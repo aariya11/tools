@@ -16,6 +16,14 @@ export interface ToolFeature {
   iconName?: string;
 }
 
+export interface EducationalSection {
+  title: string;
+  subtitle?: string;
+  paragraphs: string[];
+  useCases?: string[];
+  whyChoose?: string[];
+}
+
 export interface ToolMeta {
   id: string;
   name: string;
@@ -27,7 +35,16 @@ export interface ToolMeta {
   isPopular?: boolean;
   isRecent?: boolean;
   badge?: string;
-  keywords: string[];
+  
+  // Search Engine Optimization (SEO)
+  seoTitle?: string;
+  metaDescription?: string;
+  h1Heading?: string;
+  primaryKeyword?: string;
+  secondaryKeywords?: string[];
+  educationalSection?: EducationalSection;
+
+  keywords?: string[]; // Internal helper/search filter tags
   features: ToolFeature[];
   howToSteps: HowToStep[];
   faqs: FAQItem[];

@@ -20,10 +20,14 @@ export const CategoryPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
       <SeoHead
-        title={`${categoryMeta.name} — Free Online Utilities`}
+        title={`${categoryMeta.name} – Free Online Utilities | ToolBoxX`}
         description={categoryMeta.description}
         canonicalPath={`/category/${categoryMeta.id}`}
-        keywords={[`${categoryMeta.id} tools`, 'free online tools', 'browser utilities']}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'All Tools', url: '/all-tools' },
+          { name: categoryMeta.name, url: `/category/${categoryMeta.id}` }
+        ]}
       />
 
       <Breadcrumbs

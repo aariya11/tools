@@ -18,10 +18,13 @@ export const AllToolsPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
       <SeoHead
-        title="All Tools Directory"
-        description="Browse the complete catalog of free, browser-based online tools for images, PDFs, text, and generators."
+        title="All Tools Directory – Complete Online Utility Suite | ToolBoxX"
+        description="Browse the complete catalog of 39+ free, browser-based online tools for images, PDFs, text, and QR code generators with 100% on-device privacy."
         canonicalPath="/all-tools"
-        keywords={['all tools', 'online utility suite', 'image tools', 'pdf tools', 'text tools', 'generators']}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'All Tools', url: '/all-tools' }
+        ]}
       />
 
       <Breadcrumbs items={[{ label: 'All Tools' }]} />
