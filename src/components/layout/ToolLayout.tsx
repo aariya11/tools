@@ -26,12 +26,13 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex-1">
-      {/* Dynamic SEO & Schema (WebApplication, FAQPage, BreadcrumbList) */}
+      {/* Dynamic SEO & Schema (WebApplication, HowTo, FAQPage, BreadcrumbList) */}
       <SeoHead
         title={seoTitle}
         description={seoDescription}
         canonicalPath={tool.path}
         faqs={tool.faqs}
+        howToSteps={tool.howToSteps}
         breadcrumbs={breadcrumbs}
       />
 

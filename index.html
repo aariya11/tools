@@ -3,30 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>ToolBoxX — Free Online Tools That Just Work | Private, Fast & Browser-Based</title>
     <meta name="description" content="Free online utility platform. Compress, convert, resize, and edit images, PDFs, text, and QR codes directly in your browser. 100% private, no file uploads required." />
     <meta name="author" content="ToolBoxX" />
-    <meta name="theme-color" content="#4f46e5" />
+    <meta name="theme-color" content="#18181b" />
+
+    <!-- Googlebot & Search Engine Indexing Directives -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="revisit-after" content="2 days" />
+
+    <!-- Global GEO-Targeting & International Distribution Meta -->
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="target" content="all" />
+    <meta name="audience" content="all" />
+    <meta name="language" content="English" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="format-detection" content="telephone=no" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://toolboxx.dev/" />
+    <meta property="og:url" content="https://pdfedittools.netlify.app/" />
+    <meta property="og:site_name" content="ToolBoxX" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="hi_IN" />
+    <meta property="og:locale:alternate" content="pt_BR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta property="og:locale:alternate" content="zh_CN" />
     <meta property="og:title" content="ToolBoxX — Free Online Tools That Just Work" />
     <meta property="og:description" content="Compress, convert, resize, generate and transform your files and text — quickly, privately and for free directly in your browser." />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://toolboxx.dev/" />
-    <meta property="twitter:title" content="ToolBoxX — Free Online Tools That Just Work" />
-    <meta property="twitter:description" content="Compress, convert, resize, generate and transform your files and text — quickly, privately and for free directly in your browser." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://pdfedittools.netlify.app/" />
+    <meta name="twitter:title" content="ToolBoxX — Free Online Tools That Just Work" />
+    <meta name="twitter:description" content="Compress, convert, resize, generate and transform your files and text — quickly, privately and for free directly in your browser." />
 
-    <!-- Google Fonts Preconnect & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- DNS Prefetch & Resource Preconnects for Speed & CWV -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://translate.google.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen">
+  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 min-h-screen">
     <div id="root"></div>
     <div id="google_translate_element" style="display:none"></div>
     <script type="text/javascript">
