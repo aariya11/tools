@@ -52,9 +52,14 @@ export const GLOBAL_LANGUAGES: LanguageOption[] = [
   { code: 'pt-PT', name: 'Portuguese (Portugal)', nativeName: 'Português (Portugal)', flag: '🇵🇹', region: 'Europe' },
 ];
 
+export const getGoogleTranslateCode = (code: string): string => {
+  if (code === 'he') return 'iw';
+  if (code === 'pt-PT') return 'pt';
+  return code;
+};
+
 // Core dictionary for immediate instant UI localization
 const TRANSLATIONS: Record<string, Record<string, string>> = {
-  // Navigation & Core Labels
   'nav.imageTools': {
     en: 'Image Tools',
     es: 'Herramientas de Imagen',
@@ -201,18 +206,18 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     id: '100% Gratis',
   },
   'badge.private': {
-    en: '100% Private (No Uploads)',
-    es: '100% Privado (Sin Subidas)',
-    'zh-CN': '100% 隐私安全（无需上传）',
-    'zh-TW': '100% 隱私安全（無需上傳）',
-    hi: '100% निजी (कोई अपलोड नहीं)',
-    ar: 'خصوصية 100% (بدون رفع)',
-    fr: '100% Privé (Aucun envoi)',
-    pt: '100% Privado (Sem Upload)',
-    de: '100% Privat (Kein Upload)',
-    ru: '100% Приватно (Без загрузки)',
-    ja: '100% プライベート（サーバー送信なし）',
-    ko: '100% 개인정보 보호 (업로드 없음)',
+    en: '100% Client-Side Privacy: Your files never leave your device',
+    es: '100% Privacidad del Cliente: Tus archivos nunca salen de tu dispositivo',
+    'zh-CN': '100% 客户端隐私：您的文件绝不会离开您的设备',
+    'zh-TW': '100% 客戶端隱私：您的檔案絕不會離開您的設備',
+    hi: '100% क्लाइंट-साइड गोपनीयता: आपकी फाइलें कभी आपके डिवाइस से बाहर नहीं जातीं',
+    ar: 'خصوصية تامة 100%: ملفاتك لا تغادر جهازك أبدًا',
+    fr: '100% Confidentialité locale: Vos fichiers ne quittent jamais votre appareil',
+    pt: '100% Privacidade: Seus arquivos nunca saem do seu dispositivo',
+    de: '100% Client-seitige Privatsphäre: Ihre Dateien verlassen nie Ihr Gerät',
+    ru: '100% Приватность: Ваши файлы никогда не покидают ваше устройство',
+    ja: '100% クライアント側プライバシー: ファイルが端末外に送信されることはありません',
+    ko: '100% 클라이언트 개인정보 보호: 파일이 기기를 벗어나지 않습니다',
   },
   'theme.customizer': {
     en: 'Customize Theme',
@@ -258,21 +263,55 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [langCode, setLangCodeState] = useState<string>(() => {
+    // Read from localStorage first
     const saved = localStorage.getItem('toolboxx_language');
     if (saved && GLOBAL_LANGUAGES.some(l => l.code === saved)) {
       return saved;
     }
-    // Check navigator language
-    const browserLang = navigator.language;
-    const directMatch = GLOBAL_LANGUAGES.find(l => l.code === browserLang);
-    if (directMatch) return directMatch.code;
-    const prefixMatch = GLOBAL_LANGUAGES.find(l => browserLang.startsWith(l.code));
-    if (prefixMatch) return prefixMatch.code;
+    // Also check if googtrans cookie was already set
+    const match = document.cookie.match(/googtrans=\/en\/([^;]+)/);
+    if (match && match[1]) {
+      const gCode = match[1];
+      const found = GLOBAL_LANGUAGES.find(l => getGoogleTranslateCode(l.code) === gCode || l.code === gCode);
+      if (found) return found.code;
+    }
     return 'en';
   });
 
   const currentLanguage = GLOBAL_LANGUAGES.find(l => l.code === langCode) || GLOBAL_LANGUAGES[0];
   const isRtl = Boolean(currentLanguage.isRtl);
+
+  const applyGoogleTranslate = (code: string) => {
+    const targetGoogleCode = getGoogleTranslateCode(code);
+    const domain = window.location.hostname;
+
+    if (code === 'en') {
+      // Clear cookie completely across root domain & current domain
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${domain}; path=/;`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${domain}; path=/;`;
+    } else {
+      const cookieValue = `/en/${targetGoogleCode}`;
+      document.cookie = `googtrans=${cookieValue}; path=/;`;
+      document.cookie = `googtrans=${cookieValue}; domain=.${domain}; path=/;`;
+      document.cookie = `googtrans=${cookieValue}; domain=${domain}; path=/;`;
+    }
+
+    // Try triggering the Google Translate combo box if present
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+    if (select) {
+      select.value = code === 'en' ? '' : targetGoogleCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // If combo box is not in DOM yet, ensure the Google script is loaded
+      if (!document.getElementById('google-translate-script')) {
+        const s = document.createElement('script');
+        s.id = 'google-translate-script';
+        s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(s);
+      }
+    }
+  };
 
   useEffect(() => {
     localStorage.setItem('toolboxx_language', langCode);
@@ -281,23 +320,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = langCode;
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
 
-    // Trigger Google Translate widget if language is non-English
-    if (langCode !== 'en') {
-      try {
-        const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-        if (select) {
-          select.value = langCode.split('-')[0];
-          select.dispatchEvent(new Event('change'));
-        }
-      } catch (e) {
-        // Silent fallback
-      }
-    }
+    applyGoogleTranslate(langCode);
   }, [langCode, isRtl]);
 
   const setLanguage = (code: string) => {
     if (GLOBAL_LANGUAGES.some(l => l.code === code)) {
       setLangCodeState(code);
+      applyGoogleTranslate(code);
     }
   };
 
@@ -305,7 +334,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const dict = TRANSLATIONS[key];
     if (dict) {
       if (dict[langCode]) return dict[langCode];
-      // Fallback to base language (e.g. 'zh' for 'zh-CN')
       const base = langCode.split('-')[0];
       if (dict[base]) return dict[base];
       if (dict['en']) return dict['en'];
