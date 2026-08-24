@@ -14,7 +14,6 @@ import {
   Sliders,
 } from 'lucide-react';
 import { ToolCard } from '../components/common/ToolCard';
-import { AdSlot } from '../components/common/AdSlot';
 import { SeoHead } from '../components/common/SeoHead';
 import { Accordion } from '../components/common/Accordion';
 import {
@@ -97,11 +96,6 @@ export const HomePage: React.FC = () => {
         canonicalPath="/"
         faqs={HOMEPAGE_FAQS}
       />
-
-      {/* Top Header AdSlot */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 hidden sm:block">
-        <AdSlot type="leaderboard" />
-      </div>
 
       {/* ========================================================================= */}
       {/* 1. HERO SECTION (Editorial, Minimalist, High-Impact) */}
@@ -314,11 +308,6 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Mid Page In-Content AdSlot */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4">
-        <AdSlot type="in-content" />
-      </div>
 
       {/* ========================================================================= */}
       {/* 4. CATEGORY SHOWCASE: IMAGE TOOLS */}

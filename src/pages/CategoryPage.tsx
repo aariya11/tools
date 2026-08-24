@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { ToolCard } from '../components/common/ToolCard';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
-import { AdSlot } from '../components/common/AdSlot';
 import { SeoHead } from '../components/common/SeoHead';
 import { DynamicIcon } from '../components/common/DynamicIcon';
 import { CATEGORIES, getToolsByCategory } from '../data/toolsData';
@@ -54,10 +53,6 @@ export const CategoryPage: React.FC = () => {
         {tools.map((tool) => (
           <ToolCard key={tool.id} tool={tool} />
         ))}
-      </div>
-
-      <div className="my-12">
-        <AdSlot type="in-content" />
       </div>
     </div>
   );

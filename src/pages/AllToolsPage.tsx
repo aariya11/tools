@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Search, Grid } from 'lucide-react';
 import { ToolCard } from '../components/common/ToolCard';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
-import { AdSlot } from '../components/common/AdSlot';
 import { SeoHead } from '../components/common/SeoHead';
 import { TOOLS_DATA, searchTools } from '../data/toolsData';
 
@@ -92,11 +91,6 @@ export const AllToolsPage: React.FC = () => {
           ))}
         </div>
       )}
-
-      {/* AdSlot */}
-      <div className="my-12">
-        <AdSlot type="in-content" />
-      </div>
     </div>
   );
 };

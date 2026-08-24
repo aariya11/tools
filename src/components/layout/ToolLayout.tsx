@@ -4,7 +4,6 @@ import type { ToolMeta } from '../../types/tools';
 import { Breadcrumbs } from './Breadcrumbs';
 import { Accordion } from '../common/Accordion';
 import { RelatedTools } from '../common/RelatedTools';
-import { AdSlot } from '../common/AdSlot';
 import { SeoHead } from '../common/SeoHead';
 import { DynamicIcon } from '../common/DynamicIcon';
 
@@ -44,9 +43,6 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
         ]}
       />
 
-      {/* Top Banner Ad Container */}
-      <AdSlot type="leaderboard" className="my-4 hidden sm:flex" />
-
       {/* Tool Header */}
       <div className="text-center max-w-3xl mx-auto my-8 sm:my-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs">
@@ -76,9 +72,6 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
           {children}
         </div>
       </div>
-
-      {/* In-Content AdSlot */}
-      <AdSlot type="in-content" className="my-8" />
 
       {/* Step-by-Step "How to Use" Section */}
       {tool.howToSteps && tool.howToSteps.length > 0 && (

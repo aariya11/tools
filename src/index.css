@@ -1,99 +1,23 @@
 @import "tailwindcss";
 
 @layer base {
+  /* Default CSS custom properties (monochrome dark — overridden by ThemeContext JS per theme/mode) */
   :root {
     color-scheme: dark;
-    --theme-accent: #E8DFCF;
-    --theme-accent-hover: #F5F1E8;
-    --theme-bg-dark: #11110F;
-    --theme-bg-light: #FBF9F5;
+    --c-bg: #11110F;
+    --c-surface: #161513;
+    --c-card: #1B1A17;
+    --c-border: #2A2824;
+    --c-border-hover: #3D3A34;
+    --c-text: #F5F1E8;
+    --c-muted: #B8B2A7;
+    --c-subtle: #7A756D;
+    --c-accent: #E8DFCF;
+    --c-gold: #B79B70;
   }
-  
+
   .dark {
     color-scheme: dark;
-  }
-
-  /* Default Premium Dark Editorial Theme (Inspired by wegic editorial aesthetic) */
-  [data-theme="monochrome"].dark body,
-  :root:not([data-theme]).dark body,
-  :root body {
-    background-color: #11110F;
-    color: #F5F1E8;
-  }
-  
-  [data-theme="monochrome"]:not(.dark) body {
-    background-color: #FAF8F5;
-    color: #181714;
-  }
-
-  /* Modern Slate Theme */
-  [data-theme="slate"].dark body {
-    background-color: #0c0f14;
-    color: #f1f5f9;
-  }
-  [data-theme="slate"]:not(.dark) body {
-    background-color: #f8fafc;
-    color: #0f172a;
-  }
-
-  /* Midnight Indigo Theme */
-  [data-theme="midnight"].dark body {
-    background-color: #060913;
-    color: #f3f4f6;
-  }
-  [data-theme="midnight"]:not(.dark) body {
-    background-color: #f5f7ff;
-    color: #111827;
-  }
-
-  /* Emerald Mint Theme */
-  [data-theme="emerald"].dark body {
-    background-color: #071510;
-    color: #f0fdf4;
-  }
-  [data-theme="emerald"]:not(.dark) body {
-    background-color: #f0fdf4;
-    color: #022c22;
-  }
-
-  /* Cyberpunk Violet Theme */
-  [data-theme="cyberpunk"].dark body {
-    background-color: #0d0617;
-    color: #faf5ff;
-  }
-  [data-theme="cyberpunk"]:not(.dark) body {
-    background-color: #faf5ff;
-    color: #2e1065;
-  }
-
-  /* Sunset Amber Theme */
-  [data-theme="sunset"].dark body {
-    background-color: #140d05;
-    color: #fffbeb;
-  }
-  [data-theme="sunset"]:not(.dark) body {
-    background-color: #fffbeb;
-    color: #451a03;
-  }
-
-  /* Crimson Rose Theme */
-  [data-theme="crimson"].dark body {
-    background-color: #140508;
-    color: #fff1f2;
-  }
-  [data-theme="crimson"]:not(.dark) body {
-    background-color: #fff1f2;
-    color: #4c0519;
-  }
-
-  /* Ocean Cyan Theme */
-  [data-theme="ocean"].dark body {
-    background-color: #04121a;
-    color: #ecfeff;
-  }
-  [data-theme="ocean"]:not(.dark) body {
-    background-color: #ecfeff;
-    color: #083344;
   }
 
   body {
@@ -104,40 +28,40 @@
     display: flex;
     flex-direction: column;
     transition-property: color, background-color, border-color;
-    transition-duration: 150ms;
-    background-color: #11110F;
-    color: #F5F1E8;
+    transition-duration: 200ms;
+    background-color: var(--c-bg);
+    color: var(--c-text);
   }
 }
 
-/* Custom Scrollbars (Refined warm dark) */
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #11110F;
+  background: var(--c-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2A2824;
+  background-color: var(--c-border);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3D3A34;
+  background-color: var(--c-border-hover);
 }
 
 /* Range input styling */
 input[type="range"] {
-  accent-color: #B79B70;
+  accent-color: var(--c-gold);
 }
 
 /* Focus states */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #B79B70, 0 0 0 4px #11110F;
+  box-shadow: 0 0 0 2px var(--c-gold), 0 0 0 4px var(--c-bg);
 }
 
 /* RTL Support Styles */
@@ -168,3 +92,4 @@ input[type="range"] {
 body {
   top: 0 !important;
 }
+
