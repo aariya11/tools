@@ -132,8 +132,8 @@ const TOOL_PRESETS: ToolPreset[] = [
     keywords: ['barcodegenerator', 'retailtools', 'inventory', 'ecommercehacks', 'amazonfba', 'logistics'],
   },
   {
-    id: 'image-resizer',
-    name: 'Social Media Image Resizer',
+    id: 'social-media-resizer',
+    name: 'Social Media Resizer',
     category: 'Image Tools',
     headline: 'Crop & resize photos to exact dimensions for Instagram, YouTube, X, and LinkedIn',
     problem: 'Social platforms cut off key parts of images that are not resized to platform specs.',

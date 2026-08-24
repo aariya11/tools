@@ -154,7 +154,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: BLOG_AUTHORS.alex,
     category: 'Image',
     tags: ['Image Compression', 'Web Performance', 'Instagram Size', 'WebP'],
-    relatedToolIds: ['image-compressor', 'image-resizer', 'png-to-webp', 'jpg-to-png'],
+    relatedToolIds: ['image-compressor', 'image-cropper', 'png-to-webp', 'jpg-to-png'],
     primaryToolId: 'image-compressor',
     featured: false,
     keyTakeaways: [

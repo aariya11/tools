@@ -20,7 +20,14 @@ import { SeoHead } from '../components/common/SeoHead';
 import { SocialShareButtons } from '../components/common/SocialShareButtons';
 
 const SOCIAL_TOOL_IDS = [
-  'image-resizer',
+  'social-media-resizer',
+  'social-content-generator',
+  'social-image-generator',
+  'short-video-script-generator',
+  'content-calendar',
+  'social-bio-generator',
+  'link-in-bio-builder',
+  'youtube-tag-generator',
   'image-compressor',
   'background-remover',
   'ai-social-caption',

@@ -49,52 +49,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'How much file size can I expect to save?', answer: 'Depending on original quality and your chosen compression level, file sizes typically drop by 40% to 85% with minimal perceptual loss.' },
       { question: 'Is there a limit on how many images I can compress?', answer: 'No! ToolBoxX is completely free with no usage limits, registrations, or watermarks.' }
     ],
-    relatedToolIds: ['image-resizer', 'jpg-to-png', 'png-to-webp', 'jpg-to-pdf']
-  },
-  {
-    id: 'image-resizer',
-    name: 'Image Resizer',
-    path: '/image-resizer',
-    category: 'images',
-    shortDescription: 'Resize images by pixels or percentage with aspect ratio lock and social media presets.',
-    fullDescription: 'Quickly change image dimensions with precision. Maintain aspect ratios, pick from ready-to-use social media presets (Instagram, YouTube, HD, 4K), or scale by percentage in seconds.',
-    icon: 'Maximize2',
-    isPopular: true,
-    seoTitle: 'Image Resizer Online – Resize Images & Photos Free | ToolBoxX',
-    metaDescription: 'Resize images online for free by exact pixel dimensions or percentage. Keep aspect ratios locked and choose from social media presets with instant browser processing.',
-    h1Heading: 'Image Resizer Online',
-    primaryKeyword: 'image resizer',
-    secondaryKeywords: ['image resizer online', 'resize image', 'resize photo', 'photo resizer', 'free image resizer', 'change image dimensions'],
-    educationalSection: {
-      title: 'Fast, Lossless Image Resizing for Any Platform',
-      paragraphs: [
-        'Changing image dimensions is a common requirement for social media avatars, banners, eCommerce product galleries, and responsive web design. ToolBoxX Image Resizer lets you specify exact width and height pixel values or scale by a proportional percentage.',
-        'The built-in aspect ratio lock ensures your photos never stretch or distort, providing crisp bicubic image interpolation in your browser.'
-      ],
-      useCases: [
-        'Social Media Header & Thumbnails: Resize for YouTube thumbnails (1280×720), Instagram posts (1080×1080), and banners.',
-        'eCommerce & Catalogs: Standardize product images to uniform square or portrait dimensions.',
-        'Fast Cropping & Scaling: Scale down massive 4K camera photos for quick web sharing.'
-      ]
-    },
-    features: [
-      { title: 'Lock Aspect Ratio', description: 'Keep original proportions intact automatically when adjusting width or height.' },
-      { title: 'Social Media Presets', description: 'One-click templates for Instagram posts, stories, YouTube thumbnails, Full HD, and custom dimensions.' },
-      { title: 'Percentage Scaling', description: 'Easily scale your photo up or down between 10% and 200% with a single slider.' },
-      { title: 'Lossless Resampling', description: 'Smooth high-quality bicubic resampling for sharp graphics and photos.' }
-    ],
-    howToSteps: [
-      { title: 'Choose Image', description: 'Upload the image you want to resize from your device.' },
-      { title: 'Set Target Dimensions', description: 'Enter specific pixel dimensions or select a standard preset like Full HD or Instagram.' },
-      { title: 'Verify Aspect Ratio', description: 'Ensure the aspect ratio lock is enabled if you wish to prevent stretching.' },
-      { title: 'Download Resized Image', description: 'Click Download to receive your resized image instantly.' }
-    ],
-    faqs: [
-      { question: 'Can I resize without distorting my photo?', answer: 'Yes. Simply keep the "Lock Aspect Ratio" toggle turned on, and changing one dimension will automatically adjust the other proportionally.' },
-      { question: 'Does resizing reduce image file size?', answer: 'Downsizing an image reduces total pixel count and significantly decreases file size without compromising pixel density.' },
-      { question: 'Are animated GIFs supported?', answer: 'Static images (JPG, PNG, WebP) are fully supported. Animated frame resizing is handled per static keyframe.' }
-    ],
-    relatedToolIds: ['image-compressor', 'jpg-to-png', 'png-to-webp', 'jpg-to-pdf']
+    relatedToolIds: ['image-cropper', 'jpg-to-png', 'png-to-webp', 'jpg-to-pdf']
   },
   {
     id: 'jpg-to-png',
@@ -137,7 +92,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Why convert JPG to PNG?', answer: 'PNG uses lossless compression, making it ideal for screenshots, digital art, text overlays, and further editing where generation loss must be avoided.' },
       { question: 'Will converting a JPG to PNG make the background transparent?', answer: 'JPGs do not store transparency data, so the initial conversion keeps the original background intact. PNG format allows you to add transparency in subsequent graphic editing.' }
     ],
-    relatedToolIds: ['png-to-webp', 'image-compressor', 'image-resizer', 'jpg-to-pdf']
+    relatedToolIds: ['png-to-webp', 'image-compressor', 'image-cropper', 'jpg-to-pdf']
   },
   {
     id: 'png-to-webp',
@@ -179,7 +134,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Is WebP supported by all web browsers?', answer: 'Yes. All modern browsers including Google Chrome, Apple Safari, Mozilla Firefox, and Microsoft Edge natively support WebP.' },
       { question: 'Does WebP preserve transparent PNG backgrounds?', answer: 'Yes! WebP provides full 8-bit transparency support with significantly lower file weight than PNG.' }
     ],
-    relatedToolIds: ['jpg-to-png', 'image-compressor', 'image-resizer', 'jpg-to-pdf']
+    relatedToolIds: ['jpg-to-png', 'image-compressor', 'image-cropper', 'jpg-to-pdf']
   },
 
   {
@@ -225,7 +180,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Does cropping reduce photo resolution?', answer: 'Cropping extracts the selected pixel region at full original resolution without upscaling or blurring.' },
       { question: 'Can I enter exact pixel dimensions?', answer: 'Yes! Type your target width, height, and coordinates directly into the dimension input boxes.' }
     ],
-    relatedToolIds: ['image-resizer', 'image-compressor', 'image-enhancer', 'image-upscaler']
+    relatedToolIds: ['image-cropper', 'image-compressor', 'image-enhancer', 'image-upscaler']
   },
   {
     id: 'background-remover',
@@ -315,7 +270,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'How does 4x upscaling work?', answer: '4x upscaling quadruples width and height, creating 16 times more total pixels through progressive bicubic interpolation and high-pass filtering.' },
       { question: 'Is upscaling processed client-side?', answer: 'Yes! All calculations run directly in your browser using hardware-accelerated canvas contexts.' }
     ],
-    relatedToolIds: ['image-enhancer', 'image-resizer', 'image-compressor', 'image-cropper']
+    relatedToolIds: ['image-enhancer', 'image-cropper', 'image-compressor', 'image-cropper']
   },
   {
     id: 'image-enhancer',
@@ -405,7 +360,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Is there a limit on how many images I can convert?', answer: 'No limit! You can convert as many images as your browser memory can handle.' },
       { question: 'Are my photos uploaded to a server?', answer: 'Never. All format conversion is executed locally on your device for complete privacy.' }
     ],
-    relatedToolIds: ['jpg-to-png', 'png-to-webp', 'image-compressor', 'image-resizer']
+    relatedToolIds: ['jpg-to-png', 'png-to-webp', 'image-compressor', 'image-cropper']
   },
   {
     id: 'image-metadata-remover',
@@ -495,7 +450,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Can I watermark multiple photos at once?', answer: 'Yes! Upload multiple images and our tool will apply the same watermark settings across all photos in batch.' },
       { question: 'What logo formats are supported?', answer: 'Transparent PNG and SVG logos work best for clean, crisp watermark overlays.' }
     ],
-    relatedToolIds: ['image-cropper', 'image-resizer', 'image-converter', 'image-enhancer']
+    relatedToolIds: ['image-cropper', 'image-cropper', 'image-converter', 'image-enhancer']
   },
   {
     id: 'image-blur-pixelate',
@@ -630,7 +585,7 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'What files are included in the downloaded ZIP?', answer: 'The package contains favicon.ico, 6 PNG sizes (16, 32, 48, 180, 192, 512), site.webmanifest, and browserconfig.xml.' },
       { question: 'Is favicon.ico multi-resolution?', answer: 'Yes! The generated favicon.ico includes embedded 16x16, 32x32, and 48x48 icon directories for crisp display across all Windows and macOS browsers.' }
     ],
-    relatedToolIds: ['image-color-picker', 'image-cropper', 'image-converter', 'image-resizer']
+    relatedToolIds: ['image-color-picker', 'image-cropper', 'image-converter', 'image-cropper']
   },
 
   // =========================================================================
@@ -3791,7 +3746,7 @@ export const TOOLS_DATA: ToolMeta[] = [
     faqs: [
       { question: 'What resolution are the downloaded images?', answer: 'Images are exported at full native high resolution (e.g. 1080×1080, 1080×1920, 1600×900) for crystal-clear retina rendering.' }
     ],
-    relatedToolIds: ['social-media-resizer', 'social-content-generator', 'image-resizer', 'link-in-bio-builder']
+    relatedToolIds: ['social-media-resizer', 'social-content-generator', 'image-cropper', 'link-in-bio-builder']
   },
   {
     id: 'social-media-resizer',
@@ -3836,7 +3791,7 @@ export const TOOLS_DATA: ToolMeta[] = [
     faqs: [
       { question: 'Will my image quality degrade?', answer: 'No. The resizer uses high-quality bicubic canvas resampling and exports in lossless PNG or high-quality WebP/JPEG.' }
     ],
-    relatedToolIds: ['image-resizer', 'social-image-generator', 'image-cropper', 'image-compressor']
+    relatedToolIds: ['image-cropper', 'social-image-generator', 'image-cropper', 'image-compressor']
   },
   {
     id: 'short-video-script-generator',

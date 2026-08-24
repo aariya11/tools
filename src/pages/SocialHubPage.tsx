@@ -721,8 +721,8 @@ export const SocialHubPage: React.FC = () => {
                   <h3 className="text-lg font-bold text-[var(--c-text)]">2026 Social Media Dimension Standards</h3>
                   <p className="text-xs text-[var(--c-muted)]">Click any dimension to copy or jump to Image Resizer.</p>
                 </div>
-                <Link to="/image-resizer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[var(--c-gold)] text-black font-bold text-xs hover:brightness-110 transition-all">
-                  <span>Open Image Resizer</span>
+                <Link to="/social-media-resizer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[var(--c-gold)] text-[var(--c-bg)] font-bold text-xs hover:brightness-110 transition-all">
+                  <span>Open Social Resizer</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, lazy } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/layout/Header';
@@ -31,7 +31,6 @@ const FreeImageToolsPage = lazy(() => import('./pages/FreeImageToolsPage').then(
 
 // Lazy-loaded Image Tools
 const ImageCompressor = lazy(() => import('./components/tools/image/ImageCompressor').then((m) => ({ default: m.ImageCompressor })));
-const ImageResizer = lazy(() => import('./components/tools/image/ImageResizer').then((m) => ({ default: m.ImageResizer })));
 const JpgToPng = lazy(() => import('./components/tools/image/JpgToPng').then((m) => ({ default: m.JpgToPng })));
 const PngToWebp = lazy(() => import('./components/tools/image/PngToWebp').then((m) => ({ default: m.PngToWebp })));
 const ImageCropper = lazy(() => import('./components/tools/image/ImageCropper').then((m) => ({ default: m.ImageCropper })));
@@ -217,11 +216,7 @@ export function App() {
                 />
                 <Route
                   path="/image-resizer"
-                  element={
-                    <ToolWrapper toolId="image-resizer">
-                      <ImageResizer />
-                    </ToolWrapper>
-                  }
+                  element={<Navigate to="/image-cropper" replace />}
                 />
                 <Route
                   path="/jpg-to-png"
