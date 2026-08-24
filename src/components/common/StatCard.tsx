@@ -8,6 +8,7 @@ interface StatCardProps {
   badgeType?: 'success' | 'neutral' | 'warning';
   icon?: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const StatCard: React.FC<StatCardProps> = ({
@@ -18,6 +19,7 @@ export const StatCard: React.FC<StatCardProps> = ({
   badgeType = 'neutral',
   icon,
   className = '',
+  style,
 }) => {
   const getBadgeClasses = () => {
     switch (badgeType) {
@@ -32,6 +34,7 @@ export const StatCard: React.FC<StatCardProps> = ({
 
   return (
     <div
+      style={style}
       className={`p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col justify-between transition-all ${className}`}
     >
       <div className="flex items-center justify-between gap-2 mb-2">

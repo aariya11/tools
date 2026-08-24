@@ -23,6 +23,16 @@ const ImageCompressor = lazy(() => import('./components/tools/image/ImageCompres
 const ImageResizer = lazy(() => import('./components/tools/image/ImageResizer').then((m) => ({ default: m.ImageResizer })));
 const JpgToPng = lazy(() => import('./components/tools/image/JpgToPng').then((m) => ({ default: m.JpgToPng })));
 const PngToWebp = lazy(() => import('./components/tools/image/PngToWebp').then((m) => ({ default: m.PngToWebp })));
+const ImageCropper = lazy(() => import('./components/tools/image/ImageCropper').then((m) => ({ default: m.ImageCropper })));
+const BackgroundRemover = lazy(() => import('./components/tools/image/BackgroundRemover').then((m) => ({ default: m.BackgroundRemover })));
+const ImageUpscaler = lazy(() => import('./components/tools/image/ImageUpscaler').then((m) => ({ default: m.ImageUpscaler })));
+const ImageEnhancer = lazy(() => import('./components/tools/image/ImageEnhancer').then((m) => ({ default: m.ImageEnhancer })));
+const ImageConverter = lazy(() => import('./components/tools/image/ImageConverter').then((m) => ({ default: m.ImageConverter })));
+const ImageMetadataRemover = lazy(() => import('./components/tools/image/ImageMetadataRemover').then((m) => ({ default: m.ImageMetadataRemover })));
+const ImageWatermark = lazy(() => import('./components/tools/image/ImageWatermark').then((m) => ({ default: m.ImageWatermark })));
+const ImageBlurPixelate = lazy(() => import('./components/tools/image/ImageBlurPixelate').then((m) => ({ default: m.ImageBlurPixelate })));
+const ImageColorPicker = lazy(() => import('./components/tools/image/ImageColorPicker').then((m) => ({ default: m.ImageColorPicker })));
+const FaviconGenerator = lazy(() => import('./components/tools/image/FaviconGenerator').then((m) => ({ default: m.FaviconGenerator })));
 
 // Lazy-loaded PDF Tools
 const PdfToolsHub = lazy(() => import('./components/tools/pdf/PdfToolsHub').then((m) => ({ default: m.PdfToolsHub })));
@@ -65,6 +75,49 @@ const TextToHandwriting = lazy(() => import('./components/tools/text/TextToHandw
 
 // Lazy-loaded Generators
 const QrCodeGenerator = lazy(() => import('./components/tools/generator/QrCodeGenerator').then((m) => ({ default: m.QrCodeGenerator })));
+
+// Lazy-loaded AI Tools
+const AiSummarizer = lazy(() => import('./components/tools/ai/AiSummarizer').then((m) => ({ default: m.AiSummarizer })));
+const AiRewriter = lazy(() => import('./components/tools/ai/AiRewriter').then((m) => ({ default: m.AiRewriter })));
+const AiGrammarChecker = lazy(() => import('./components/tools/ai/AiGrammarChecker').then((m) => ({ default: m.AiGrammarChecker })));
+const AiEmailWriter = lazy(() => import('./components/tools/ai/AiEmailWriter').then((m) => ({ default: m.AiEmailWriter })));
+const AiTitleGenerator = lazy(() => import('./components/tools/ai/AiTitleGenerator').then((m) => ({ default: m.AiTitleGenerator })));
+const AiBlogOutline = lazy(() => import('./components/tools/ai/AiBlogOutline').then((m) => ({ default: m.AiBlogOutline })));
+// Lazy-loaded Business & Marketing Tools
+const BarcodeGenerator = lazy(() => import('./components/tools/business/BarcodeGenerator').then((m) => ({ default: m.BarcodeGenerator })));
+const UtmBuilder = lazy(() => import('./components/tools/business/UtmBuilder').then((m) => ({ default: m.UtmBuilder })));
+const MetaTagGenerator = lazy(() => import('./components/tools/business/MetaTagGenerator').then((m) => ({ default: m.MetaTagGenerator })));
+const RobotsTxtGenerator = lazy(() => import('./components/tools/business/RobotsTxtGenerator').then((m) => ({ default: m.RobotsTxtGenerator })));
+const SchemaGenerator = lazy(() => import('./components/tools/business/SchemaGenerator').then((m) => ({ default: m.SchemaGenerator })));
+const EmailSignatureGenerator = lazy(() => import('./components/tools/business/EmailSignatureGenerator').then((m) => ({ default: m.EmailSignatureGenerator })));
+const InvoiceGenerator = lazy(() => import('./components/tools/business/InvoiceGenerator').then((m) => ({ default: m.InvoiceGenerator })));
+const ResumeBuilder = lazy(() => import('./components/tools/business/ResumeBuilder').then((m) => ({ default: m.ResumeBuilder })));
+const CoverLetterGenerator = lazy(() => import('./components/tools/business/CoverLetterGenerator').then((m) => ({ default: m.CoverLetterGenerator })));
+const BusinessNameGenerator = lazy(() => import('./components/tools/business/BusinessNameGenerator').then((m) => ({ default: m.BusinessNameGenerator })));
+const PasswordGenerator = lazy(() => import('./components/tools/business/PasswordGenerator').then((m) => ({ default: m.PasswordGenerator })));
+const UuidGenerator = lazy(() => import('./components/tools/business/UuidGenerator').then((m) => ({ default: m.UuidGenerator })));
+
+// Lazy-loaded Developer Tools
+const JsonTools = lazy(() => import('./components/tools/developer/JsonTools').then((m) => ({ default: m.JsonTools })));
+const CodeMinifier = lazy(() => import('./components/tools/developer/CodeMinifier').then((m) => ({ default: m.CodeMinifier })));
+const Base64Tool = lazy(() => import('./components/tools/developer/Base64Tool').then((m) => ({ default: m.Base64Tool })));
+const UrlEncoder = lazy(() => import('./components/tools/developer/UrlEncoder').then((m) => ({ default: m.UrlEncoder })));
+const JwtDecoder = lazy(() => import('./components/tools/developer/JwtDecoder').then((m) => ({ default: m.JwtDecoder })));
+const HashGenerator = lazy(() => import('./components/tools/developer/HashGenerator').then((m) => ({ default: m.HashGenerator })));
+const RegexTester = lazy(() => import('./components/tools/developer/RegexTester').then((m) => ({ default: m.RegexTester })));
+const TimestampConverter = lazy(() => import('./components/tools/developer/TimestampConverter').then((m) => ({ default: m.TimestampConverter })));
+const ColorConverter = lazy(() => import('./components/tools/developer/ColorConverter').then((m) => ({ default: m.ColorConverter })));
+
+// Lazy-loaded Text Tools (Extended)
+const TextCleaner = lazy(() => import('./components/tools/text/TextCleaner').then((m) => ({ default: m.TextCleaner })));
+const MarkdownEditor = lazy(() => import('./components/tools/text/MarkdownEditor').then((m) => ({ default: m.MarkdownEditor })));
+const CsvConverter = lazy(() => import('./components/tools/text/CsvConverter').then((m) => ({ default: m.CsvConverter })));
+
+// Lazy-loaded File & Archive Tools
+const ZipCreator = lazy(() => import('./components/tools/file/ZipCreator').then((m) => ({ default: m.ZipCreator })));
+const ZipExtractor = lazy(() => import('./components/tools/file/ZipExtractor').then((m) => ({ default: m.ZipExtractor })));
+const BulkRenamer = lazy(() => import('./components/tools/file/BulkRenamer').then((m) => ({ default: m.BulkRenamer })));
+const FileSizeConverter = lazy(() => import('./components/tools/file/FileSizeConverter').then((m) => ({ default: m.FileSizeConverter })));
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -138,6 +191,86 @@ export function App() {
                   element={
                     <ToolWrapper toolId="png-to-webp">
                       <PngToWebp />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-cropper"
+                  element={
+                    <ToolWrapper toolId="image-cropper">
+                      <ImageCropper />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/background-remover"
+                  element={
+                    <ToolWrapper toolId="background-remover">
+                      <BackgroundRemover />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-upscaler"
+                  element={
+                    <ToolWrapper toolId="image-upscaler">
+                      <ImageUpscaler />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-enhancer"
+                  element={
+                    <ToolWrapper toolId="image-enhancer">
+                      <ImageEnhancer />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-converter"
+                  element={
+                    <ToolWrapper toolId="image-converter">
+                      <ImageConverter />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-metadata-remover"
+                  element={
+                    <ToolWrapper toolId="image-metadata-remover">
+                      <ImageMetadataRemover />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-watermark"
+                  element={
+                    <ToolWrapper toolId="image-watermark">
+                      <ImageWatermark />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-blur-pixelate"
+                  element={
+                    <ToolWrapper toolId="image-blur-pixelate">
+                      <ImageBlurPixelate />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/image-color-picker"
+                  element={
+                    <ToolWrapper toolId="image-color-picker">
+                      <ImageColorPicker />
+                    </ToolWrapper>
+                  }
+                />
+                <Route
+                  path="/favicon-generator"
+                  element={
+                    <ToolWrapper toolId="favicon-generator">
+                      <FaviconGenerator />
                     </ToolWrapper>
                   }
                 />
@@ -267,6 +400,48 @@ export function App() {
                     </ToolWrapper>
                   }
                 />
+
+                {/* AI Tools */}
+                <Route path="/ai-summarizer" element={<ToolWrapper toolId="ai-summarizer"><AiSummarizer /></ToolWrapper>} />
+                <Route path="/ai-rewriter" element={<ToolWrapper toolId="ai-rewriter"><AiRewriter /></ToolWrapper>} />
+                <Route path="/ai-grammar-checker" element={<ToolWrapper toolId="ai-grammar-checker"><AiGrammarChecker /></ToolWrapper>} />
+                <Route path="/ai-email-writer" element={<ToolWrapper toolId="ai-email-writer"><AiEmailWriter /></ToolWrapper>} />
+                <Route path="/ai-title-generator" element={<ToolWrapper toolId="ai-title-generator"><AiTitleGenerator /></ToolWrapper>} />
+                {/* Business & Marketing Tools */}
+                <Route path="/barcode-generator" element={<ToolWrapper toolId="barcode-generator"><BarcodeGenerator /></ToolWrapper>} />
+                <Route path="/utm-builder" element={<ToolWrapper toolId="utm-builder"><UtmBuilder /></ToolWrapper>} />
+                <Route path="/meta-tag-generator" element={<ToolWrapper toolId="meta-tag-generator"><MetaTagGenerator /></ToolWrapper>} />
+                <Route path="/robots-txt-generator" element={<ToolWrapper toolId="robots-txt-generator"><RobotsTxtGenerator /></ToolWrapper>} />
+                <Route path="/schema-generator" element={<ToolWrapper toolId="schema-generator"><SchemaGenerator /></ToolWrapper>} />
+                <Route path="/email-signature-generator" element={<ToolWrapper toolId="email-signature-generator"><EmailSignatureGenerator /></ToolWrapper>} />
+                <Route path="/invoice-generator" element={<ToolWrapper toolId="invoice-generator"><InvoiceGenerator /></ToolWrapper>} />
+                <Route path="/resume-builder" element={<ToolWrapper toolId="resume-builder"><ResumeBuilder /></ToolWrapper>} />
+                <Route path="/cover-letter-generator" element={<ToolWrapper toolId="cover-letter-generator"><CoverLetterGenerator /></ToolWrapper>} />
+                <Route path="/business-name-generator" element={<ToolWrapper toolId="business-name-generator"><BusinessNameGenerator /></ToolWrapper>} />
+                <Route path="/password-generator" element={<ToolWrapper toolId="password-generator"><PasswordGenerator /></ToolWrapper>} />
+                <Route path="/uuid-generator" element={<ToolWrapper toolId="uuid-generator"><UuidGenerator /></ToolWrapper>} />
+
+                {/* Developer Tools */}
+                <Route path="/json-formatter" element={<ToolWrapper toolId="json-formatter"><JsonTools /></ToolWrapper>} />
+                <Route path="/code-minifier" element={<ToolWrapper toolId="code-minifier"><CodeMinifier /></ToolWrapper>} />
+                <Route path="/base64-tool" element={<ToolWrapper toolId="base64-tool"><Base64Tool /></ToolWrapper>} />
+                <Route path="/url-encoder" element={<ToolWrapper toolId="url-encoder"><UrlEncoder /></ToolWrapper>} />
+                <Route path="/jwt-decoder" element={<ToolWrapper toolId="jwt-decoder"><JwtDecoder /></ToolWrapper>} />
+                <Route path="/hash-generator" element={<ToolWrapper toolId="hash-generator"><HashGenerator /></ToolWrapper>} />
+                <Route path="/regex-tester" element={<ToolWrapper toolId="regex-tester"><RegexTester /></ToolWrapper>} />
+                <Route path="/timestamp-converter" element={<ToolWrapper toolId="timestamp-converter"><TimestampConverter /></ToolWrapper>} />
+                <Route path="/color-converter" element={<ToolWrapper toolId="color-converter"><ColorConverter /></ToolWrapper>} />
+
+                {/* Text Tools (Extended) */}
+                <Route path="/text-cleaner" element={<ToolWrapper toolId="text-cleaner"><TextCleaner /></ToolWrapper>} />
+                <Route path="/markdown-editor" element={<ToolWrapper toolId="markdown-editor"><MarkdownEditor /></ToolWrapper>} />
+                <Route path="/csv-converter" element={<ToolWrapper toolId="csv-converter"><CsvConverter /></ToolWrapper>} />
+
+                {/* File & Archive Tools */}
+                <Route path="/zip-creator" element={<ToolWrapper toolId="zip-creator"><ZipCreator /></ToolWrapper>} />
+                <Route path="/zip-extractor" element={<ToolWrapper toolId="zip-extractor"><ZipExtractor /></ToolWrapper>} />
+                <Route path="/bulk-renamer" element={<ToolWrapper toolId="bulk-renamer"><BulkRenamer /></ToolWrapper>} />
+                <Route path="/file-size-converter" element={<ToolWrapper toolId="file-size-converter"><FileSizeConverter /></ToolWrapper>} />
 
                 {/* Fallback 404 */}
                 <Route path="*" element={<NotFoundPage />} />

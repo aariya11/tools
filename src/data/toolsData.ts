@@ -182,6 +182,457 @@ export const TOOLS_DATA: ToolMeta[] = [
     relatedToolIds: ['jpg-to-png', 'image-compressor', 'image-resizer', 'jpg-to-pdf']
   },
 
+  {
+    id: 'image-cropper',
+    name: 'Image Cropper',
+    path: '/image-cropper',
+    category: 'images',
+    shortDescription: 'Crop images online to custom dimensions or standard aspect ratios (1:1, 16:9, 4:3, 9:16, 3:2).',
+    fullDescription: 'Interactively crop, rotate, flip, and adjust composition of photos with rule-of-thirds grid overlay and exact pixel inputs. Instant client-side browser export to PNG, JPEG, or WebP.',
+    icon: 'Crop',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Image Cropper Online Free – Crop JPG, PNG & WebP | ToolBoxX',
+    metaDescription: 'Free online image cropper. Crop photos to square 1:1, 16:9, 4:3, 9:16, or custom pixel dimensions with interactive grid and rotation tools.',
+    h1Heading: 'Image Cropper Online',
+    primaryKeyword: 'image cropper',
+    secondaryKeywords: ['crop image', 'crop photo', 'online image cropper', 'crop photo online', 'free image cropper', 'aspect ratio crop'],
+    educationalSection: {
+      title: 'How to Crop Photos with Exact Aspect Ratios',
+      paragraphs: [
+        'Cropping allows you to remove unwanted background distractions, focus attention on your subject, and format images for specific social media platforms like Instagram stories, YouTube thumbnails, and profile avatars.',
+        'ToolBoxX Image Cropper provides interactive drag handles, pixel-exact width and height inputs, and a rule-of-thirds visual composition grid.'
+      ],
+      useCases: [
+        'Social Media Avatars: Crop square 1:1 avatars for LinkedIn, Twitter, and Discord.',
+        'Story & Reel Formats: Crop vertical 9:16 images for Instagram stories and TikTok.',
+        'Widescreen Banners: Crop 16:9 banners for YouTube and desktop hero headers.'
+      ]
+    },
+    features: [
+      { title: 'Standard Aspect Ratios', description: 'Preset 1:1, 4:3, 16:9, 3:2, 9:16, and 2:3 aspect ratios plus freeform cropping.' },
+      { title: 'Pixel-Exact Controls', description: 'Enter numeric X, Y, Width, and Height dimensions with live bi-directional sync.' },
+      { title: 'Rotate & Flip Tools', description: 'Rotate 90 degrees clockwise or counter-clockwise, and flip horizontally or vertically.' },
+      { title: 'Rule-of-Thirds Grid', description: 'Toggle composition grid overlay for professional photographic framing.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Photo', description: 'Select any JPG, PNG, or WebP image from your device.' },
+      { title: 'Select Aspect Ratio', description: 'Choose a standard ratio like 1:1 or 16:9, or drag the crop box freely.' },
+      { title: 'Adjust Crop Box', description: 'Drag corner handles or move the crop box to frame your subject.' },
+      { title: 'Download Cropped Image', description: 'Export your cropped photo in PNG, JPG, or WebP format.' }
+    ],
+    faqs: [
+      { question: 'Does cropping reduce photo resolution?', answer: 'Cropping extracts the selected pixel region at full original resolution without upscaling or blurring.' },
+      { question: 'Can I enter exact pixel dimensions?', answer: 'Yes! Type your target width, height, and coordinates directly into the dimension input boxes.' }
+    ],
+    relatedToolIds: ['image-resizer', 'image-compressor', 'image-enhancer', 'image-upscaler']
+  },
+  {
+    id: 'background-remover',
+    name: 'Background Remover',
+    path: '/background-remover',
+    category: 'images',
+    shortDescription: 'Remove background from photos and graphics with color-keying, luminance thresholding, and feathering.',
+    fullDescription: 'Extract transparent subjects from white backgrounds, green screens, or solid studio backdrops with smooth alpha edge feathering and spill suppression directly in your browser.',
+    icon: 'Scissors',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Background Remover Online Free – Make PNG Transparent | ToolBoxX',
+    metaDescription: 'Remove image backgrounds online for free. Color-key green screens and white backgrounds with smooth edge feathering and download transparent PNGs.',
+    h1Heading: 'Background Remover Online',
+    primaryKeyword: 'background remover',
+    secondaryKeywords: ['remove background', 'transparent background', 'remove bg', 'make background transparent', 'free background remover', 'chroma key online'],
+    educationalSection: {
+      title: 'Browser-Based Color Keying & Transparent Cutouts',
+      paragraphs: [
+        'Isolating subjects from solid studio backgrounds, white product backdrops, or green screen setups is a vital workflow for eCommerce, graphic design, and marketing thumbnails.',
+        'ToolBoxX Background Remover uses Euclidean color-distance sampling and luminance thresholding with smooth alpha feathering to produce anti-aliased PNG cutouts.'
+      ],
+      useCases: [
+        'eCommerce Product Photos: Isolate items from white backgrounds for clean catalog listings.',
+        'Green Screen & Studio Chroma: Key out solid green or blue backdrop footage frames.',
+        'Signature & Ink Extraction: Extract dark ink drawings or signatures from paper using luminance thresholding.'
+      ]
+    },
+    features: [
+      { title: 'Interactive Eyedropper', description: 'Click any pixel on the preview canvas to target and eliminate that background color.' },
+      { title: 'Smooth Alpha Feathering', description: 'Soft falloff ramps prevent jagged edges and pixelated halos around cutouts.' },
+      { title: 'Color Spill Suppression', description: 'Automatically desaturates colored fringe around borders for seamless compositing.' },
+      { title: 'Luminance Ink Extraction', description: 'Extract dark ink, signatures, or logos from light paper backgrounds.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Image', description: 'Upload your photo, product shot, or graphic.' },
+      { title: 'Sample Background Color', description: 'Use the eyedropper to click the background color or choose a preset.' },
+      { title: 'Tune Tolerance & Feather', description: 'Adjust the tolerance slider to clean edges and soften boundaries.' },
+      { title: 'Download Transparent PNG', description: 'Save your clean 32-bit transparent PNG image.' }
+    ],
+    faqs: [
+      { question: 'Will my downloaded image have a transparent background?', answer: 'Yes! The exported image is a 32-bit PNG with an active 8-bit alpha transparency channel.' },
+      { question: 'What backgrounds work best with this tool?', answer: 'Solid white, black, green screen, or studio backgrounds provide the cleanest instant keying results.' }
+    ],
+    relatedToolIds: ['image-cropper', 'image-enhancer', 'image-blur-pixelate', 'image-compressor']
+  },
+  {
+    id: 'image-upscaler',
+    name: 'Image Upscaler',
+    path: '/image-upscaler',
+    category: 'images',
+    shortDescription: 'Super-sample images to 2x and 4x high resolution with unsharp mask edge clarity.',
+    fullDescription: 'Increase photo resolution and pixel density by 200% or 400% using multi-pass bicubic super-sampling and contrast-adaptive unsharp filtering with live before/after slider comparison.',
+    icon: 'Sparkles',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Image Upscaler Online Free – 2x & 4x High-Resolution Enhancer | ToolBoxX',
+    metaDescription: 'Upscale low-resolution images 2x and 4x online for free. Increase photo clarity and pixel density with super-sampling and interactive before/after split slider.',
+    h1Heading: 'Image Upscaler Online',
+    primaryKeyword: 'image upscaler',
+    secondaryKeywords: ['upscale image', 'image super resolution', 'enlarge photo', 'increase image resolution', 'photo upscaler', 'high res image converter'],
+    educationalSection: {
+      title: 'High-Fidelity Super-Sampling and Edge Clarification',
+      paragraphs: [
+        'Enlarging low-resolution images often results in blurry edges and pixelation. Our Image Upscaler uses progressive multi-stage bicubic super-sampling combined with unsharp mask convolution filters.',
+        'This algorithm emphasizes micro-details, sharpens contour transitions, and suppresses noise artifacts without sending your private files to cloud servers.'
+      ],
+      useCases: [
+        'Print Preparation: Upscale low-res web graphics to 300 DPI print-ready dimensions.',
+        'Old Photos & Scans: Enlarge historic photos and low-megapixel camera shots.',
+        'Wallpapers & Displays: Scale images for 2K, 4K, and Retina monitor backgrounds.'
+      ]
+    },
+    features: [
+      { title: '2x & 4x Super-Sampling', description: 'Boost pixel density by 4x (2x scale) or 16x (4x scale) with progressive interpolation.' },
+      { title: 'Unsharp Mask Filter', description: 'Recover micro-contrast and edge sharpness across high-frequency boundaries.' },
+      { title: 'Interactive Split Slider', description: 'Drag the before/after comparison divider to inspect fine pixel differences.' },
+      { title: 'Artifact Suppression', description: 'Smart noise thresholding prevents amplification of JPEG compression artifacts.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Low-Res Image', description: 'Select the photo or illustration you want to enlarge.' },
+      { title: 'Select Scale Factor', description: 'Choose 2x (Double Resolution) or 4x (Quadruple Resolution).' },
+      { title: 'Adjust Sharpness', description: 'Fine-tune the unsharp mask slider to your preferred edge definition.' },
+      { title: 'Download High-Res Image', description: 'Download the enhanced high-resolution image file.' }
+    ],
+    faqs: [
+      { question: 'How does 4x upscaling work?', answer: '4x upscaling quadruples width and height, creating 16 times more total pixels through progressive bicubic interpolation and high-pass filtering.' },
+      { question: 'Is upscaling processed client-side?', answer: 'Yes! All calculations run directly in your browser using hardware-accelerated canvas contexts.' }
+    ],
+    relatedToolIds: ['image-enhancer', 'image-resizer', 'image-compressor', 'image-cropper']
+  },
+  {
+    id: 'image-enhancer',
+    name: 'Image Enhancer',
+    path: '/image-enhancer',
+    category: 'images',
+    shortDescription: 'Enhance photo lighting, contrast, saturation, sharpness, and warmth with real-time presets.',
+    fullDescription: 'Professional browser-based photo editor with real-time controls for brightness, exposure, highlights, shadows, temperature, and one-click aesthetic presets (Vivid, Cinematic, Vintage, B&W).',
+    icon: 'Sliders',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Image Enhancer Online – Enhance Photo Quality Free | ToolBoxX',
+    metaDescription: 'Enhance photos online for free. Adjust lighting, contrast, warmth, and sharpness with live preview, aesthetic filter presets, and instant download.',
+    h1Heading: 'Image Enhancer Online',
+    primaryKeyword: 'image enhancer',
+    secondaryKeywords: ['photo enhancer', 'enhance photo online', 'image filter online', 'photo color corrector', 'free image enhancer', 'adjust photo brightness'],
+    educationalSection: {
+      title: 'Real-Time Color Grading and Lighting Adjustments',
+      paragraphs: [
+        'Give your photos a professional polish by correcting underexposed shadows, recovering blown-out highlights, warming skin tones, and boosting vibrant color saturation.',
+        'ToolBoxX Image Enhancer runs a hybrid canvas-pixel pipeline with zero latency, providing immediate visual feedback for every slider adjustment.'
+      ],
+      useCases: [
+        'Photography Touch-Up: Correct exposure and color balance for portraits and landscape shots.',
+        'Social Media Posts: Apply one-click cinematic, vintage, and vivid color presets.',
+        'Marketing Materials: Standardize photo warmth and sharpness across campaign assets.'
+      ]
+    },
+    features: [
+      { title: 'Comprehensive Sliders', description: 'Adjust Brightness, Contrast, Saturation, Exposure, Warmth, Highlights, Shadows, Sharpness, and Vignette.' },
+      { title: '9 One-Click Presets', description: 'Instant styles including Vivid Pop, Cinematic Film, Vintage 70s, Dynamic B&W, and Dramatic HDR.' },
+      { title: 'Hold-to-Compare', description: 'Hold down the compare button to seamlessly preview the original untouched image.' },
+      { title: 'Multi-Format Export', description: 'Export your enhanced photography in JPEG, PNG, or WebP format with quality control.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Image', description: 'Drop or select your photo from your device.' },
+      { title: 'Pick a Preset or Adjust Sliders', description: 'Choose a style preset or fine-tune lighting, warmth, and contrast.' },
+      { title: 'Compare with Original', description: 'Hold the compare button to inspect your improvements.' },
+      { title: 'Download Enhanced Image', description: 'Save your polished photo in full resolution.' }
+    ],
+    faqs: [
+      { question: 'Can I reset adjustments if I make a mistake?', answer: 'Yes! Click the "Reset" button anytime to restore all sliders to their original defaults.' },
+      { question: 'Does enhancing compress or downscale my image?', answer: 'No. The image is rendered and exported at its original full pixel resolution.' }
+    ],
+    relatedToolIds: ['image-upscaler', 'image-cropper', 'image-color-picker', 'image-compressor']
+  },
+  {
+    id: 'image-converter',
+    name: 'Image Converter',
+    path: '/image-converter',
+    category: 'images',
+    shortDescription: 'Batch convert images between JPG, PNG, WebP, GIF, BMP, TIFF, SVG, and AVIF formats.',
+    fullDescription: 'Convert multiple image files simultaneously directly in your browser. Choose target formats, fine-tune compression quality, and download individual files or a packaged ZIP archive.',
+    icon: 'FileImage',
+    isPopular: true,
+    badge: 'Batch',
+    seoTitle: 'Image Converter Online Free – Batch Convert PNG, JPG & WebP | ToolBoxX',
+    metaDescription: 'Batch convert images online for free. Convert JPG, PNG, WebP, BMP, and TIFF files with custom compression and download single files or a ZIP archive.',
+    h1Heading: 'Batch Image Converter Online',
+    primaryKeyword: 'image converter',
+    secondaryKeywords: ['convert image', 'batch image converter', 'image format converter', 'jpg to webp converter', 'png to jpg converter', 'free image converter'],
+    educationalSection: {
+      title: 'Batch Convert Image Formats in Your Browser',
+      paragraphs: [
+        'Different platforms and devices require different image formats. WebP offers ultra-lightweight web compression, PNG maintains lossless transparency, and JPEG provides universal compatibility.',
+        'ToolBoxX Image Converter processes dozens of files in parallel inside your browser, converting formats and bundling results into a clean ZIP archive.'
+      ],
+      useCases: [
+        'Website Asset Optimization: Batch convert heavy PNGs and JPGs to next-gen WebP format.',
+        'Graphic Design: Convert vector SVGs and WebPs to standard transparent PNGs.',
+        'Cross-Platform Compatibility: Convert uncommon formats (TIFF, BMP, AVIF) to universal JPEG.'
+      ]
+    },
+    features: [
+      { title: 'Batch Processing', description: 'Upload and convert dozens of images simultaneously with live progress indicators.' },
+      { title: 'Wide Format Support', description: 'Supports PNG, JPEG, WebP, BMP, TIFF, GIF, SVG, and AVIF files.' },
+      { title: 'ZIP Archive Download', description: 'Download all converted images bundled together in a single ZIP file.' },
+      { title: 'Quality Slider', description: 'Adjust compression ratio from 10% to 100% for lossy WebP and JPEG outputs.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Multiple Images', description: 'Drag and drop or select multiple files from your device.' },
+      { title: 'Choose Target Format', description: 'Select WebP, PNG, JPEG, or BMP.' },
+      { title: 'Click Convert All', description: 'Watch the real-time conversion progress across all queue items.' },
+      { title: 'Download Converted Files', description: 'Download files individually or click "Download All as ZIP".' }
+    ],
+    faqs: [
+      { question: 'Is there a limit on how many images I can convert?', answer: 'No limit! You can convert as many images as your browser memory can handle.' },
+      { question: 'Are my photos uploaded to a server?', answer: 'Never. All format conversion is executed locally on your device for complete privacy.' }
+    ],
+    relatedToolIds: ['jpg-to-png', 'png-to-webp', 'image-compressor', 'image-resizer']
+  },
+  {
+    id: 'image-metadata-remover',
+    name: 'Image Metadata Remover',
+    path: '/image-metadata-remover',
+    category: 'images',
+    shortDescription: 'Strip EXIF, GPS location, camera serial numbers, and author tags for 100% photo privacy.',
+    fullDescription: 'Inspect hidden metadata in photos and remove GPS coordinates, camera models, exposure data, timestamps, and software signatures via clean canvas reconstruction.',
+    icon: 'ShieldCheck',
+    isPopular: false,
+    isRecent: true,
+    seoTitle: 'Image Metadata Remover Online – Strip EXIF & GPS Free | ToolBoxX',
+    metaDescription: 'Strip EXIF, GPS location, and camera metadata from photos online for free. Remove privacy-leaking location coordinates with clean browser sanitization.',
+    h1Heading: 'Image Metadata & EXIF Remover',
+    primaryKeyword: 'image metadata remover',
+    secondaryKeywords: ['remove exif', 'strip exif data', 'remove photo location', 'delete metadata from photo', 'clean exif online', 'photo privacy tool'],
+    educationalSection: {
+      title: 'Protect Your Privacy by Stripping Photo EXIF & GPS Tags',
+      paragraphs: [
+        'Modern smartphones and digital cameras embed extensive metadata into every photo you take. This EXIF data frequently contains your exact GPS latitude/longitude coordinates, device serial numbers, and timestamps.',
+        'Sharing un-sanitized photos on forums, classifieds, or messaging apps can inadvertently reveal your home address or location history. Our tool completely sanitizes image files.'
+      ],
+      useCases: [
+        'Online Selling & Classifieds: Remove home GPS coordinates before listing photos on eBay, Craigslist, or Facebook Marketplace.',
+        'Social Media Privacy: Sanitize family and travel photos before posting publicly.',
+        'Journalism & Anonymous Submissions: Strip camera device serials and creation timestamps.'
+      ]
+    },
+    features: [
+      { title: 'EXIF & GPS Inspector', description: 'Audit embedded camera model, timestamp, and GPS coordinates before sanitization.' },
+      { title: 'Privacy Risk Score', description: 'Evaluates privacy exposure levels and confirms 100% sanitized output.' },
+      { title: 'Pristine Pixel Reconstruction', description: 'Re-encodes image pixels onto a fresh canvas, completely purging metadata headers.' },
+      { title: 'Instant Anonymized Download', description: 'Download clean sanitized photos with zero server transmission.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Photo', description: 'Select any JPEG, PNG, WebP, or TIFF image to inspect.' },
+      { title: 'Review Metadata Audit', description: 'View detected camera models, timestamps, and GPS coordinates.' },
+      { title: 'Sanitize Automatically', description: 'The tool automatically strips all non-image data.' },
+      { title: 'Download Clean Photo', description: 'Save your anonymized, privacy-safe photo.' }
+    ],
+    faqs: [
+      { question: 'Does removing metadata reduce visual image quality?', answer: 'No. Only non-image header tags are removed. The visual pixel quality remains crisp and unchanged.' },
+      { question: 'Can someone recover my GPS location after using this tool?', answer: 'No. The metadata headers are permanently purged during canvas re-encoding.' }
+    ],
+    relatedToolIds: ['image-compressor', 'image-blur-pixelate', 'image-converter', 'image-cropper']
+  },
+  {
+    id: 'image-watermark',
+    name: 'Image Watermark',
+    path: '/image-watermark',
+    category: 'images',
+    shortDescription: 'Add custom text or logo watermarks with 9-point anchor positioning or tiled patterns.',
+    fullDescription: 'Protect your photos with customizable text watermarks (font, opacity, rotation, color) or PNG logos. Supports multi-image batch queue and one-click ZIP download.',
+    icon: 'Stamp',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Image Watermark Online – Watermark Photos & Logos Free | ToolBoxX',
+    metaDescription: 'Add text or logo watermarks to photos online for free. Custom fonts, opacity, 9-point anchor grid, tiled patterns, and batch processing with ZIP download.',
+    h1Heading: 'Image Watermark Online',
+    primaryKeyword: 'image watermark',
+    secondaryKeywords: ['watermark image', 'watermark photo online', 'add watermark to photo', 'free photo watermark', 'batch watermark photos', 'logo watermark online'],
+    educationalSection: {
+      title: 'Protect Copyright and Brand Assets with Watermarks',
+      paragraphs: [
+        'Watermarking photos protects your digital copyright, discourages unauthorized image scraping, and boosts brand recognition across client proofing galleries and social media.',
+        'ToolBoxX Image Watermark allows you to configure customizable typography, shadow outlines, transparent PNG logo stamps, or full-coverage diagonal tiled patterns.'
+      ],
+      useCases: [
+        'Photography Client Proofs: Stamp "SAMPLE" or "PROOF" diagonally across photo galleries.',
+        'eCommerce & Catalogs: Add company logos to product photography.',
+        'Social Media Branding: Stamp copyright and social handles onto viral graphics.'
+      ]
+    },
+    features: [
+      { title: 'Dual Watermark Types', description: 'Apply styled text watermarks or upload transparent PNG logo images.' },
+      { title: '9-Point Anchor & Tiled Grid', description: 'Position watermarks at corners, centers, or repeated diagonal tiled patterns.' },
+      { title: 'Batch Multi-Image Support', description: 'Apply consistent watermark styling across multiple photos and download as a ZIP archive.' },
+      { title: 'Complete Typography Controls', description: 'Adjust font family, size, color, opacity, drop shadow, and rotation angle.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Photos', description: 'Upload one or multiple images you want to watermark.' },
+      { title: 'Configure Watermark', description: 'Type your text or upload your logo, and adjust opacity and position.' },
+      { title: 'Preview Results', description: 'Inspect the live watermarked canvas in the interactive viewer.' },
+      { title: 'Download Watermarked Images', description: 'Download individual photos or click "Download All as ZIP".' }
+    ],
+    faqs: [
+      { question: 'Can I watermark multiple photos at once?', answer: 'Yes! Upload multiple images and our tool will apply the same watermark settings across all photos in batch.' },
+      { question: 'What logo formats are supported?', answer: 'Transparent PNG and SVG logos work best for clean, crisp watermark overlays.' }
+    ],
+    relatedToolIds: ['image-cropper', 'image-resizer', 'image-converter', 'image-enhancer']
+  },
+  {
+    id: 'image-blur-pixelate',
+    name: 'Blur & Pixelate Image',
+    path: '/image-blur-pixelate',
+    category: 'images',
+    shortDescription: 'Censor sensitive details, faces, license plates, and private text with blur or pixelation.',
+    fullDescription: 'Interactive censorship utility with rectangle box and freehand brush tools to blur, pixelate, or black out private information, credit card numbers, and faces.',
+    icon: 'EyeOff',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Blur & Pixelate Image Online – Censor Photos Free | ToolBoxX',
+    metaDescription: 'Blur and pixelate photos online for free. Censor faces, license plates, documents, and private information with interactive box and brush redaction tools.',
+    h1Heading: 'Blur & Pixelate Image Online',
+    primaryKeyword: 'blur image',
+    secondaryKeywords: ['pixelate image', 'censor photo', 'blur face online', 'blur license plate', 'redact photo', 'free image blur tool'],
+    educationalSection: {
+      title: 'Interactive Image Redaction & Data Obfuscation',
+      paragraphs: [
+        'When sharing screenshots, receipts, identification documents, or street photography, obscuring sensitive information is crucial for compliance and security.',
+        'ToolBoxX Blur & Pixelate lets you draw exact censorship boxes or use a freehand brush to pixelate, blur, blackout, or whiteout confidential details.'
+      ],
+      useCases: [
+        'Document & Receipt Redaction: Censor bank account numbers, signatures, and credit card CVVs.',
+        'Street & Vehicle Photography: Blur car license plates and bystanders\' faces.',
+        'Software Bug Reports: Hide private API tokens and passwords in bug screenshots.'
+      ]
+    },
+    features: [
+      { title: 'Rectangle & Brush Tools', description: 'Draw precise rectangular censorship boxes or paint freehand with adjustable brush size.' },
+      { title: '4 Redaction Effects', description: 'Choose from Pixelate, Gaussian Blur, Blackout solid bars, and Whiteout solid bars.' },
+      { title: 'Undo & Layer Management', description: 'Step back through action history with full undo and individual redaction deletion.' },
+      { title: 'Full-Resolution Export', description: 'Exports sanitized images at original dimensions without compression degradation.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Image', description: 'Select the photo or screenshot containing sensitive information.' },
+      { title: 'Select Tool & Effect', description: 'Choose Rectangle Box or Brush, and select Pixelate or Blur.' },
+      { title: 'Draw Over Sensitive Area', description: 'Click and drag over faces, text, or numbers to obscure them.' },
+      { title: 'Download Censored Image', description: 'Save your redacted, privacy-protected image.' }
+    ],
+    faqs: [
+      { question: 'Can pixelated or blurred data be reversed?', answer: 'When exported, the underlying pixels are permanently replaced and cannot be restored from the output file.' },
+      { question: 'What is the difference between blur and pixelate?', answer: 'Blur creates a smooth, diffused effect, while pixelate turns the region into stylized mosaic blocks.' }
+    ],
+    relatedToolIds: ['image-metadata-remover', 'image-cropper', 'image-enhancer', 'image-compressor']
+  },
+  {
+    id: 'image-color-picker',
+    name: 'Image Color Picker',
+    path: '/image-color-picker',
+    category: 'images',
+    shortDescription: 'Sample exact pixel colors from photos with 10x loupe magnifier, HEX/RGB/HSL, and palette export.',
+    fullDescription: 'Extract harmonious color palettes from images, hover with a high-precision 10x pixel magnifier loupe, sample colors in HEX, RGB, HSL, CMYK, and HSV, and export palettes to CSS or PNG.',
+    icon: 'Pipette',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Image Color Picker Online – Extract Palette & HEX Codes Free | ToolBoxX',
+    metaDescription: 'Pick colors from images online for free. 10x magnifier loupe, HEX, RGB, HSL, and CMYK color codes, dominant palette extraction, and CSS export.',
+    h1Heading: 'Image Color Picker & Palette Extractor',
+    primaryKeyword: 'image color picker',
+    secondaryKeywords: ['color picker from image', 'extract color palette from photo', 'image hex color picker', 'rgb color picker from image', 'photo palette generator', 'eyedropper tool online'],
+    educationalSection: {
+      title: 'Sample Colors and Extract Color Schemes from Images',
+      paragraphs: [
+        'Finding the exact hex code or color scheme from a photograph, UI mockup, or artwork is essential for designers, web developers, and digital artists.',
+        'ToolBoxX Image Color Picker provides a 10x magnified loupe with single-pixel precision, automatic dominant color clustering, and one-click copying in HEX, RGB, HSL, CMYK, and HSV.'
+      ],
+      useCases: [
+        'Brand & Web Design: Sample brand colors from logos and design mockups.',
+        'Digital Art & Illustration: Extract natural color palettes from landscape and portrait photography.',
+        'Theme Creation: Export CSS variable palettes for web design development.'
+      ]
+    },
+    features: [
+      { title: '10x Magnifier Loupe', description: 'Zoom into individual pixels under your cursor with crosshair target alignment.' },
+      { title: 'Multi-Format Conversion', description: 'Instantly view and copy HEX (#RRGGBB), RGB, HSL, CMYK, and HSV codes.' },
+      { title: 'Dominant Palette Extraction', description: 'Automatically identifies the top 8 harmonious dominant colors in the photo.' },
+      { title: 'Palette Export Options', description: 'Export color history as CSS Variables, JSON arrays, or downloadable PNG swatches.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Photo or Graphic', description: 'Select any image from your computer or phone.' },
+      { title: 'Hover & Inspect', description: 'Move your cursor to inspect pixel colors in the magnified loupe.' },
+      { title: 'Click to Sample Color', description: 'Click anywhere to lock the color and add it to your palette history.' },
+      { title: 'Copy Color Code', description: 'Click any format (HEX, RGB, HSL, CMYK) to copy it to your clipboard.' }
+    ],
+    faqs: [
+      { question: 'How accurate is the color picker?', answer: 'It samples exact 24-bit sRGB color values with pixel-perfect precision.' },
+      { question: 'Can I export all sampled colors at once?', answer: 'Yes! Click "CSS" or "PNG" in the color history section to export all saved colors.' }
+    ],
+    relatedToolIds: ['image-enhancer', 'favicon-generator', 'image-cropper', 'image-compressor']
+  },
+  {
+    id: 'favicon-generator',
+    name: 'Favicon Generator',
+    path: '/favicon-generator',
+    category: 'images',
+    shortDescription: 'Generate complete modern favicon bundles (ICO, PNG 16/32/48/180/192/512, webmanifest & HTML).',
+    fullDescription: 'Upload a logo to generate a complete production-ready favicon package with multi-resolution favicon.ico, Apple Touch Icon, Android PWA icons, site.webmanifest, browserconfig.xml, and HTML snippets.',
+    icon: 'Globe',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Favicon Generator Online – Create ICO, Apple Touch & PWA Icons Free | ToolBoxX',
+    metaDescription: 'Free online favicon generator. Create multi-resolution favicon.ico, 16x16, 32x32, Apple touch icons, Android PWA manifest, and copy HTML code in a ZIP bundle.',
+    h1Heading: 'Favicon & App Icon Generator',
+    primaryKeyword: 'favicon generator',
+    secondaryKeywords: ['create favicon', 'favicon ico generator', 'apple touch icon generator', 'pwa icon generator', 'free favicon maker', 'generate favicon from png'],
+    educationalSection: {
+      title: 'Complete Multi-Platform Favicon and App Icon Package',
+      paragraphs: [
+        'A complete web application favicon strategy requires multiple icon formats: 16x16 and 32x32 for desktop browser tabs, 180x180 for iOS Home Screen bookmarks, and 192x192 / 512x512 icons for Android Progressive Web Apps.',
+        'ToolBoxX Favicon Generator processes your logo, applies padding and corner rounding, generates all 8 required icon assets, and packages them in a downloadable ZIP with ready-to-paste HTML tags.'
+      ],
+      useCases: [
+        'Website & Web App Launch: Generate all required browser icons and PWA manifest files.',
+        'Mobile Bookmarks: Ensure crisp, retina-sharp icons when users add your site to iPhone/Android home screens.',
+        'Brand Consistency: Standardize desktop browser tab and Google search result icons.'
+      ]
+    },
+    features: [
+      { title: '8-Asset Production Bundle', description: 'Generates favicon.ico, 16x16, 32x32, 48x48, 180x180 Apple Touch, 192x192, and 512x512 PWA icons.' },
+      { title: 'Web Manifest & XML Included', description: 'Includes valid site.webmanifest and browserconfig.xml files configured with your app name.' },
+      { title: 'Live Device Mockups', description: 'Preview how your favicon looks in a Chrome browser tab, iOS home screen, and Android app icon.' },
+      { title: 'Ready-to-Paste HTML Code', description: 'Copy pre-formatted <link> header tags with one click.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Logo', description: 'Upload a square or rectangular PNG, SVG, or JPG logo.' },
+      { title: 'Customize App Info & Styling', description: 'Enter your app title, theme color, background fill, and padding.' },
+      { title: 'Check Device Mockups', description: 'Verify how the icon looks on desktop browser tabs and mobile screens.' },
+      { title: 'Download Favicon ZIP', description: 'Download the complete ZIP package and paste the HTML snippet into your <head>.' }
+    ],
+    faqs: [
+      { question: 'What files are included in the downloaded ZIP?', answer: 'The package contains favicon.ico, 6 PNG sizes (16, 32, 48, 180, 192, 512), site.webmanifest, and browserconfig.xml.' },
+      { question: 'Is favicon.ico multi-resolution?', answer: 'Yes! The generated favicon.ico includes embedded 16x16, 32x32, and 48x48 icon directories for crisp display across all Windows and macOS browsers.' }
+    ],
+    relatedToolIds: ['image-color-picker', 'image-cropper', 'image-converter', 'image-resizer']
+  },
+
   // =========================================================================
   // --- PDF TOOLS (30 Full-Featured Browser Utilities) ---
   // =========================================================================
@@ -1735,10 +2186,1248 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'What file format should I download for physical printing?', answer: 'For physical business cards, posters, and banners, download the vector SVG format for infinite resolution scaling without pixelation.' }
     ],
     relatedToolIds: ['word-counter', 'case-converter', 'image-compressor', 'pdf-tools']
+  },
+  // =========================================================================
+  // --- AI TOOLS ---
+  // =========================================================================
+  {
+    id: 'ai-summarizer',
+    name: 'AI Text Summarizer',
+    path: '/ai-summarizer',
+    category: 'ai',
+    shortDescription: 'Summarize articles, research papers, and documents with smart extractive NLP or Gemini AI.',
+    fullDescription: 'Condense long articles, reports, PDFs, and meeting notes into clear TL;DR summaries, key takeaway bullet points, or executive briefs. Runs instantly in your browser with smart extractive NLP or connect your Gemini API key for deep neural summaries.',
+    icon: 'Scissors',
+    isPopular: true,
+    badge: 'AI Powered',
+    seoTitle: 'Free AI Text Summarizer Online – Condense Articles & PDFs | ToolBoxX',
+    metaDescription: 'Free online AI text summarizer. Condense articles, research papers, DOCX, and PDF documents into key takeaways and TL;DR bullet points. 100% private.',
+    h1Heading: 'AI Text Summarizer Online',
+    primaryKeyword: 'ai summarizer',
+    secondaryKeywords: ['ai summarizer online', 'text summarizer', 'summarize text free', 'article summarizer', 'pdf summarizer', 'tldr generator'],
+    educationalSection: {
+      title: 'How Our Smart AI Summarization Engine Works',
+      paragraphs: [
+        'ToolBoxX AI Summarizer combines client-side frequency-weighted sentence extraction with TF-IDF scoring and optional Google Gemini AI generative processing.',
+        'Whether analyzing quarterly business reviews, medical research, or technical specifications, you can customize summary depth from punchy 1-sentence TL;DRs to exhaustive multi-section executive briefs.'
+      ],
+      useCases: [
+        'Executive Briefings: Turn 20-page market reports into actionable 5-point summaries.',
+        'Academic Research: Extract primary hypotheses, methodologies, and findings from dense research PDFs.',
+        'Meeting & Call Notes: Distill hours of raw transcripts into clear action items and deadlines.'
+      ]
+    },
+    features: [
+      { title: '3 Depth Modes', description: 'Choose between Short (TL;DR), Medium (Key Takeaways), and Detailed (In-depth Brief).' },
+      { title: 'Multi-Format Ingestion', description: 'Paste text or upload PDF, DOCX, Markdown, TXT, JSON, and CSV documents directly.' },
+      { title: 'Dual NLP Engine', description: 'Works 100% offline with zero server uploads, or connect Gemini for state-of-the-art LLM output.' },
+      { title: 'Export & Copy', description: 'One-click copy and export to clean Markdown (.md) or plain text (.txt).' }
+    ],
+    howToSteps: [
+      { title: 'Provide Text', description: 'Paste your text or upload a PDF, Word, or Markdown document.' },
+      { title: 'Select Summary Depth', description: 'Choose Short, Medium, or Detailed along with your preferred output format.' },
+      { title: 'Generate Summary', description: 'Click Generate to produce an instant distilled summary.' },
+      { title: 'Copy or Download', description: 'Copy the result to your clipboard or download as a Markdown file.' }
+    ],
+    faqs: [
+      { question: 'Is my uploaded text sent to remote servers?', answer: 'No. ToolBoxX uses client-side NLP algorithms running directly in your browser. If you connect your optional Gemini API key, requests are sent securely and directly to Google with no middleman logging.' },
+      { question: 'What file types can I upload to summarize?', answer: 'You can upload .pdf, .docx, .txt, .md, .csv, and .json files up to 50MB.' },
+      { question: 'Can I choose between bullet points and paragraphs?', answer: 'Yes! You can toggle between Bullets, Prose Paragraphs, and Structured Executive Brief formats.' }
+    ],
+    relatedToolIds: ['ai-rewriter', 'ai-grammar-checker', 'word-counter', 'character-counter']
+  },
+  {
+    id: 'ai-rewriter',
+    name: 'AI Content Rewriter',
+    path: '/ai-rewriter',
+    category: 'ai',
+    shortDescription: 'Rephrase and rewrite content across 6 tone modes with side-by-side comparison.',
+    fullDescription: 'Rewrite paragraphs, emails, and essays in 6 distinct tone modes: Professional, Friendly, Formal, Concise, Creative, and Casual. Features side-by-side diff previews, multiple generated variations, and instant browser processing.',
+    icon: 'Sliders',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free AI Content Rewriter & Paraphrasing Tool | ToolBoxX',
+    metaDescription: 'Rephrase text online with 6 distinct tone modes. Professional, Friendly, Formal, Concise, Creative, and Casual paraphrasing with side-by-side preview.',
+    h1Heading: 'AI Content Rewriter & Paraphraser',
+    primaryKeyword: 'ai rewriter',
+    secondaryKeywords: ['ai rewriter online', 'paraphrasing tool', 'content rephrase', 'article rewriter', 'tone changer', 'sentence rewriter'],
+    educationalSection: {
+      title: 'Transform Tone and Eliminate Fluff with AI Rewriting',
+      paragraphs: [
+        'Finding the right tone for client emails, academic essays, or social media posts is challenging. ToolBoxX AI Rewriter analyzes sentence structures, eliminates wordy bloat, and applies tone-specific vocabulary shifts.',
+        'With 3 generated variations per rewrite, you can pick the exact phrasing that matches your communication intent.'
+      ],
+      useCases: [
+        'Workplace Communications: Polish rough drafts into professional, executive-ready emails.',
+        'Fluff Elimination: Use Concise mode to trim wordy sentences and boost clarity.',
+        'Creative Writing: Inject vivid imagery and engaging metaphors into marketing copy.'
+      ]
+    },
+    features: [
+      { title: '6 Tone Modes', description: 'Professional, Friendly, Formal, Concise, Creative, and Casual persona presets.' },
+      { title: '3 Variations Per Run', description: 'Generates multiple stylistic alternatives for every prompt.' },
+      { title: 'Side-by-Side Preview', description: 'Compare original and rewritten text with live character and word diff counts.' },
+      { title: '100% Client-Side Privacy', description: 'Zero tracking or data logging. Runs offline or with your personal Gemini key.' }
+    ],
+    howToSteps: [
+      { title: 'Paste Content', description: 'Enter or paste the text you want to rewrite into the editor.' },
+      { title: 'Choose Tone Persona', description: 'Select Professional, Friendly, Formal, Concise, Creative, or Casual.' },
+      { title: 'Click Rewrite', description: 'Review the generated variations in the preview window.' },
+      { title: 'Select & Copy', description: 'Switch between variations and copy the best version to your clipboard.' }
+    ],
+    faqs: [
+      { question: 'How does the tone adjustment work?', answer: 'Our heuristic engine restructures sentence clauses, adjusts active/passive voice, replaces synonyms, and trims filler phrases to match the target persona.' },
+      { question: 'Is there a limit on how many words I can rewrite?', answer: 'There are no strict limits! You can rewrite single sentences, paragraphs, or full essays for free.' }
+    ],
+    relatedToolIds: ['ai-grammar-checker', 'ai-summarizer', 'ai-email-writer', 'case-converter']
+  },
+  {
+    id: 'ai-grammar-checker',
+    name: 'AI Grammar Checker',
+    path: '/ai-grammar-checker',
+    category: 'ai',
+    shortDescription: 'Proofread and fix spelling, grammar, wordiness, and passive voice with one-click corrections.',
+    fullDescription: 'Comprehensive proofreading tool that detects common misspellings, subject-verb agreement errors, homophones, double words, passive voice, and wordy phrases. Features interactive highlighted chips and a one-click Fix All button.',
+    icon: 'CheckCircle2',
+    isPopular: true,
+    badge: 'Essential',
+    seoTitle: 'Free AI Grammar Checker & Proofreader Online | ToolBoxX',
+    metaDescription: 'Check grammar, spelling, punctuation, and style errors free online. Instant client-side proofreading with 1-click fixes and writing health score.',
+    h1Heading: 'AI Grammar Checker & Proofreader',
+    primaryKeyword: 'ai grammar checker',
+    secondaryKeywords: ['grammar checker online', 'free grammar checker', 'proofreading tool', 'spell checker online', 'fix grammar mistakes', 'sentence corrector'],
+    educationalSection: {
+      title: 'Real-Time Interactive Grammar and Writing Quality Inspection',
+      paragraphs: [
+        'Effective writing requires flawless spelling, grammatical precision, and clear sentence economy. ToolBoxX Grammar Checker scans text across multiple diagnostic categories including spelling typos, homophone confusion, wordiness, and passive voice.',
+        'With categorized error chips and a one-click Fix All Issues tool, you can polish documents in seconds.'
+      ],
+      useCases: [
+        'Email Proofreading: Catch embarrassing typos and wrong homophones before hitting send.',
+        'Academic Essays: Ensure subject-verb agreement and eliminate wordy redundancies.',
+        'Content Publishing: Audit blog posts and social drafts for clean readability scores.'
+      ]
+    },
+    features: [
+      { title: '4 Diagnostic Categories', description: 'Inspects Spelling, Grammar, Clarity/Wordiness, and Passive Voice.' },
+      { title: 'Interactive Error Chips', description: 'Color-coded issues with inline replacement tooltips and explanations.' },
+      { title: 'One-Click  Fix All', description: 'Resolve all detected issues simultaneously with a single button press.' },
+      { title: 'Writing Health Meter', description: 'Live 0-100% writing quality score with real-time feedback.' }
+    ],
+    howToSteps: [
+      { title: 'Input Text', description: 'Paste your draft into the interactive grammar editor.' },
+      { title: 'Review Issues', description: 'Explore categorized error badges on the right sidebar or click highlighted chips.' },
+      { title: 'Apply Corrections', description: 'Click Apply Fix on individual issues or click Fix All Issues.' },
+      { title: 'Copy Clean Draft', description: 'Copy the finalized, error-free text to your clipboard.' }
+    ],
+    faqs: [
+      { question: 'Does the grammar checker save my text?', answer: 'No. All processing happens entirely in your local browser memory with zero cloud storage.' },
+      { question: 'What is the Deep AI Polish feature?', answer: 'If you connect your optional Google Gemini API key, Deep AI Polish performs a neural pass that re-evaluates tone, flow, and complex syntactic nuances.' }
+    ],
+    relatedToolIds: ['ai-rewriter', 'ai-summarizer', 'word-counter', 'character-counter']
+  },
+  {
+    id: 'ai-email-writer',
+    name: 'AI Email Writer',
+    path: '/ai-email-writer',
+    category: 'ai',
+    shortDescription: 'Draft high-converting business emails and subject lines tailored to purpose and tone.',
+    fullDescription: 'Generate professional, casual, urgent, follow-up, and sales pitch emails in seconds. Provides 3 catchy subject lines, structured body copy with bullet points, and direct mailto integration.',
+    icon: 'Mail',
+    isPopular: false,
+    isRecent: true,
+    badge: 'Productivity',
+    seoTitle: 'Free AI Email Writer Online – Generate Professional Emails | ToolBoxX',
+    metaDescription: 'Generate professional business emails, follow-ups, and sales outreach in seconds. Free online AI email generator with subject line variations.',
+    h1Heading: 'AI Email Writer & Subject Generator',
+    primaryKeyword: 'ai email writer',
+    secondaryKeywords: ['ai email generator', 'email writer online', 'free email writer', 'sales email generator', 'follow up email generator', 'business email templates'],
+    educationalSection: {
+      title: 'Craft High-Converting Business Communications in Seconds',
+      paragraphs: [
+        'Writing compelling emails with high open rates and crisp calls-to-action is a critical skill for sales, recruiting, and project management. ToolBoxX AI Email Writer organizes your raw talking points into structured, engaging correspondence.',
+        'With multiple subject line options and one-click Mail App opening, sending professional emails is effortless.'
+      ],
+      useCases: [
+        'Cold Outreach & Sales: Generate persuasive value propositions that capture executive attention.',
+        'Project Follow-Ups: Send polite yet firm milestone updates and sign-off requests.',
+        'Meeting Scheduling: Propose concise agendas and clear time slots with zero back-and-forth.'
+      ]
+    },
+    features: [
+      { title: '5 Specialized Tones', description: 'Formal, Casual, Urgent, Follow-up, and Sales Pitch modes.' },
+      { title: '3 Subject Line Variations', description: 'High-open-rate subject lines categorized by style.' },
+      { title: 'One-Click Mail Client', description: 'Launch your native email app with pre-filled subject and body.' },
+      { title: 'Ready-to-Use Presets', description: 'Templates for Meetings, Follow-ups, Pitches, and Team Updates.' }
+    ],
+    howToSteps: [
+      { title: 'Define Goal & Recipient', description: 'Enter the email purpose, recipient name, and desired tone.' },
+      { title: 'Add Key Talking Points', description: 'List key bullet points or notes you want included.' },
+      { title: 'Generate Email', description: 'Click Generate to produce subject lines and structured body copy.' },
+      { title: 'Copy or Send', description: 'Copy the email or open directly in your favorite email client.' }
+    ],
+    faqs: [
+      { question: 'Can I edit the generated email body?', answer: 'Yes! The output textarea is fully editable so you can make quick personal adjustments before copying or sending.' },
+      { question: 'How does the mailto integration work?', answer: 'Clicking Mail App opens your default email client (Apple Mail, Outlook, Thunderbird, etc.) with the subject and body pre-populated.' }
+    ],
+    relatedToolIds: ['ai-rewriter', 'ai-grammar-checker', 'ai-social-caption', 'word-counter']
+  },
+  {
+    id: 'ai-title-generator',
+    name: 'AI Title Generator',
+    path: '/ai-title-generator',
+    category: 'ai',
+    shortDescription: 'Generate 10 high-CTR catchy title variations for blogs, YouTube, newsletters, and podcasts.',
+    fullDescription: 'Craft viral, click-worthy headlines and SEO titles for YouTube videos, articles, product launches, newsletters, and podcast episodes. Includes character counters, power word indicators, and 1-click copy.',
+    icon: 'Type',
+    isPopular: false,
+    isRecent: true,
+    badge: 'Marketing',
+    seoTitle: 'Free AI Title Generator – 10 High-CTR Catchy Headlines | ToolBoxX',
+    metaDescription: 'Generate 10 catchy, high-CTR titles for blogs, YouTube videos, newsletters, and product launches. Free AI headline generator with SEO character counts.',
+    h1Heading: 'AI Title & Headline Generator',
+    primaryKeyword: 'ai title generator',
+    secondaryKeywords: ['headline generator', 'youtube title generator', 'catchy title generator', 'blog title generator', 'seo title generator', 'viral headline maker'],
+    educationalSection: {
+      title: 'The Psychology of High-CTR Headlines and Viral Titles',
+      paragraphs: [
+        '80% of readers decide whether to click based purely on the headline. ToolBoxX AI Title Generator leverages proven psychological hooks—including Curiosity Gaps, Numbered Listicles, How-To Guides, and Contrarian viewpoints—to maximize engagement.',
+        'Each title variation includes character counters tailored for Google SERP and YouTube thumbnail limits.'
+      ],
+      useCases: [
+        'YouTube Creators: Optimize video titles for search discovery and click-through rates.',
+        'Bloggers & Copywriters: Craft SEO headlines that rank on page one and generate organic traffic.',
+        'Newsletter Publishers: Boost email open rates with provocative subject lines.'
+      ]
+    },
+    features: [
+      { title: '10 Distinct Formula Styles', description: 'Viral, SEO, Curiosity, Listicle, Direct, Contrarian, and Case Study angles.' },
+      { title: '5 Platform Presets', description: 'Optimized for Blogs, YouTube, Product Launches, Newsletters, and Podcasts.' },
+      { title: 'SEO Character Tracker', description: 'Highlights optimal 50-60 character lengths for Google and YouTube display.' },
+      { title: 'Export to CSV / TXT', description: 'Download all title variations to a spreadsheet with CTR grades.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Topic', description: 'Type your core topic or target keywords.' },
+      { title: 'Select Platform', description: 'Choose Blog, YouTube, Product Launch, Newsletter, or Podcast.' },
+      { title: 'Click Generate', description: 'Review 10 catchy headline variations with power word badges.' },
+      { title: 'Copy Best Titles', description: 'Click copy on individual titles or export the entire list to CSV.' }
+    ],
+    faqs: [
+      { question: 'What makes a high-CTR title?', answer: 'High-performing titles typically combine emotional power words, clear value promises, specific numbers, and optimal character lengths between 50 and 65 characters.' },
+      { question: 'Can I bookmark favorite titles?', answer: 'Yes! Click the star icon next to any title to bookmark it during your brainstorming session.' }
+    ],
+    relatedToolIds: ['ai-blog-outline', 'ai-social-caption', 'ai-rewriter', 'character-counter']
+  },
+  {
+    id: 'ai-blog-outline',
+    name: 'AI Blog Outline Generator',
+    path: '/ai-blog-outline',
+    category: 'ai',
+    shortDescription: 'Generate complete structured article outlines with H1, H2, H3 subtopics, FAQs, and Markdown export.',
+    fullDescription: 'Create comprehensive, SEO-optimized article outlines complete with master H1 title, meta descriptions, 5-8 H2 main sections, H3 subtopics, talking points, key takeaways box, and schema FAQs. Copy as Markdown with one click.',
+    icon: 'Layers',
+    isPopular: false,
+    isRecent: true,
+    badge: 'Content Strategy',
+    seoTitle: 'Free AI Blog Outline Generator – Structured Article Outlines | ToolBoxX',
+    metaDescription: 'Generate structured blog outlines with H1, H2, H3 sections, word count budgets, key takeaways, and FAQs. Free AI article outline generator with Markdown export.',
+    h1Heading: 'AI Blog Outline Generator',
+    primaryKeyword: 'ai blog outline',
+    secondaryKeywords: ['blog outline generator', 'ai article outline', 'content outline maker', 'seo outline generator', 'article structure generator', 'blog post outline'],
+    educationalSection: {
+      title: 'Architect Comprehensive, High-Ranking Editorial Outlines',
+      paragraphs: [
+        'A thorough outline is the backbone of high-ranking long-form content. ToolBoxX AI Blog Outline Generator builds a structured hierarchy covering introductory hooks, core content pillars, estimated word counts, and search-optimized FAQ sections.',
+        'Export directly to clean Markdown (.md) to start drafting immediately in Obsidian, Notion, VS Code, or WordPress.'
+      ],
+      useCases: [
+        'Content Creators: Plan comprehensive 2,500+ word pillar posts with balanced section word budgets.',
+        'SEO Agencies: Build standardized content briefs for freelance writers and editorial teams.',
+        'Educators & Authors: Organize complex technical tutorials into step-by-step learning modules.'
+      ]
+    },
+    features: [
+      { title: 'Exhaustive Hierarchy', description: 'Master H1, Meta Description, 5-8 H2 sections, and nested H3 subtopics.' },
+      { title: 'Word Budget Allocator', description: 'Calculates recommended word count distribution per section.' },
+      { title: 'Interactive Tree View', description: 'Expand and collapse sections with accordion controls.' },
+      { title: '1-Click Markdown Export', description: 'Copy or download formatted Markdown (.md) with headings and bullet points.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Article Topic', description: 'Provide your blog topic, working title, and target audience.' },
+      { title: 'Set Word Count Goal', description: 'Choose your target length from 1,200 to 4,500+ words.' },
+      { title: 'Generate Outline', description: 'Click Generate to produce the complete structured article architecture.' },
+      { title: 'Export Markdown', description: 'Copy as Markdown or download the .md file to start writing.' }
+    ],
+    faqs: [
+      { question: 'What formats can I export the outline in?', answer: 'You can copy the outline formatted in standard Markdown (#, ##, ###, -) or download it directly as a .md file.' },
+      { question: 'Does the outline include FAQ schema?', answer: 'Yes! Every outline includes a dedicated FAQ section with 3-6 relevant search questions and answer hints.' }
+    ],
+    relatedToolIds: ['ai-title-generator', 'ai-summarizer', 'ai-rewriter', 'word-counter']
+  },
+  {
+    id: 'ai-social-caption',
+    name: 'AI Social Media Caption Generator',
+    path: '/ai-social-caption',
+    category: 'ai',
+    shortDescription: 'Generate tailored captions for Instagram, LinkedIn, X/Twitter, Facebook, and Threads with live mockups.',
+    fullDescription: 'Craft platform-native captions tailored with optimal hooks, line spacing, emojis, character limits, and trending hashtag recommendations. Features live mobile previews for Instagram, LinkedIn, and Twitter.',
+    icon: 'Share2',
+    isPopular: false,
+    isRecent: true,
+    badge: 'Social Media',
+    seoTitle: 'Free AI Social Media Caption Generator – Multi-Platform Copy | ToolBoxX',
+    metaDescription: 'Generate engaging captions for Instagram, LinkedIn, Twitter, Facebook, and Threads. Tailored social media copy with hashtags and live mockups.',
+    h1Heading: 'AI Social Media Caption Generator',
+    primaryKeyword: 'ai social caption',
+    secondaryKeywords: ['social media caption generator', 'instagram caption generator', 'linkedin post generator', 'twitter hook generator', 'ai tweet generator', 'social media copywriter'],
+    educationalSection: {
+      title: 'Craft Platform-Native Social Content that Drives Engagement',
+      paragraphs: [
+        'Every social network demands distinct formatting: LinkedIn thrives on spaced-out storytelling and professional insights, Instagram needs visual line breaks and hashtags, while X/Twitter requires punchy 280-character hooks.',
+        'ToolBoxX AI Social Caption formats your raw concepts to match platform norms with live UI preview cards.'
+      ],
+      useCases: [
+        'LinkedIn Thought Leadership: Share business milestones and lessons with high engagement.',
+        'Instagram Posts & Reels: Generate catchy captions with clean line spacing and hashtag clusters.',
+        'X/Twitter Viral Hooks: Write tight 280-character updates and thread starters.'
+      ]
+    },
+    features: [
+      { title: '5 Major Platforms', description: 'Instagram, LinkedIn, X/Twitter, Facebook, and Threads.' },
+      { title: '6 Engagement Tones', description: 'Educational, Storytelling, Promotional, Humorous, Inspirational, and Discussion.' },
+      { title: 'Live Mobile Preview Mockup', description: 'Inspect how your post appears inside authentic social UI cards.' },
+      { title: 'Hashtag Recommendation Cloud', description: '1-click add and copy trending and niche hashtags.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Post Concept', description: 'Type your raw idea, announcement, or milestone.' },
+      { title: 'Select Network & Tone', description: 'Pick Instagram, LinkedIn, X/Twitter, Facebook, or Threads.' },
+      { title: 'Generate Captions', description: 'Review 3 tailored variations in the live preview card.' },
+      { title: 'Copy & Publish', description: 'Add hashtags and copy your finalized caption.' }
+    ],
+    faqs: [
+      { question: 'Does the tool check character limits?', answer: 'Yes! The live progress bar monitors character limits for each platform (Twitter 280, Threads 500, Instagram 2200, LinkedIn 3000).' },
+      { question: 'Can I disable emojis and hashtags?', answer: 'Yes! Simply uncheck the Include Emojis or Include Hashtags toggles to get clean plain text.' }
+    ],
+    relatedToolIds: ['ai-title-generator', 'ai-email-writer', 'ai-rewriter', 'character-counter']
+  },
+  // =========================================================================
+  // --- BUSINESS & MARKETING TOOLS ---
+  // =========================================================================
+  {
+    id: 'barcode-generator',
+    name: 'Barcode Generator',
+    path: '/barcode-generator',
+    category: 'business',
+    shortDescription: 'Generate CODE128, EAN-13, UPC-A, and Code 39 barcodes with custom dimensions, colors, and SVG/PNG download.',
+    fullDescription: 'Generate standard, laser-scannable 1D barcodes for retail, inventory, shipping, and asset tracking. Supports Code 128, EAN-13, UPC-A, and Code 39 with live real-time preview, check digit calculation, customizable bar width/height, human-readable text toggles, and vector SVG or crisp PNG exports.',
+    icon: 'Barcode',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free Online Barcode Generator – Code 128, EAN-13, UPC-A, Code 39 | ToolBoxX',
+    metaDescription: 'Generate custom scannable barcodes online for free. Supports Code 128, EAN-13, UPC-A, and Code 39 with instant high-resolution PNG & SVG vector download.',
+    h1Heading: 'Online Barcode Generator',
+    primaryKeyword: 'barcode generator',
+    secondaryKeywords: ['barcode maker', 'code 128 generator', 'ean 13 barcode generator', 'upc barcode generator', 'free barcode generator'],
+    educationalSection: {
+      title: 'How Our Free Online Barcode Generator Works',
+      paragraphs: [
+        'ToolBoxX Barcode Generator creates mathematically compliant 1D barcodes directly in your browser using pure client-side algorithms.',
+        'Whether managing warehouse inventory with Code 128, selling retail items with EAN-13/UPC-A, or tracking military/industrial equipment with Code 39, download crisp vector SVGs or raster PNGs ready for physical printing.'
+      ]
+    },
+    features: [
+      { title: 'Universal 1D Formats', description: 'Supports Code 128 (Auto/B), EAN-13, UPC-A, and Code 39 with automated check digit verification.' },
+      { title: 'Vector SVG & High-Res PNG', description: 'Export resolution-independent vector SVG for physical packaging or crisp PNG images.' },
+      { title: 'Full Visual Customization', description: 'Fine-tune bar width scaling, bar height, quiet zones, foreground/background colors, and font sizes.' }
+    ],
+    howToSteps: [
+      { title: 'Select Barcode Format', description: 'Choose Code 128, EAN-13, UPC-A, or Code 39 based on your application.' },
+      { title: 'Enter SKU or Numerical Data', description: 'Type your product code, ISBN, or serial number.' },
+      { title: 'Adjust Dimensions & Colors', description: 'Customize bar height, module scale, and label visibility.' },
+      { title: 'Download Barcode', description: 'Download your high-res PNG or vector SVG file with 1 click.' }
+    ],
+    faqs: [
+      { question: 'Will these barcodes scan on physical laser and optical scanners?', answer: 'Yes! All barcodes adhere strictly to GS1 and ANSI standards with accurate guard bars, quiet zones, and parity encodings.' }
+    ],
+    relatedToolIds: ['qr-code-generator', 'utm-builder', 'invoice-generator', 'uuid-generator']
+  },
+  {
+    id: 'utm-builder',
+    name: 'UTM Campaign Builder',
+    path: '/utm-builder',
+    category: 'business',
+    shortDescription: 'Build tracking URLs with campaign source, medium, name, term, content, live URL preview, and QR code.',
+    fullDescription: 'Create Google Analytics compliant UTM tracking links for marketing campaigns. Includes presets for Google Ads, Facebook Ads, Newsletters, LinkedIn, Twitter, and YouTube, alongside automatic parameter sanitization, scannable QR code generator, and link history.',
+    icon: 'Link',
+    isPopular: true,
+    badge: 'Essential',
+    seoTitle: 'Free UTM Campaign Builder Online – URL Builder with QR Code | ToolBoxX',
+    metaDescription: 'Free online UTM builder for Google Analytics 4. Generate clean tracking URLs with custom source, medium, campaign, term, content, and instant QR code.',
+    h1Heading: 'Google Analytics UTM Campaign Builder',
+    primaryKeyword: 'utm builder',
+    secondaryKeywords: ['utm generator', 'campaign url builder', 'google analytics url builder', 'utm link maker', 'tracking url builder'],
+    educationalSection: {
+      title: 'Why Use UTM Campaign Tracking URLs?',
+      paragraphs: [
+        'UTM (Urchin Tracking Module) parameters are standardized tags appended to destination URLs. When clicked, Google Analytics and other analytics platforms capture exact traffic sources, mediums, and campaign names.',
+        'Proper UTM tagging eliminates blind spots in digital marketing attribution, letting you measure ROI across email newsletters, paid search, social ads, and affiliate links.'
+      ]
+    },
+    features: [
+      { title: 'Ready-Made Presets', description: '1-click templates for Google Ads, Facebook, LinkedIn, Email Newsletters, and YouTube.' },
+      { title: 'Instant QR Code Generation', description: 'Automatically creates a scannable QR code for every generated campaign link.' },
+      { title: 'Parameter Sanitization', description: 'Automatic lowercasing and space-replacement ensures clean attribution reporting in GA4.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Destination URL', description: 'Paste the target landing page URL.' },
+      { title: 'Fill UTM Parameters', description: 'Enter source, medium, campaign name, and optional term/content tags.' },
+      { title: 'Copy & Share', description: 'Copy the formatted URL or download the accompanying QR Code.' }
+    ],
+    faqs: [
+      { question: 'Which UTM parameters are mandatory?', answer: 'For accurate attribution in Google Analytics 4, utm_source, utm_medium, and utm_campaign are required.' }
+    ],
+    relatedToolIds: ['qr-code-generator', 'meta-tag-generator', 'robots-txt-generator']
+  },
+  {
+    id: 'meta-tag-generator',
+    name: 'SEO Meta Tag Generator',
+    path: '/meta-tag-generator',
+    category: 'business',
+    shortDescription: 'Generate HTML standard meta tags, Open Graph (Facebook/LinkedIn), and Twitter Cards with live Google SERP preview.',
+    fullDescription: 'Comprehensive SEO and Social Media meta tag generator. Customize page title, description, canonical link, author, robots directives, Open Graph, and Twitter Cards with live Google desktop/mobile SERP and social share card previews.',
+    icon: 'Globe',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Meta Tag Generator Online – Google SERP & Open Graph Preview | ToolBoxX',
+    metaDescription: 'Free online SEO meta tag generator. Create HTML head tags, Open Graph, and Twitter Cards with real-time Google search snippet and social media card previews.',
+    h1Heading: 'SEO & Social Meta Tag Generator',
+    primaryKeyword: 'meta tag generator',
+    secondaryKeywords: ['open graph generator', 'twitter card generator', 'seo meta tags', 'serp simulator', 'google preview tool'],
+    features: [
+      { title: 'Live Google SERP Preview', description: 'See how your snippet renders on desktop and mobile search result pages with character count alerts.' },
+      { title: 'Open Graph & Twitter Cards', description: 'Mockup Facebook, LinkedIn, and Twitter/X social preview cards with high-fidelity formatting.' },
+      { title: '1-Click HTML Export', description: 'Copy ready-to-paste HTML <head> tags or download a formatted meta.html file.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Page Metadata', description: 'Type your title, description, URL, author, and keywords.' },
+      { title: 'Sync Social Tags', description: 'Click Auto-Sync to propagate metadata to Open Graph and Twitter Cards.' },
+      { title: 'Copy Head Code', description: 'Copy the generated HTML snippet directly into your web project.' }
+    ],
+    faqs: [
+      { question: 'What is the ideal meta description length for SEO?', answer: 'Google typically truncates snippets beyond 155-160 characters on desktop and 120 characters on mobile.' }
+    ],
+    relatedToolIds: ['schema-generator', 'robots-txt-generator', 'utm-builder']
+  },
+  {
+    id: 'robots-txt-generator',
+    name: 'Robots.txt Generator',
+    path: '/robots-txt-generator',
+    category: 'business',
+    shortDescription: 'Create custom robots.txt with allow/disallow paths, AI scraper blocking, sitemap links, and interactive rule tester.',
+    fullDescription: 'Configure search engine crawler rules effortlessly. Manage allow/disallow paths for Googlebot, Bingbot, and protect your website content from AI training bots (GPTBot, CCBot, Claude-Web) with 1-click download and live path tester.',
+    icon: 'Bot',
+    isPopular: false,
+    badge: 'SEO',
+    seoTitle: 'Robots.txt Generator Online – Block AI Scrapers & Manage Crawlers | ToolBoxX',
+    metaDescription: 'Free online robots.txt generator. Create custom crawl directives, block AI scrapers (GPTBot, Claude), add sitemaps, test paths, and download robots.txt.',
+    h1Heading: 'Robots.txt Generator & Tester',
+    primaryKeyword: 'robots txt generator',
+    secondaryKeywords: ['robots txt builder', 'create robots txt', 'block ai scrapers', 'crawl delay generator', 'robots txt tester'],
+    features: [
+      { title: 'AI Crawler Shield', description: '1-click to block GPTBot, CCBot, Claude-Web, and AI web scrapers from your content.' },
+      { title: 'Interactive Path Tester', description: 'Test any URL path against your rules to verify if it is allowed or blocked.' },
+      { title: 'Sitemaps & Host Directives', description: 'Include multiple XML sitemaps and preferred domain host rules.' }
+    ],
+    howToSteps: [
+      { title: 'Select a Template', description: 'Pick Standard SEO, E-Commerce, WordPress, or Block AI Scrapers.' },
+      { title: 'Add Custom Rules', description: 'Configure custom Allow and Disallow directory paths.' },
+      { title: 'Download File', description: 'Download robots.txt and upload it to the root directory of your domain.' }
+    ],
+    faqs: [
+      { question: 'Where should the robots.txt file be placed?', answer: 'It must be uploaded directly to the root directory of your website domain (e.g. https://yourdomain.com/robots.txt).' }
+    ],
+    relatedToolIds: ['schema-generator', 'meta-tag-generator', 'utm-builder']
+  },
+  {
+    id: 'schema-generator',
+    name: 'Schema Markup Generator',
+    path: '/schema-generator',
+    category: 'business',
+    shortDescription: 'Structured JSON-LD generator for Article, FAQ Page, Product, Organization, Local Business, and How-To guides.',
+    fullDescription: 'Generate Google-compliant structured JSON-LD data for rich search results. Create schema markups for articles, FAQs, products, local businesses, organizations, and how-to guides with live syntax highlighting, 1-click copy, and Google Rich Results testing.',
+    icon: 'Code',
+    isPopular: true,
+    badge: 'Rich Results',
+    seoTitle: 'JSON-LD Schema Markup Generator Online – FAQ, Product, Article | ToolBoxX',
+    metaDescription: 'Free online Schema.org JSON-LD generator. Create structured data markup for FAQs, Products, Articles, Organizations, and Local Businesses for Google Rich Snippets.',
+    h1Heading: 'JSON-LD Schema Markup Generator',
+    primaryKeyword: 'schema markup generator',
+    secondaryKeywords: ['json ld generator', 'faq schema generator', 'product schema generator', 'rich snippets generator', 'structured data tool'],
+    features: [
+      { title: '6+ Schema Formats', description: 'Generate Article, FAQ Page, Product, Organization, Local Business, and How-To schemas.' },
+      { title: 'Valid Schema.org JSON-LD', description: 'Compliant with Google Search Central structured data specifications.' },
+      { title: '1-Click Testing', description: 'Direct test integration with Google Rich Results Test suite.' }
+    ],
+    howToSteps: [
+      { title: 'Select Schema Type', description: 'Choose Article, FAQ, Product, Organization, Local Business, or How-To.' },
+      { title: 'Fill In Properties', description: 'Enter all relevant properties and details.' },
+      { title: 'Copy Script Tag', description: 'Paste the generated JSON-LD script tag into your HTML document.' }
+    ],
+    faqs: [
+      { question: 'Why is JSON-LD preferred over Microdata?', answer: 'Google explicitly recommends JSON-LD because it is decoupled from HTML presentation and easier to maintain dynamically.' }
+    ],
+    relatedToolIds: ['meta-tag-generator', 'robots-txt-generator', 'utm-builder']
+  },
+  {
+    id: 'email-signature-generator',
+    name: 'Email Signature Generator',
+    path: '/email-signature-generator',
+    category: 'business',
+    shortDescription: 'Input name, title, company, avatar, contact details, social links, and theme color for 1-click HTML signature copy.',
+    fullDescription: 'Create sleek, professional email signatures compatible with Gmail, Apple Mail, Outlook, and Thunderbird. Customize themes, profile photos, CTA buttons, and social badges, with 1-click rich clipboard copy for instant pasting.',
+    icon: 'Mail',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free Email Signature Generator – Gmail, Outlook, Apple Mail | ToolBoxX',
+    metaDescription: 'Create beautiful, professional email signatures for free. Customizable templates with photos, social icons, CTA buttons, and 1-click copy into Gmail and Outlook.',
+    h1Heading: 'Professional Email Signature Generator',
+    primaryKeyword: 'email signature generator',
+    secondaryKeywords: ['free email signature', 'gmail signature generator', 'outlook signature maker', 'html email signature', 'business email signature'],
+    features: [
+      { title: 'Universal Email Compatibility', description: 'Engineered with table-based HTML for flawless rendering across Gmail, Outlook, Apple Mail, and mobile clients.' },
+      { title: 'Rich Formatting Clipboard Copy', description: '1-click copy copies the rendered formatted signature so you can paste directly into your email settings.' },
+      { title: 'Custom Themes & Shapes', description: 'Customize accent colors, avatar shapes (circle/rounded/square), CTA banners, and social links.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Personal Details', description: 'Type your name, job title, department, company, and contact numbers.' },
+      { title: 'Add Photo & Social Links', description: 'Paste your avatar image URL, LinkedIn, Twitter, and calendar booking link.' },
+      { title: 'Copy & Paste', description: 'Click 1-Click Copy HTML Signature and paste directly into your email client settings.' }
+    ],
+    faqs: [
+      { question: 'How do I add this signature to Gmail?', answer: 'Click Copy HTML Signature, open Gmail Settings > General > Signature, create a new signature, and press Ctrl+V (or Cmd+V) to paste.' }
+    ],
+    relatedToolIds: ['invoice-generator', 'resume-builder', 'business-name-generator']
+  },
+  {
+    id: 'invoice-generator',
+    name: 'Invoice Generator',
+    path: '/invoice-generator',
+    category: 'business',
+    shortDescription: 'Interactive invoice builder with business details, line items, tax rate, currencies, and 1-click PDF download.',
+    fullDescription: 'Create, customize, and download professional PDF invoices in seconds. Dynamic line items, automated subtotal/tax calculations, multi-currency support ($ USD, € EUR, £ GBP, etc.), payment instructions, and high-resolution PDF exports via html2canvas and pdf-lib.',
+    icon: 'Receipt',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free Online Invoice Generator – Create & Download PDF Invoices | ToolBoxX',
+    metaDescription: 'Free online invoice generator for freelancers and businesses. Add line items, calculate taxes, customize currencies, and download professional PDF invoices.',
+    h1Heading: 'Free Online PDF Invoice Generator',
+    primaryKeyword: 'invoice generator',
+    secondaryKeywords: ['free invoice maker', 'invoice pdf generator', 'create invoice online', 'freelance invoice template', 'bill generator'],
+    features: [
+      { title: 'Instant High-Res PDF Export', description: 'Render pixel-perfect A4 invoice documents directly in your browser using pdf-lib.' },
+      { title: 'Multi-Currency & Tax Engine', description: 'Support for USD, EUR, GBP, CAD, AUD, INR, and automated tax/discount calculations.' },
+      { title: 'Dynamic Line Items', description: 'Add, remove, and customize item descriptions, quantities, unit rates, and line discounts.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Business & Client Info', description: 'Add sender details, billing address, and client information.' },
+      { title: 'Add Line Items', description: 'List services or products with quantities, rates, and discounts.' },
+      { title: 'Download PDF', description: 'Click 1-Click Download High-Res Invoice to export your ready-to-send PDF.' }
+    ],
+    faqs: [
+      { question: 'Is my financial data stored on your servers?', answer: 'No! All invoice data and PDF generation occurs 100% locally in your browser memory.' }
+    ],
+    relatedToolIds: ['resume-builder', 'email-signature-generator', 'barcode-generator']
+  },
+  {
+    id: 'resume-builder',
+    name: 'ATS Resume Builder',
+    path: '/resume-builder',
+    category: 'business',
+    shortDescription: 'Modern ATS-compliant resume builder: Personal info, summary, work experience, education, skills, and 1-click PDF export.',
+    fullDescription: 'Build professional, ATS-optimized resumes that pass applicant tracking systems. Add dynamic work experiences with bullet points, education, skill badges, and featured projects with live A4 preview and 1-click PDF export.',
+    icon: 'FileSpreadsheet',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free ATS Resume Builder Online – Create & Export PDF Resumes | ToolBoxX',
+    metaDescription: 'Free ATS-compliant resume builder. Create professional resumes with work experience, education, skill tags, live A4 preview, and instant PDF download.',
+    h1Heading: 'ATS-Friendly Online Resume Builder',
+    primaryKeyword: 'resume builder',
+    secondaryKeywords: ['ats resume builder', 'free cv maker', 'online resume creator', 'resume pdf export', 'job application resume'],
+    features: [
+      { title: 'ATS-Compliant Structure', description: 'Standardized typography and single-column hierarchy ensures flawless machine readability.' },
+      { title: 'Dynamic Experience & Projects', description: 'Add multiple work experiences with custom achievement bullets and project tech stacks.' },
+      { title: '1-Click PDF & Print Export', description: 'Generate high-resolution A4 PDF documents ready for job applications.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Contact Info & Summary', description: 'Fill your headline, email, phone, location, and career summary.' },
+      { title: 'Add Roles & Education', description: 'Detail your past achievements, degrees, and core competencies.' },
+      { title: 'Export PDF', description: 'Download your ATS-compliant PDF resume with 1 click.' }
+    ],
+    faqs: [
+      { question: 'What makes a resume ATS-compliant?', answer: 'ATS compliance requires clean standard section headers, machine-readable text fonts, consistent bullet points, and absence of complex multi-layered graphical tables.' }
+    ],
+    relatedToolIds: ['cover-letter-generator', 'invoice-generator', 'email-signature-generator']
+  },
+  {
+    id: 'cover-letter-generator',
+    name: 'Cover Letter Generator',
+    path: '/cover-letter-generator',
+    category: 'business',
+    shortDescription: 'Input job title, hiring manager, company, and key achievements to generate a professional cover letter with Word DOCX export.',
+    fullDescription: 'Craft persuasive, tailored cover letters tailored to your target job role and company. Choose from confident, formal, passionate, or technical tones with full paragraph editing, letterhead preview, and 1-click Word (.docx) export.',
+    icon: 'FileText',
+    isPopular: false,
+    badge: 'Career',
+    seoTitle: 'Free Cover Letter Generator Online – Word DOCX & PDF Export | ToolBoxX',
+    metaDescription: 'Generate customized, professional cover letters for job applications. Choose tones, customize key achievements, and download in Word (.docx) or print to PDF.',
+    h1Heading: 'AI-Crafted Cover Letter Generator',
+    primaryKeyword: 'cover letter generator',
+    secondaryKeywords: ['cover letter builder', 'job application letter maker', 'cover letter docx export', 'free cover letter template'],
+    features: [
+      { title: 'Multi-Tone Writing Engine', description: 'Select from Confident & Dynamic, Formal Executive, Passionate, or Technical tones.' },
+      { title: 'Word (.docx) & PDF Export', description: 'Download standard Microsoft Word .docx files with clean formatting and letterhead.' },
+      { title: 'Fully Editable Live Editor', description: 'Tweak and edit every paragraph directly in the live letter preview.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Target Role & Company', description: 'Provide the job title, company name, and hiring manager.' },
+      { title: 'Specify Key Achievements', description: 'List your core skills, years of experience, and top accomplishments.' },
+      { title: 'Download Word DOCX', description: 'Export your tailored cover letter as a formatted Word document.' }
+    ],
+    faqs: [
+      { question: 'Can I edit the generated letter before exporting?', answer: 'Yes! Every paragraph in the live letter preview is completely editable.' }
+    ],
+    relatedToolIds: ['resume-builder', 'email-signature-generator', 'business-name-generator']
+  },
+  {
+    id: 'business-name-generator',
+    name: 'Business Name Generator',
+    path: '/business-name-generator',
+    category: 'business',
+    shortDescription: 'Input industry keywords and brand vibe (Tech, Luxury, Modern, Friendly) to generate 20+ brand names with domain links.',
+    fullDescription: 'Discover memorable, creative brand and startup names. Categorized by linguistic formulas (Tech compounds, blends, affixes, luxury roots, short domains) with catchy slogans, domain availability links, and wishlist export.',
+    icon: 'Sparkles',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free Business Name Generator – Brand & Startup Names with Domains | ToolBoxX',
+    metaDescription: 'Generate 20+ creative business and startup names with domain availability links. Filter by Tech, Luxury, Modern, and Friendly vibes with instant CSV export.',
+    h1Heading: 'Creative Business & Brand Name Generator',
+    primaryKeyword: 'business name generator',
+    secondaryKeywords: ['brand name generator', 'startup name generator', 'company name maker', 'domain name ideas', 'business name ideas'],
+    features: [
+      { title: 'Smart Linguistic Formulas', description: 'Generates compound words, modern tech affixes (-ify, -io, -ly), luxury roots, and portmanteaus.' },
+      { title: 'Instant Domain & Trademark Checks', description: 'Direct links to check .com, .io, .co domain registration and USPTO trademark availability.' },
+      { title: 'Save to Favorites & Export', description: 'Heart your favorite brand ideas and download them as a clean CSV list.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Seed Keywords', description: 'Type words related to your product, niche, or industry.' },
+      { title: 'Select Brand Vibe', description: 'Choose Tech, Luxury, Modern, Friendly, or Short & Punchy.' },
+      { title: 'Check Domains & Save', description: 'Click any name to verify domain availability and save your favorites.' }
+    ],
+    faqs: [
+      { question: 'How do I choose the best brand name?', answer: 'Look for names that are easy to spell, memorable, under 3 syllables, and have available .com or relevant TLDs.' }
+    ],
+    relatedToolIds: ['password-generator', 'utm-builder', 'email-signature-generator']
+  },
+  {
+    id: 'password-generator',
+    name: 'Secure Password Generator',
+    path: '/password-generator',
+    category: 'business',
+    shortDescription: 'Cryptographically secure password generator using window.crypto with length sliders, entropy meter, and diceware passphrases.',
+    fullDescription: 'Generate unbreakable, cryptographically secure passwords and memorable diceware passphrases. Real-time entropy calculations, brute-force crack time estimates, custom character sets, ambiguous character filters, and bulk generation.',
+    icon: 'Lock',
+    isPopular: true,
+    badge: 'Security',
+    seoTitle: 'Secure Password Generator Online – CSPRNG Random & Passphrases | ToolBoxX',
+    metaDescription: 'Free online secure password generator using cryptographic CSPRNG. Generate random character passwords, diceware passphrases, PINs, and entropy analysis.',
+    h1Heading: 'Cryptographically Secure Password Generator',
+    primaryKeyword: 'password generator',
+    secondaryKeywords: ['secure password generator', 'random password maker', 'passphrase generator', 'diceware generator', 'strong password generator'],
+    features: [
+      { title: '100% Cryptographically Secure (CSPRNG)', description: 'Powered by window.crypto.getRandomValues for maximum mathematical entropy.' },
+      { title: '3 Generation Modes', description: 'Random characters (8-64 chars), Memorable Diceware passphrases, and Numeric PINs.' },
+      { title: 'Entropy & Crack Time Meter', description: 'Live calculation of entropy bits and estimated quantum/supercomputer brute force resistance.' }
+    ],
+    howToSteps: [
+      { title: 'Select Mode & Length', description: 'Choose Random, Passphrase, or PIN, and adjust the length slider.' },
+      { title: 'Configure Character Sets', description: 'Toggle uppercase, lowercase, numbers, and symbols.' },
+      { title: 'Copy Password', description: 'Click Copy Secure Password to use immediately.' }
+    ],
+    faqs: [
+      { question: 'What makes a password cryptographically secure?', answer: 'A password is secure when generated using a true cryptographic pseudo-random number generator (CSPRNG) with at least 60-80 bits of entropy.' }
+    ],
+    relatedToolIds: ['uuid-generator', 'business-name-generator', 'qr-code-generator']
+  },
+  {
+    id: 'uuid-generator',
+    name: 'Bulk UUID / GUID Generator',
+    path: '/uuid-generator',
+    category: 'business',
+    shortDescription: 'Bulk UUID generator (UUID v4 / v1 / NanoID, quantity 1-100, uppercase/lowercase, hyphens) with copy and .txt/.json download.',
+    fullDescription: 'Generate RFC 4122 compliant UUID v4, UUID v1, and NanoID identifiers in bulk (1-100+). Customize uppercase/lowercase, hyphens, brackets, and export formats (JSON array, SQL insert, raw list) with an integrated UUID validator tool.',
+    icon: 'Key',
+    isPopular: true,
+    badge: 'Developer',
+    seoTitle: 'Bulk UUID Generator Online – UUID v4, v1, GUID & NanoID | ToolBoxX',
+    metaDescription: 'Free online bulk UUID/GUID generator. Generate cryptographically random UUID v4, timestamp UUID v1, and NanoIDs in bulk with custom formatting.',
+    h1Heading: 'Bulk UUID & GUID Generator',
+    primaryKeyword: 'uuid generator',
+    secondaryKeywords: ['guid generator', 'bulk uuid generator', 'uuid v4 generator', 'uuid v1 generator', 'online uuid maker'],
+    features: [
+      { title: 'RFC 4122 Standard Compliant', description: 'Supports cryptographically secure UUID v4 (random), UUID v1 (timestamp), and NanoID.' },
+      { title: 'Flexible Formatting', description: 'Uppercase/lowercase, with/without hyphens, braces {...}, quotes, and SQL/JSON export.' },
+      { title: 'Built-In UUID Validator', description: 'Inspect and validate any UUID string to check RFC version, variant, and structure.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Version & Quantity', description: 'Select UUID v4, v1, or NanoID, and set the number of identifiers.' },
+      { title: 'Customize Formatting', description: 'Toggle casing, hyphens, or enclosing bracket syntax.' },
+      { title: 'Copy or Download', description: 'Copy all generated UUIDs or download as a .txt or .json file.' }
+    ],
+    faqs: [
+      { question: 'What is the probability of a UUID v4 collision?', answer: 'Virtually zero. Generating 1 billion UUIDs per second for 100 years has less than a 1 in a billion chance of a collision.' }
+    ],
+    relatedToolIds: ['password-generator', 'barcode-generator', 'utm-builder']
+  },
+  // =========================================================================
+  // --- DEVELOPER TOOLS ---
+  // =========================================================================
+  {
+    id: 'json-formatter',
+    name: 'JSON Formatter & Validator',
+    path: '/json-formatter',
+    category: 'developer',
+    shortDescription: 'Format, minify, repair, and validate JSON data with line error markers and interactive tree viewer.',
+    fullDescription: 'Clean, pretty-print, and format JSON strings with custom indentation (2/4 spaces). Includes line-number error highlights, automatic syntax repair for trailing commas or quotes, and a searchable visual tree explorer.',
+    icon: 'FileCode',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'JSON Formatter & Validator Online – Pretty Print & Tree View | ToolBoxX',
+    metaDescription: 'Free online JSON formatter, validator, and tree viewer. Format 2/4 spaces, minify, repair syntax errors, and inspect JSON objects 100% locally in your browser.',
+    h1Heading: 'JSON Formatter & Validator',
+    primaryKeyword: 'json formatter',
+    secondaryKeywords: ['json validator', 'json prettifier', 'json tree viewer', 'minify json', 'format json online'],
+    features: [
+      { title: '2 & 4 Space Formatting', description: 'Standardize nested JSON objects with customizable indent spacing.' },
+      { title: 'Line Error Highlighting', description: 'Pinpoint precise syntax error line and column locations with actionable messages.' },
+      { title: 'Interactive Tree Explorer', description: 'Collapsible object nodes with key-value search and one-click JSONPath copying.' },
+      { title: 'One-Click Syntax Repair', description: 'Fix trailing commas, single quotes, and unquoted object keys automatically.' }
+    ],
+    howToSteps: [
+      { title: 'Input JSON Data', description: 'Paste your raw JSON code or upload a .json file.' },
+      { title: 'Select Indentation', description: 'Choose 2 spaces, 4 spaces, or Minify.' },
+      { title: 'Inspect or Repair', description: 'Explore the visual tree or click Repair JSON if syntax errors are present.' },
+      { title: 'Copy or Download', description: 'Copy the formatted JSON or download as a file.' }
+    ],
+    faqs: [
+      { question: 'Is my JSON uploaded to a server?', answer: 'No. All parsing and formatting occurs strictly within your browser using native JavaScript JSON engines.' },
+      { question: 'Can this tool repair broken JSON?', answer: 'Yes. The Repair JSON feature fixes single quotes, unquoted keys, and trailing commas.' }
+    ],
+    relatedToolIds: ['code-minifier', 'base64-tool', 'jwt-decoder', 'csv-converter']
+  },
+  {
+    id: 'code-minifier',
+    name: 'Code Minifier & Beautifier',
+    path: '/code-minifier',
+    category: 'developer',
+    shortDescription: 'Minify and beautify HTML, CSS, and JavaScript with character reduction statistics.',
+    fullDescription: 'Compress JavaScript, CSS, and HTML source code by removing comments, collapsing whitespace, stripping console logs, and shortening color codes. Includes instant formatting and character savings metrics.',
+    icon: 'Minimize2',
+    isPopular: true,
+    badge: 'Developer',
+    seoTitle: 'Code Minifier & Beautifier – HTML, CSS, JS Compressor | ToolBoxX',
+    metaDescription: 'Minify and format HTML, CSS, and JavaScript online. Reduce bundle sizes, remove comments and console.logs, and preview code reduction metrics.',
+    h1Heading: 'Code Minifier & Beautifier',
+    primaryKeyword: 'code minifier',
+    secondaryKeywords: ['js minifier', 'css minifier', 'html minifier', 'beautify code', 'compress javascript'],
+    features: [
+      { title: 'HTML, CSS & JS Support', description: 'Unified multi-language compression engine tailored for web source assets.' },
+      { title: 'Compression Metric Stats', description: 'Inspect exact character count reductions, bytes saved, and compression percentages.' },
+      { title: 'Configurable Rules', description: 'Toggle comment removal, console.log stripping, and HEX color shortening.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Language', description: 'Select JavaScript, CSS, or HTML.' },
+      { title: 'Paste Source Code', description: 'Enter code or upload your source script.' },
+      { title: 'Minify or Beautify', description: 'Click Minify for production bundles or Beautify for clean readability.' },
+      { title: 'Export File', description: 'Copy output or download as .min.js, .min.css, or .min.html.' }
+    ],
+    faqs: [
+      { question: 'Does minification break my code?', answer: 'The minifier preserves syntactic correctness while removing non-functional whitespace and comments.' }
+    ],
+    relatedToolIds: ['json-formatter', 'base64-tool', 'regex-tester']
+  },
+  {
+    id: 'base64-tool',
+    name: 'Base64 Encoder & Decoder',
+    path: '/base64-tool',
+    category: 'developer',
+    shortDescription: 'UTF-8 text and binary file Base64 encoder/decoder with Data URI, HTML, and CSS generator.',
+    fullDescription: 'Encode and decode UTF-8 text strings and binary files (images, audio, documents) to Base64 format. Features URL-safe mode, live media previews, and export snippets for HTML <img> tags and CSS backgrounds.',
+    icon: 'Binary',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Base64 Encoder & Decoder Online – Text & Image to Base64 | ToolBoxX',
+    metaDescription: 'Free online Base64 encoder and decoder. Convert text strings and images to Base64 data URIs with URL-safe options and live preview.',
+    h1Heading: 'Base64 Encoder & Decoder',
+    primaryKeyword: 'base64 encoder',
+    secondaryKeywords: ['base64 decoder', 'image to base64', 'base64 to image', 'url safe base64', 'data uri generator'],
+    features: [
+      { title: 'UTF-8 & Emoji Safe', description: 'Full support for multi-byte Unicode characters and international text without corruption.' },
+      { title: 'Binary File Upload', description: 'Convert PNG, JPG, SVG, WEBP, PDF, and audio files to Data URIs.' },
+      { title: 'Export Snippets', description: 'Generate ready-to-use HTML <img> tags, CSS background-image URLs, and raw Base64 strings.' }
+    ],
+    howToSteps: [
+      { title: 'Select Mode', description: 'Choose Text Strings or Binary File / Image mode.' },
+      { title: 'Provide Input', description: 'Type your message or upload an image file.' },
+      { title: 'Select Format', description: 'Choose Data URI, Raw Base64, HTML tag, or CSS.' },
+      { title: 'Copy Result', description: 'Copy snippet to clipboard or download file.' }
+    ],
+    faqs: [
+      { question: 'What is the size overhead of Base64?', answer: 'Base64 encoding increases binary file size by approximately 33% due to 6-bit grouping.' }
+    ],
+    relatedToolIds: ['url-encoder', 'jwt-decoder', 'hash-generator', 'image-compressor']
+  },
+  {
+    id: 'url-encoder',
+    name: 'URL Encoder & Decoder',
+    path: '/url-encoder',
+    category: 'developer',
+    shortDescription: 'Encode and decode URLs with encodeURIComponent, query parameter builder table, and JSON export.',
+    fullDescription: 'Safely encode special characters and query parameters for HTTP requests. Includes encodeURIComponent and encodeURI modes, space-to-plus options, and an interactive query parameters table editor.',
+    icon: 'Globe',
+    isPopular: true,
+    badge: 'Developer',
+    seoTitle: 'URL Encoder & Decoder Online – Query Parameter Builder | ToolBoxX',
+    metaDescription: 'Free online URL encoder and decoder. Convert query strings, encode special characters, and edit URL parameters interactively.',
+    h1Heading: 'URL Encoder & Decoder',
+    primaryKeyword: 'url encoder',
+    secondaryKeywords: ['url decoder', 'url encode online', 'decode url', 'percent encoding', 'query string builder'],
+    features: [
+      { title: 'Component & Full URI Modes', description: 'Encode individual query values or preserve full protocol schemes.' },
+      { title: 'Interactive Parameters Table', description: 'Add, modify, toggle, and delete URL query parameters with live URL updates.' },
+      { title: 'JSON Export', description: 'Export query parameters as a structured JSON key-value dictionary.' }
+    ],
+    howToSteps: [
+      { title: 'Input URL', description: 'Paste the URL or string you wish to convert.' },
+      { title: 'Select Method', description: 'Choose Encode or Decode mode with optional space-to-plus handling.' },
+      { title: 'Edit Parameters', description: 'Use the interactive table to add or modify query params.' },
+      { title: 'Copy URL', description: 'Copy the final sanitized URL.' }
+    ],
+    faqs: [
+      { question: 'When should I use encodeURIComponent vs encodeURI?', answer: 'Use encodeURIComponent for individual query parameter keys and values. Use encodeURI when encoding a complete web address without breaking slashes and question marks.' }
+    ],
+    relatedToolIds: ['base64-tool', 'jwt-decoder', 'utm-builder']
+  },
+  {
+    id: 'jwt-decoder',
+    name: 'JWT Decoder & Inspector',
+    path: '/jwt-decoder',
+    category: 'developer',
+    shortDescription: 'Decode JSON Web Tokens, inspect Header, Payload, and Signature, with expiration and claims analysis.',
+    fullDescription: 'Paste any JWT token to instantly decode its Header, Payload, and Signature with color-coded syntax. Evaluates token expiration timers, issued-at dates, and provides human explanations for standard RFC 7519 claims.',
+    icon: 'KeyRound',
+    isPopular: true,
+    badge: 'Security',
+    seoTitle: 'JWT Decoder Online – Inspect JSON Web Token Claims & Expiry | ToolBoxX',
+    metaDescription: 'Decode and inspect JSON Web Tokens (JWT) online. View header algorithms, payload claims, expiration countdowns, and verify token status securely in your browser.',
+    h1Heading: 'JWT Token Decoder & Inspector',
+    primaryKeyword: 'jwt decoder',
+    secondaryKeywords: ['jwt token decoder', 'decode jwt', 'jwt inspector', 'json web token viewer', 'jwt claims'],
+    features: [
+      { title: 'Color-Coded Token Breakdown', description: 'Header (Algorithm), Payload (Claims), and Signature separated with dedicated color themes.' },
+      { title: 'Token Expiry Countdown', description: 'Real-time active, expired, or future validity checks with human timestamps.' },
+      { title: 'Standard Claims Directory', description: 'Explains iss, sub, aud, exp, nbf, and custom RBAC permissions.' }
+    ],
+    howToSteps: [
+      { title: 'Paste Token', description: 'Paste your encoded JWT string into the input area.' },
+      { title: 'Review Status', description: 'Check the validity banner for expiration and algorithm details.' },
+      { title: 'Inspect Claims', description: 'Review the parsed Header and Payload JSON structures.' },
+      { title: 'Copy Claims', description: 'Copy individual sections or formatted JSON output.' }
+    ],
+    faqs: [
+      { question: 'Is my secret key or token transmitted over the internet?', answer: 'Never. ToolBoxX decodes Base64Url tokens 100% locally in your browser memory.' }
+    ],
+    relatedToolIds: ['hash-generator', 'base64-tool', 'json-formatter', 'uuid-generator']
+  },
+  {
+    id: 'hash-generator',
+    name: 'Hash & Checksum Generator',
+    path: '/hash-generator',
+    category: 'developer',
+    shortDescription: 'Calculate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes and HMAC signatures with file checksum support.',
+    fullDescription: 'Generate cryptographically secure hashes and HMAC message authentication codes using Web Crypto API. Supports plain text, secret keys, file uploads of any size, and live checksum verification comparison.',
+    icon: 'Hash',
+    isPopular: true,
+    badge: 'Security',
+    seoTitle: 'Hash Generator Online – MD5, SHA-1, SHA-256, SHA-512 & HMAC | ToolBoxX',
+    metaDescription: 'Calculate MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes and HMAC signatures online. Compute file checksums with instant browser-based processing.',
+    h1Heading: 'Cryptographic Hash & Checksum Generator',
+    primaryKeyword: 'hash generator',
+    secondaryKeywords: ['sha256 generator', 'md5 hash generator', 'sha512 calculator', 'hmac generator', 'file checksum'],
+    features: [
+      { title: '5 Hashing Standards', description: 'MD5, SHA-1, SHA-256, SHA-384, and SHA-512 calculated in parallel.' },
+      { title: 'HMAC Secret Key Mode', description: 'Compute keyed-hash message authentication codes for secure API verification.' },
+      { title: 'File Checksum Verification', description: 'Upload files to verify integrity and compare against expected checksums.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Mode', description: 'Select Text String or File Checksum mode.' },
+      { title: 'Input Data', description: 'Type your message or upload a file.' },
+      { title: 'Configure Options', description: 'Optionally provide an HMAC secret key or toggle UPPERCASE/Base64.' },
+      { title: 'Copy Hashes', description: 'Copy individual digests or export all hashes.' }
+    ],
+    faqs: [
+      { question: 'How is SHA-256 calculated?', answer: 'It is computed directly through the browser Web Crypto API (crypto.subtle.digest) for maximum hardware acceleration.' }
+    ],
+    relatedToolIds: ['jwt-decoder', 'base64-tool', 'password-generator']
+  },
+  {
+    id: 'regex-tester',
+    name: 'Regex Tester & Debugger',
+    path: '/regex-tester',
+    category: 'developer',
+    shortDescription: 'Interactive regular expression tester with live highlights, capture groups breakdown, substitution, and cheat sheet.',
+    fullDescription: 'Build and debug JavaScript regular expressions with real-time matching highlights, flag toggles (g, i, m, s, u), capture groups inspector, string substitution preview, and common pattern presets.',
+    icon: 'Search',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Regex Tester Online – JavaScript Regular Expression Debugger | ToolBoxX',
+    metaDescription: 'Interactive online Regex tester with live match highlights, capture group breakdown, replacement preview, and syntax cheat sheet. Fast and client-side.',
+    h1Heading: 'Regex Tester & Debugger',
+    primaryKeyword: 'regex tester',
+    secondaryKeywords: ['regular expression tester', 'regex debugger', 'javascript regex tester', 'regex replace online', 'regex cheat sheet'],
+    features: [
+      { title: 'Live Match Highlighting', description: 'Visual colored highlights for every matched segment in your test string.' },
+      { title: 'Capture Groups Inspector', description: 'Detailed table breakdown of numbered and named capture groups.' },
+      { title: 'String Substitution', description: 'Preview replace operations with $1, $2 capture variable support.' },
+      { title: 'Regex Cheat Sheet', description: 'Instant reference for common tokens, anchors, quantifiers, and flags.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Pattern', description: 'Type your regular expression pattern and toggle flags (g, i, m, s, u).' },
+      { title: 'Provide Test String', description: 'Enter the text you wish to match against or choose a preset.' },
+      { title: 'Review Matches', description: 'Inspect highlighted matches and capture group values.' },
+      { title: 'Test Substitution', description: 'Switch to the Replace tab to preview text modifications.' }
+    ],
+    faqs: [
+      { question: 'What flags are supported?', answer: 'Global (g), Case-Insensitive (i), Multiline (m), DotAll (s), and Unicode (u) are supported.' }
+    ],
+    relatedToolIds: ['text-cleaner', 'code-minifier', 'json-formatter']
+  },
+  {
+    id: 'timestamp-converter',
+    name: 'Unix Timestamp Converter',
+    path: '/timestamp-converter',
+    category: 'developer',
+    shortDescription: 'Convert Unix epoch timestamps to human dates (UTC/Local/ISO-8601) and human dates to Unix timestamps.',
+    fullDescription: 'Convert between Unix epoch timestamps (seconds and milliseconds) and human-readable dates across multiple timezones. Features live ticking clock, relative time calculation, leap year checks, and date duration calculator.',
+    icon: 'Clock',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Unix Timestamp Converter – Epoch to Human Date & Time | ToolBoxX',
+    metaDescription: 'Convert Unix timestamps (seconds & milliseconds) to human date and time in UTC, Local, and ISO-8601 formats. Includes date difference and timezone converter.',
+    h1Heading: 'Unix Timestamp Converter',
+    primaryKeyword: 'timestamp converter',
+    secondaryKeywords: ['unix timestamp', 'epoch converter', 'unix time to date', 'date to timestamp', 'epoch time converter'],
+    features: [
+      { title: 'Seconds & Milliseconds Support', description: 'Auto-detects 10-digit seconds and 13-digit millisecond epoch timestamps.' },
+      { title: 'Multi-Timezone Conversion', description: 'View local browser time, UTC, EST, PST, GMT, CET, JST, and IST.' },
+      { title: 'Date Duration Calculator', description: 'Calculate exact intervals between two dates in days, hours, and seconds.' }
+    ],
+    howToSteps: [
+      { title: 'Input Timestamp or Date', description: 'Enter an epoch timestamp or pick a calendar date.' },
+      { title: 'View Converted Dates', description: 'Inspect local, UTC, ISO-8601, and relative date outputs.' },
+      { title: 'Adjust Offsets', description: 'Use quick buttons (+1 hour, +1 day) to shift time.' },
+      { title: 'Copy Result', description: 'Copy the desired date format or Unix timestamp.' }
+    ],
+    faqs: [
+      { question: 'What is Unix Epoch time?', answer: 'Unix epoch time is the number of seconds that have elapsed since 00:00:00 UTC on January 1, 1970.' }
+    ],
+    relatedToolIds: ['jwt-decoder', 'hash-generator', 'color-converter']
+  },
+  {
+    id: 'color-converter',
+    name: 'Color Converter & Contrast Checker',
+    path: '/color-converter',
+    category: 'developer',
+    shortDescription: 'Convert HEX, RGB, RGBA, HSL, HSLA, CMYK, HSV with WCAG 2.1 contrast checker and color harmonies.',
+    fullDescription: 'Comprehensive color converter and accessibility tool. Convert between HEX, RGB, HSL, CMYK, and HSV, check WCAG AA/AAA contrast ratios against black and white, and generate complementary, analogous, and triadic palettes.',
+    icon: 'Palette',
+    isPopular: true,
+    badge: 'Design',
+    seoTitle: 'Color Converter & WCAG Contrast Checker – HEX, RGB, HSL, CMYK | ToolBoxX',
+    metaDescription: 'Convert colors between HEX, RGB, RGBA, HSL, HSLA, CMYK, and HSV. Test WCAG 2.1 contrast compliance and generate harmonious color palettes.',
+    h1Heading: 'Color Converter & WCAG Contrast Checker',
+    primaryKeyword: 'color converter',
+    secondaryKeywords: ['hex to rgb', 'rgb to hex', 'hex to hsl', 'wcag contrast checker', 'color palette generator'],
+    features: [
+      { title: 'Multi-Format Conversion', description: 'Instant bidirectional conversion between HEX, HEX8, RGB, RGBA, HSL, HSLA, CMYK, and HSV.' },
+      { title: 'WCAG 2.1 Contrast Testing', description: 'Automated AA and AAA compliance scores for normal text, large text, and UI elements.' },
+      { title: 'Color Harmony Palettes', description: 'Generate complementary, analogous, triadic, tetradic, and monochromatic shade ladders.' }
+    ],
+    howToSteps: [
+      { title: 'Select Color', description: 'Pick a color from the swatch, enter a HEX code, or use precision HSL sliders.' },
+      { title: 'Inspect Formats', description: 'View converted values in RGB, HSL, CMYK, and HSV.' },
+      { title: 'Verify Contrast', description: 'Review WCAG readability badges against light and dark backgrounds.' },
+      { title: 'Copy Formats', description: 'Copy any color representation or palette color with one click.' }
+    ],
+    faqs: [
+      { question: 'What is WCAG AA contrast standard?', answer: 'WCAG 2.1 Level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt bold).' }
+    ],
+    relatedToolIds: ['code-minifier', 'base64-tool', 'image-compressor']
+  },
+
+  // =========================================================================
+  // --- TEXT TOOLS (EXTENDED) ---
+  // =========================================================================
+  {
+    id: 'text-cleaner',
+    name: 'Text Cleaner & Line Sorter',
+    path: '/text-cleaner',
+    category: 'text',
+    shortDescription: 'Remove duplicate lines, sort alphabetically, trim whitespace, strip HTML tags, and convert case.',
+    fullDescription: 'Clean and organize text lists. Remove duplicate lines, remove blank lines, sort A-Z or Z-A, collapse multiple spaces, strip HTML/XML markup tags, add line numbering, and convert letter cases.',
+    icon: 'AlignLeft',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Text Cleaner & Line Sorter Online – Remove Duplicates & Sort | ToolBoxX',
+    metaDescription: 'Free online text cleaner and line sorter. Remove duplicate lines, sort A-Z, strip extra spaces, remove empty lines, and format text lists.',
+    h1Heading: 'Text Cleaner & Line Sorter',
+    primaryKeyword: 'text cleaner',
+    secondaryKeywords: ['remove duplicate lines', 'sort lines online', 'strip html tags', 'trim whitespace', 'text formatter'],
+    features: [
+      { title: 'Deduplication Engine', description: 'Remove duplicate lines with one click while preserving list order.' },
+      { title: 'Flexible Line Sorting', description: 'Sort A-Z, Z-A, by line length, reverse order, or randomize.' },
+      { title: 'Whitespace Sanitization', description: 'Trim leading/trailing spaces and collapse consecutive spaces.' },
+      { title: 'Prefix & Suffix Adder', description: 'Prepend or append custom characters to every line simultaneously.' }
+    ],
+    howToSteps: [
+      { title: 'Paste Text', description: 'Paste your raw list or text data into the editor.' },
+      { title: 'Apply Actions', description: 'Click Remove Duplicates, Remove Empty Lines, or Sort Lines.' },
+      { title: 'Add Prefixes', description: 'Optionally add prefixes, suffixes, or numbering to all lines.' },
+      { title: 'Export Clean Text', description: 'Copy output or download as a .txt document.' }
+    ],
+    faqs: [
+      { question: 'Does this handle large text files?', answer: 'Yes, tens of thousands of lines can be processed smoothly in your browser.' }
+    ],
+    relatedToolIds: ['word-counter', 'case-converter', 'markdown-editor', 'csv-converter']
+  },
+  {
+    id: 'markdown-editor',
+    name: 'Markdown Editor & HTML Converter',
+    path: '/markdown-editor',
+    category: 'text',
+    shortDescription: 'Split-pane Markdown editor with live visual HTML preview, table generator, and export to MD/HTML.',
+    fullDescription: 'Write and format Markdown documents with real-time side-by-side HTML preview. Includes syntax toolbar for bold, italic, code blocks, tables, task checklists, reading time metrics, and bidirectional HTML export.',
+    icon: 'FileText',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Markdown Editor Online – Live HTML Preview & Converter | ToolBoxX',
+    metaDescription: 'Free split-pane online Markdown editor with live preview. Format tables, code blocks, checklists, and export to Markdown or HTML.',
+    h1Heading: 'Markdown Editor & HTML Converter',
+    primaryKeyword: 'markdown editor',
+    secondaryKeywords: ['markdown to html', 'online markdown preview', 'markdown table generator', 'markdown live editor'],
+    features: [
+      { title: 'Live Split-Pane Preview', description: 'View rendered HTML alongside your markdown editor in real time.' },
+      { title: 'Rich Formatting Toolbar', description: 'Insert headings, tables, code blocks, blockquotes, and task checkboxes.' },
+      { title: 'HTML Source Inspector', description: 'View and export generated HTML markup directly.' },
+      { title: 'Reading Time Statistics', description: 'Track word count, character count, and estimated reading time.' }
+    ],
+    howToSteps: [
+      { title: 'Write Markdown', description: 'Type or paste markdown syntax into the editor pane.' },
+      { title: 'Use Toolbar', description: 'Insert tables, code blocks, and formatting using top buttons.' },
+      { title: 'Preview Document', description: 'Switch between Split, Editor, or Preview views.' },
+      { title: 'Export File', description: 'Download as a .md file or standalone .html document.' }
+    ],
+    faqs: [
+      { question: 'Are tables and checklists supported?', answer: 'Yes, full GitHub Flavored Markdown tables, checklists, and code blocks are supported.' }
+    ],
+    relatedToolIds: ['text-cleaner', 'word-counter', 'json-formatter', 'csv-converter']
+  },
+  {
+    id: 'csv-converter',
+    name: 'CSV ↔ JSON Converter',
+    path: '/csv-converter',
+    category: 'text',
+    shortDescription: 'Convert CSV to JSON and JSON to CSV with customizable delimiters and interactive table preview.',
+    fullDescription: 'Convert tabular data between CSV/TSV and JSON formats. Supports comma, semicolon, tab, and pipe delimiters, header row toggles, and provides an interactive scrollable table preview of your dataset.',
+    icon: 'Table',
+    isPopular: true,
+    badge: 'Data',
+    seoTitle: 'CSV to JSON & JSON to CSV Converter Online | ToolBoxX',
+    metaDescription: 'Convert CSV to JSON and JSON to CSV online. Customize delimiters, inspect data in a table preview, and download converted files instantly.',
+    h1Heading: 'CSV ↔ JSON Converter',
+    primaryKeyword: 'csv to json',
+    secondaryKeywords: ['json to csv', 'csv converter', 'tsv to json', 'convert csv online', 'csv table viewer'],
+    features: [
+      { title: 'Bidirectional Conversion', description: 'Convert CSV/TSV to JSON array or JSON array back to structured CSV.' },
+      { title: 'Custom Delimiters', description: 'Support for comma (,), semicolon (;), tab (\\t / TSV), and pipe (|).' },
+      { title: 'Interactive Table Preview', description: 'Inspect parsed records in a structured tabular grid with row counts.' }
+    ],
+    howToSteps: [
+      { title: 'Select Direction', description: 'Choose CSV to JSON or JSON to CSV mode.' },
+      { title: 'Provide Data', description: 'Paste your data or upload a .csv or .json file.' },
+      { title: 'Set Delimiter', description: 'Select comma, semicolon, or tab separation.' },
+      { title: 'Download Converted File', description: 'Export as .json or .csv with a single click.' }
+    ],
+    faqs: [
+      { question: 'Does this handle quoted fields containing commas?', answer: 'Yes, the parser respects double-quoted strings and escaped characters.' }
+    ],
+    relatedToolIds: ['json-formatter', 'text-cleaner', 'markdown-editor']
+  },
+
+  // =========================================================================
+  // --- FILE & ARCHIVE TOOLS ---
+  // =========================================================================
+  {
+    id: 'zip-creator',
+    name: 'ZIP Archive Creator',
+    path: '/zip-creator',
+    category: 'file',
+    shortDescription: 'Compress multiple files or folders into a custom .ZIP archive with compression levels.',
+    fullDescription: 'Package and compress multiple files or entire folder directories into a single .zip archive. Select custom compression levels (STORE or DEFLATE Levels 1-9) and generate archives 100% in-browser using JSZip.',
+    icon: 'FolderArchive',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'ZIP Archive Creator Online – Compress Files & Folders | ToolBoxX',
+    metaDescription: 'Create ZIP archives online for free. Compress multiple files and folders into a .zip file with custom compression levels in your browser.',
+    h1Heading: 'ZIP Archive Creator',
+    primaryKeyword: 'zip creator',
+    secondaryKeywords: ['create zip online', 'compress files to zip', 'zip maker', 'online zip archiver', 'folder to zip'],
+    features: [
+      { title: 'Multi-File & Folder Archiving', description: 'Drop multiple files and nested folder hierarchies simultaneously.' },
+      { title: 'Adjustable Compression Levels', description: 'Choose STORE (fastest) or DEFLATE Levels 1-9 for maximum space savings.' },
+      { title: '100% Client-Side JSZip', description: 'No file size limits imposed by network bandwidth; processed in RAM.' }
+    ],
+    howToSteps: [
+      { title: 'Add Files', description: 'Drag and drop files or folders into the upload zone.' },
+      { title: 'Set Archive Name', description: 'Name your .zip archive and choose a compression level.' },
+      { title: 'Generate Archive', description: 'Click Create .ZIP Archive to package files.' },
+      { title: 'Download ZIP', description: 'Save the compressed archive directly to your device.' }
+    ],
+    faqs: [
+      { question: 'Are my files uploaded to a remote server?', answer: 'No. The entire ZIP archive is built locally in your browser memory via JSZip.' }
+    ],
+    relatedToolIds: ['zip-extractor', 'bulk-renamer', 'file-size-converter', 'image-compressor']
+  },
+  {
+    id: 'zip-extractor',
+    name: 'ZIP Extractor & Viewer',
+    path: '/zip-extractor',
+    category: 'file',
+    shortDescription: 'Open, inspect, preview images and code files, and unpack any .ZIP archive in your browser.',
+    fullDescription: 'Upload and inspect any .zip archive file without extracting to disk first. Browse file hierarchies, preview images and source code files directly in your browser, and download individual assets or unpack all files.',
+    icon: 'PackageCheck',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'ZIP Extractor & Viewer Online – Unzip & Preview Files | ToolBoxX',
+    metaDescription: 'Extract and view ZIP archives online for free. Inspect file trees, preview images and text files, and download unpacked contents securely.',
+    h1Heading: 'ZIP Extractor & Archive Viewer',
+    primaryKeyword: 'zip extractor',
+    secondaryKeywords: ['unzip online', 'zip viewer', 'open zip file', 'extract zip in browser', 'preview zip contents'],
+    features: [
+      { title: 'In-Browser File Preview', description: 'Preview text, JSON, code files, and images without saving to disk.' },
+      { title: 'Selective File Extraction', description: 'Download specific individual files or unpack the entire archive at once.' },
+      { title: 'Archive File Tree Search', description: 'Filter and search through large archive directories by filename or extension.' }
+    ],
+    howToSteps: [
+      { title: 'Upload ZIP', description: 'Drag and drop your .zip file into the browser.' },
+      { title: 'Inspect Contents', description: 'Browse the extracted file tree and check file sizes.' },
+      { title: 'Preview Files', description: 'Click any image or text file to inspect its content.' },
+      { title: 'Download Files', description: 'Save individual files or click Download All Files.' }
+    ],
+    faqs: [
+      { question: 'Can I preview password-protected ZIP files?', answer: 'Standard unencrypted ZIP archives are fully supported for live in-browser preview.' }
+    ],
+    relatedToolIds: ['zip-creator', 'bulk-renamer', 'file-size-converter']
+  },
+  {
+    id: 'bulk-renamer',
+    name: 'Bulk File Renamer',
+    path: '/bulk-renamer',
+    category: 'file',
+    shortDescription: 'Upload multiple files, apply prefix/suffix, sequential numbering, search & replace, and download in a ZIP.',
+    fullDescription: 'Rename dozens of files at once with powerful batch rules. Add prefixes/suffixes, apply sequential numbering templates (photo_01.jpg), search & replace with regex, change case, and download all renamed files in a single ZIP.',
+    icon: 'FolderPen',
+    isPopular: true,
+    badge: 'Productivity',
+    seoTitle: 'Bulk File Renamer Online – Batch Rename Files in ZIP | ToolBoxX',
+    metaDescription: 'Batch rename multiple files online for free. Add prefixes, suffixes, sequential numbers, change case, and download renamed files in a ZIP archive.',
+    h1Heading: 'Bulk File Renamer',
+    primaryKeyword: 'bulk file renamer',
+    secondaryKeywords: ['batch file renamer', 'rename multiple files online', 'sequential file numbering', 'bulk file rename tool'],
+    features: [
+      { title: 'Sequential Numbering', description: 'Template names with automatic zero-padding (e.g. item_001.png, item_002.png).' },
+      { title: 'Live Before/After Preview', description: 'Instant comparison table showing proposed names with collision warnings.' },
+      { title: 'Search & Replace with Regex', description: 'Find and replace patterns across all filenames simultaneously.' },
+      { title: 'ZIP Batch Download', description: 'Download all renamed assets packaged neatly in a single ZIP.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Files', description: 'Select multiple files you want to batch rename.' },
+      { title: 'Configure Rules', description: 'Set prefixes, suffixes, numbering, or search & replace rules.' },
+      { title: 'Review Comparison', description: 'Check the Before/After table for accuracy.' },
+      { title: 'Download ZIP', description: 'Click Download Renamed Files (.ZIP) to save.' }
+    ],
+    faqs: [
+      { question: 'Are file contents modified during renaming?', answer: 'No. File contents remain 100% untouched; only the filename and archive structure are modified.' }
+    ],
+    relatedToolIds: ['zip-creator', 'zip-extractor', 'file-size-converter']
+  },
+  {
+    id: 'file-size-converter',
+    name: 'File Size & Storage Converter',
+    path: '/file-size-converter',
+    category: 'file',
+    shortDescription: 'Convert Bytes, KB, MB, GB, TB, PB with binary (1024) and decimal (1000) standards + transfer time calculator.',
+    fullDescription: 'Convert between data storage units from Bits and Bytes to Petabytes. Toggle binary (KiB/MiB/GiB) vs decimal (KB/MB/GB) standards, calculate network download/upload transfer times, and search the standard MIME types directory.',
+    icon: 'HardDrive',
+    isPopular: true,
+    badge: 'Utility',
+    seoTitle: 'File Size & Storage Unit Converter – Bytes, MB, GB, TB | ToolBoxX',
+    metaDescription: 'Convert data storage units (Bytes, KB, MB, GB, TB, PB) online. Calculate network download times and search standard MIME types and extensions.',
+    h1Heading: 'File Size & Data Storage Converter',
+    primaryKeyword: 'file size converter',
+    secondaryKeywords: ['bytes to mb', 'mb to gb converter', 'data storage converter', 'download time calculator', 'mime type directory'],
+    features: [
+      { title: 'Binary & Decimal Standards', description: 'Toggle between IEC Binary (1024) and SI Decimal (1000) storage bases.' },
+      { title: 'Transfer Time Calculator', description: 'Estimate upload/download durations across 4G, 5G, Fiber, and Gigabit connections.' },
+      { title: 'MIME Types Directory', description: 'Searchable database of standard file extensions, content types, and descriptions.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Value', description: 'Type the data size and choose a source unit (MB, GB, TB, etc.).' },
+      { title: 'Select Standard', description: 'Toggle Binary (1024) or Decimal (1000) mode.' },
+      { title: 'Review Equivalents', description: 'Inspect converted values across all storage tiers.' },
+      { title: 'Calculate Transfer Time', description: 'Select a network speed to see download duration.' }
+    ],
+    faqs: [
+      { question: 'What is the difference between MB and MiB?', answer: '1 MB (Megabyte) = 1,000,000 bytes (Base 10 / SI). 1 MiB (Mebibyte) = 1,048,576 bytes (Base 2 / IEC).' }
+    ],
+    relatedToolIds: ['zip-creator', 'image-compressor', 'bulk-renamer']
   }
 ];
 
 export const CATEGORIES = [
+  {
+    id: 'developer',
+    name: 'Developer Tools',
+    description: 'JSON formatters, minifiers, JWT inspectors, Base64 converters, regex testers, hashes, and color converters.',
+    icon: 'Code2'
+  },
+  {
+    id: 'file',
+    name: 'File & Archive Tools',
+    description: 'Create and extract ZIP archives, bulk rename files with custom rules, and convert data storage units.',
+    icon: 'FolderArchive'
+  },
+  {
+    id: 'business',
+    name: 'Business & Marketing',
+    description: 'Professional tools for barcodes, UTM links, meta tags, schema markup, invoices, email signatures, resumes, and passwords.',
+    icon: 'Briefcase'
+  },
+  {
+    id: 'ai',
+    name: 'AI Tools',
+    description: 'Intelligent AI text generators, summarizers, rewriters, email assistants, and proofreaders.',
+    icon: 'Sparkles'
+  },
   {
     id: 'pdf',
     name: 'PDF Tools',

@@ -70,6 +70,19 @@ import {
   Sheet,
   MonitorPlay,
   ScanSearch,
+  Stamp,
+  Pipette,
+  Globe,
+  Share2,
+  Code2,
+  FolderArchive,
+  Briefcase,
+  FileCode,
+  Binary,
+  Link as LinkIcon,
+  Cpu,
+  FileSignature,
+  Key,
 } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.FC<any>> = {
@@ -135,6 +148,15 @@ const ICON_MAP: Record<string, React.FC<any>> = {
   EyeOff,
   GitCompare,
   Code,
+  Code2,
+  FolderArchive,
+  Briefcase,
+  FileCode,
+  Binary,
+  Link: LinkIcon,
+  Cpu,
+  FileSignature,
+  Key,
   Camera,
   FileInput,
   Table,
@@ -143,6 +165,10 @@ const ICON_MAP: Record<string, React.FC<any>> = {
   Sheet,
   MonitorPlay,
   ScanSearch,
+  Stamp,
+  Pipette,
+  Globe,
+  Share2,
 };
 
 export const DynamicIcon: React.FC<{ name: string; className?: string }> = ({

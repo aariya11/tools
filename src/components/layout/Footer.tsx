@@ -15,8 +15,10 @@ export const Footer: React.FC = () => {
 
   const imageTools = getToolsByCategory('images');
   const pdfTools = getToolsByCategory('pdf');
+  const aiTools = getToolsByCategory('ai');
+  const devTools = getToolsByCategory('developer');
+  const bizTools = getToolsByCategory('business');
   const textTools = getToolsByCategory('text');
-  const generatorTools = getToolsByCategory('generators');
 
   return (
     <>
@@ -60,7 +62,7 @@ export const Footer: React.FC = () => {
 
         {/* Main Multi-Column Directory */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-10">
             {/* Col 1: Brand Wordmark & Mission */}
             <div className="col-span-2 space-y-4">
               <Link to="/" className="flex items-center gap-3">
@@ -72,10 +74,10 @@ export const Footer: React.FC = () => {
                 </span>
               </Link>
               <p className="text-sm text-[var(--c-muted)] max-w-sm leading-relaxed font-normal">
-                Simple online tools for everyday digital tasks. High-performance browser utilities for PDFs, images, text, and productivity.
+                High-performance client-side productivity utilities for PDFs, images, AI workflows, and developer tools. 100% free and private.
               </p>
               <div className="flex items-center gap-4 text-xs font-mono text-[var(--c-subtle)]">
-                <span>100% Free</span>
+                <span>60+ Free Tools</span>
                 <span>•</span>
                 <span>Zero File Uploads</span>
                 <span>•</span>
@@ -94,15 +96,12 @@ export const Footer: React.FC = () => {
                     to="/pdf-tools"
                     className="font-bold text-[var(--c-accent)] hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
                   >
-                    PDF Hub (30 Tools) <ArrowUpRight className="w-3 h-3 text-[var(--c-gold)]" />
+                    PDF Hub (30+) <ArrowUpRight className="w-3 h-3 text-[var(--c-gold)]" />
                   </Link>
                 </li>
-                {pdfTools.filter(t => t.id !== 'pdf-tools').slice(0, 7).map((t) => (
+                {pdfTools.filter(t => t.id !== 'pdf-tools').slice(0, 6).map((t) => (
                   <li key={t.id}>
-                    <Link
-                      to={t.path}
-                      className="hover:text-[var(--c-text)] transition-colors"
-                    >
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
                     </Link>
                   </li>
@@ -110,18 +109,15 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 3: Image Tools */}
+            {/* Col 3: Image Suite */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                Image Tools
+                Image Suite
               </h5>
               <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
-                {imageTools.map((t) => (
+                {imageTools.slice(0, 7).map((t) => (
                   <li key={t.id}>
-                    <Link
-                      to={t.path}
-                      className="hover:text-[var(--c-text)] transition-colors"
-                    >
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
                     </Link>
                   </li>
@@ -129,52 +125,49 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 4: Text & Utilities */}
+            {/* Col 4: AI & Business */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                Text & Utilities
+                AI & Business
               </h5>
               <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
-                {textTools.map((t) => (
+                {aiTools.slice(0, 4).map((t) => (
                   <li key={t.id}>
-                    <Link
-                      to={t.path}
-                      className="hover:text-[var(--c-text)] transition-colors"
-                    >
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
                     </Link>
                   </li>
                 ))}
-                {generatorTools.map((t) => (
+                {bizTools.slice(0, 3).map((t) => (
                   <li key={t.id}>
-                    <Link
-                      to={t.path}
-                      className="hover:text-[var(--c-text)] transition-colors"
-                    >
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
                     </Link>
                   </li>
                 ))}
-                <li className="pt-2 border-t border-[var(--c-border)]/60">
-                  <Link to="/about" className="hover:text-[var(--c-text)] transition-colors">
-                    About ToolBoxX
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy" className="hover:text-[var(--c-text)] transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms" className="hover:text-[var(--c-text)] transition-colors">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-[var(--c-text)] transition-colors">
-                    Contact Support
-                  </Link>
-                </li>
+              </ul>
+            </div>
+
+            {/* Col 5: Developer & Text */}
+            <div>
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
+                Developer & Text
+              </h5>
+              <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
+                {devTools.slice(0, 4).map((t) => (
+                  <li key={t.id}>
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
+                      {t.name}
+                    </Link>
+                  </li>
+                ))}
+                {textTools.slice(0, 3).map((t) => (
+                  <li key={t.id}>
+                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
+                      {t.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

@@ -60,16 +60,20 @@ export const AllToolsPage: React.FC = () => {
             { id: 'all', label: 'All Categories' },
             { id: 'pdf', label: 'PDF Tools' },
             { id: 'images', label: 'Image Tools' },
+            { id: 'ai', label: 'AI Suite' },
+            { id: 'developer', label: 'Developer Tools' },
+            { id: 'business', label: 'Business & Marketing' },
             { id: 'text', label: 'Text Tools' },
-            { id: 'generators', label: 'Utilities' },
+            { id: 'file', label: 'File & Archive' },
+            { id: 'generators', label: 'Generators' },
           ].map((cat) => (
             <button
               key={cat.id}
               onClick={() => setCategory(cat.id)}
               className={`px-4 py-2 rounded-xl font-semibold transition-all cursor-pointer ${
                 category === cat.id
-                  ? 'bg-[#B79B70] text-[#11110F] font-bold shadow-xs'
-                  : 'bg-[#161513] border border-[#2A2824] text-[#B8B2A7] hover:text-[#F5F1E8] hover:border-[#3D3A34]'
+                  ? 'bg-[var(--c-gold)] text-[var(--c-bg)] font-bold shadow-xs'
+                  : 'bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-muted)] hover:text-[var(--c-text)] hover:border-[var(--c-border-hover)]'
               }`}
             >
               {cat.label}
@@ -80,9 +84,9 @@ export const AllToolsPage: React.FC = () => {
 
       {/* Tools Grid */}
       {filtered.length === 0 ? (
-        <div className="p-12 text-center text-[#B8B2A7] bg-[#161513] rounded-3xl border border-[#2A2824]">
-          <p className="font-semibold text-lg text-[#F5F1E8]">No tools found matching "{query}"</p>
-          <p className="text-sm mt-1 text-[#7A756D]">Try clearing your search query or selecting another category.</p>
+        <div className="p-12 text-center text-[var(--c-muted)] bg-[var(--c-surface)] rounded-3xl border border-[var(--c-border)]">
+          <p className="font-semibold text-lg text-[var(--c-text)]">No tools found matching "{query}"</p>
+          <p className="text-sm mt-1 text-[var(--c-subtle)]">Try clearing your search query or selecting another category.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

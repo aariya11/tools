@@ -30,6 +30,9 @@ export const HomePage: React.FC = () => {
   const popularTools = getPopularTools();
   const pdfTools = getToolsByCategory('pdf');
   const imageTools = getToolsByCategory('images');
+  const aiTools = getToolsByCategory('ai');
+  const devTools = getToolsByCategory('developer');
+  const bizTools = getToolsByCategory('business');
   const textTools = getToolsByCategory('text');
   const generatorTools = getToolsByCategory('generators');
 
@@ -38,11 +41,13 @@ export const HomePage: React.FC = () => {
   const QUICK_SUGGESTIONS = [
     { label: 'Compress PDF', path: '/pdf-compress' },
     { label: 'Merge PDF', path: '/pdf-merge' },
-    { label: 'Edit PDF', path: '/edit-pdf' },
+    { label: 'PDF Editor', path: '/edit-pdf' },
+    { label: 'Background Remover', path: '/background-remover' },
+    { label: 'AI Summarizer', path: '/ai-summarizer' },
+    { label: 'JSON Formatter', path: '/json-formatter' },
+    { label: 'Resume Builder', path: '/resume-builder' },
+    { label: 'Invoice Generator', path: '/invoice-generator' },
     { label: 'Image Compressor', path: '/image-compressor' },
-    { label: 'JPG to PNG', path: '/jpg-to-png' },
-    { label: 'Word Counter', path: '/word-counter' },
-    { label: 'Text to Handwriting', path: '/text-to-handwriting' },
     { label: 'QR Code Generator', path: '/qr-code-generator' },
   ];
 
@@ -345,19 +350,87 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. CATEGORY SHOWCASE: TEXT & UTILITY TOOLS */}
+      {/* 5. CATEGORY SHOWCASE: AI & DEVELOPER TOOLS */}
       {/* ========================================================================= */}
       <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Text Tools Column */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* AI Tools Column */}
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-[var(--c-gold)]" />
+                    <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                      AI Productivity Tools
+                    </h3>
+                  </div>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">Intelligent summaries, content rewriters, grammar checkers & email drafts</p>
+                </div>
+                <Link to="/category/ai" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                  All AI Tools →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {aiTools.slice(0, 4).map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+              </div>
+            </div>
+
+            {/* Developer Tools Column */}
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
-                    Text Tools
+                    Developer Tools
                   </h3>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">Word counts, case conversions, and handwriting generation</p>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">JSON formatters, code minifiers, Base64, JWT, hashes, and regex testers</p>
+                </div>
+                <Link to="/category/developer" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                  All Developer Tools →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {devTools.slice(0, 4).map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Business Tools Column */}
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                    Business & Marketing
+                  </h3>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">Invoices, resume builders, UTM campaign trackers & barcode generators</p>
+                </div>
+                <Link to="/category/business" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                  All Business Tools →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {bizTools.slice(0, 4).map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+              </div>
+            </div>
+
+            {/* Text & Archive Column */}
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                    Text & Utilities
+                  </h3>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">Word counters, QR generators, markdown editors, and ZIP archivers</p>
                 </div>
                 <Link to="/category/text" className="text-xs font-semibold text-[#B79B70] hover:underline">
                   All Text Tools →
@@ -365,28 +438,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {textTools.map((tool) => (
-                  <ToolCard key={tool.id} tool={tool} />
-                ))}
-              </div>
-            </div>
-
-            {/* Utility & QR Column */}
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
-                    Utility Tools
-                  </h3>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">QR code generators with custom logo embedding and export</p>
-                </div>
-                <Link to="/category/generators" className="text-xs font-semibold text-[#B79B70] hover:underline">
-                  All Utilities →
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {generatorTools.map((tool) => (
+                {textTools.slice(0, 3).map((tool) => (
                   <ToolCard key={tool.id} tool={tool} />
                 ))}
                 <Link
@@ -395,7 +447,7 @@ export const HomePage: React.FC = () => {
                 >
                   <Sliders className="w-8 h-8 text-[#B79B70] mb-2 group-hover:scale-110 transition-transform" />
                   <span className="text-sm font-bold text-[#F5F1E8]">Browse All Tools</span>
-                  <span className="text-xs text-[#B8B2A7] mt-1">39+ Free Utilities</span>
+                  <span className="text-xs text-[#B8B2A7] mt-1">60+ Free Utilities</span>
                 </Link>
               </div>
             </div>

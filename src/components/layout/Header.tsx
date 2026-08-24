@@ -14,6 +14,9 @@ import {
   ShieldCheck,
   Palette,
   Globe,
+  Sparkles,
+  Briefcase,
+  Code2,
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -87,65 +90,89 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 text-sm font-medium text-[var(--c-muted)]">
+          <nav className="hidden xl:flex items-center space-x-1 text-sm font-medium text-[var(--c-muted)]">
             <Link
               to="/pdf-tools"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all duration-150 ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
                 location.pathname.includes('pdf')
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <FileText className="w-4 h-4 text-[var(--c-gold)]" />
-              <span>{t('nav.pdfTools', 'PDF Tools')}</span>
+              <span>PDF</span>
             </Link>
 
             <Link
               to="/category/images"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('images') || location.pathname.includes('image') || location.pathname.includes('png') || location.pathname.includes('jpg')
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('image') || location.pathname.includes('png') || location.pathname.includes('jpg')
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <ImageIcon className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>{t('nav.imageTools', 'Image Tools')}</span>
+              <span>Images</span>
+            </Link>
+
+            <Link
+              to="/category/ai"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('ai-') || location.pathname.includes('/category/ai')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-[var(--c-gold)]" />
+              <span>AI</span>
+            </Link>
+
+            <Link
+              to="/category/developer"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('developer') || location.pathname.includes('json') || location.pathname.includes('jwt') || location.pathname.includes('base64') || location.pathname.includes('regex')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <Code2 className="w-4 h-4 text-[var(--c-muted)]" />
+              <span>Developer</span>
+            </Link>
+
+            <Link
+              to="/category/business"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('business') || location.pathname.includes('invoice') || location.pathname.includes('resume') || location.pathname.includes('utm') || location.pathname.includes('barcode')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 text-[var(--c-muted)]" />
+              <span>Business</span>
             </Link>
 
             <Link
               to="/category/text"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('text') || location.pathname.includes('word') || location.pathname.includes('case')
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('text') || location.pathname.includes('word') || location.pathname.includes('case') || location.pathname.includes('clean')
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <Type className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>{t('nav.textTools', 'Text Tools')}</span>
-            </Link>
-
-            <Link
-              to="/qr-code-generator"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('qr')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <QrCode className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>{t('nav.generators', 'Utilities')}</span>
+              <span>Text</span>
             </Link>
 
             <Link
               to="/all-tools"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all duration-150 ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
                 location.pathname === '/all-tools'
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <Grid className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>{t('nav.allTools', 'All Tools')}</span>
+              <span>All 60+ Tools</span>
             </Link>
           </nav>
 
@@ -232,11 +259,35 @@ export const Header: React.FC = () => {
               </Link>
 
               <Link
+                to="/category/ai"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <Sparkles className="w-5 h-5 text-[var(--c-gold)]" />
+                <span>AI Productivity Suite</span>
+              </Link>
+
+              <Link
+                to="/category/developer"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <Code2 className="w-5 h-5 text-[var(--c-muted)]" />
+                <span>Developer Tools (JSON, JWT, Hash)</span>
+              </Link>
+
+              <Link
+                to="/category/business"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <Briefcase className="w-5 h-5 text-[var(--c-muted)]" />
+                <span>Business & Marketing Tools</span>
+              </Link>
+
+              <Link
                 to="/category/text"
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <Type className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>{t('nav.textTools', 'Text Tools')}</span>
+                <span>Text & Document Tools</span>
               </Link>
 
               <Link
