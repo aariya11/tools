@@ -83,42 +83,42 @@ export const ProtectPdf: React.FC = () => {
   return (
     <div className="space-y-8">
       {!isDone && (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-[var(--c-surface)] rounded-2xl p-6 shadow-sm border border-[var(--c-border)] max-w-xl mx-auto">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="p-3 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl">
+            <div className="p-3 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-xl">
               <File className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200">{file.name}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{formatFileSize(file.size)}</p>
+              <h3 className="font-semibold text-[var(--c-text)]">{file.name}</h3>
+              <p className="text-sm text-[var(--c-subtle)]">{formatFileSize(file.size)}</p>
             </div>
           </div>
           
-          <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-900/50 flex space-x-3">
-            <AlertCircle className="w-5 h-5 text-yellow-600 dark:text-yellow-500 flex-shrink-0" />
-            <p className="text-sm text-yellow-800 dark:text-yellow-400">
+          <div className="mb-6 p-4 bg-amber-500/10 rounded-xl border border-amber-500/30 flex space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+            <p className="text-sm text-amber-400">
               Note: This tool updates metadata and adds a watermark. For full cryptographic password protection, use Adobe Acrobat or a server-side tool.
             </p>
           </div>
           
           <div className="space-y-4 mb-6">
             <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Owner Password</label>
-              <input type="password" value={ownerPassword} onChange={(e) => setOwnerPassword(e.target.value)} className="block w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" placeholder="Required for changing permissions" />
+              <label className="block text-sm font-medium text-[var(--c-text)] mb-1">Owner Password</label>
+              <input type="password" value={ownerPassword} onChange={(e) => setOwnerPassword(e.target.value)} className="block w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" placeholder="Required for changing permissions" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">User Password (Optional)</label>
-              <input type="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} className="block w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" placeholder="Required for opening" />
+              <label className="block text-sm font-medium text-[var(--c-text)] mb-1">User Password (Optional)</label>
+              <input type="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} className="block w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" placeholder="Required for opening" />
             </div>
             
             <div className="space-y-2 mt-4">
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" checked={canPrint} onChange={(e) => setCanPrint(e.target.checked)} className="rounded text-purple-600 focus:ring-purple-500" />
-                <span className="text-sm text-slate-700 dark:text-slate-300">Allow Printing</span>
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" checked={canPrint} onChange={(e) => setCanPrint(e.target.checked)} className="rounded accent-[var(--c-gold)]" />
+                <span className="text-sm text-[var(--c-muted)]">Allow Printing</span>
               </label>
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" checked={canCopy} onChange={(e) => setCanCopy(e.target.checked)} className="rounded text-purple-600 focus:ring-purple-500" />
-                <span className="text-sm text-slate-700 dark:text-slate-300">Allow Copying</span>
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" checked={canCopy} onChange={(e) => setCanCopy(e.target.checked)} className="rounded accent-[var(--c-gold)]" />
+                <span className="text-sm text-[var(--c-muted)]">Allow Copying</span>
               </label>
             </div>
           </div>
@@ -126,12 +126,12 @@ export const ProtectPdf: React.FC = () => {
           <button
             onClick={processFile}
             disabled={isProcessing}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 transition-colors"
+            className="w-full flex justify-center items-center py-3.5 px-4 rounded-xl shadow-md text-sm font-bold text-[var(--c-bg)] bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 transition-all cursor-pointer"
           >
             {isProcessing ? (
-              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" />Processing...</>
+              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5" />Processing...</>
             ) : (
-              <><Lock className="-ml-1 mr-2 h-5 w-5 text-white" />Protect PDF</>
+              <><Lock className="-ml-1 mr-2 h-5 w-5" />Protect PDF</>
             )}
           </button>
         </div>

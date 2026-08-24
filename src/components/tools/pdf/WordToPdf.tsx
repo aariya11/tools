@@ -140,15 +140,15 @@ export const WordToPdf: React.FC = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700">
+      <div className="flex flex-col items-center justify-center p-8 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
         {!isComplete ? (
           <div className="flex flex-col items-center space-y-4">
-            <div className="p-4 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">
+            <div className="p-4 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-full">
               <FileText className="w-8 h-8" />
             </div>
-            <p className="text-center text-slate-600 dark:text-slate-300">Ready to convert <strong>{file.name}</strong> to PDF.</p>
+            <p className="text-center text-[var(--c-muted)]">Ready to convert <strong>{file.name}</strong> to PDF.</p>
             {warnings.length > 0 && (
-              <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 rounded-lg max-w-md w-full flex items-start space-x-3">
+              <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-xl max-w-md w-full flex items-start space-x-3">
                 <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="font-semibold mb-1">Conversion Warnings:</p>
@@ -161,7 +161,7 @@ export const WordToPdf: React.FC = () => {
             <button
               onClick={processFile}
               disabled={isProcessing}
-              className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mt-6 px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {isProcessing ? (
                 <>
@@ -175,17 +175,17 @@ export const WordToPdf: React.FC = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-[var(--c-card)] text-emerald-400 border border-[var(--c-border)] rounded-full flex items-center justify-center">
               <FileText className="w-8 h-8" />
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Conversion Complete!</h3>
-              <p className="text-slate-600 dark:text-slate-400">Your PDF is ready for download.</p>
+              <h3 className="text-xl font-semibold text-[var(--c-text)] mb-2">Conversion Complete!</h3>
+              <p className="text-[var(--c-muted)]">Your PDF is ready for download.</p>
             </div>
             <div className="flex space-x-4">
               <button
                 onClick={handleDownload}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2"
+                className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 cursor-pointer"
               >
                 <Download className="w-5 h-5" />
                 <span>Download PDF</span>

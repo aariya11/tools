@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, FileText, Type } from 'lucide-react';
+import { Download, FileText, Type, Settings } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { FileUploader } from '../../common/FileUploader';
 import { StatCard } from '../../common/StatCard';
@@ -79,66 +79,64 @@ export const AddWatermark: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} />
-        <StatCard label="File Size" value={formatFileSize(file.size)} icon={<FileText size={20} />} />
+        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+        <StatCard label="File Size" value={formatFileSize(file.size)} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
       </div>
       
-      <div className="bg-slate-50 dark:bg-slate-800/40 p-6 rounded-2xl space-y-4">
-        <h3 className="font-semibold flex items-center text-slate-800 dark:text-slate-200">
-          <Type size={18} className="mr-2" /> Watermark Settings
+      <div className="bg-[var(--c-surface)] p-6 rounded-2xl space-y-4 border border-[var(--c-border)] max-w-xl mx-auto">
+        <h3 className="font-semibold flex items-center text-[var(--c-text)]">
+          <Settings size={18} className="mr-2 text-[var(--c-gold)]" /> Watermark Settings
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="sm:col-span-2">
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Watermark Text</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Watermark Text</label>
             <input 
               type="text" 
               value={text} 
               onChange={e => setText(e.target.value)}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2"
+              className="w-full bg-[var(--c-card)] text-[var(--c-text)] border border-[var(--c-border)] rounded-xl px-4 py-2.5 outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
               placeholder="e.g. CONFIDENTIAL"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Font Size ({fontSize}pt)</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Font Size ({fontSize}pt)</label>
             <input 
               type="range" min="20" max="120" 
               value={fontSize} 
               onChange={e => setFontSize(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-[var(--c-gold)]"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Opacity ({Math.round(opacity * 100)}%)</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Opacity ({Math.round(opacity * 100)}%)</label>
             <input 
               type="range" min="0.05" max="0.5" step="0.01" 
               value={opacity} 
               onChange={e => setOpacity(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-[var(--c-gold)]"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Rotation Angle ({angle}°)</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Rotation Angle ({angle}°)</label>
             <input 
               type="range" min="-90" max="90" 
               value={angle} 
               onChange={e => setAngle(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-[var(--c-gold)]"
             />
           </div>
         </div>
-      </div>
-      
-      <div className="flex justify-end">
+
         <button
           onClick={handleProcess}
           disabled={isProcessing || !text}
-          className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-50 transition flex items-center"
+          className="w-full mt-4 py-3.5 px-6 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl hover:bg-[var(--c-gold)] disabled:opacity-50 transition flex items-center justify-center cursor-pointer shadow-md"
         >
-          {isProcessing ? 'Processing...' : <><Download size={18} className="mr-2" /> Download PDF</>}
+          {isProcessing ? 'Processing...' : <><Download size={18} className="mr-2" /> Download Watermarked PDF</>}
         </button>
       </div>
 

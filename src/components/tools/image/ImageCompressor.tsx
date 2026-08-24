@@ -127,24 +127,24 @@ export const ImageCompressor: React.FC = () => {
           <StatCard
             label="Original Size"
             value={formatFileSize(compressedResult.originalSize)}
-            className="bg-slate-50 dark:bg-slate-800/40"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
           <StatCard
             label="Compressed Size"
             value={formatFileSize(compressedResult.compressedSize)}
             badge={isProcessing ? 'Optimizing...' : `${savings.percentage}% Saved`}
             badgeType={savings.percentage > 0 ? 'success' : 'neutral'}
-            className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
           <StatCard
             label="Storage Saved"
             value={formatFileSize(savings.savedBytes)}
-            className="bg-slate-50 dark:bg-slate-800/40"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
           <StatCard
             label="Resolution"
             value={`${compressedResult.width} × ${compressedResult.height}`}
-            className="bg-slate-50 dark:bg-slate-800/40"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
         </div>
       )}
@@ -152,15 +152,15 @@ export const ImageCompressor: React.FC = () => {
       {/* Controls & Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Column: Compression Controls */}
-        <div className="lg:col-span-4 space-y-6 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
-            <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-              <Sliders className="w-4 h-4 text-indigo-500" />
+        <div className="lg:col-span-4 space-y-6 bg-[var(--c-surface)] p-6 rounded-2xl border border-[var(--c-border)]">
+          <div className="flex items-center justify-between pb-3 border-b border-[var(--c-border)]">
+            <h3 className="font-bold text-base text-[var(--c-text)] flex items-center gap-2">
+              <Sliders className="w-4 h-4 text-[var(--c-gold)]" />
               Settings
             </h3>
             <button
               onClick={handleReset}
-              className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
+              className="text-xs text-[var(--c-muted)] hover:text-[var(--c-text)] flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="w-3 h-3" /> Change File
             </button>
@@ -169,10 +169,10 @@ export const ImageCompressor: React.FC = () => {
           {/* Quality Slider */}
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <label className="font-semibold text-slate-700 dark:text-slate-300">
+              <label className="font-semibold text-[var(--c-text)]">
                 Quality:
               </label>
-              <span className="font-bold text-indigo-600 dark:text-indigo-400">
+              <span className="font-bold text-[var(--c-gold)]">
                 {quality}%
               </span>
             </div>
@@ -183,9 +183,9 @@ export const ImageCompressor: React.FC = () => {
               step="1"
               value={quality}
               onChange={(e) => setQuality(Number(e.target.value))}
-              className="w-full cursor-pointer h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none"
+              className="w-full cursor-pointer h-2 bg-[var(--c-card)] rounded-lg appearance-none accent-[var(--c-gold)]"
             />
-            <div className="flex justify-between text-[11px] text-slate-400">
+            <div className="flex justify-between text-[11px] text-[var(--c-subtle)]">
               <span>Smaller Size (5%)</span>
               <span>Balanced (75%)</span>
               <span>Best Quality (95%)</span>
@@ -194,7 +194,7 @@ export const ImageCompressor: React.FC = () => {
 
           {/* Output Format */}
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+            <label className="text-sm font-semibold text-[var(--c-text)]">
               Output Format:
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -207,10 +207,10 @@ export const ImageCompressor: React.FC = () => {
                   key={fmt.val}
                   type="button"
                   onClick={() => setTargetFormat(fmt.val as any)}
-                  className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all ${
+                  className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all cursor-pointer ${
                     targetFormat === fmt.val || (targetFormat === 'original' && fmt.val === 'image/jpeg')
-                      ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                      : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-indigo-300'
+                      ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] shadow-xs'
+                      : 'bg-[var(--c-card)] text-[var(--c-muted)] border-[var(--c-border)] hover:border-[var(--c-border-hover)]'
                   }`}
                 >
                   {fmt.label}
@@ -221,13 +221,13 @@ export const ImageCompressor: React.FC = () => {
 
           {/* Max Dimension */}
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+            <label className="text-sm font-semibold text-[var(--c-text)]">
               Max Dimension:
             </label>
             <select
               value={maxDimension}
               onChange={(e) => setMaxDimension(Number(e.target.value))}
-              className="w-full px-3 py-2 text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-3 py-2 text-sm rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] focus:outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
             >
               <option value="0">Original Dimensions (No scale down)</option>
               <option value="3840">4K Ultra HD (3840px max)</option>
@@ -239,11 +239,11 @@ export const ImageCompressor: React.FC = () => {
           </div>
 
           {/* Download Button CTA */}
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+          <div className="pt-4 border-t border-[var(--c-border)]">
             <button
               onClick={handleDownload}
               disabled={!compressedResult || isProcessing}
-              className="w-full py-3.5 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
             >
               <Download className="w-5 h-5" />
               {isProcessing ? 'Compressing...' : 'Download Compressed Image'}
@@ -254,39 +254,39 @@ export const ImageCompressor: React.FC = () => {
         {/* Right Column: Visual Comparison & Preview */}
         <div className="lg:col-span-8 flex flex-col space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
-              <Eye className="w-4 h-4 text-indigo-500" />
+            <span className="text-sm font-semibold text-[var(--c-text)] flex items-center gap-2">
+              <Eye className="w-4 h-4 text-[var(--c-gold)]" />
               Live Preview
             </span>
 
             {/* Preview Mode Switcher */}
-            <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold">
+            <div className="flex bg-[var(--c-surface)] border border-[var(--c-border)] p-1 rounded-xl text-xs font-semibold">
               <button
                 onClick={() => setPreviewMode('split')}
-                className={`px-3 py-1 rounded-lg transition-colors ${
+                className={`px-3 py-1 rounded-lg transition-colors cursor-pointer ${
                   previewMode === 'split'
-                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-xs'
-                    : 'text-slate-600 dark:text-slate-400'
+                    ? 'bg-[var(--c-card)] text-[var(--c-gold)] shadow-xs border border-[var(--c-border)]'
+                    : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
                 Side by Side
               </button>
               <button
                 onClick={() => setPreviewMode('original')}
-                className={`px-3 py-1 rounded-lg transition-colors ${
+                className={`px-3 py-1 rounded-lg transition-colors cursor-pointer ${
                   previewMode === 'original'
-                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-xs'
-                    : 'text-slate-600 dark:text-slate-400'
+                    ? 'bg-[var(--c-card)] text-[var(--c-gold)] shadow-xs border border-[var(--c-border)]'
+                    : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
                 Original
               </button>
               <button
                 onClick={() => setPreviewMode('compressed')}
-                className={`px-3 py-1 rounded-lg transition-colors ${
+                className={`px-3 py-1 rounded-lg transition-colors cursor-pointer ${
                   previewMode === 'compressed'
-                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-xs'
-                    : 'text-slate-600 dark:text-slate-400'
+                    ? 'bg-[var(--c-card)] text-[var(--c-gold)] shadow-xs border border-[var(--c-border)]'
+                    : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
                 Compressed
@@ -295,11 +295,11 @@ export const ImageCompressor: React.FC = () => {
           </div>
 
           {/* Preview Canvas Container */}
-          <div className="flex-1 min-h-[380px] rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-950/50 p-4 flex items-center justify-center overflow-hidden">
+          <div className="flex-1 min-h-[380px] rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] p-4 flex items-center justify-center overflow-hidden">
             {previewMode === 'split' && compressedResult && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-full">
-                <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <span className="text-xs font-semibold text-slate-500 mb-2">
+                <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)]">
+                  <span className="text-xs font-semibold text-[var(--c-muted)] mb-2">
                     Original ({formatFileSize(compressedResult.originalSize)})
                   </span>
                   <img
@@ -308,8 +308,8 @@ export const ImageCompressor: React.FC = () => {
                     className="max-h-64 object-contain rounded-lg shadow-sm"
                   />
                 </div>
-                <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60">
-                  <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
+                <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)]">
+                  <span className="text-xs font-semibold text-[var(--c-gold)] mb-2">
                     Compressed ({formatFileSize(compressedResult.compressedSize)})
                   </span>
                   <img

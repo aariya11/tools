@@ -158,29 +158,29 @@ export const ExcelToPdf: React.FC = () => {
         <StatCard label="File Size" value={formatFileSize(file.size)} />
       </div>
 
-      <div className="p-8 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700">
+      <div className="p-8 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
         {!isComplete ? (
           <div className="flex flex-col items-center space-y-6">
-            <div className="p-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">
+            <div className="p-4 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-full">
               <Table className="w-8 h-8" />
             </div>
             
             <div className="w-full max-w-md">
-              <h4 className="font-medium text-slate-900 dark:text-white mb-3">Select sheets to include:</h4>
+              <h4 className="font-medium text-[var(--c-text)] mb-3">Select sheets to include:</h4>
               <div className="space-y-2 max-h-60 overflow-y-auto">
                 {workbook?.SheetNames.map(sheetName => (
                   <button
                     key={sheetName}
                     onClick={() => toggleSheet(sheetName)}
-                    className={`w-full flex items-center justify-between p-3 rounded-lg border transition-colors ${
+                    className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all cursor-pointer ${
                       selectedSheets.includes(sheetName)
-                        ? 'bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800'
-                        : 'bg-white border-slate-200 dark:bg-slate-800 dark:border-slate-700'
+                        ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] font-bold'
+                        : 'bg-[var(--c-card)] text-[var(--c-text)] border-[var(--c-border)] hover:border-[var(--c-border-hover)]'
                     }`}
                   >
                     <span className="text-sm font-medium">{sheetName}</span>
                     {selectedSheets.includes(sheetName) && (
-                      <CheckSquare className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      <CheckSquare className="w-5 h-5 text-[var(--c-bg)]" />
                     )}
                   </button>
                 ))}
@@ -190,7 +190,7 @@ export const ExcelToPdf: React.FC = () => {
             <button
               onClick={processFile}
               disabled={isProcessing || selectedSheets.length === 0}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {isProcessing ? (
                 <>
@@ -204,16 +204,16 @@ export const ExcelToPdf: React.FC = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-[var(--c-card)] text-emerald-400 border border-[var(--c-border)] rounded-full flex items-center justify-center">
               <Table className="w-8 h-8" />
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Conversion Complete!</h3>
-              <p className="text-slate-600 dark:text-slate-400">Your PDF is ready for download.</p>
+              <h3 className="text-xl font-semibold text-[var(--c-text)] mb-2">Conversion Complete!</h3>
+              <p className="text-[var(--c-muted)]">Your PDF is ready for download.</p>
             </div>
             <button
               onClick={handleDownload}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 cursor-pointer"
             >
               <Download className="w-5 h-5" />
               <span>Download PDF</span>

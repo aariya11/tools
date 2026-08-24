@@ -81,31 +81,31 @@ export const JpgToPng: React.FC = () => {
         <StatCard
           label="Original JPG Size"
           value={formatFileSize(file.size)}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Converted PNG Size"
           value={convertedResult ? formatFileSize(convertedResult.blob.size) : 'Converting...'}
           badge="Lossless"
           badgeType="success"
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Dimensions"
           value={convertedResult ? `${convertedResult.width} × ${convertedResult.height}` : '...'}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
       </div>
 
       {/* Main Workspace */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 flex flex-col items-center text-center space-y-6">
-        <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
+      <div className="p-6 sm:p-8 rounded-2xl bg-[var(--c-surface)] border border-[var(--c-border)] flex flex-col items-center text-center space-y-6">
+        <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
           <CheckCircle2 className="w-5 h-5" />
           <span>Image ready in PNG format</span>
         </div>
 
         {convertedResult && (
-          <div className="max-h-80 max-w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-2 shadow-md">
+          <div className="max-h-80 max-w-full overflow-hidden rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] p-2 shadow-md">
             <img
               src={convertedResult.dataUrl}
               alt="Converted PNG preview"
@@ -118,7 +118,7 @@ export const JpgToPng: React.FC = () => {
           <button
             onClick={handleDownload}
             disabled={!convertedResult || isConverting}
-            className="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+            className="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
           >
             <Download className="w-5 h-5" />
             Download PNG File
@@ -126,7 +126,7 @@ export const JpgToPng: React.FC = () => {
 
           <button
             onClick={handleReset}
-            className="w-full sm:w-auto py-3.5 px-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold flex items-center justify-center gap-2"
+            className="w-full sm:w-auto py-3.5 px-5 rounded-2xl border border-[var(--c-border)] bg-[var(--c-card)] hover:bg-[var(--c-surface)] text-[var(--c-text)] text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer"
           >
             <RefreshCw className="w-4 h-4" /> Convert Another
           </button>

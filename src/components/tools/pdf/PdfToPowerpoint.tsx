@@ -90,17 +90,17 @@ export const PdfToPowerpoint: React.FC = () => {
         <StatCard label="File Size" value={formatFileSize(file.size)} />
       </div>
 
-      <div className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700">
+      <div className="flex flex-col items-center justify-center p-8 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
         {!isComplete ? (
           <div className="flex flex-col items-center space-y-6">
-            <div className="p-4 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">
+            <div className="p-4 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-full">
               <Presentation className="w-8 h-8" />
             </div>
-            <p className="text-center text-slate-600 dark:text-slate-300">Convert <strong>{file.name}</strong> to PowerPoint presentation.</p>
+            <p className="text-center text-[var(--c-muted)]">Convert <strong>{file.name}</strong> to PowerPoint presentation.</p>
             <button
               onClick={processFile}
               disabled={isProcessing}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {isProcessing ? (
                 <>
@@ -114,16 +114,16 @@ export const PdfToPowerpoint: React.FC = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-[var(--c-card)] text-emerald-400 border border-[var(--c-border)] rounded-full flex items-center justify-center">
               <Presentation className="w-8 h-8" />
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Conversion Complete!</h3>
-              <p className="text-slate-600 dark:text-slate-400">Your presentation is ready.</p>
+              <h3 className="text-xl font-semibold text-[var(--c-text)] mb-2">Conversion Complete!</h3>
+              <p className="text-[var(--c-muted)]">Your presentation is ready.</p>
             </div>
             <button
               onClick={handleDownload}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 cursor-pointer"
             >
               <Download className="w-5 h-5" />
               <span>Download PPTX</span>

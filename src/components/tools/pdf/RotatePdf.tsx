@@ -94,22 +94,22 @@ export const RotatePdf: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} />
-        <StatCard label="Total Pages" value={pages.length.toString()} icon={<FileText size={20} />} />
+        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+        <StatCard label="Total Pages" value={pages.length.toString()} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
       </div>
       
-      <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/40 p-4 rounded-2xl">
+      <div className="flex justify-between items-center bg-[var(--c-surface)] p-4 rounded-2xl border border-[var(--c-border)]">
         <button 
           onClick={handleRotateAll}
-          className="px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 rounded-xl hover:bg-blue-200 dark:hover:bg-blue-800/60 transition flex items-center"
+          className="px-4 py-2 bg-[var(--c-card)] text-[var(--c-text)] border border-[var(--c-border)] rounded-xl hover:border-[var(--c-gold)] transition flex items-center cursor-pointer text-sm font-semibold"
         >
-          <RotateCw size={18} className="mr-2" />
+          <RotateCw size={18} className="mr-2 text-[var(--c-gold)]" />
           Rotate All Pages
         </button>
         <button
           onClick={handleProcess}
           disabled={isProcessing || pages.length === 0}
-          className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-50 transition flex items-center"
+          className="px-6 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl hover:bg-[var(--c-gold)] disabled:opacity-50 transition flex items-center cursor-pointer shadow-md"
         >
           {isProcessing ? 'Processing...' : <><Download size={18} className="mr-2" /> Download PDF</>}
         </button>
@@ -117,9 +117,9 @@ export const RotatePdf: React.FC = () => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {pages.map((page, index) => (
-          <div key={page.id} className="relative group rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 flex flex-col items-center p-2">
-            <span className="absolute top-2 left-2 bg-slate-900/60 text-white text-xs px-2 py-1 rounded-md z-10">{page.id}</span>
-            <div className="w-full aspect-[1/1.4] flex items-center justify-center overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg">
+          <div key={page.id} className="relative group rounded-xl overflow-hidden border border-[var(--c-border)] bg-[var(--c-card)] flex flex-col items-center p-2">
+            <span className="absolute top-2 left-2 bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-text)] text-xs px-2 py-1 rounded-md z-10 font-bold">{page.id}</span>
+            <div className="w-full aspect-[1/1.4] flex items-center justify-center overflow-hidden bg-white rounded-lg">
               <img 
                 src={page.url} 
                 alt={`Page ${page.id}`} 
@@ -129,10 +129,10 @@ export const RotatePdf: React.FC = () => {
             </div>
             <button
               onClick={() => handleRotatePage(index)}
-              className="mt-2 w-full flex items-center justify-center py-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition"
+              className="mt-2 w-full flex items-center justify-center py-1.5 bg-[var(--c-surface)] hover:bg-[var(--c-gold)] hover:text-[var(--c-bg)] border border-[var(--c-border)] text-[var(--c-text)] text-xs font-semibold rounded-lg transition cursor-pointer"
             >
-              <RotateCw size={16} className="mr-1" />
-              Rotate
+              <RotateCw size={14} className="mr-1" />
+              Rotate 90°
             </button>
           </div>
         ))}

@@ -110,7 +110,7 @@ export const ComparePdf: React.FC = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-lg font-semibold mb-4">Original PDF</h3>
+          <h3 className="text-base font-bold mb-4 text-[var(--c-text)]">Original PDF</h3>
           <FileUploader
             accept="application/pdf"
             allowedFormatsText="PDF"
@@ -120,7 +120,7 @@ export const ComparePdf: React.FC = () => {
           />
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-4">Modified PDF</h3>
+          <h3 className="text-base font-bold mb-4 text-[var(--c-text)]">Modified PDF</h3>
           <FileUploader
             accept="application/pdf"
             allowedFormatsText="PDF"
@@ -136,36 +136,36 @@ export const ComparePdf: React.FC = () => {
   return (
     <div className="space-y-8">
       {isProcessing ? (
-        <div className="py-20 text-center text-slate-500">Analyzing differences...</div>
+        <div className="py-20 text-center text-[var(--c-subtle)]">Analyzing differences...</div>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <StatCard label="Visual Difference" value={`${diffPercent.toFixed(2)}%`} />
-            <StatCard label="Original Size" value={(file1.size / 1024 / 1024).toFixed(2) + ' MB'} />
-            <StatCard label="Modified Size" value={(file2.size / 1024 / 1024).toFixed(2) + ' MB'} />
+            <StatCard label="Visual Difference" value={`${diffPercent.toFixed(2)}%`} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+            <StatCard label="Original Size" value={(file1.size / 1024 / 1024).toFixed(2) + ' MB'} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+            <StatCard label="Modified Size" value={(file2.size / 1024 / 1024).toFixed(2) + ' MB'} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="border rounded-xl bg-slate-50 dark:bg-slate-800/40 p-2">
-              <h4 className="text-center font-medium mb-2 text-slate-600">Original</h4>
-              {img1 && <img src={img1} alt="Original" className="w-full h-auto shadow" />}
+            <div className="border border-[var(--c-border)] rounded-2xl bg-[var(--c-surface)] p-3">
+              <h4 className="text-center font-semibold mb-2 text-[var(--c-muted)] text-sm">Original</h4>
+              {img1 && <img src={img1} alt="Original" className="w-full h-auto shadow rounded-lg border border-[var(--c-border)]" />}
             </div>
-            <div className="border rounded-xl bg-indigo-50 dark:bg-indigo-900/20 p-2">
-              <h4 className="text-center font-medium mb-2 text-indigo-600 flex justify-center items-center gap-2">
+            <div className="border border-[var(--c-border)] rounded-2xl bg-[var(--c-surface)] p-3">
+              <h4 className="text-center font-semibold mb-2 text-[var(--c-gold)] flex justify-center items-center gap-2 text-sm">
                 <SplitSquareHorizontal size={16} /> Difference Overlay
               </h4>
-              {diffImg && <img src={diffImg} alt="Diff" className="w-full h-auto shadow" />}
+              {diffImg && <img src={diffImg} alt="Diff" className="w-full h-auto shadow rounded-lg border border-[var(--c-border)]" />}
             </div>
-            <div className="border rounded-xl bg-slate-50 dark:bg-slate-800/40 p-2">
-              <h4 className="text-center font-medium mb-2 text-slate-600">Modified</h4>
-              {img2 && <img src={img2} alt="Modified" className="w-full h-auto shadow" />}
+            <div className="border border-[var(--c-border)] rounded-2xl bg-[var(--c-surface)] p-3">
+              <h4 className="text-center font-semibold mb-2 text-[var(--c-muted)] text-sm">Modified</h4>
+              {img2 && <img src={img2} alt="Modified" className="w-full h-auto shadow rounded-lg border border-[var(--c-border)]" />}
             </div>
           </div>
         </>
       )}
 
-      <div className="flex justify-between items-center">
-        <button onClick={handleReset} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg">Compare New Files</button>
+      <div className="flex justify-end items-center">
+        <button onClick={handleReset} className="px-5 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold hover:bg-[var(--c-gold)] rounded-xl transition cursor-pointer shadow-md text-sm">Compare New Files</button>
       </div>
       
       <PostCompletionRecommendations currentToolId="compare-pdf" onReset={handleReset} />

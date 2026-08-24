@@ -63,30 +63,30 @@ export const UnlockPdf: React.FC = () => {
   return (
     <div className="space-y-8">
       {!isDone && (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-[var(--c-surface)] rounded-2xl p-6 shadow-sm border border-[var(--c-border)] max-w-xl mx-auto">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl">
+            <div className="p-3 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-xl">
               <File className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200">{file.name}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{formatFileSize(file.size)}</p>
+              <h3 className="font-semibold text-[var(--c-text)]">{file.name}</h3>
+              <p className="text-sm text-[var(--c-subtle)]">{formatFileSize(file.size)}</p>
             </div>
           </div>
           
           <div className="mb-6">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--c-text)] mb-2">
               Password (optional if you want to try without first)
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Key className="h-5 w-5 text-slate-400" />
+                <Key className="h-5 w-5 text-[var(--c-subtle)]" />
               </div>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full pl-10 pr-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl leading-5 bg-white dark:bg-slate-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                className="block w-full pl-10 pr-3 py-2.5 border border-[var(--c-border)] rounded-xl leading-5 bg-[var(--c-card)] text-[var(--c-text)] placeholder-[var(--c-subtle)] focus:outline-none focus:ring-1 focus:ring-[var(--c-gold)] text-sm"
                 placeholder="Enter document password"
               />
             </div>
@@ -95,16 +95,16 @@ export const UnlockPdf: React.FC = () => {
           <button
             onClick={processFile}
             disabled={isProcessing}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full flex justify-center items-center py-3.5 px-4 rounded-xl shadow-md text-sm font-bold text-[var(--c-bg)] bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 transition-all cursor-pointer"
           >
             {isProcessing ? (
               <>
-                <RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" />
+                <RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5" />
                 Unlocking...
               </>
             ) : (
               <>
-                <Unlock className="-ml-1 mr-2 h-5 w-5 text-white" />
+                <Unlock className="-ml-1 mr-2 h-5 w-5" />
                 Unlock PDF
               </>
             )}

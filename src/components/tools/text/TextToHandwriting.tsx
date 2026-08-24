@@ -272,13 +272,13 @@ export const TextToHandwriting: React.FC = () => {
         {/* Left: Input Text & Styling Controls */}
         <div className="lg:col-span-6 space-y-6">
           {/* Text Input Area */}
-          <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 space-y-4">
+          <div className="p-6 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-4">
             <div className="flex items-center justify-between">
-              <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <FileText className="w-4 h-4 text-zinc-500" />
+              <h4 className="text-sm font-bold text-[var(--c-text)] flex items-center gap-2">
+                <FileText className="w-4 h-4 text-[var(--c-gold)]" />
                 Text to Convert
               </h4>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-muted)]">
                 {text.split(/\s+/).filter(Boolean).length} Words
               </span>
             </div>
@@ -288,14 +288,14 @@ export const TextToHandwriting: React.FC = () => {
               value={text}
               onChange={e => setText(e.target.value)}
               placeholder="Paste or type text to convert into realistic handwriting..."
-              className="w-full p-4 rounded-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white text-sm leading-relaxed font-sans focus:ring-2 focus:ring-zinc-500"
+              className="w-full p-4 rounded-2xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] text-sm leading-relaxed font-sans focus:ring-1 focus:ring-[var(--c-gold)] outline-none"
             />
           </div>
 
           {/* Handwriting Font Picker */}
-          <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 space-y-4">
-            <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-              <Type className="w-4 h-4 text-zinc-500" />
+          <div className="p-6 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-4">
+            <h4 className="text-sm font-bold text-[var(--c-text)] flex items-center gap-2">
+              <Type className="w-4 h-4 text-[var(--c-gold)]" />
               Handwriting Style
             </h4>
 
@@ -307,17 +307,17 @@ export const TextToHandwriting: React.FC = () => {
                     key={f.id}
                     type="button"
                     onClick={() => setSelectedFont(f.id)}
-                    className={`p-3 rounded-2xl border-2 text-left transition-all ${
+                    className={`p-3 rounded-2xl border text-left transition-all cursor-pointer ${
                       isSelected
-                        ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 shadow-md'
-                        : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-400'
+                        ? 'border-[var(--c-gold)] bg-[var(--c-card)] shadow-md'
+                        : 'border-[var(--c-border)] bg-[var(--c-card)]/50 hover:border-[var(--c-border-hover)]'
                     }`}
                   >
-                    <div className="text-xs font-bold text-zinc-900 dark:text-white mb-1">
+                    <div className="text-xs font-bold text-[var(--c-text)] mb-1">
                       {f.name}
                     </div>
                     <div
-                      className="text-lg text-zinc-700 dark:text-zinc-300 truncate"
+                      className="text-lg text-[var(--c-muted)] truncate"
                       style={{ fontFamily: f.fontFamily }}
                     >
                       {f.sample}
@@ -329,16 +329,16 @@ export const TextToHandwriting: React.FC = () => {
           </div>
 
           {/* Paper Style & Ink Color */}
-          <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 space-y-4">
-            <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-              <Palette className="w-4 h-4 text-zinc-500" />
+          <div className="p-6 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-4">
+            <h4 className="text-sm font-bold text-[var(--c-text)] flex items-center gap-2">
+              <Palette className="w-4 h-4 text-[var(--c-gold)]" />
               Paper & Ink Settings
             </h4>
 
             <div className="space-y-4">
               {/* Paper Selection */}
               <div>
-                <label className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-2">
+                <label className="text-xs font-semibold text-[var(--c-text)] block mb-2">
                   Paper Texture & Background
                 </label>
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
@@ -355,10 +355,10 @@ export const TextToHandwriting: React.FC = () => {
                       key={p.id}
                       type="button"
                       onClick={() => setPaperType(p.id)}
-                      className={`py-2 px-2.5 rounded-xl border text-xs font-bold text-center transition-all ${
+                      className={`py-2 px-2.5 rounded-xl border text-xs font-bold text-center transition-all cursor-pointer ${
                         paperType === p.id
-                          ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 border-transparent shadow-xs'
-                          : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+                          ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] shadow-xs'
+                          : 'bg-[var(--c-card)] border-[var(--c-border)] text-[var(--c-muted)] hover:text-[var(--c-text)]'
                       }`}
                     >
                       {p.label}
@@ -369,7 +369,7 @@ export const TextToHandwriting: React.FC = () => {
 
               {/* Ink Color Swatches */}
               <div>
-                <label className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-2">
+                <label className="text-xs font-semibold text-[var(--c-text)] block mb-2">
                   Ink Color
                 </label>
                 <div className="flex flex-wrap items-center gap-2">
@@ -378,10 +378,10 @@ export const TextToHandwriting: React.FC = () => {
                       key={c.hex}
                       type="button"
                       onClick={() => setInkColor(c.hex)}
-                      className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                         inkColor === c.hex
-                          ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800'
-                          : 'border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900'
+                          ? 'border-[var(--c-gold)] bg-[var(--c-card)]'
+                          : 'border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-muted)]'
                       }`}
                     >
                       <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: c.hex }} />
@@ -394,7 +394,7 @@ export const TextToHandwriting: React.FC = () => {
               {/* Typography Sliders */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div>
-                  <label className="text-xs font-medium text-zinc-600 dark:text-zinc-400 block mb-1">
+                  <label className="text-xs font-medium text-[var(--c-muted)] block mb-1">
                     Font Size: {fontSize}px
                   </label>
                   <input
@@ -403,12 +403,12 @@ export const TextToHandwriting: React.FC = () => {
                     max="36"
                     value={fontSize}
                     onChange={e => setFontSize(Number(e.target.value))}
-                    className="w-full accent-zinc-900 dark:accent-white"
+                    className="w-full accent-[var(--c-gold)] cursor-pointer"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-medium text-zinc-600 dark:text-zinc-400 block mb-1">
+                  <label className="text-xs font-medium text-[var(--c-muted)] block mb-1">
                     Line Spacing: {lineHeight}px
                   </label>
                   <input
@@ -417,7 +417,7 @@ export const TextToHandwriting: React.FC = () => {
                     max="52"
                     value={lineHeight}
                     onChange={e => setLineHeight(Number(e.target.value))}
-                    className="w-full accent-zinc-900 dark:accent-white"
+                    className="w-full accent-[var(--c-gold)] cursor-pointer"
                   />
                 </div>
               </div>
@@ -426,19 +426,19 @@ export const TextToHandwriting: React.FC = () => {
         </div>
 
         {/* Right: Live Realistic Paper Preview & Export */}
-        <div className="lg:col-span-6 flex flex-col justify-between p-6 sm:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/40 text-center space-y-6">
+        <div className="lg:col-span-6 flex flex-col justify-between p-6 sm:p-8 rounded-3xl border border-[var(--c-border)] bg-[var(--c-surface)] text-center space-y-6">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
-              <BookOpen className="w-4 h-4 text-zinc-500" />
+            <span className="text-xs font-bold text-[var(--c-text)] flex items-center gap-1.5">
+              <BookOpen className="w-4 h-4 text-[var(--c-gold)]" />
               Live Handwritten Page Preview
             </span>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-muted)]">
               High Resolution A4
             </span>
           </div>
 
           {/* Paper Canvas Preview */}
-          <div className="rounded-2xl shadow-2xl overflow-hidden border border-zinc-300 dark:border-zinc-700 bg-white max-h-[580px] overflow-y-auto">
+          <div className="rounded-2xl shadow-2xl overflow-hidden border border-[var(--c-border)] bg-white max-h-[580px] overflow-y-auto">
             <canvas ref={canvasRef} className="w-full object-contain block" />
           </div>
 
@@ -447,7 +447,7 @@ export const TextToHandwriting: React.FC = () => {
             <button
               onClick={handleDownloadPng}
               disabled={!previewDataUrl}
-              className="py-3.5 px-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 disabled:opacity-50 text-white dark:text-zinc-900 font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="py-3.5 px-4 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               Download Image (PNG)
@@ -456,7 +456,7 @@ export const TextToHandwriting: React.FC = () => {
             <button
               onClick={handleDownloadPdf}
               disabled={!previewDataUrl}
-              className="py-3.5 px-4 rounded-2xl border-2 border-zinc-900 dark:border-white bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-50 text-zinc-900 dark:text-white font-bold text-xs shadow-xs flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="py-3.5 px-4 rounded-2xl border border-[var(--c-border)] bg-[var(--c-card)] hover:bg-[var(--c-surface)] disabled:opacity-50 text-[var(--c-text)] font-bold text-xs shadow-xs flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               Download PDF Document

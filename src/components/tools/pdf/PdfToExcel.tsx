@@ -114,15 +114,15 @@ export const PdfToExcel: React.FC = () => {
         <StatCard label="File Size" value={formatFileSize(file.size)} />
       </div>
 
-      <div className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700">
+      <div className="flex flex-col items-center justify-center p-8 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
         {!isComplete ? (
           <div className="flex flex-col items-center space-y-6">
-            <div className="p-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">
+            <div className="p-4 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-full">
               <Table className="w-8 h-8" />
             </div>
             
-            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded-lg max-w-md w-full flex items-start space-x-3">
-              <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
+            <div className="p-4 bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-muted)] rounded-xl max-w-md w-full flex items-start space-x-3">
+              <Info className="w-5 h-5 flex-shrink-0 mt-0.5 text-[var(--c-gold)]" />
               <div className="text-sm">
                 <p>Best results with PDFs containing clear tabular data. Complex layouts may require manual adjustment after conversion.</p>
               </div>
@@ -131,7 +131,7 @@ export const PdfToExcel: React.FC = () => {
             <button
               onClick={processFile}
               disabled={isProcessing}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {isProcessing ? (
                 <>
@@ -145,16 +145,16 @@ export const PdfToExcel: React.FC = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-[var(--c-card)] text-emerald-400 border border-[var(--c-border)] rounded-full flex items-center justify-center">
               <Table className="w-8 h-8" />
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Conversion Complete!</h3>
-              <p className="text-slate-600 dark:text-slate-400">Your Excel file is ready.</p>
+              <h3 className="text-xl font-semibold text-[var(--c-text)] mb-2">Conversion Complete!</h3>
+              <p className="text-[var(--c-muted)]">Your Excel file is ready.</p>
             </div>
             <button
               onClick={handleDownload}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors flex items-center space-x-2"
+              className="px-6 py-3.5 bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold rounded-xl shadow-md transition-all flex items-center space-x-2 cursor-pointer"
             >
               <Download className="w-5 h-5" />
               <span>Download XLSX</span>

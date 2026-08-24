@@ -97,34 +97,34 @@ export const PngToWebp: React.FC = () => {
         <StatCard
           label="Original PNG Size"
           value={formatFileSize(file.size)}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="WebP Size"
           value={convertedResult ? formatFileSize(convertedResult.blob.size) : 'Optimizing...'}
           badge={savings.percentage > 0 ? `${savings.percentage}% Smaller` : undefined}
           badgeType="success"
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Resolution"
           value={convertedResult ? `${convertedResult.width} × ${convertedResult.height}` : '...'}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
       </div>
 
       {/* Main Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left: Quality Settings */}
-        <div className="lg:col-span-5 space-y-6 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
-            <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-              <Sliders className="w-4 h-4 text-indigo-500" />
+        <div className="lg:col-span-5 space-y-6 bg-[var(--c-surface)] p-6 rounded-2xl border border-[var(--c-border)]">
+          <div className="flex items-center justify-between pb-3 border-b border-[var(--c-border)]">
+            <h3 className="font-bold text-base text-[var(--c-text)] flex items-center gap-2">
+              <Sliders className="w-4 h-4 text-[var(--c-gold)]" />
               WebP Quality
             </h3>
             <button
               onClick={handleReset}
-              className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
+              className="text-xs text-[var(--c-muted)] hover:text-[var(--c-text)] flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="w-3 h-3" /> Change File
             </button>
@@ -132,10 +132,10 @@ export const PngToWebp: React.FC = () => {
 
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <label className="font-semibold text-slate-700 dark:text-slate-300">
+              <label className="font-semibold text-[var(--c-text)]">
                 Quality Level:
               </label>
-              <span className="font-bold text-indigo-600 dark:text-indigo-400">
+              <span className="font-bold text-[var(--c-gold)]">
                 {quality}%
               </span>
             </div>
@@ -146,21 +146,21 @@ export const PngToWebp: React.FC = () => {
               step="1"
               value={quality}
               onChange={(e) => setQuality(Number(e.target.value))}
-              className="w-full cursor-pointer h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none"
+              className="w-full cursor-pointer h-2 bg-[var(--c-card)] rounded-lg appearance-none accent-[var(--c-gold)]"
             />
-            <div className="flex justify-between text-[11px] text-slate-400">
+            <div className="flex justify-between text-[11px] text-[var(--c-subtle)]">
               <span>Maximum Compression (10%)</span>
               <span>Web Optimal (85%)</span>
               <span>Near Lossless (100%)</span>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/60 text-xs text-indigo-900 dark:text-indigo-300 space-y-1">
-            <p className="font-semibold flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+          <div className="p-4 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)] text-xs text-[var(--c-text)] space-y-1">
+            <p className="font-semibold flex items-center gap-1.5 text-[var(--c-gold)]">
+              <CheckCircle2 className="w-4 h-4 text-[var(--c-gold)]" />
               Alpha Transparency Preserved
             </p>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-[var(--c-muted)]">
               Transparent backgrounds in your PNG file will be seamlessly retained in the WebP output.
             </p>
           </div>
@@ -168,7 +168,7 @@ export const PngToWebp: React.FC = () => {
           <button
             onClick={handleDownload}
             disabled={!convertedResult || isConverting}
-            className="w-full py-3.5 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+            className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
           >
             <Download className="w-5 h-5" />
             {isConverting ? 'Processing...' : 'Download WebP Image'}
@@ -177,18 +177,18 @@ export const PngToWebp: React.FC = () => {
 
         {/* Right: Preview */}
         <div className="lg:col-span-7 flex flex-col space-y-4">
-          <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+          <span className="text-sm font-semibold text-[var(--c-text)]">
             WebP Live Output Preview
           </span>
-          <div className="flex-1 min-h-[350px] rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-950/50 p-6 flex items-center justify-center overflow-hidden">
+          <div className="flex-1 min-h-[350px] rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] p-6 flex items-center justify-center overflow-hidden">
             {convertedResult ? (
               <img
                 src={convertedResult.dataUrl}
                 alt="WebP converted preview"
-                className="max-h-[300px] max-w-full object-contain rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-800"
+                className="max-h-[300px] max-w-full object-contain rounded-xl shadow-lg border border-[var(--c-border)]"
               />
             ) : (
-              <div className="text-slate-400 text-sm">Processing WebP output...</div>
+              <div className="text-[var(--c-subtle)] text-sm">Processing WebP output...</div>
             )}
           </div>
         </div>

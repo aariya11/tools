@@ -94,22 +94,22 @@ export const AddPageNumbers: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} />
-        <StatCard label="File Size" value={formatFileSize(file.size)} icon={<FileText size={20} />} />
+        <StatCard label="File Name" value={file.name} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+        <StatCard label="File Size" value={formatFileSize(file.size)} icon={<FileText size={20} />} className="bg-[var(--c-surface)] border-[var(--c-border)]" />
       </div>
       
-      <div className="bg-slate-50 dark:bg-slate-800/40 p-6 rounded-2xl space-y-4">
-        <h3 className="font-semibold flex items-center text-slate-800 dark:text-slate-200">
-          <Settings size={18} className="mr-2" /> Page Number Settings
+      <div className="bg-[var(--c-surface)] p-6 rounded-2xl space-y-4 border border-[var(--c-border)] max-w-xl mx-auto">
+        <h3 className="font-semibold flex items-center text-[var(--c-text)]">
+          <Settings size={18} className="mr-2 text-[var(--c-gold)]" /> Page Number Settings
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Position</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Position</label>
             <select 
               value={position} 
               onChange={e => setPosition(e.target.value)}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2"
+              className="w-full bg-[var(--c-card)] text-[var(--c-text)] border border-[var(--c-border)] rounded-xl px-4 py-2.5 outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
             >
               <option value="bottom-left">Bottom Left</option>
               <option value="bottom-center">Bottom Center</option>
@@ -121,11 +121,11 @@ export const AddPageNumbers: React.FC = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Format</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Format</label>
             <select 
               value={format} 
               onChange={e => setFormat(e.target.value)}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2"
+              className="w-full bg-[var(--c-card)] text-[var(--c-text)] border border-[var(--c-border)] rounded-xl px-4 py-2.5 outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
             >
               <option value="X">1, 2, 3...</option>
               <option value="Page X">Page 1, Page 2...</option>
@@ -134,37 +134,35 @@ export const AddPageNumbers: React.FC = () => {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Starting Number</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Starting Number</label>
             <input 
               type="number" 
               min="1" 
               value={startNumber} 
               onChange={e => setStartNumber(Number(e.target.value))}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2"
+              className="w-full bg-[var(--c-card)] text-[var(--c-text)] border border-[var(--c-border)] rounded-xl px-4 py-2 outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">Font Size ({fontSize}pt)</label>
+            <label className="block text-sm font-medium text-[var(--c-muted)] mb-1">Font Size ({fontSize}pt)</label>
             <input 
               type="range" 
               min="10" 
               max="24" 
               value={fontSize} 
               onChange={e => setFontSize(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-[var(--c-gold)]"
             />
           </div>
         </div>
-      </div>
-      
-      <div className="flex justify-end">
+
         <button
           onClick={handleProcess}
           disabled={isProcessing}
-          className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-50 transition flex items-center"
+          className="w-full mt-4 py-3.5 px-6 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl hover:bg-[var(--c-gold)] disabled:opacity-50 transition flex items-center justify-center cursor-pointer shadow-md"
         >
-          {isProcessing ? 'Processing...' : <><Download size={18} className="mr-2" /> Download PDF</>}
+          {isProcessing ? 'Processing...' : <><Download size={18} className="mr-2" /> Download Numbered PDF</>}
         </button>
       </div>
 

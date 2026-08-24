@@ -55,9 +55,9 @@ export const HtmlToPdf: React.FC = () => {
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2"><Code size={20}/> HTML Input</h3>
+          <h3 className="text-base font-bold mb-4 flex items-center gap-2 text-[var(--c-text)]"><Code size={20} className="text-[var(--c-gold)]"/> HTML Input</h3>
           <textarea
-            className="w-full h-[400px] p-4 border rounded-xl font-mono text-sm resize-none focus:ring-2 focus:ring-indigo-500 outline-none dark:bg-slate-800"
+            className="w-full h-[400px] p-4 border border-[var(--c-border)] rounded-xl font-mono text-sm resize-none focus:ring-1 focus:ring-[var(--c-gold)] outline-none bg-[var(--c-surface)] text-[var(--c-text)]"
             value={htmlContent}
             onChange={(e) => setHtmlContent(e.target.value)}
             placeholder="Paste your HTML here..."
@@ -65,8 +65,8 @@ export const HtmlToPdf: React.FC = () => {
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-4">Preview</h3>
-          <div className="border rounded-xl bg-white h-[400px] overflow-hidden">
+          <h3 className="text-base font-bold mb-4 text-[var(--c-text)]">Live Rendered Preview</h3>
+          <div className="border border-[var(--c-border)] rounded-xl bg-white h-[400px] overflow-hidden shadow-inner">
             <iframe
               ref={iframeRef}
               title="HTML Preview"
@@ -78,9 +78,9 @@ export const HtmlToPdf: React.FC = () => {
       </div>
 
       <div className="flex justify-between items-center">
-        <button onClick={handleReset} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg">Reset</button>
-        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2 bg-indigo-600 text-white rounded-lg flex items-center gap-2 hover:bg-indigo-700">
-          <Download size={18} /> Convert to PDF
+        <button onClick={handleReset} className="px-4 py-2 text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] cursor-pointer">Reset Default</button>
+        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl flex items-center gap-2 hover:bg-[var(--c-gold)] transition cursor-pointer shadow-md">
+          <Download size={18} /> {isProcessing ? 'Converting...' : 'Convert HTML to PDF'}
         </button>
       </div>
       

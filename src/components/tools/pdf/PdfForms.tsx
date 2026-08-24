@@ -119,18 +119,18 @@ export const PdfForms: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border shadow-sm">
-        <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-          <Edit3 className="text-indigo-600" /> Form Fields ({fields.length})
+      <div className="bg-[var(--c-surface)] p-6 rounded-2xl border border-[var(--c-border)] shadow-sm">
+        <h3 className="text-lg font-bold mb-6 flex items-center gap-2 text-[var(--c-text)]">
+          <Edit3 className="text-[var(--c-gold)]" /> Form Fields ({fields.length})
         </h3>
 
         {fields.length === 0 ? (
-          <p className="text-slate-500 text-center py-8">No editable form fields found in this document.</p>
+          <p className="text-[var(--c-subtle)] text-center py-8">No editable form fields found in this document.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {fields.map(field => (
               <div key={field.name} className="flex flex-col gap-1">
-                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="text-sm font-semibold text-[var(--c-text)]">
                   {field.name}
                 </label>
                 
@@ -139,7 +139,7 @@ export const PdfForms: React.FC = () => {
                     type="text"
                     value={formData[field.name]}
                     onChange={e => setFormData({...formData, [field.name]: e.target.value})}
-                    className="border p-2 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none dark:bg-slate-900"
+                    className="border border-[var(--c-border)] p-2.5 rounded-xl bg-[var(--c-card)] text-[var(--c-text)] focus:ring-1 focus:ring-[var(--c-gold)] outline-none text-sm"
                   />
                 )}
 
@@ -148,7 +148,7 @@ export const PdfForms: React.FC = () => {
                     type="checkbox"
                     checked={formData[field.name]}
                     onChange={e => setFormData({...formData, [field.name]: e.target.checked})}
-                    className="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="w-5 h-5 rounded border-[var(--c-border)] accent-[var(--c-gold)] cursor-pointer"
                   />
                 )}
 
@@ -156,7 +156,7 @@ export const PdfForms: React.FC = () => {
                   <select
                     value={formData[field.name]}
                     onChange={e => setFormData({...formData, [field.name]: e.target.value})}
-                    className="border p-2 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none dark:bg-slate-900"
+                    className="border border-[var(--c-border)] p-2.5 rounded-xl bg-[var(--c-card)] text-[var(--c-text)] focus:ring-1 focus:ring-[var(--c-gold)] outline-none text-sm cursor-pointer"
                   >
                     <option value="">Select option...</option>
                     {field.options?.map(opt => (
@@ -169,7 +169,7 @@ export const PdfForms: React.FC = () => {
                   <select
                     value={formData[field.name]}
                     onChange={e => setFormData({...formData, [field.name]: e.target.value})}
-                    className="border p-2 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none dark:bg-slate-900"
+                    className="border border-[var(--c-border)] p-2.5 rounded-xl bg-[var(--c-card)] text-[var(--c-text)] focus:ring-1 focus:ring-[var(--c-gold)] outline-none text-sm cursor-pointer"
                   >
                     <option value="">Select option...</option>
                     {field.options?.map(opt => (
@@ -184,13 +184,13 @@ export const PdfForms: React.FC = () => {
       </div>
 
       <div className="flex justify-between items-center">
-        <button onClick={handleReset} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+        <button onClick={handleReset} className="px-4 py-2 text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] cursor-pointer">Change File</button>
         <button 
           onClick={handleApply} 
           disabled={isProcessing || fields.length === 0} 
-          className="px-6 py-2 bg-indigo-600 text-white rounded-lg flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50"
+          className="px-6 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl flex items-center gap-2 hover:bg-[var(--c-gold)] disabled:opacity-50 transition cursor-pointer shadow-md"
         >
-          <Download size={18} /> Fill & Flatten
+          <Download size={18} /> {isProcessing ? 'Saving...' : 'Fill, Flatten & Download PDF'}
         </button>
       </div>
       

@@ -110,31 +110,31 @@ export const PdfMerge: React.FC = () => {
             <StatCard
               label="Selected Documents"
               value={`${files.length} Files`}
-              className="bg-slate-50 dark:bg-slate-800/40"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
             <StatCard
               label="Combined Input Size"
               value={formatFileSize(totalSize)}
-              className="bg-slate-50 dark:bg-slate-800/40"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
             <StatCard
               label="Merged Output"
               value={mergedBlob ? formatFileSize(mergedBlob.size) : 'Ready to merge'}
               badge={mergedBlob ? 'Ready' : undefined}
               badgeType="success"
-              className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
           </div>
 
           {/* Re-orderable File List */}
-          <div className="bg-slate-50 dark:bg-slate-800/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <div className="bg-[var(--c-surface)] p-6 rounded-2xl border border-[var(--c-border)] space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-[var(--c-border)]">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--c-text)]">
                 Document Sequence ({files.length})
               </h3>
               <button
                 onClick={handleReset}
-                className="text-xs text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1"
+                className="text-xs text-rose-400 hover:underline flex items-center gap-1 cursor-pointer"
               >
                 <Trash2 className="w-3.5 h-3.5" /> Clear All
               </button>
@@ -144,18 +144,18 @@ export const PdfMerge: React.FC = () => {
               {files.map((file, idx) => (
                 <div
                   key={`${file.name}-${idx}`}
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)] shadow-xs"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className="w-6 h-6 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold flex items-center justify-center shrink-0">
+                    <span className="w-6 h-6 rounded-md bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-muted)] text-xs font-bold flex items-center justify-center shrink-0">
                       {idx + 1}
                     </span>
-                    <FileText className="w-5 h-5 text-rose-500 shrink-0" />
+                    <FileText className="w-5 h-5 text-[var(--c-gold)] shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 truncate">
+                      <p className="text-sm font-semibold text-[var(--c-text)] truncate">
                         {file.name}
                       </p>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-[var(--c-subtle)]">
                         {formatFileSize(file.size)}
                       </p>
                     </div>
@@ -166,7 +166,7 @@ export const PdfMerge: React.FC = () => {
                     <button
                       onClick={() => moveUp(idx)}
                       disabled={idx === 0}
-                      className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-30"
+                      className="p-1.5 rounded-lg text-[var(--c-muted)] hover:text-[var(--c-text)] disabled:opacity-30 cursor-pointer"
                       title="Move Up"
                     >
                       <ArrowUp className="w-4 h-4" />
@@ -174,14 +174,14 @@ export const PdfMerge: React.FC = () => {
                     <button
                       onClick={() => moveDown(idx)}
                       disabled={idx === files.length - 1}
-                      className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-30"
+                      className="p-1.5 rounded-lg text-[var(--c-muted)] hover:text-[var(--c-text)] disabled:opacity-30 cursor-pointer"
                       title="Move Down"
                     >
                       <ArrowDown className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => removeFile(idx)}
-                      className="p-1.5 rounded-lg text-rose-400 hover:text-rose-600 dark:hover:text-rose-300"
+                      className="p-1.5 rounded-lg text-rose-400 hover:text-rose-300 cursor-pointer"
                       title="Remove file"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -197,20 +197,20 @@ export const PdfMerge: React.FC = () => {
                 <button
                   onClick={handleMerge}
                   disabled={files.length < 2 || isMerging}
-                  className="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+                  className="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
                 >
                   <FileText className="w-5 h-5" />
                   {isMerging ? 'Merging PDF Documents...' : `Merge ${files.length} PDFs`}
                 </button>
               ) : (
                 <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-                  <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
+                  <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold">
                     <CheckCircle2 className="w-5 h-5" />
                     <span>Merged PDF is ready!</span>
                   </div>
                   <button
                     onClick={handleDownload}
-                    className="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+                    className="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
                   >
                     <Download className="w-5 h-5" />
                     Download Merged PDF

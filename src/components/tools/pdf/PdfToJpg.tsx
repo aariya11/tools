@@ -97,7 +97,7 @@ export const PdfToJpg: React.FC = () => {
           label="PDF Name"
           value={file.name}
           subValue={formatFileSize(file.size)}
-          className="bg-slate-50 dark:bg-slate-800/40 truncate"
+          className="bg-[var(--c-surface)] border-[var(--c-border)] truncate"
         />
         <StatCard
           label="Pages Rendered"
@@ -106,30 +106,30 @@ export const PdfToJpg: React.FC = () => {
               ? `${progress.current} of ${progress.total || '...'}`
               : `${renderedPages.length} Pages`
           }
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Status"
           value={isRendering ? 'Rendering...' : 'Ready'}
           badge={renderedPages.length > 0 ? 'High-DPI' : undefined}
           badgeType="success"
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
       </div>
 
       {/* Main Workspace */}
       <div className="space-y-6">
         {/* Action Header */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 dark:bg-slate-800/40 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-800 dark:text-slate-200">
-            <Eye className="w-4 h-4 text-indigo-500" />
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[var(--c-surface)] p-4 rounded-2xl border border-[var(--c-border)]">
+          <div className="flex items-center gap-2 text-sm font-semibold text-[var(--c-text)]">
+            <Eye className="w-4 h-4 text-[var(--c-gold)]" />
             <span>Rendered Page Gallery ({renderedPages.length})</span>
           </div>
 
           <div className="flex items-center gap-3">
             <button
               onClick={handleReset}
-              className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
+              className="text-xs text-[var(--c-muted)] hover:text-[var(--c-text)] flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="w-3.5 h-3.5" /> Convert Another
             </button>
@@ -137,7 +137,7 @@ export const PdfToJpg: React.FC = () => {
             {renderedPages.length > 0 && (
               <button
                 onClick={handleDownloadAllZip}
-                className="py-2 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md shadow-indigo-500/20 flex items-center gap-1.5 transition-all"
+                className="py-2 px-4 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-xs font-bold shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
               >
                 <Archive className="w-4 h-4" /> Download All (ZIP)
               </button>
@@ -147,13 +147,13 @@ export const PdfToJpg: React.FC = () => {
 
         {/* Loading Progress State */}
         {isRendering && (
-          <div className="p-12 text-center bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
-            <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="p-12 text-center bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)] space-y-4">
+            <div className="w-12 h-12 border-4 border-[var(--c-gold)] border-t-transparent rounded-full animate-spin mx-auto" />
             <div>
-              <h4 className="font-bold text-base text-slate-900 dark:text-white">
+              <h4 className="font-bold text-base text-[var(--c-text)]">
                 Rendering PDF Pages...
               </h4>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-[var(--c-subtle)] mt-1">
                 Processing page {progress.current} of {progress.total}
               </p>
             </div>
@@ -166,27 +166,27 @@ export const PdfToJpg: React.FC = () => {
             {renderedPages.map((page) => (
               <div
                 key={page.pageNumber}
-                className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+                className="rounded-2xl border border-[var(--c-border)] bg-[var(--c-card)] overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
               >
-                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-600 dark:text-slate-300">
+                <div className="p-3 bg-[var(--c-surface)] border-b border-[var(--c-border)] flex items-center justify-between text-xs font-semibold text-[var(--c-text)]">
                   <span>Page {page.pageNumber}</span>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-[var(--c-subtle)]">
                     {formatFileSize(page.blob.size)}
                   </span>
                 </div>
 
-                <div className="p-4 flex items-center justify-center bg-slate-100/50 dark:bg-slate-950/50 min-h-[220px]">
+                <div className="p-4 flex items-center justify-center bg-white min-h-[220px]">
                   <img
                     src={page.dataUrl}
                     alt={`Page ${page.pageNumber}`}
-                    className="max-h-56 object-contain rounded-md shadow-sm border border-slate-200/60 dark:border-slate-800"
+                    className="max-h-56 object-contain rounded-md shadow-sm border border-slate-200"
                   />
                 </div>
 
-                <div className="p-3 border-t border-slate-100 dark:border-slate-800">
+                <div className="p-3 border-t border-[var(--c-border)] bg-[var(--c-surface)]">
                   <button
                     onClick={() => handleDownloadSingle(page.pageNumber, page.blob)}
-                    className="w-full py-2 px-3 rounded-xl bg-slate-100 hover:bg-indigo-600 hover:text-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                    className="w-full py-2 px-3 rounded-xl bg-[var(--c-card)] hover:bg-[var(--c-gold)] hover:text-[var(--c-bg)] border border-[var(--c-border)] text-[var(--c-text)] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
                     Download JPG

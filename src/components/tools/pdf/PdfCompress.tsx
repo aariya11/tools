@@ -82,37 +82,37 @@ export const PdfCompress: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Stats */}
+      {/* Top Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <StatCard
           label="Original PDF Size"
           value={formatFileSize(file.size)}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Optimized PDF Size"
           value={compressedBytes ? formatFileSize(compressedBytes.byteLength) : 'Ready'}
           badge={savings.percentage > 0 ? `${savings.percentage}% Saved` : undefined}
           badgeType="success"
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="File Name"
           value={file.name}
-          className="bg-slate-50 dark:bg-slate-800/40 truncate text-base"
+          className="bg-[var(--c-surface)] border-[var(--c-border)] truncate text-base"
         />
       </div>
 
       {/* Main Workspace */}
-      <div className="bg-slate-50 dark:bg-slate-800/40 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 max-w-xl mx-auto space-y-6">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
-          <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-indigo-500" />
+      <div className="bg-[var(--c-surface)] p-6 sm:p-8 rounded-2xl border border-[var(--c-border)] max-w-xl mx-auto space-y-6">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--c-border)]">
+          <h3 className="font-bold text-base text-[var(--c-text)] flex items-center gap-2">
+            <Sliders className="w-4 h-4 text-[var(--c-gold)]" />
             Compression Level
           </h3>
           <button
             onClick={handleReset}
-            className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
+            className="text-xs text-[var(--c-muted)] hover:text-[var(--c-text)] flex items-center gap-1 cursor-pointer"
           >
             <RefreshCw className="w-3 h-3" /> Change File
           </button>
@@ -128,16 +128,16 @@ export const PdfCompress: React.FC = () => {
               key={item.id}
               type="button"
               onClick={() => setLevel(item.id as any)}
-              className={`p-3 rounded-xl text-left border transition-all ${
+              className={`p-3 rounded-xl text-left border transition-all cursor-pointer ${
                 level === item.id
-                  ? 'bg-indigo-600 text-white border-indigo-600 shadow-md'
-                  : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700'
+                  ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] shadow-md'
+                  : 'bg-[var(--c-card)] text-[var(--c-text)] border-[var(--c-border)] hover:border-[var(--c-border-hover)]'
               }`}
             >
               <div className="font-bold text-xs">{item.title}</div>
               <div
                 className={`text-[10px] mt-1 line-clamp-2 ${
-                  level === item.id ? 'text-indigo-100' : 'text-slate-400'
+                  level === item.id ? 'opacity-90 font-medium' : 'text-[var(--c-subtle)]'
                 }`}
               >
                 {item.desc}
@@ -148,27 +148,36 @@ export const PdfCompress: React.FC = () => {
 
         {compressedBytes ? (
           <div className="space-y-4 pt-2">
-            <div className="flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
+            <div className="flex items-center justify-center gap-2 text-emerald-400 text-sm font-semibold">
               <CheckCircle2 className="w-5 h-5" />
               <span>PDF compressed successfully!</span>
             </div>
 
             <button
               onClick={handleDownload}
-              className="w-full py-3.5 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
             >
               <Download className="w-5 h-5" />
-              Download Compressed PDF ({formatFileSize(compressedBytes.byteLength)})
+              Download Compressed PDF
             </button>
           </div>
         ) : (
           <button
             onClick={handleCompress}
             disabled={isCompressing}
-            className="w-full py-3.5 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+            className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
           >
-            <Minimize className="w-5 h-5" />
-            {isCompressing ? 'Compressing PDF...' : 'Compress PDF Document'}
+            {isCompressing ? (
+              <>
+                <RefreshCw className="w-5 h-5 animate-spin" />
+                Optimizing PDF streams...
+              </>
+            ) : (
+              <>
+                <Download className="w-5 h-5" />
+                Compress PDF Now
+              </>
+            )}
           </button>
         )}
       </div>

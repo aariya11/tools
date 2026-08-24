@@ -73,24 +73,24 @@ export const PdfToPdfa: React.FC = () => {
     <div className="space-y-8">
       {isDone ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <StatCard label="Original Metadata" value={metadata.before} badge="Before" />
-          <StatCard label="Updated Metadata" value={metadata.after} badge="After" badgeType="success" />
+          <StatCard label="Original Metadata" value={metadata.before} badge="Before" className="bg-[var(--c-surface)] border-[var(--c-border)]" />
+          <StatCard label="Updated Metadata" value={metadata.after} badge="After" badgeType="success" className="bg-[var(--c-surface)] border-[var(--c-border)]" />
         </div>
       ) : (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-[var(--c-surface)] rounded-2xl p-6 shadow-sm border border-[var(--c-border)] max-w-xl mx-auto">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="p-3 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
+            <div className="p-3 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-xl">
               <File className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200">{file.name}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{formatFileSize(file.size)}</p>
+              <h3 className="font-semibold text-[var(--c-text)]">{file.name}</h3>
+              <p className="text-sm text-[var(--c-subtle)]">{formatFileSize(file.size)}</p>
             </div>
           </div>
           
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-900/50 flex space-x-3">
-            <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-500 flex-shrink-0" />
-            <p className="text-sm text-blue-800 dark:text-blue-400">
+          <div className="mb-6 p-4 bg-amber-500/10 rounded-xl border border-amber-500/30 flex space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+            <p className="text-sm text-amber-400">
               Note: This applies PDF/A metadata conformance. Full ISO 19005 validation requires specialized tools.
             </p>
           </div>
@@ -98,12 +98,12 @@ export const PdfToPdfa: React.FC = () => {
           <button
             onClick={processFile}
             disabled={isProcessing}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors"
+            className="w-full flex justify-center items-center py-3.5 px-4 rounded-xl shadow-md text-sm font-bold text-[var(--c-bg)] bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 transition-all cursor-pointer"
           >
             {isProcessing ? (
-              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" />Converting...</>
+              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5" />Converting...</>
             ) : (
-              <><FileBadge className="-ml-1 mr-2 h-5 w-5 text-white" />Convert to PDF/A</>
+              <><FileBadge className="-ml-1 mr-2 h-5 w-5" />Convert to PDF/A</>
             )}
           </button>
         </div>

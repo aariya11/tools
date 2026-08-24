@@ -83,22 +83,22 @@ export const CaseConverter: React.FC = () => {
         <StatCard
           label="Characters"
           value={stats.characters.toLocaleString()}
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Words"
           value={stats.words.toLocaleString()}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Sentences"
           value={stats.sentences.toLocaleString()}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Lines"
           value={stats.paragraphs.toLocaleString()}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
       </div>
 
@@ -106,7 +106,7 @@ export const CaseConverter: React.FC = () => {
       <div className="space-y-6">
         {/* Buttons Grid */}
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+          <label className="text-xs font-bold uppercase tracking-wider text-[var(--c-subtle)] block">
             Select Target Case
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5">
@@ -116,12 +116,12 @@ export const CaseConverter: React.FC = () => {
                 type="button"
                 onClick={() => applyTransformation(btn.fn, btn.label)}
                 disabled={!text.trim()}
-                className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md disabled:opacity-40 text-left transition-all active:scale-98 group"
+                className="p-3 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] hover:border-[var(--c-gold)] hover:shadow-md disabled:opacity-40 text-left transition-all active:scale-98 group cursor-pointer"
               >
-                <div className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                <div className="text-xs font-bold text-[var(--c-text)] group-hover:text-[var(--c-gold)]">
                   {btn.label}
                 </div>
-                <div className="text-[11px] text-slate-400 font-mono mt-0.5 truncate">
+                <div className="text-[11px] text-[var(--c-subtle)] font-mono mt-0.5 truncate">
                   {btn.example}
                 </div>
               </button>
@@ -132,8 +132,8 @@ export const CaseConverter: React.FC = () => {
         {/* Text Area with Action Bar */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
-              <Type className="w-4 h-4 text-indigo-500" />
+            <span className="text-sm font-semibold text-[var(--c-text)] flex items-center gap-2">
+              <Type className="w-4 h-4 text-[var(--c-gold)]" />
               Text Workspace
             </span>
 
@@ -141,7 +141,7 @@ export const CaseConverter: React.FC = () => {
               <button
                 onClick={handleUndo}
                 disabled={historyIndex < 0}
-                className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 disabled:opacity-30 flex items-center gap-1"
+                className="text-xs text-[var(--c-subtle)] hover:text-[var(--c-text)] disabled:opacity-30 flex items-center gap-1 cursor-pointer"
                 title="Undo last conversion"
               >
                 <Undo className="w-3.5 h-3.5" /> Undo
@@ -150,7 +150,7 @@ export const CaseConverter: React.FC = () => {
               {text && (
                 <button
                   onClick={handleClear}
-                  className="text-xs text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1"
+                  className="text-xs text-rose-400 hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <Trash2 className="w-3.5 h-3.5" /> Clear
                 </button>
@@ -163,12 +163,12 @@ export const CaseConverter: React.FC = () => {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter or paste text here to convert between uppercase, lowercase, camelCase, snake_case, Title Case, etc..."
-            className="w-full p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 text-base leading-relaxed focus:ring-2 focus:ring-indigo-500 shadow-inner resize-y font-sans"
+            className="w-full p-4 sm:p-5 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text)] placeholder:text-[var(--c-subtle)] text-base leading-relaxed focus:ring-1 focus:ring-[var(--c-gold)] focus:border-[var(--c-gold)] shadow-inner resize-y font-sans outline-none"
           />
 
           {/* Action Row */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <span className="text-xs text-slate-400">
+            <span className="text-xs text-[var(--c-subtle)]">
               Instant conversion • Zero lag
             </span>
 
@@ -176,7 +176,7 @@ export const CaseConverter: React.FC = () => {
               <button
                 onClick={handleDownloadTxt}
                 disabled={!text}
-                className="py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-40 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                className="py-2.5 px-4 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] hover:bg-[var(--c-surface)] disabled:opacity-40 text-[var(--c-text)] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Download className="w-4 h-4" /> Download .txt
               </button>
@@ -184,7 +184,7 @@ export const CaseConverter: React.FC = () => {
               <button
                 onClick={handleCopy}
                 disabled={!text}
-                className="py-2.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white text-xs font-bold shadow-md shadow-indigo-500/20 flex items-center gap-2 transition-all active:scale-95"
+                className="py-2.5 px-5 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-40 text-[var(--c-bg)] text-xs font-bold shadow-md flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
               >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 {copied ? 'Copied!' : 'Copy Result'}

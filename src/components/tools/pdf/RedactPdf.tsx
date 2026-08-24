@@ -196,34 +196,34 @@ export const RedactPdf: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex gap-4 overflow-x-auto p-4 bg-slate-50 dark:bg-slate-800/40 rounded-2xl">
+      <div className="flex gap-4 overflow-x-auto p-4 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
         {thumbnails.map((url, idx) => (
           <div 
             key={idx} 
-            className={`cursor-pointer border-2 rounded shrink-0 transition ${activePageIdx === idx ? 'border-indigo-500' : 'border-transparent'}`}
+            className={`cursor-pointer border-2 rounded-xl p-1 shrink-0 transition ${activePageIdx === idx ? 'border-[var(--c-gold)] shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}`}
             onClick={() => setActivePageIdx(idx)}
           >
-            <img src={url} alt={`Page ${idx + 1}`} className="h-32 object-contain bg-white" />
-            <p className="text-center text-sm mt-1">Page {idx + 1}</p>
+            <img src={url} alt={`Page ${idx + 1}`} className="h-32 object-contain bg-white rounded-lg" />
+            <p className={`text-center text-xs mt-1 font-semibold ${activePageIdx === idx ? 'text-[var(--c-gold)]' : 'text-[var(--c-subtle)]'}`}>Page {idx + 1}</p>
           </div>
         ))}
       </div>
 
-      <div className="border rounded-2xl overflow-auto bg-slate-100 p-4 flex justify-center cursor-crosshair">
+      <div className="border border-[var(--c-border)] rounded-2xl overflow-auto bg-[var(--c-surface)] p-4 flex justify-center cursor-crosshair">
         <canvas 
           ref={canvasRef} 
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className="shadow-lg max-w-full bg-white" 
+          className="shadow-lg max-w-full bg-white rounded-lg" 
           style={{ maxHeight: '600px', objectFit: 'contain' }} 
         />
       </div>
 
       <div className="flex justify-between items-center">
-        <button onClick={handleReset} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
-        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2 bg-slate-800 text-white rounded-lg flex items-center gap-2 hover:bg-slate-900">
+        <button onClick={handleReset} className="px-4 py-2 text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] cursor-pointer">Change File</button>
+        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl flex items-center gap-2 hover:bg-[var(--c-gold)] transition shadow-md cursor-pointer">
           <Crosshair size={18} /> Apply Redaction & Download
         </button>
       </div>

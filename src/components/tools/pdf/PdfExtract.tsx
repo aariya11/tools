@@ -141,42 +141,42 @@ export const PdfExtract: React.FC = () => {
           label="Document"
           value={file.name}
           subValue={formatFileSize(file.size)}
-          className="bg-slate-50 dark:bg-slate-800/40 truncate"
+          className="bg-[var(--c-surface)] border-[var(--c-border)] truncate"
         />
         <StatCard
           label="Total Pages"
           value={`${renderedPages.length} Pages`}
-          className="bg-slate-50 dark:bg-slate-800/40"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
         <StatCard
           label="Selected to Extract"
           value={`${selectedPages.length} of ${renderedPages.length}`}
           badge={selectedPages.length > 0 ? 'Selected' : undefined}
           badgeType="success"
-          className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+          className="bg-[var(--c-surface)] border-[var(--c-border)]"
         />
       </div>
 
       {/* Main Workspace */}
       <div className="space-y-6">
         {/* Controls Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 dark:bg-slate-800/40 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[var(--c-surface)] p-4 rounded-2xl border border-[var(--c-border)]">
           <div className="flex items-center gap-2">
             <button
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold hover:border-indigo-400"
+              className="px-3 py-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] text-xs font-semibold hover:border-[var(--c-gold)] cursor-pointer"
             >
               Select All
             </button>
             <button
               onClick={deselectAll}
-              className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold hover:border-indigo-400"
+              className="px-3 py-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] text-xs font-semibold hover:border-[var(--c-gold)] cursor-pointer"
             >
               Deselect All
             </button>
             <button
               onClick={invertSelection}
-              className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold hover:border-indigo-400"
+              className="px-3 py-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] text-xs font-semibold hover:border-[var(--c-gold)] cursor-pointer"
             >
               Invert Selection
             </button>
@@ -185,7 +185,7 @@ export const PdfExtract: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={handleReset}
-              className="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
+              className="text-xs text-[var(--c-muted)] hover:text-[var(--c-text)] flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw className="w-3.5 h-3.5" /> Choose Another PDF
             </button>
@@ -194,7 +194,7 @@ export const PdfExtract: React.FC = () => {
               <button
                 onClick={handleExtract}
                 disabled={selectedPages.length === 0 || isExtracting}
-                className="py-2.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-xs font-bold shadow-md shadow-indigo-500/20 flex items-center gap-2 transition-all active:scale-98"
+                className="py-2.5 px-5 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] text-xs font-bold shadow-md flex items-center gap-2 transition-all active:scale-98 cursor-pointer"
               >
                 <CheckSquare className="w-4 h-4" />
                 {isExtracting ? 'Extracting...' : `Extract (${selectedPages.length}) Pages`}
@@ -202,7 +202,7 @@ export const PdfExtract: React.FC = () => {
             ) : (
               <button
                 onClick={handleDownload}
-                className="py-2.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-500/20 flex items-center gap-2 transition-all active:scale-98"
+                className="py-2.5 px-5 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-xs font-bold shadow-md flex items-center gap-2 transition-all active:scale-98 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 Download Extracted PDF
@@ -213,9 +213,9 @@ export const PdfExtract: React.FC = () => {
 
         {/* Loading Spinner */}
         {isRendering && (
-          <div className="p-12 text-center bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <div className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-            <p className="text-sm font-semibold">Generating interactive page thumbnails...</p>
+          <div className="p-12 text-center bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
+            <div className="w-10 h-10 border-4 border-[var(--c-gold)] border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+            <p className="text-sm font-semibold text-[var(--c-text)]">Generating interactive page thumbnails...</p>
           </div>
         )}
 
@@ -230,22 +230,22 @@ export const PdfExtract: React.FC = () => {
                   onClick={() => togglePage(page.pageNumber)}
                   className={`cursor-pointer rounded-2xl border-2 transition-all overflow-hidden p-2 flex flex-col justify-between ${
                     isSelected
-                      ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-950/40 shadow-md ring-2 ring-indigo-500/20'
-                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 opacity-60 hover:opacity-100 hover:border-slate-400'
+                      ? 'border-[var(--c-gold)] bg-[var(--c-card)] shadow-md ring-1 ring-[var(--c-gold)]'
+                      : 'border-[var(--c-border)] bg-[var(--c-card)]/60 opacity-60 hover:opacity-100 hover:border-[var(--c-border-hover)]'
                   }`}
                 >
                   <div className="flex items-center justify-between pb-1 text-xs font-bold">
-                    <span className={isSelected ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400'}>
+                    <span className={isSelected ? 'text-[var(--c-gold)]' : 'text-[var(--c-subtle)]'}>
                       Page {page.pageNumber}
                     </span>
                     {isSelected ? (
-                      <CheckCircle2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      <CheckCircle2 className="w-4 h-4 text-[var(--c-gold)]" />
                     ) : (
-                      <Square className="w-4 h-4 text-slate-300 dark:text-slate-700" />
+                      <Square className="w-4 h-4 text-[var(--c-subtle)]" />
                     )}
                   </div>
 
-                  <div className="my-1.5 flex items-center justify-center min-h-[140px] bg-slate-100 dark:bg-slate-950 rounded-lg p-1">
+                  <div className="my-1.5 flex items-center justify-center min-h-[140px] bg-white rounded-lg p-1">
                     <img
                       src={page.dataUrl}
                       alt={`Page ${page.pageNumber}`}

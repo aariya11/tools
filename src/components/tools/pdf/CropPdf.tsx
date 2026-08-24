@@ -101,23 +101,23 @@ export const CropPdf: React.FC = () => {
   return (
     <div className="space-y-8">
       {!isDone && (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-[var(--c-surface)] rounded-2xl p-6 shadow-sm border border-[var(--c-border)] max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="p-3 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl">
+            <div className="p-3 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-xl">
               <File className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200">{file.name}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{formatFileSize(file.size)}</p>
+              <h3 className="font-semibold text-[var(--c-text)]">{file.name}</h3>
+              <p className="text-sm text-[var(--c-subtle)]">{formatFileSize(file.size)}</p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             {/* Preview */}
-            <div className="flex justify-center bg-slate-100 dark:bg-slate-900 rounded-xl p-4 overflow-hidden relative">
+            <div className="flex justify-center bg-white rounded-xl p-4 overflow-hidden relative border border-[var(--c-border)]">
               {thumbnail ? (
                 <div className="relative">
-                  <img src={thumbnail} alt="Preview" className="max-w-full h-auto max-h-[400px] border border-slate-300 dark:border-slate-700 shadow-sm" />
+                  <img src={thumbnail} alt="Preview" className="max-w-full h-auto max-h-[400px] border border-slate-300 shadow-sm" />
                   <div className="absolute inset-0 bg-black/40 pointer-events-none" style={{
                     clipPath: `polygon(
                       0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
@@ -131,30 +131,30 @@ export const CropPdf: React.FC = () => {
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-48 w-full">
-                  <RefreshCw className="animate-spin h-8 w-8 text-slate-400" />
+                  <RefreshCw className="animate-spin h-8 w-8 text-[var(--c-gold)]" />
                 </div>
               )}
             </div>
             
             {/* Controls */}
             <div className="space-y-4">
-              <h4 className="font-medium text-slate-800 dark:text-slate-200">Margins (pts)</h4>
+              <h4 className="font-medium text-[var(--c-text)]">Margins (pts)</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-slate-600 dark:text-slate-400 mb-1">Top</label>
-                  <input type="number" name="top" value={margins.top} onChange={handleMarginChange} className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" />
+                  <label className="block text-sm text-[var(--c-muted)] mb-1">Top</label>
+                  <input type="number" name="top" value={margins.top} onChange={handleMarginChange} className="w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-600 dark:text-slate-400 mb-1">Bottom</label>
-                  <input type="number" name="bottom" value={margins.bottom} onChange={handleMarginChange} className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" />
+                  <label className="block text-sm text-[var(--c-muted)] mb-1">Bottom</label>
+                  <input type="number" name="bottom" value={margins.bottom} onChange={handleMarginChange} className="w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-600 dark:text-slate-400 mb-1">Left</label>
-                  <input type="number" name="left" value={margins.left} onChange={handleMarginChange} className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" />
+                  <label className="block text-sm text-[var(--c-muted)] mb-1">Left</label>
+                  <input type="number" name="left" value={margins.left} onChange={handleMarginChange} className="w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-600 dark:text-slate-400 mb-1">Right</label>
-                  <input type="number" name="right" value={margins.right} onChange={handleMarginChange} className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700" />
+                  <label className="block text-sm text-[var(--c-muted)] mb-1">Right</label>
+                  <input type="number" name="right" value={margins.right} onChange={handleMarginChange} className="w-full px-3 py-2 border border-[var(--c-border)] rounded-xl bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]" />
                 </div>
               </div>
             </div>
@@ -163,12 +163,12 @@ export const CropPdf: React.FC = () => {
           <button
             onClick={processFile}
             disabled={isProcessing}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 transition-colors"
+            className="w-full flex justify-center items-center py-3.5 px-4 rounded-xl shadow-md text-sm font-bold text-[var(--c-bg)] bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 transition-all cursor-pointer"
           >
             {isProcessing ? (
-              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" />Cropping...</>
+              <><RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5" />Cropping...</>
             ) : (
-              <><Crop className="-ml-1 mr-2 h-5 w-5 text-white" />Crop PDF</>
+              <><Crop className="-ml-1 mr-2 h-5 w-5" />Crop PDF</>
             )}
           </button>
         </div>

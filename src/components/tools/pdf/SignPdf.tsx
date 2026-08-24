@@ -142,25 +142,25 @@ export const SignPdf: React.FC = () => {
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-lg font-semibold mb-4">1. Select Page</h3>
-          <div className="flex gap-4 overflow-x-auto p-4 bg-slate-50 dark:bg-slate-800/40 rounded-2xl">
+          <h3 className="text-base font-bold mb-4 text-[var(--c-text)]">1. Select Page to Sign</h3>
+          <div className="flex gap-4 overflow-x-auto p-4 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)]">
             {thumbnails.map((url, idx) => (
               <div 
                 key={idx} 
-                className={`cursor-pointer border-2 rounded shrink-0 transition ${selectedPage === idx ? 'border-indigo-500' : 'border-transparent'}`}
+                className={`cursor-pointer border-2 rounded-xl p-1 shrink-0 transition ${selectedPage === idx ? 'border-[var(--c-gold)] shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}`}
                 onClick={() => setSelectedPage(idx)}
               >
-                <img src={url} alt={`Page ${idx + 1}`} className="h-48 object-contain bg-white" />
-                <p className="text-center text-sm mt-1">Page {idx + 1}</p>
+                <img src={url} alt={`Page ${idx + 1}`} className="h-48 object-contain bg-white rounded-lg" />
+                <p className={`text-center text-xs mt-1 font-semibold ${selectedPage === idx ? 'text-[var(--c-gold)]' : 'text-[var(--c-subtle)]'}`}>Page {idx + 1}</p>
               </div>
             ))}
           </div>
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-4">2. Draw Signature</h3>
-          <div className="bg-slate-50 dark:bg-slate-800/40 p-4 rounded-2xl space-y-4">
-            <div className="border rounded bg-white w-[300px] h-[150px] mx-auto">
+          <h3 className="text-base font-bold mb-4 text-[var(--c-text)]">2. Draw Signature</h3>
+          <div className="bg-[var(--c-surface)] p-6 rounded-2xl space-y-4 border border-[var(--c-border)]">
+            <div className="border border-[var(--c-border)] rounded-xl bg-white w-[300px] h-[150px] mx-auto overflow-hidden shadow-inner">
               <canvas
                 ref={canvasRef}
                 width={300}
@@ -176,8 +176,8 @@ export const SignPdf: React.FC = () => {
               />
             </div>
             <div className="flex justify-center">
-              <button onClick={clearSignature} className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:bg-slate-200 rounded-lg">
-                <RotateCcw size={16} /> Clear Signature
+              <button onClick={clearSignature} className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] rounded-xl cursor-pointer">
+                <RotateCcw size={14} /> Clear Signature Pad
               </button>
             </div>
           </div>
@@ -185,9 +185,9 @@ export const SignPdf: React.FC = () => {
       </div>
 
       <div className="flex justify-between items-center">
-        <button onClick={handleReset} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
-        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2 bg-indigo-600 text-white rounded-lg flex items-center gap-2 hover:bg-indigo-700">
-          <Download size={18} /> Apply & Save
+        <button onClick={handleReset} className="px-4 py-2 text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] cursor-pointer">Change File</button>
+        <button onClick={handleApply} disabled={isProcessing} className="px-6 py-2.5 bg-[var(--c-accent)] text-[var(--c-bg)] font-bold rounded-xl flex items-center gap-2 hover:bg-[var(--c-gold)] cursor-pointer shadow-md">
+          <Download size={18} /> {isProcessing ? 'Applying...' : 'Apply & Download Signed PDF'}
         </button>
       </div>
       

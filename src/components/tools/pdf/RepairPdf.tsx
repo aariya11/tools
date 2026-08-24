@@ -80,39 +80,41 @@ export const RepairPdf: React.FC = () => {
             label="Original Size"
             value={formatFileSize(stats.originalSize)}
             badge="Before"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
           <StatCard
             label="Repaired Size"
             value={formatFileSize(stats.repairedSize)}
             badge="After"
             badgeType="success"
+            className="bg-[var(--c-surface)] border-[var(--c-border)]"
           />
         </div>
       ) : (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-[var(--c-surface)] rounded-2xl p-6 shadow-sm border border-[var(--c-border)] max-w-xl mx-auto">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
+            <div className="p-3 bg-[var(--c-card)] text-[var(--c-gold)] border border-[var(--c-border)] rounded-xl">
               <File className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200">{file.name}</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{formatFileSize(file.size)}</p>
+              <h3 className="font-semibold text-[var(--c-text)]">{file.name}</h3>
+              <p className="text-sm text-[var(--c-subtle)]">{formatFileSize(file.size)}</p>
             </div>
           </div>
           
           <button
             onClick={processFile}
             disabled={isProcessing}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full flex justify-center items-center py-3.5 px-4 rounded-xl shadow-md text-sm font-bold text-[var(--c-bg)] bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 transition-all cursor-pointer"
           >
             {isProcessing ? (
               <>
-                <RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" />
+                <RefreshCw className="animate-spin -ml-1 mr-2 h-5 w-5" />
                 Repairing...
               </>
             ) : (
               <>
-                <Hammer className="-ml-1 mr-2 h-5 w-5 text-white" />
+                <Hammer className="-ml-1 mr-2 h-5 w-5" />
                 Repair PDF
               </>
             )}

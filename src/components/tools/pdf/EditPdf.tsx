@@ -457,16 +457,16 @@ export const EditPdf: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Toolbar */}
-      <div className="p-4 rounded-3xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+      <div className="p-4 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] flex flex-wrap items-center justify-between gap-3">
         {/* Tool Selectors */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
           <button
             type="button"
             onClick={() => setActiveTool('text')}
-            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTool === 'text'
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-md'
-                : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                ? 'bg-[var(--c-gold)] text-[var(--c-bg)] shadow-md'
+                : 'text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)]'
             }`}
           >
             <Type className="w-4 h-4" />
@@ -476,10 +476,10 @@ export const EditPdf: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTool('whiteout')}
-            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTool === 'whiteout'
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-md'
-                : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                ? 'bg-[var(--c-gold)] text-[var(--c-bg)] shadow-md'
+                : 'text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)]'
             }`}
           >
             <Eraser className="w-4 h-4" />
@@ -489,10 +489,10 @@ export const EditPdf: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTool('rect')}
-            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTool === 'rect'
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-md'
-                : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                ? 'bg-[var(--c-gold)] text-[var(--c-bg)] shadow-md'
+                : 'text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)]'
             }`}
           >
             <Square className="w-4 h-4" />
@@ -502,10 +502,10 @@ export const EditPdf: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTool('circle')}
-            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTool === 'circle'
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-md'
-                : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                ? 'bg-[var(--c-gold)] text-[var(--c-bg)] shadow-md'
+                : 'text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)]'
             }`}
           >
             <Circle className="w-4 h-4" />
@@ -515,10 +515,10 @@ export const EditPdf: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTool('stamp')}
-            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTool === 'stamp'
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-md'
-                : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                ? 'bg-[var(--c-gold)] text-[var(--c-bg)] shadow-md'
+                : 'text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)]'
             }`}
           >
             <Stamp className="w-4 h-4" />
@@ -530,7 +530,7 @@ export const EditPdf: React.FC = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setAnnotations(annotations.filter(a => a.pageIndex !== currentPageIndex))}
-            className="p-2 rounded-xl text-zinc-500 hover:text-red-600 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-xs font-semibold flex items-center gap-1"
+            className="p-2 rounded-xl text-[var(--c-muted)] hover:text-rose-400 hover:bg-[var(--c-card)] text-xs font-semibold flex items-center gap-1 cursor-pointer"
             title="Clear edits on current page"
           >
             <RotateCcw className="w-4 h-4" />
@@ -540,7 +540,7 @@ export const EditPdf: React.FC = () => {
           <button
             onClick={handleApply}
             disabled={isProcessing}
-            className="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 disabled:opacity-50 text-white dark:text-zinc-900 text-xs font-bold shadow-md flex items-center gap-1.5 transition-all"
+            className="px-4 py-2 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] text-xs font-bold shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
           >
             <Download className="w-4 h-4" />
             <span>{isProcessing ? 'Saving...' : 'Apply & Save PDF'}</span>
@@ -549,12 +549,12 @@ export const EditPdf: React.FC = () => {
       </div>
 
       {/* Property Options Bar */}
-      <div className="p-4 rounded-3xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 space-y-3">
+      <div className="p-4 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3">
         {activeTool === 'text' && (
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
             {/* Text input */}
             <div className="sm:col-span-5">
-              <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">
+              <label className="text-[11px] font-bold text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
                 Text Content
               </label>
               <input
@@ -562,19 +562,19 @@ export const EditPdf: React.FC = () => {
                 value={textInput}
                 onChange={e => handleSelectedTextChange(e.target.value)}
                 placeholder="Type text to place on PDF..."
-                className="w-full px-3 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
               />
             </div>
 
             {/* Font Family */}
             <div className="sm:col-span-2">
-              <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">
+              <label className="text-[11px] font-bold text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
                 Font
               </label>
               <select
                 value={fontFamily}
                 onChange={e => setFontFamily(e.target.value as any)}
-                className="w-full px-2.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white"
+                className="w-full px-2.5 py-2 text-xs rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] outline-none focus:ring-1 focus:ring-[var(--c-gold)]"
               >
                 <option value="Helvetica">Helvetica / Arial</option>
                 <option value="TimesRoman">Times New Roman</option>
@@ -584,7 +584,7 @@ export const EditPdf: React.FC = () => {
 
             {/* Font Size */}
             <div className="sm:col-span-2">
-              <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">
+              <label className="text-[11px] font-bold text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
                 Size: {fontSize}px
               </label>
               <input
@@ -593,13 +593,13 @@ export const EditPdf: React.FC = () => {
                 max="48"
                 value={fontSize}
                 onChange={e => handleSelectedFontSizeChange(Number(e.target.value))}
-                className="w-full accent-zinc-900 dark:accent-white"
+                className="w-full accent-[var(--c-gold)]"
               />
             </div>
 
             {/* Color */}
             <div className="sm:col-span-1">
-              <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">
+              <label className="text-[11px] font-bold text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
                 Color
               </label>
               <input
@@ -612,14 +612,14 @@ export const EditPdf: React.FC = () => {
 
             {/* Whiteout Background Toggle */}
             <div className="sm:col-span-2 pt-4 sm:pt-0">
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-[var(--c-text)]">
                 <input
                   type="checkbox"
                   checked={useTextBg}
                   onChange={e => setUseTextBg(e.target.checked)}
-                  className="rounded accent-zinc-900 dark:accent-white"
+                  className="rounded accent-[var(--c-gold)]"
                 />
-                <span>Whiteout Fill (Cover text)</span>
+                <span>Whiteout Fill</span>
               </label>
             </div>
           </div>
@@ -627,16 +627,16 @@ export const EditPdf: React.FC = () => {
 
         {activeTool === 'stamp' && (
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400">Stamp Text:</span>
+            <span className="text-xs font-bold text-[var(--c-muted)]">Stamp Text:</span>
             {['APPROVED', 'CONFIDENTIAL', 'DRAFT', 'VOID', 'PAID'].map(s => (
               <button
                 key={s}
                 type="button"
                 onClick={() => setStampText(s)}
-                className={`px-3 py-1 rounded-lg text-xs font-bold border transition-colors ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold border transition-colors cursor-pointer ${
                   stampText === s
-                    ? 'bg-red-600 text-white border-transparent'
-                    : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+                    ? 'bg-rose-500 text-white border-transparent'
+                    : 'bg-[var(--c-card)] border-[var(--c-border)] text-[var(--c-text)] hover:border-[var(--c-gold)]'
                 }`}
               >
                 {s}
@@ -652,23 +652,23 @@ export const EditPdf: React.FC = () => {
         <div className="lg:col-span-9 space-y-4">
           {/* Page Pagination Controls */}
           {pageThumbnails.length > 1 && (
-            <div className="flex items-center justify-between p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800">
+            <div className="flex items-center justify-between p-3 rounded-2xl bg-[var(--c-surface)] border border-[var(--c-border)]">
               <button
                 onClick={() => handlePageChange(currentPageIndex - 1)}
                 disabled={currentPageIndex === 0}
-                className="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 disabled:opacity-40 text-xs font-semibold flex items-center gap-1"
+                className="p-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] disabled:opacity-40 text-xs font-semibold flex items-center gap-1 cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" /> Prev Page
               </button>
 
-              <span className="text-xs font-bold text-zinc-800 dark:text-zinc-200">
+              <span className="text-xs font-bold text-[var(--c-text)]">
                 Page {currentPageIndex + 1} of {pageThumbnails.length}
               </span>
 
               <button
                 onClick={() => handlePageChange(currentPageIndex + 1)}
                 disabled={currentPageIndex === pageThumbnails.length - 1}
-                className="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 disabled:opacity-40 text-xs font-semibold flex items-center gap-1"
+                className="p-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] disabled:opacity-40 text-xs font-semibold flex items-center gap-1 cursor-pointer"
               >
                 Next Page <ChevronRight className="w-4 h-4" />
               </button>
@@ -676,7 +676,7 @@ export const EditPdf: React.FC = () => {
           )}
 
           {/* Interactive Canvas Container */}
-          <div className="p-4 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center overflow-auto max-h-[700px]">
+          <div className="p-4 rounded-3xl border border-[var(--c-border)] bg-[var(--c-surface)] flex items-center justify-center overflow-auto max-h-[700px]">
             <canvas
               ref={canvasRef}
               onMouseDown={handleCanvasMouseDown}
@@ -686,26 +686,26 @@ export const EditPdf: React.FC = () => {
             />
           </div>
 
-          <p className="text-xs text-center text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs text-center text-[var(--c-subtle)]">
             💡 Click anywhere on the PDF page to place your text or element. Drag elements to reposition.
           </p>
         </div>
 
         {/* Right Sidebar: Active Layers / Annotations */}
         <div className="lg:col-span-3 space-y-4">
-          <div className="p-4 rounded-3xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 space-y-3">
+          <div className="p-4 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5" />
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--c-text)] flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-[var(--c-gold)]" />
                 Page {currentPageIndex + 1} Layers
               </h4>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-200 dark:bg-zinc-800">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--c-card)] text-[var(--c-muted)]">
                 {currentPageAnnotations.length}
               </span>
             </div>
 
             {currentPageAnnotations.length === 0 ? (
-              <p className="text-xs text-zinc-400 py-6 text-center">
+              <p className="text-xs text-[var(--c-subtle)] py-6 text-center">
                 No edits on this page yet. Click on the document to add text.
               </p>
             ) : (
@@ -718,15 +718,15 @@ export const EditPdf: React.FC = () => {
                       onClick={() => setSelectedAnnotationId(ann.id)}
                       className={`p-2.5 rounded-xl border text-xs flex items-center justify-between gap-2 cursor-pointer transition-colors ${
                         isSelected
-                          ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800'
-                          : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-400'
+                          ? 'border-[var(--c-gold)] bg-[var(--c-card)] text-[var(--c-text)]'
+                          : 'border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-muted)] hover:border-[var(--c-border-hover)]'
                       }`}
                     >
                       <div className="truncate">
                         <div className="font-bold capitalize truncate">
                           {ann.type === 'text' ? ann.text || 'Text Box' : ann.type}
                         </div>
-                        <div className="text-[10px] text-zinc-400">
+                        <div className="text-[10px] text-[var(--c-subtle)]">
                           x: {ann.x}, y: {ann.y}
                         </div>
                       </div>
@@ -735,7 +735,7 @@ export const EditPdf: React.FC = () => {
                           e.stopPropagation();
                           handleDeleteAnnotation(ann.id);
                         }}
-                        className="p-1 rounded text-red-500 hover:bg-red-50 dark:hover:bg-red-950/50"
+                        className="p-1 rounded text-rose-400 hover:bg-rose-500/10 cursor-pointer"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>

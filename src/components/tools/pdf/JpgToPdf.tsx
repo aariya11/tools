@@ -132,41 +132,41 @@ export const JpgToPdf: React.FC = () => {
             <StatCard
               label="Selected Images"
               value={`${images.length} Photos`}
-              className="bg-slate-50 dark:bg-slate-800/40"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
             <StatCard
               label="Total Image Size"
               value={formatFileSize(totalImageSize)}
-              className="bg-slate-50 dark:bg-slate-800/40"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
             <StatCard
               label="PDF Output"
               value={pdfBytes ? formatFileSize(pdfBytes.byteLength) : 'Ready to convert'}
               badge={pdfBytes ? 'Ready' : undefined}
               badgeType="success"
-              className="bg-slate-50 dark:bg-slate-800/40 border-indigo-200 dark:border-indigo-800"
+              className="bg-[var(--c-surface)] border-[var(--c-border)]"
             />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left: Layout Settings & Convert Button */}
-            <div className="lg:col-span-4 space-y-6 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
-                <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-                  <Sliders className="w-4 h-4 text-indigo-500" />
+            <div className="lg:col-span-4 space-y-6 bg-[var(--c-surface)] p-6 rounded-2xl border border-[var(--c-border)]">
+              <div className="flex items-center justify-between pb-3 border-b border-[var(--c-border)]">
+                <h3 className="font-bold text-base text-[var(--c-text)] flex items-center gap-2">
+                  <Sliders className="w-4 h-4 text-[var(--c-gold)]" />
                   PDF Page Layout
                 </h3>
                 <button
                   onClick={handleReset}
-                  className="text-xs text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1"
+                  className="text-xs text-rose-400 hover:underline flex items-center gap-1 cursor-pointer"
                 >
-                  <Trash2 className="w-3 3.5" /> Clear
+                  <Trash2 className="w-3.5 h-3.5" /> Clear
                 </button>
               </div>
 
               {/* Page Orientation */}
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--c-subtle)] block">
                   Page Orientation
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -179,10 +179,10 @@ export const JpgToPdf: React.FC = () => {
                       key={o.id}
                       type="button"
                       onClick={() => setOrientation(o.id as any)}
-                      className={`py-2 px-2 text-xs font-semibold rounded-xl border transition-all ${
+                      className={`py-2 px-2 text-xs font-semibold rounded-xl border transition-all cursor-pointer ${
                         orientation === o.id
-                          ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                          : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700'
+                          ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] shadow-xs'
+                          : 'bg-[var(--c-card)] text-[var(--c-muted)] border-[var(--c-border)] hover:border-[var(--c-border-hover)]'
                       }`}
                     >
                       {o.label}
@@ -193,7 +193,7 @@ export const JpgToPdf: React.FC = () => {
 
               {/* Page Margins */}
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--c-subtle)] block">
                   Page Margin
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -206,10 +206,10 @@ export const JpgToPdf: React.FC = () => {
                       key={m.val}
                       type="button"
                       onClick={() => setMargin(m.val)}
-                      className={`py-2 px-2 text-xs font-semibold rounded-xl border transition-all ${
+                      className={`py-2 px-2 text-xs font-semibold rounded-xl border transition-all cursor-pointer ${
                         margin === m.val
-                          ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                          : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700'
+                          ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)] shadow-xs'
+                          : 'bg-[var(--c-card)] text-[var(--c-muted)] border-[var(--c-border)] hover:border-[var(--c-border-hover)]'
                       }`}
                     >
                       {m.label}
@@ -219,25 +219,25 @@ export const JpgToPdf: React.FC = () => {
               </div>
 
               {/* Convert / Download CTA */}
-              <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+              <div className="pt-4 border-t border-[var(--c-border)]">
                 {!pdfBytes ? (
                   <button
                     onClick={handleConvertToPdf}
                     disabled={isConverting}
-                    className="w-full py-3.5 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-base shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+                    className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] disabled:opacity-50 text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
                   >
                     <FileText className="w-5 h-5" />
                     {isConverting ? 'Generating PDF...' : `Convert ${images.length} Images to PDF`}
                   </button>
                 ) : (
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
+                    <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold">
                       <CheckCircle2 className="w-5 h-5" />
                       <span>PDF Document Ready!</span>
                     </div>
                     <button
                       onClick={handleDownload}
-                      className="w-full py-3.5 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all active:scale-98"
+                      className="w-full py-3.5 px-6 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer"
                     >
                       <Download className="w-5 h-5" />
                       Download PDF File
@@ -249,7 +249,7 @@ export const JpgToPdf: React.FC = () => {
 
             {/* Right: Images List */}
             <div className="lg:col-span-8 space-y-4">
-              <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+              <span className="text-sm font-semibold text-[var(--c-text)]">
                 Image Sequence ({images.length})
               </span>
 
@@ -257,22 +257,22 @@ export const JpgToPdf: React.FC = () => {
                 {images.map((item, idx) => (
                   <div
                     key={`${item.file.name}-${idx}`}
-                    className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs"
+                    className="flex items-center justify-between p-3 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)] shadow-xs"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="w-6 h-6 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold flex items-center justify-center shrink-0">
+                      <span className="w-6 h-6 rounded-md bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-muted)] text-xs font-bold flex items-center justify-center shrink-0">
                         {idx + 1}
                       </span>
                       <img
                         src={item.dataUrl}
                         alt="Thumbnail"
-                        className="w-10 h-10 object-cover rounded-lg border border-slate-200 dark:border-slate-700 shrink-0"
+                        className="w-10 h-10 object-cover rounded-lg border border-[var(--c-border)] shrink-0"
                       />
                       <div className="min-w-0">
-                        <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 truncate">
+                        <p className="text-xs font-semibold text-[var(--c-text)] truncate">
                           {item.file.name}
                         </p>
-                        <p className="text-[11px] text-slate-400">
+                        <p className="text-[11px] text-[var(--c-subtle)]">
                           {item.width} × {item.height}px • {formatFileSize(item.file.size)}
                         </p>
                       </div>
@@ -282,20 +282,20 @@ export const JpgToPdf: React.FC = () => {
                       <button
                         onClick={() => moveUp(idx)}
                         disabled={idx === 0}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-30"
+                        className="p-1.5 rounded-lg text-[var(--c-muted)] hover:text-[var(--c-text)] disabled:opacity-30 cursor-pointer"
                       >
                         <ArrowUp className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => moveDown(idx)}
                         disabled={idx === images.length - 1}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-30"
+                        className="p-1.5 rounded-lg text-[var(--c-muted)] hover:text-[var(--c-text)] disabled:opacity-30 cursor-pointer"
                       >
                         <ArrowDown className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => removeImage(idx)}
-                        className="p-1.5 rounded-lg text-rose-400 hover:text-rose-600 dark:hover:text-rose-300"
+                        className="p-1.5 rounded-lg text-rose-400 hover:text-rose-300 cursor-pointer"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
