@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Search,
-  Sun,
-  Moon,
   Menu,
   X,
   Image as ImageIcon,
@@ -12,8 +10,6 @@ import {
   QrCode,
   Grid,
   ShieldCheck,
-  Palette,
-  Globe,
   Sparkles,
   Briefcase,
   Code2,
@@ -21,18 +17,10 @@ import {
   Flame,
   GraduationCap,
 } from 'lucide-react';
-import { useTheme } from '../../context/ThemeContext';
-import { useLanguage } from '../../context/LanguageContext';
 import { SearchModal } from '../common/SearchModal';
-import { ThemeModal } from '../common/ThemeModal';
-import { LanguageModal } from '../common/LanguageModal';
 
 export const Header: React.FC = () => {
-  const { mode, toggleMode, currentPresetConfig } = useTheme();
-  const { currentLanguage, t } = useLanguage();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isThemeOpen, setIsThemeOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -208,55 +196,20 @@ export const Header: React.FC = () => {
             {/* Global Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2.5 px-3 py-2 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:border-[var(--c-border-hover)] text-[var(--c-muted)] hover:text-[var(--c-text)] text-xs transition-all"
+              className="flex items-center gap-2.5 px-3 py-2 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:border-[var(--c-border-hover)] text-[var(--c-muted)] hover:text-[var(--c-text)] text-xs transition-all cursor-pointer"
               aria-label="Search tools"
             >
               <Search className="w-3.5 h-3.5 text-[var(--c-gold)]" />
-              <span className="hidden md:inline font-medium">{t('nav.search', 'Search tools...')}</span>
+              <span className="hidden md:inline font-medium">Search tools...</span>
               <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono text-[var(--c-muted)] bg-[var(--c-card)] border border-[var(--c-border)] rounded shadow-xs">
                 ⌘K
               </kbd>
             </button>
 
-            {/* Global Language Selector */}
-            <button
-              onClick={() => setIsLangOpen(true)}
-              className="flex items-center gap-1.5 px-2.5 py-2 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-muted)] hover:text-[var(--c-text)] hover:border-[var(--c-border-hover)] text-xs font-semibold transition-all"
-              title="Change language"
-              aria-label="Change language"
-            >
-              <Globe className="w-3.5 h-3.5 text-[var(--c-muted)]" />
-              <span className="text-xs">{currentLanguage.flag}</span>
-              <span className="hidden sm:inline uppercase text-[11px] font-mono font-bold">{currentLanguage.code}</span>
-            </button>
-
-            {/* Theme Customizer */}
-            <button
-              onClick={() => setIsThemeOpen(true)}
-              className="flex items-center gap-1.5 p-2 sm:px-2.5 sm:py-2 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-muted)] hover:text-[var(--c-text)] hover:border-[var(--c-border-hover)] text-xs font-semibold transition-all"
-              title="Customize theme atmosphere"
-              aria-label="Customize theme"
-            >
-              <Palette className="w-3.5 h-3.5 text-[var(--c-gold)]" />
-              <div
-                className="w-2.5 h-2.5 rounded-full border border-white/20 hidden sm:block"
-                style={{ backgroundColor: currentPresetConfig.accentColor }}
-              />
-            </button>
-
-            {/* Light / Dark Mode Toggle */}
-            <button
-              onClick={toggleMode}
-              className="p-2 rounded-xl text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] transition-colors border border-transparent hover:border-[var(--c-border)]"
-              aria-label={mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            >
-              {mode === 'dark' ? <Sun className="w-4 h-4 text-[var(--c-gold)]" /> : <Moon className="w-4 h-4 text-[var(--c-text)]" />}
-            </button>
-
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] border border-[var(--c-border)] transition-colors"
+              className="lg:hidden p-2 rounded-xl text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] border border-[var(--c-border)] transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -274,7 +227,7 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <FileText className="w-5 h-5 text-[var(--c-gold)]" />
-                <span>{t('nav.pdfTools', 'PDF Tools (30+ Utilities)')}</span>
+                <span>PDF Tools (30+ Utilities)</span>
               </Link>
 
               <Link
@@ -282,7 +235,7 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <ImageIcon className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>{t('nav.imageTools', 'Image Tools')}</span>
+                <span>Image Tools</span>
               </Link>
 
               <Link
@@ -322,7 +275,7 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <QrCode className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>{t('nav.generators', 'Utilities & QR')}</span>
+                <span>Utilities & QR</span>
               </Link>
 
               <Link
@@ -354,27 +307,8 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <Grid className="w-5 h-5 text-[var(--c-gold)]" />
-                <span>{t('nav.allTools', 'All Tools Catalog')}</span>
+                <span>All 60+ Tools Catalog</span>
               </Link>
-            </div>
-
-            {/* Quick Actions in Mobile Drawer */}
-            <div className="grid grid-cols-2 gap-2 pt-2">
-              <button
-                onClick={() => { setIsMobileMenuOpen(false); setIsLangOpen(true); }}
-                className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-xs font-semibold text-[var(--c-text)]"
-              >
-                <Globe className="w-4 h-4 text-[var(--c-gold)]" />
-                <span>{currentLanguage.flag} Language</span>
-              </button>
-
-              <button
-                onClick={() => { setIsMobileMenuOpen(false); setIsThemeOpen(true); }}
-                className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-xs font-semibold text-[var(--c-text)]"
-              >
-                <Palette className="w-4 h-4 text-[var(--c-gold)]" />
-                <span>Atmosphere</span>
-              </button>
             </div>
 
             <div className="pt-3 border-t border-[var(--c-border)] grid grid-cols-2 gap-2 text-xs text-[var(--c-muted)]">
@@ -394,12 +328,6 @@ export const Header: React.FC = () => {
 
       {/* Global Search Dialog */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-
-      {/* Theme Customizer Modal */}
-      <ThemeModal isOpen={isThemeOpen} onClose={() => setIsThemeOpen(false)} />
-
-      {/* Global Language Modal */}
-      <LanguageModal isOpen={isLangOpen} onClose={() => setIsLangOpen(false)} />
     </>
   );
 };

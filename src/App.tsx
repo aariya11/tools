@@ -186,6 +186,7 @@ export function App() {
                 {/* Platform Pages */}
                 <Route path="/" element={<HomePage />} />
                 <Route path="/all-tools" element={<AllToolsPage />} />
+                <Route path="/tools" element={<Navigate to="/all-tools" replace />} />
                 <Route path="/category/:id" element={<CategoryPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />

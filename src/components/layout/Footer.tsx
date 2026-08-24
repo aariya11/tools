@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Palette, Globe, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, ArrowUpRight, Lock, Zap } from 'lucide-react';
 import { getToolsByCategory } from '../../data/toolsData';
-import { useTheme } from '../../context/ThemeContext';
-import { useLanguage } from '../../context/LanguageContext';
-import { ThemeModal } from '../common/ThemeModal';
-import { LanguageModal } from '../common/LanguageModal';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
   <svg
@@ -24,11 +20,6 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4'
 );
 
 export const Footer: React.FC = () => {
-  const { currentPresetConfig } = useTheme();
-  const { currentLanguage } = useLanguage();
-  const [isThemeOpen, setIsThemeOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
-
   const imageTools = getToolsByCategory('images');
   const pdfTools = getToolsByCategory('pdf');
   const aiTools = getToolsByCategory('ai');
@@ -56,22 +47,15 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setIsLangOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-xs font-semibold text-[var(--c-text)] hover:border-[var(--c-border-hover)] transition-colors cursor-pointer"
-              >
-                <Globe className="w-3.5 h-3.5 text-[var(--c-gold)]" />
-                <span>{currentLanguage.flag} {currentLanguage.nativeName}</span>
-              </button>
-
-              <button
-                onClick={() => setIsThemeOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-xs font-semibold text-[var(--c-text)] hover:border-[var(--c-border-hover)] transition-colors cursor-pointer"
-              >
-                <Palette className="w-3.5 h-3.5 text-[var(--c-gold)]" />
-                <span>Theme: {currentPresetConfig.name.split(' ')[0]}</span>
-              </button>
+            <div className="flex items-center gap-3 text-xs text-[var(--c-muted)] font-mono">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)]">
+                <Lock className="w-3.5 h-3.5 text-[var(--c-gold)]" />
+                <span>Zero Server Uploads</span>
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)]">
+                <Zap className="w-3.5 h-3.5 text-[var(--c-gold)]" />
+                <span>Client-Side Speed</span>
+              </span>
             </div>
           </div>
         </div>
@@ -257,12 +241,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      {/* Theme Modal */}
-      <ThemeModal isOpen={isThemeOpen} onClose={() => setIsThemeOpen(false)} />
-
-      {/* Language Modal */}
-      <LanguageModal isOpen={isLangOpen} onClose={() => setIsLangOpen(false)} />
     </>
   );
 };

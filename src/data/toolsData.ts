@@ -4100,8 +4100,8 @@ export const getRecentTools = (): ToolMeta[] => {
 };
 
 export const searchTools = (query: string): ToolMeta[] => {
-  if (!query.trim()) return [];
-  const q = query.toLowerCase();
+  if (!query || !query.trim()) return TOOLS_DATA;
+  const q = query.toLowerCase().trim();
   return TOOLS_DATA.filter(
     (t) =>
       t.name.toLowerCase().includes(q) ||

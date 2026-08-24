@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
   const textTools = getToolsByCategory('text');
   const generatorTools = getToolsByCategory('generators');
 
-  const searchResults = searchTools(searchQuery);
+  const searchResults = searchQuery.trim() ? searchTools(searchQuery) : [];
 
   const QUICK_SUGGESTIONS = [
     { label: 'Compress PDF', path: '/pdf-compress' },
