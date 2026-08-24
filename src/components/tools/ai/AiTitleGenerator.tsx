@@ -486,7 +486,7 @@ Do not output numbering or other markdown code blocks.`;
             className="w-full sm:w-auto py-3 px-7 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-98 disabled:opacity-40 cursor-pointer"
             style={{
               backgroundColor: 'var(--c-gold)',
-              color: '#11110F',
+              color: 'var(--c-bg)',
             }}
           >
             {isGenerating ? (
@@ -609,7 +609,7 @@ Do not output numbering or other markdown code blocks.`;
                     className="py-2 px-3.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-sm"
                     style={{
                       backgroundColor: isCopied ? '#10B981' : 'var(--c-gold)',
-                      color: isCopied ? '#FFFFFF' : '#11110F',
+                      color: isCopied ? '#FFFFFF' : 'var(--c-bg)',
                     }}
                   >
                     {isCopied ? (

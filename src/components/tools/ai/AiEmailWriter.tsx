@@ -525,7 +525,7 @@ ${talkingPoints}
             className="w-full py-3 px-6 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-98 disabled:opacity-40 cursor-pointer mt-4"
             style={{
               backgroundColor: 'var(--c-gold)',
-              color: '#11110F',
+              color: 'var(--c-bg)',
             }}
           >
             {isGenerating ? (

@@ -29,28 +29,28 @@ export const AllToolsPage: React.FC = () => {
       <Breadcrumbs items={[{ label: 'All Tools' }]} />
 
       <div className="text-center max-w-3xl mx-auto my-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider">
           <Grid className="w-3.5 h-3.5" />
           <span>Full Catalog ({TOOLS_DATA.length} Tools)</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8]">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[var(--c-text)]">
           All Online Utilities
         </h1>
-        <p className="text-base text-[#B8B2A7] leading-relaxed max-w-2xl mx-auto font-normal">
+        <p className="text-base text-[var(--c-muted)] leading-relaxed max-w-2xl mx-auto font-normal">
           Fast, browser-based tools with 100% on-device privacy. Zero server uploads.
         </p>
       </div>
 
       {/* Search and Category Filter Bar */}
-      <div className="max-w-3xl mx-auto mb-12 space-y-4">
+      <div className="max-w-4xl mx-auto mb-12 space-y-4">
         <div className="relative">
-          <Search className="w-5 h-5 text-[#B79B70] absolute left-4 top-1/2 -translate-y-1/2" />
+          <Search className="w-5 h-5 text-[var(--c-gold)] absolute left-4 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search all tools by name, action or keyword..."
-            className="w-full pl-12 pr-4 py-3.5 text-sm rounded-2xl border border-[#2A2824] bg-[#161513] text-[#F5F1E8] placeholder:text-[#7A756D] focus:ring-1 focus:ring-[#B79B70] focus:border-[#B79B70] shadow-sm outline-none transition-all"
+            className="w-full pl-12 pr-4 py-3.5 text-sm rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text)] placeholder:text-[var(--c-subtle)] focus:ring-1 focus:ring-[var(--c-gold)] focus:border-[var(--c-gold)] shadow-sm outline-none transition-all"
           />
         </div>
 
@@ -63,6 +63,8 @@ export const AllToolsPage: React.FC = () => {
             { id: 'ai', label: 'AI Suite' },
             { id: 'developer', label: 'Developer Tools' },
             { id: 'business', label: 'Business & Marketing' },
+            { id: 'social', label: 'Social & Creators' },
+            { id: 'calculators', label: 'Calculators' },
             { id: 'text', label: 'Text Tools' },
             { id: 'file', label: 'File & Archive' },
             { id: 'generators', label: 'Generators' },

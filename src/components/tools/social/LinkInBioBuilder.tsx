@@ -563,7 +563,7 @@ export const LinkInBioBuilder: React.FC = () => {
             </button>
             <button
               onClick={handleDownloadHtml}
-              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download index.html</span>
@@ -708,7 +708,7 @@ export const LinkInBioBuilder: React.FC = () => {
               </h3>
               <button
                 onClick={handleAddLink}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--c-gold)] text-[#11110F] text-xs font-bold shadow-sm hover:bg-[var(--c-text)] transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--c-gold)] text-[var(--c-bg)] text-xs font-bold shadow-sm hover:bg-[var(--c-text)] transition-all cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Link</span>

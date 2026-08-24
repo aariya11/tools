@@ -37,14 +37,14 @@ export const CategoryPage: React.FC = () => {
       />
 
       <div className="text-center max-w-3xl mx-auto my-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider">
           <DynamicIcon name={categoryMeta.icon} className="w-3.5 h-3.5" />
           <span>{categoryMeta.name}</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8]">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[var(--c-text)]">
           {categoryMeta.name}
         </h1>
-        <p className="text-base text-[#B8B2A7] leading-relaxed max-w-2xl mx-auto font-normal">
+        <p className="text-base text-[var(--c-muted)] leading-relaxed max-w-2xl mx-auto font-normal">
           {categoryMeta.description}
         </p>
       </div>

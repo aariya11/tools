@@ -45,22 +45,22 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Tool Header */}
       <div className="text-center max-w-3xl mx-auto my-8 sm:my-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs">
           <DynamicIcon name={tool.icon} className="w-3.5 h-3.5" />
           <span>{tool.category} Utility</span>
         </div>
 
         {/* SEO Editorial H1 Heading */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8] tracking-tight mb-4 leading-[1.15]">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[var(--c-text)] tracking-tight mb-4 leading-[1.15]">
           {h1Title}
         </h1>
 
-        <p className="text-base sm:text-lg text-[#B8B2A7] leading-relaxed max-w-2xl mx-auto font-normal">
+        <p className="text-base sm:text-lg text-[var(--c-muted)] leading-relaxed max-w-2xl mx-auto font-normal">
           {tool.fullDescription}
         </p>
 
         {/* Privacy Assurance Pill */}
-        <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161513] border border-[#2A2824] text-[#B8B2A7] text-xs font-medium shadow-xs">
+        <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-muted)] text-xs font-medium shadow-xs">
           <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
           <span>100% Client-Side Privacy: Your files never leave your device</span>
         </div>
@@ -68,19 +68,19 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Main Interactive Tool Workspace Container */}
       <div className="my-8">
-        <div className="bg-[#161513] rounded-3xl border border-[#2A2824] p-4 sm:p-8 shadow-2xl backdrop-blur-md">
+        <div className="bg-[var(--c-surface)] rounded-3xl border border-[var(--c-border)] p-4 sm:p-8 shadow-2xl backdrop-blur-md">
           {children}
         </div>
       </div>
 
       {/* Step-by-Step "How to Use" Section */}
       {tool.howToSteps && tool.howToSteps.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-[#2A2824]">
+        <section className="mt-16 pt-12 border-t border-[var(--c-border)]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[var(--c-text)]">
               How to Use {tool.name} Online
             </h2>
-            <p className="text-sm text-[#B8B2A7] mt-2">
+            <p className="text-sm text-[var(--c-muted)] mt-2">
               Follow these simple steps to process your files securely in seconds.
             </p>
           </div>
@@ -89,15 +89,15 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
             {tool.howToSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="relative p-6 rounded-2xl border border-[#2A2824] bg-[#161513] hover:border-[#3D3A34] shadow-xs flex flex-col justify-start transition-colors"
+                className="relative p-6 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:border-[var(--c-border-hover)] shadow-xs flex flex-col justify-start transition-colors"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] font-mono font-bold text-xs flex items-center justify-center mb-4 shadow-sm">
+                <div className="w-8 h-8 rounded-lg bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] font-mono font-bold text-xs flex items-center justify-center mb-4 shadow-sm">
                   0{idx + 1}
                 </div>
-                <h3 className="text-base font-bold text-[#F5F1E8] mb-2">
+                <h3 className="text-base font-bold text-[var(--c-text)] mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+                <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
                   {step.description}
                 </p>
               </div>
@@ -108,33 +108,33 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Rich Educational Section (Overview & Use Cases) */}
       {tool.educationalSection && (
-        <section className="mt-16 pt-12 border-t border-[#2A2824]">
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-6">
+        <section className="mt-16 pt-12 border-t border-[var(--c-border)]">
+          <div className="p-8 sm:p-10 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-6">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider mb-3">
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>Overview & Guide</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8] mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[var(--c-text)] mb-4">
                 {tool.educationalSection.title}
               </h2>
               {tool.educationalSection.paragraphs.map((p, i) => (
-                <p key={i} className="text-sm sm:text-base text-[#B8B2A7] leading-relaxed mb-4 font-normal">
+                <p key={i} className="text-sm sm:text-base text-[var(--c-muted)] leading-relaxed mb-4 font-normal">
                   {p}
                 </p>
               ))}
             </div>
 
             {tool.educationalSection.useCases && tool.educationalSection.useCases.length > 0 && (
-              <div className="pt-4 border-t border-[#2A2824]/80">
-                <h3 className="text-base font-bold text-[#F5F1E8] mb-3">
+              <div className="pt-4 border-t border-[var(--c-border)]/80">
+                <h3 className="text-base font-bold text-[var(--c-text)] mb-3">
                   Common Use Cases
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {tool.educationalSection.useCases.map((useCase, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-sm text-[#B8B2A7]">
-                      <div className="w-5 h-5 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-[#B79B70]" />
+                    <div key={idx} className="flex items-start gap-2.5 text-sm text-[var(--c-muted)]">
+                      <div className="w-5 h-5 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-[var(--c-gold)]" />
                       </div>
                       <span>{useCase}</span>
                     </div>
@@ -148,12 +148,12 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Key Features & Capabilities Section */}
       {tool.features && tool.features.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-[#2A2824]">
+        <section className="mt-16 pt-12 border-t border-[var(--c-border)]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[var(--c-text)]">
               Key Features & Capabilities
             </h2>
-            <p className="text-sm text-[#B8B2A7] mt-2">
+            <p className="text-sm text-[var(--c-muted)] mt-2">
               Engineered for maximum speed, precision, and privacy.
             </p>
           </div>
@@ -162,16 +162,16 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
             {tool.features.map((feature, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl border border-[#2A2824] bg-[#161513] hover:border-[#3D3A34] shadow-xs flex items-start gap-4 transition-colors"
+                className="p-6 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:border-[var(--c-border-hover)] shadow-xs flex items-start gap-4 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-[#F5F1E8] mb-1">
+                  <h3 className="text-base font-bold text-[var(--c-text)] mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+                  <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
                     {feature.description}
                   </p>
                 </div>
@@ -183,16 +183,16 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Frequently Asked Questions */}
       {tool.faqs && tool.faqs.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-[#2A2824]">
+        <section className="mt-16 pt-12 border-t border-[var(--c-border)]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider mb-3">
               <HelpCircle className="w-3.5 h-3.5" />
               <span>Questions & Answers</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[var(--c-text)]">
               Frequently Asked Questions
             </h2>
-            <p className="text-sm text-[#B8B2A7] mt-2">
+            <p className="text-sm text-[var(--c-muted)] mt-2">
               Everything you need to know about using our {tool.name} tool.
             </p>
           </div>

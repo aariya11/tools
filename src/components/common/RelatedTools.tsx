@@ -21,20 +21,20 @@ export const RelatedTools: React.FC<RelatedToolsProps> = ({
   if (relatedTools.length === 0) return null;
 
   return (
-    <section className="mt-16 pt-12 border-t border-[#2A2824]">
+    <section className="mt-16 pt-12 border-t border-[var(--c-border)]">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
+          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[var(--c-text)]">
             Related Utilities
           </h2>
-          <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+          <p className="text-sm text-[var(--c-muted)] mt-1 font-normal">
             Other tools frequently used alongside {currentTool?.name || 'this utility'}
           </p>
         </div>
 
         <Link
           to="/all-tools"
-          className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+          className="text-xs font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5"
         >
           View All Tools <ArrowRight className="w-3.5 h-3.5" />
         </Link>
@@ -61,16 +61,16 @@ export const PostCompletionRecommendations: React.FC<{
   if (relatedTools.length === 0) return null;
 
   return (
-    <div className="mt-8 p-6 rounded-2xl border border-[#2A2824] bg-[#161513] shadow-lg animate-in fade-in">
+    <div className="mt-8 p-6 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] shadow-lg animate-in fade-in">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <div className="flex items-center gap-2 text-[#F5F1E8]">
-          <Sparkles className="w-4 h-4 text-[#B79B70]" />
+        <div className="flex items-center gap-2 text-[var(--c-text)]">
+          <Sparkles className="w-4 h-4 text-[var(--c-gold)]" />
           <h4 className="font-semibold text-sm tracking-wide">Next Recommended Steps:</h4>
         </div>
         {onReset && (
           <button
             onClick={onReset}
-            className="text-xs font-medium text-[#B8B2A7] hover:text-[#F5F1E8] underline cursor-pointer"
+            className="text-xs font-medium text-[var(--c-muted)] hover:text-[var(--c-text)] underline cursor-pointer"
           >
             Process another file
           </button>
@@ -82,12 +82,12 @@ export const PostCompletionRecommendations: React.FC<{
           <Link
             key={tool.id}
             to={tool.path}
-            className="p-4 rounded-xl border border-[#2A2824] bg-[#1B1A17] hover:border-[#B79B70]/50 hover:bg-[#1F1E1B] transition-all flex flex-col justify-between group"
+            className="p-4 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] hover:border-[var(--c-gold)]/50 hover:bg-[var(--c-surface)] transition-all flex flex-col justify-between group"
           >
-            <span className="text-xs font-bold text-[#F5F1E8] group-hover:text-[#E8DFCF] transition-colors">
+            <span className="text-xs font-bold text-[var(--c-text)] group-hover:text-[var(--c-accent)] transition-colors">
               {tool.name}
             </span>
-            <span className="text-[11px] text-[#B8B2A7] mt-1 line-clamp-1">
+            <span className="text-[11px] text-[var(--c-muted)] mt-1 line-clamp-1">
               {tool.shortDescription}
             </span>
           </Link>

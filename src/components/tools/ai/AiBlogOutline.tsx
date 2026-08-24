@@ -611,7 +611,7 @@ Return ONLY pure JSON. Do not include markdown code block formatting or preamble
             className="w-full sm:w-auto py-3 px-8 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-98 disabled:opacity-40 cursor-pointer"
             style={{
               backgroundColor: 'var(--c-gold)',
-              color: '#11110F',
+              color: 'var(--c-bg)',
             }}
           >
             {isGenerating ? (
@@ -660,7 +660,7 @@ Return ONLY pure JSON. Do not include markdown code block formatting or preamble
             <button
               onClick={handleDownloadMarkdown}
               className="py-2 px-3.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-sm"
-              style={{ backgroundColor: 'var(--c-gold)', color: '#11110F' }}
+              style={{ backgroundColor: 'var(--c-gold)', color: 'var(--c-bg)' }}
             >
               <Download className="w-3.5 h-3.5" /> Download .MD
             </button>

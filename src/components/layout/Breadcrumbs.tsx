@@ -16,13 +16,13 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`flex items-center space-x-2 text-xs text-[#B8B2A7] py-3 ${className}`}
+      className={`flex items-center space-x-2 text-xs text-[var(--c-muted)] py-3 ${className}`}
     >
       <Link
         to="/"
-        className="flex items-center gap-1 hover:text-[#F5F1E8] transition-colors"
+        className="flex items-center gap-1 hover:text-[var(--c-text)] transition-colors"
       >
-        <Home className="w-3.5 h-3.5 text-[#B79B70]" />
+        <Home className="w-3.5 h-3.5 text-[var(--c-gold)]" />
         <span>Home</span>
       </Link>
 
@@ -30,16 +30,16 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
         const isLast = idx === items.length - 1;
         return (
           <React.Fragment key={idx}>
-            <ChevronRight className="w-3 h-3 text-[#7A756D] shrink-0" />
+            <ChevronRight className="w-3 h-3 text-[var(--c-subtle)] shrink-0" />
             {item.path && !isLast ? (
               <Link
                 to={item.path}
-                className="hover:text-[#F5F1E8] transition-colors capitalize truncate"
+                className="hover:text-[var(--c-text)] transition-colors capitalize truncate"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="font-semibold text-[#F5F1E8] capitalize truncate">
+              <span className="font-semibold text-[var(--c-text)] capitalize truncate">
                 {item.label}
               </span>
             )}

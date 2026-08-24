@@ -711,7 +711,7 @@ export const SocialImageGenerator: React.FC = () => {
             </button>
             <button
               onClick={handleDownload}
-              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download PNG ({activeRatioConfig.width}×{activeRatioConfig.height})</span>

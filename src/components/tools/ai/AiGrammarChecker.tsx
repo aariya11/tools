@@ -488,7 +488,7 @@ export const AiGrammarChecker: React.FC = () => {
                 className="py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-md transition-all active:scale-98 disabled:opacity-40 cursor-pointer flex-1 sm:flex-initial"
                 style={{
                   backgroundColor: 'var(--c-gold)',
-                  color: '#11110F',
+                  color: 'var(--c-bg)',
                 }}
               >
                 <Wand2 className="w-3.5 h-3.5" /> Fix All Issues ({detectedIssues.length})

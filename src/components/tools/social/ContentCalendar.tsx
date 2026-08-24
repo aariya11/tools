@@ -466,7 +466,7 @@ export const ContentCalendar: React.FC = () => {
           <div className="flex items-center gap-2 flex-wrap">
             <button
               onClick={() => openCreateModal()}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Add Post</span>
@@ -550,7 +550,7 @@ export const ContentCalendar: React.FC = () => {
                 onClick={() => setViewMode('month')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
                   viewMode === 'month'
-                    ? 'bg-[var(--c-gold)] text-[#11110F]'
+                    ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                     : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
@@ -561,7 +561,7 @@ export const ContentCalendar: React.FC = () => {
                 onClick={() => setViewMode('kanban')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
                   viewMode === 'kanban'
-                    ? 'bg-[var(--c-gold)] text-[#11110F]'
+                    ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                     : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
@@ -572,7 +572,7 @@ export const ContentCalendar: React.FC = () => {
                 onClick={() => setViewMode('list')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
                   viewMode === 'list'
-                    ? 'bg-[var(--c-gold)] text-[#11110F]'
+                    ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                     : 'text-[var(--c-muted)] hover:text-[var(--c-text)]'
                 }`}
               >
@@ -671,7 +671,7 @@ export const ContentCalendar: React.FC = () => {
                     <span
                       className={`text-xs font-mono font-bold w-6 h-6 rounded-full flex items-center justify-center ${
                         isToday
-                          ? 'bg-[var(--c-gold)] text-[#11110F]'
+                          ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                           : 'text-[var(--c-text)] group-hover:text-[var(--c-gold)]'
                       }`}
                     >
@@ -1024,7 +1024,7 @@ export const ContentCalendar: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all cursor-pointer"
+                  className="px-6 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all cursor-pointer"
                 >
                   {editingPostId ? 'Save Changes' : 'Schedule Post'}
                 </button>

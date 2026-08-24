@@ -33,6 +33,8 @@ export const HomePage: React.FC = () => {
   const aiTools = getToolsByCategory('ai');
   const devTools = getToolsByCategory('developer');
   const bizTools = getToolsByCategory('business');
+  const socialTools = getToolsByCategory('social');
+  const calcTools = getToolsByCategory('calculators');
   const textTools = getToolsByCategory('text');
   const generatorTools = getToolsByCategory('generators');
 
@@ -43,18 +45,18 @@ export const HomePage: React.FC = () => {
     { label: 'Merge PDF', path: '/pdf-merge' },
     { label: 'PDF Editor', path: '/edit-pdf' },
     { label: 'Background Remover', path: '/background-remover' },
+    { label: 'Age Calculator', path: '/age-calculator' },
+    { label: 'Social Post Generator', path: '/social-content-generator' },
     { label: 'AI Summarizer', path: '/ai-summarizer' },
     { label: 'JSON Formatter', path: '/json-formatter' },
     { label: 'Resume Builder', path: '/resume-builder' },
-    { label: 'Invoice Generator', path: '/invoice-generator' },
-    { label: 'Image Compressor', path: '/image-compressor' },
     { label: 'QR Code Generator', path: '/qr-code-generator' },
   ];
 
   const HOMEPAGE_FAQS = [
     {
       question: 'What is ToolBoxX?',
-      answer: 'ToolBoxX is an all-in-one suite of 39+ free, browser-based digital productivity tools for editing PDFs, compressing images, converting file formats, analyzing text, and generating custom QR codes without software installation.'
+      answer: `ToolBoxX is an all-in-one suite of ${TOOLS_DATA.length}+ free, browser-based digital productivity tools for editing PDFs, compressing images, converting file formats, calculating finances, generating social media content, and creating custom QR codes without software installation.`
     },
     {
       question: 'Are ToolBoxX tools completely free to use?',
@@ -94,10 +96,10 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#11110F] text-[#F5F1E8]">
+    <div className="w-full bg-[var(--c-bg)] text-[var(--c-text)]">
       <SeoHead
-        title="Free Online Tools – PDF, Image, Text & QR Code Utilities"
-        description="Discover 39+ fast, free online tools to compress images, merge and edit PDF files, convert formats, count words, and generate QR codes with 100% browser privacy."
+        title="Free Online Tools – PDF, Image, AI, Developer & Calculator Utilities"
+        description={`Discover ${TOOLS_DATA.length}+ fast, free online tools to compress images, edit PDFs, generate social content, calculate finances, and build resumes with 100% browser privacy.`}
         canonicalPath="/"
         faqs={HOMEPAGE_FAQS}
       />
@@ -105,45 +107,45 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 1. HERO SECTION (Editorial, Minimalist, High-Impact) */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-[#2A2824]/60">
+      <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-[var(--c-border)]/60">
         {/* Subtle radial ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#B79B70]/5 blur-[140px] pointer-events-none -z-10 rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[var(--c-gold)]/5 blur-[140px] pointer-events-none -z-10 rounded-full" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           {/* Trust / Privacy Pill */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#161513] border border-[#2A2824] text-[#B8B2A7] text-xs font-medium shadow-xs">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[var(--c-surface)] border border-[var(--c-border)] text-[var(--c-muted)] text-xs font-medium shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>100% Client-Side Privacy: Your files never leave your device</span>
           </div>
 
           {/* Editorial Display Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight text-[#F5F1E8] leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight text-[var(--c-text)] leading-[1.1]">
             All the tools you need.<br />
-            <span className="text-[#B79B70] italic font-normal">
+            <span className="text-[var(--c-gold)] italic font-normal">
               In one simple toolbox.
             </span>
           </h1>
 
           {/* Hero Subtitle */}
-          <p className="text-base sm:text-xl text-[#B8B2A7] max-w-2xl mx-auto leading-relaxed font-normal">
-            Free, fast and privacy-friendly online tools for PDFs, images, text and everyday productivity.
+          <p className="text-base sm:text-xl text-[var(--c-muted)] max-w-2xl mx-auto leading-relaxed font-normal">
+            Free, fast and privacy-friendly online tools for PDFs, images, AI, developer utilities and daily productivity.
           </p>
 
           {/* Prominent Search Bar */}
           <div className="max-w-2xl mx-auto pt-2">
             <form onSubmit={handleSearchSubmit} className="relative group">
-              <div className="relative flex items-center rounded-2xl sm:rounded-3xl shadow-2xl border border-[#2A2824] bg-[#161513] backdrop-blur-md overflow-hidden focus-within:border-[#B79B70]/70 focus-within:ring-1 focus-within:ring-[#B79B70]/70 transition-all">
-                <Search className="w-5 h-5 text-[#B79B70] ml-5 shrink-0" />
+              <div className="relative flex items-center rounded-2xl sm:rounded-3xl shadow-2xl border border-[var(--c-border)] bg-[var(--c-surface)] backdrop-blur-md overflow-hidden focus-within:border-[var(--c-gold)]/70 focus-within:ring-1 focus-within:ring-[var(--c-gold)]/70 transition-all">
+                <Search className="w-5 h-5 text-[var(--c-gold)] ml-5 shrink-0" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for a tool (e.g. compress PDF, word counter, JPG to PNG)..."
-                  className="w-full px-4 py-4 text-sm sm:text-base bg-transparent border-0 text-[#F5F1E8] placeholder:text-[#7A756D] focus:outline-none"
+                  placeholder="Search for a tool (e.g. compress PDF, word counter, JPG to PNG, age calculator)..."
+                  className="w-full px-4 py-4 text-sm sm:text-base bg-transparent border-0 text-[var(--c-text)] placeholder:text-[var(--c-subtle)] focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="mr-2.5 px-6 py-2.5 rounded-xl sm:rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-xs sm:text-sm font-bold shadow-md transition-all shrink-0 cursor-pointer"
+                  className="mr-2.5 px-6 py-2.5 rounded-xl sm:rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-xs sm:text-sm font-bold shadow-md transition-all shrink-0 cursor-pointer"
                 >
                   Search
                 </button>
@@ -151,9 +153,9 @@ export const HomePage: React.FC = () => {
 
               {/* Autocomplete Dropdown */}
               {searchQuery.trim() !== '' && (
-                <div className="absolute top-full left-0 right-0 mt-2 p-2 bg-[#161513] rounded-2xl border border-[#2A2824] shadow-2xl z-30 max-h-72 overflow-y-auto divide-y divide-[#2A2824]/60 text-left">
+                <div className="absolute top-full left-0 right-0 mt-2 p-2 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)] shadow-2xl z-30 max-h-72 overflow-y-auto divide-y divide-[var(--c-border)]/60 text-left">
                   {searchResults.length === 0 ? (
-                    <div className="p-4 text-center text-xs text-[#7A756D]">
+                    <div className="p-4 text-center text-xs text-[var(--c-subtle)]">
                       No matching tools found for "{searchQuery}".
                     </div>
                   ) : (
@@ -161,17 +163,17 @@ export const HomePage: React.FC = () => {
                       <Link
                         key={tool.id}
                         to={tool.path}
-                        className="flex items-center justify-between p-3 rounded-xl hover:bg-[#1B1A17] transition-colors"
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-[var(--c-card)] transition-colors"
                       >
                         <div>
-                          <p className="text-sm font-bold text-[#F5F1E8]">
+                          <p className="text-sm font-bold text-[var(--c-text)]">
                             {tool.name}
                           </p>
-                          <p className="text-xs text-[#B8B2A7] line-clamp-1">
+                          <p className="text-xs text-[var(--c-muted)] line-clamp-1">
                             {tool.shortDescription}
                           </p>
                         </div>
-                        <span className="text-xs font-bold text-[#B79B70] flex items-center gap-1">
+                        <span className="text-xs font-bold text-[var(--c-gold)] flex items-center gap-1">
                           Open <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </Link>
@@ -183,12 +185,12 @@ export const HomePage: React.FC = () => {
 
             {/* Quick Suggestion Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
-              <span className="text-[#7A756D] font-mono font-medium mr-1">Trending:</span>
+              <span className="text-[var(--c-subtle)] font-mono font-medium mr-1">Trending:</span>
               {QUICK_SUGGESTIONS.map((item) => (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="px-3 py-1 rounded-full bg-[#161513] hover:bg-[#1B1A17] text-[#B8B2A7] hover:text-[#F5F1E8] font-medium transition-colors border border-[#2A2824]"
+                  className="px-3 py-1 rounded-full bg-[var(--c-surface)] hover:bg-[var(--c-card)] text-[var(--c-muted)] hover:text-[var(--c-text)] font-medium transition-colors border border-[var(--c-border)]"
                 >
                   {item.label}
                 </Link>
@@ -200,37 +202,37 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               to="/all-tools"
-              className="px-8 py-3.5 rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-sm font-bold shadow-lg transition-all flex items-center gap-2"
+              className="px-8 py-3.5 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-sm font-bold shadow-lg transition-all flex items-center gap-2"
             >
-              <span>Explore All 39+ Tools</span>
+              <span>Explore All {TOOLS_DATA.length}+ Tools</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
             <a
               href="#popular-tools"
-              className="px-8 py-3.5 rounded-2xl bg-[#161513] hover:bg-[#1B1A17] border border-[#2A2824] text-[#E8DFCF] hover:text-white text-sm font-semibold transition-all"
+              className="px-8 py-3.5 rounded-2xl bg-[var(--c-surface)] hover:bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-text)] text-sm font-semibold transition-all"
             >
               Popular Tools
             </a>
           </div>
 
           {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-[#2A2824]/60 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-[var(--c-border)]/60 text-center">
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">39+</div>
-              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Free Utilities</div>
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[var(--c-text)]">{TOOLS_DATA.length}+</div>
+              <div className="text-xs text-[var(--c-subtle)] uppercase tracking-wider font-mono">Free Utilities</div>
             </div>
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">100%</div>
-              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Private In-Browser</div>
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[var(--c-text)]">100%</div>
+              <div className="text-xs text-[var(--c-subtle)] uppercase tracking-wider font-mono">Private In-Browser</div>
             </div>
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">0 KB</div>
-              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Server Uploads</div>
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[var(--c-text)]">0 KB</div>
+              <div className="text-xs text-[var(--c-subtle)] uppercase tracking-wider font-mono">Server Uploads</div>
             </div>
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">$0</div>
-              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Free Forever</div>
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[var(--c-text)]">$0</div>
+              <div className="text-xs text-[var(--c-subtle)] uppercase tracking-wider font-mono">Free Forever</div>
             </div>
           </div>
         </div>
@@ -242,21 +244,21 @@ export const HomePage: React.FC = () => {
       <section id="popular-tools" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 scroll-mt-20">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#B79B70] mb-2">
+            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-gold)] mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Most Used Tools</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[var(--c-text)]">
               Popular Tools
             </h2>
-            <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+            <p className="text-sm text-[var(--c-muted)] mt-1 font-normal">
               The most loved browser utilities on ToolBoxX.
             </p>
           </div>
 
           <Link
             to="/all-tools"
-            className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+            className="text-xs font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5"
           >
             View All ({TOOLS_DATA.length}) Tools <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -272,25 +274,25 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 3. CATEGORY SHOWCASE: PDF TOOLS */}
       {/* ========================================================================= */}
-      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-16 sm:py-20">
+      <section className="border-t border-[var(--c-border)]/60 bg-[var(--c-surface)]/30 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider mb-2">
                 <FileText className="w-3.5 h-3.5" />
-                <span>30 Tools Available</span>
+                <span>{pdfTools.length} Tools Available</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[var(--c-text)]">
                 PDF Tools
               </h2>
-              <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+              <p className="text-sm text-[var(--c-muted)] mt-1 font-normal">
                 Edit, compress, merge, split, sign, convert, and protect PDF documents.
               </p>
             </div>
 
             <Link
               to="/pdf-tools"
-              className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+              className="text-xs font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5"
             >
               Open PDF Hub <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -305,10 +307,10 @@ export const HomePage: React.FC = () => {
           <div className="mt-8 text-center">
             <Link
               to="/pdf-tools"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#1B1A17] hover:bg-[#1F1E1B] border border-[#2A2824] text-xs font-semibold text-[#E8DFCF] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[var(--c-card)] hover:bg-[var(--c-surface)] border border-[var(--c-border)] text-xs font-semibold text-[var(--c-text)] transition-colors"
             >
               <span>Explore all {pdfTools.length} PDF Tools</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#B79B70]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[var(--c-gold)]" />
             </Link>
           </div>
         </div>
@@ -317,32 +319,32 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 4. CATEGORY SHOWCASE: IMAGE TOOLS */}
       {/* ========================================================================= */}
-      <section className="border-t border-[#2A2824]/60 py-16 sm:py-20">
+      <section className="border-t border-[var(--c-border)]/60 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider mb-2">
                 <ImageIcon className="w-3.5 h-3.5" />
                 <span>Image Processing</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[var(--c-text)]">
                 Image Tools
               </h2>
-              <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
-                Compress photos, resize dimensions, and convert between JPG, PNG, and WebP.
+              <p className="text-sm text-[var(--c-muted)] mt-1 font-normal">
+                Compress photos, resize dimensions, remove backgrounds, upscale, and convert formats.
               </p>
             </div>
 
             <Link
               to="/category/images"
-              className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+              className="text-xs font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5"
             >
               View Image Category <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {imageTools.map((tool) => (
+            {imageTools.slice(0, 8).map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
           </div>
@@ -350,9 +352,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. CATEGORY SHOWCASE: AI & DEVELOPER TOOLS */}
+      {/* 5. CATEGORY SHOWCASE: AI & DEVELOPER & CREATOR TOOLS */}
       {/* ========================================================================= */}
-      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-16 sm:py-20">
+      <section className="border-t border-[var(--c-border)]/60 bg-[var(--c-surface)]/30 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* AI Tools Column */}
@@ -361,13 +363,13 @@ export const HomePage: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-[var(--c-gold)]" />
-                    <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                    <h3 className="text-2xl font-bold font-serif text-[var(--c-text)]">
                       AI Productivity Tools
                     </h3>
                   </div>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">Intelligent summaries, content rewriters, grammar checkers & email drafts</p>
+                  <p className="text-xs text-[var(--c-muted)] mt-0.5">Intelligent summaries, content rewriters, grammar checkers & email drafts</p>
                 </div>
-                <Link to="/category/ai" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                <Link to="/category/ai" className="text-xs font-semibold text-[var(--c-gold)] hover:underline">
                   All AI Tools →
                 </Link>
               </div>
@@ -383,12 +385,12 @@ export const HomePage: React.FC = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                  <h3 className="text-2xl font-bold font-serif text-[var(--c-text)]">
                     Developer Tools
                   </h3>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">JSON formatters, code minifiers, Base64, JWT, hashes, and regex testers</p>
+                  <p className="text-xs text-[var(--c-muted)] mt-0.5">JSON formatters, code minifiers, Base64, JWT, hashes, and regex testers</p>
                 </div>
-                <Link to="/category/developer" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                <Link to="/category/developer" className="text-xs font-semibold text-[var(--c-gold)] hover:underline">
                   All Developer Tools →
                 </Link>
               </div>
@@ -406,12 +408,12 @@ export const HomePage: React.FC = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                  <h3 className="text-2xl font-bold font-serif text-[var(--c-text)]">
                     Business & Marketing
                   </h3>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">Invoices, resume builders, UTM campaign trackers & barcode generators</p>
+                  <p className="text-xs text-[var(--c-muted)] mt-0.5">Invoices, resume builders, UTM campaign trackers & barcode generators</p>
                 </div>
-                <Link to="/category/business" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                <Link to="/category/business" className="text-xs font-semibold text-[var(--c-gold)] hover:underline">
                   All Business Tools →
                 </Link>
               </div>
@@ -423,31 +425,31 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Text & Archive Column */}
+            {/* Calculators & Social Column */}
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
-                    Text & Utilities
+                  <h3 className="text-2xl font-bold font-serif text-[var(--c-text)]">
+                    Calculators & Social Studio
                   </h3>
-                  <p className="text-xs text-[#B8B2A7] mt-0.5">Word counters, QR generators, markdown editors, and ZIP archivers</p>
+                  <p className="text-xs text-[var(--c-muted)] mt-0.5">Age, percentage, EMI calculators, viral script generators & image studios</p>
                 </div>
-                <Link to="/category/text" className="text-xs font-semibold text-[#B79B70] hover:underline">
-                  All Text Tools →
+                <Link to="/category/calculators" className="text-xs font-semibold text-[var(--c-gold)] hover:underline">
+                  All Calculators →
                 </Link>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {textTools.slice(0, 3).map((tool) => (
+                {calcTools.slice(0, 3).map((tool) => (
                   <ToolCard key={tool.id} tool={tool} />
                 ))}
                 <Link
                   to="/all-tools"
-                  className="p-6 rounded-2xl sm:rounded-3xl border border-dashed border-[#2A2824] bg-[#161513]/50 hover:border-[#B79B70]/60 flex flex-col justify-center items-center text-center group transition-all"
+                  className="p-6 rounded-2xl sm:rounded-3xl border border-dashed border-[var(--c-border)] bg-[var(--c-surface)]/50 hover:border-[var(--c-gold)]/60 flex flex-col justify-center items-center text-center group transition-all"
                 >
-                  <Sliders className="w-8 h-8 text-[#B79B70] mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-bold text-[#F5F1E8]">Browse All Tools</span>
-                  <span className="text-xs text-[#B8B2A7] mt-1">60+ Free Utilities</span>
+                  <Sliders className="w-8 h-8 text-[var(--c-gold)] mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-bold text-[var(--c-text)]">Browse All Tools</span>
+                  <span className="text-xs text-[var(--c-muted)] mt-1">{TOOLS_DATA.length}+ Free Utilities</span>
                 </Link>
               </div>
             </div>
@@ -458,69 +460,69 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 6. WHY TOOLBOXX (4 Luxury Feature Blocks) */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-[#2A2824]/60">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-[var(--c-border)]/60">
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider">
             <Wrench className="w-3.5 h-3.5" />
             <span>Why ToolBoxX</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[#F5F1E8]">
+          <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[var(--c-text)]">
             Built with Craft. Engineered for Privacy.
           </h2>
-          <p className="text-base sm:text-lg text-[#B8B2A7] leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-[var(--c-muted)] leading-relaxed font-normal">
             Every tool is designed to solve common document and media tasks with instant speed and zero server reliance.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Fast */}
-          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+          <div className="p-8 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3 hover:border-[var(--c-border-hover)] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center">
               <Zap className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#F5F1E8]">
+            <h3 className="text-lg font-bold text-[var(--c-text)]">
               Fast
             </h3>
-            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+            <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
               Get your task done quickly without complicated software, installation delays, or server queues.
             </p>
           </div>
 
           {/* Simple */}
-          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+          <div className="p-8 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3 hover:border-[var(--c-border-hover)] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#F5F1E8]">
+            <h3 className="text-lg font-bold text-[var(--c-text)]">
               Simple
             </h3>
-            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+            <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
               Clean, distraction-free interfaces designed for everyone with zero learning curve.
             </p>
           </div>
 
           {/* Private */}
-          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-emerald-400 flex items-center justify-center">
+          <div className="p-8 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3 hover:border-[var(--c-border-hover)] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] text-emerald-400 flex items-center justify-center">
               <Lock className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#F5F1E8]">
+            <h3 className="text-lg font-bold text-[var(--c-text)]">
               Private
             </h3>
-            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+            <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
               Keep privacy at the center of every file-based tool. 100% on-device browser processing.
             </p>
           </div>
 
           {/* Free */}
-          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+          <div className="p-8 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] space-y-3 hover:border-[var(--c-border-hover)] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center">
               <HeartHandshake className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#F5F1E8]">
+            <h3 className="text-lg font-bold text-[var(--c-text)]">
               Free
             </h3>
-            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+            <p className="text-sm text-[var(--c-muted)] leading-relaxed font-normal">
               Provide useful everyday utilities without subscription paywalls, watermarks, or account walls.
             </p>
           </div>
@@ -530,17 +532,17 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 7. FREQUENTLY ASKED QUESTIONS */}
       {/* ========================================================================= */}
-      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-20 sm:py-24">
+      <section className="border-t border-[var(--c-border)]/60 bg-[var(--c-surface)]/30 py-20 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] text-xs font-mono font-bold uppercase tracking-wider">
               <HelpCircle className="w-3.5 h-3.5" />
               <span>Frequently Asked Questions</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[var(--c-text)]">
               Everything You Need to Know
             </h2>
-            <p className="text-sm text-[#B8B2A7] font-normal">
+            <p className="text-sm text-[var(--c-muted)] font-normal">
               Common questions about ToolBoxX, file security, and browser utilities.
             </p>
           </div>
@@ -553,20 +555,20 @@ export const HomePage: React.FC = () => {
       {/* 8. FINAL CTA BANNER */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="p-10 sm:p-14 rounded-3xl bg-[#161513] border border-[#2A2824] text-center space-y-6 relative overflow-hidden shadow-2xl">
+        <div className="p-10 sm:p-14 rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] text-center space-y-6 relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[#F5F1E8] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[var(--c-text)] tracking-tight">
               Ready to streamline your workflow?
             </h2>
-            <p className="text-sm sm:text-base text-[#B8B2A7] leading-relaxed font-normal">
-              Start using our 39+ free, private browser utilities immediately. No downloads, no credit cards, no sign-ups required.
+            <p className="text-sm sm:text-base text-[var(--c-muted)] leading-relaxed font-normal">
+              Start using our {TOOLS_DATA.length}+ free, private browser utilities immediately. No downloads, no credit cards, no sign-ups required.
             </p>
           </div>
 
           <div className="pt-2">
             <Link
               to="/all-tools"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-sm font-bold shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-sm font-bold shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
             >
               <span>Get Started — It's Free</span>
               <ArrowRight className="w-4 h-4" />

@@ -347,7 +347,7 @@ export const SocialMediaResizer: React.FC = () => {
             <button
               onClick={handleDownloadSingle}
               disabled={!sourceImage}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download {activePreset.width}×{activePreset.height}</span>
@@ -585,7 +585,7 @@ export const SocialMediaResizer: React.FC = () => {
                     onClick={() => setActiveCategory(tab.id as PlatformCategory)}
                     className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                       activeCategory === tab.id
-                        ? 'bg-[var(--c-gold)] text-[#11110F]'
+                        ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                         : 'bg-[var(--c-card)] text-[var(--c-muted)] hover:text-[var(--c-text)]'
                     }`}
                   >
@@ -638,7 +638,7 @@ export const SocialMediaResizer: React.FC = () => {
                         }}
                         className={`text-xs px-2.5 py-1 rounded-md border font-semibold cursor-pointer ${
                           isActive
-                            ? 'bg-[var(--c-gold)] text-[#11110F] border-[var(--c-gold)]'
+                            ? 'bg-[var(--c-gold)] text-[var(--c-bg)] border-[var(--c-gold)]'
                             : 'border-[var(--c-border)] text-[var(--c-muted)] hover:text-[var(--c-text)]'
                         }`}
                       >

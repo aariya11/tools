@@ -287,7 +287,7 @@ export const SocialBioGenerator: React.FC = () => {
           <div className="flex items-center gap-2 flex-wrap">
             <button
               onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[#11110F] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--c-accent)] text-[var(--c-bg)] text-xs font-bold shadow-md hover:bg-[var(--c-text)] transition-all active:scale-95 cursor-pointer"
             >
               {copiedKey === 'standard' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
               <span>{copiedKey === 'standard' ? 'Bio Copied!' : 'Copy Bio'}</span>
