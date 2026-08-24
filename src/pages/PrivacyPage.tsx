@@ -14,57 +14,57 @@ export const PrivacyPage: React.FC = () => {
 
       <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
 
-      <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
-          <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+      <div className="text-center space-y-4 my-8">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161513] border border-[#2A2824] text-[#B8B2A7] text-xs font-mono font-bold uppercase tracking-wider">
+          <ShieldCheck className="w-4 h-4 text-emerald-400" />
           <span>Privacy Guarantee</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8]">
           Privacy Policy
         </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-sm text-[#7A756D] font-mono">
           Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
         </p>
       </div>
 
-      <div className="bg-emerald-50/50 dark:bg-emerald-950/30 p-6 sm:p-8 rounded-3xl border border-emerald-200 dark:border-emerald-800/80 space-y-4">
-        <h2 className="text-xl font-bold text-emerald-900 dark:text-emerald-200 flex items-center gap-2">
-          <Lock className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+      <div className="bg-[#161513] p-8 sm:p-10 rounded-3xl border border-[#2A2824] space-y-4 shadow-xl">
+        <h2 className="text-xl font-bold font-serif text-[#F5F1E8] flex items-center gap-2.5">
+          <Lock className="w-5 h-5 text-emerald-400" />
           The Core ToolBoxX Commitment
         </h2>
-        <p className="text-sm sm:text-base text-emerald-950 dark:text-emerald-300 leading-relaxed font-medium">
-          <strong>"Your files stay on your device whenever possible."</strong> All image compression, image resizing, format conversions, PDF merging, splitting, extraction, word counting, case conversions, and QR code generation are executed entirely within your browser memory.
+        <p className="text-sm sm:text-base text-[#B8B2A7] leading-relaxed font-normal">
+          <strong className="text-[#F5F1E8]">"Your files stay on your device whenever possible."</strong> All image compression, image resizing, format conversions, PDF merging, splitting, extraction, word counting, case conversions, and QR code generation are executed entirely within your browser memory.
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-8 leading-relaxed text-sm sm:text-base">
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+      <div className="space-y-8 leading-relaxed text-[#B8B2A7] text-sm sm:text-base">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             1. How Your Files Are Processed
           </h2>
           <p>
             When you select or drop a file (JPEG, PNG, WebP, PDF) or type text into any ToolBoxX tool, the file is read using the HTML5 File API and processed locally by client-side WebAssembly, JavaScript, and Canvas rendering engines.
           </p>
-          <ul className="space-y-2 list-disc pl-5">
+          <ul className="space-y-2 list-disc pl-5 text-[#B8B2A7]">
             <li>No file contents are uploaded to our backend servers.</li>
             <li>No files are written to permanent cloud databases.</li>
             <li>Once you download your output or close your browser tab, all temporary memory is automatically garbage collected.</li>
           </ul>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             2. Information We Do NOT Collect
           </h2>
-          <ul className="space-y-2 list-disc pl-5">
+          <ul className="space-y-2 list-disc pl-5 text-[#B8B2A7]">
             <li>We do not collect names, email addresses, or phone numbers unless you voluntarily contact us via our support form.</li>
             <li>We do not record the contents of your text, PDFs, or photos.</li>
             <li>We do not sell, rent, or monetize your personal files or personal data to third parties.</li>
           </ul>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             3. Web Analytics & Aggregated Metrics
           </h2>
           <p>
@@ -72,8 +72,8 @@ export const PrivacyPage: React.FC = () => {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             4. Display Advertising & Cookies
           </h2>
           <p>
@@ -81,12 +81,12 @@ export const PrivacyPage: React.FC = () => {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             5. Contacting Us
           </h2>
           <p>
-            If you have questions about our privacy architecture or have feedback, please reach out through our <a href="/contact" className="text-indigo-600 dark:text-indigo-400 underline">Contact Page</a>.
+            If you have questions about our privacy architecture or have feedback, please reach out through our <a href="/contact" className="text-[#B79B70] underline">Contact Page</a>.
           </p>
         </section>
       </div>

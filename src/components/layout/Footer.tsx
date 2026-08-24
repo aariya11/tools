@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Wrench, ShieldCheck, Palette, Globe } from 'lucide-react';
+import { ShieldCheck, Palette, Globe, ArrowUpRight } from 'lucide-react';
 import { getToolsByCategory } from '../../data/toolsData';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -20,20 +20,20 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="mt-auto border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black text-zinc-600 dark:text-zinc-400 transition-colors">
-        {/* Privacy Guarantee Banner */}
-        <div className="border-b border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/40 py-6">
+      <footer className="mt-auto border-t border-[#2A2824] bg-[#11110F] text-[#B8B2A7] transition-colors">
+        {/* Privacy Architecture Highlight Strip */}
+        <div className="border-b border-[#2A2824]/70 bg-[#161513]/60 py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-[#1B1A17] border border-[#2A2824] text-emerald-400 flex items-center justify-center shrink-0">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-zinc-900 dark:text-white">
+                <h4 className="text-sm font-bold text-[#F5F1E8]">
                   Privacy First Architecture
                 </h4>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  Your files stay on your device whenever possible. Zero server uploads. Zero logs.
+                <p className="text-xs text-[#B8B2A7]">
+                  Your files stay private. Processed 100% locally in your browser with zero cloud storage.
                 </p>
               </div>
             </div>
@@ -41,82 +41,67 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsLangOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#2A2824] bg-[#1B1A17] text-xs font-semibold text-[#F5F1E8] hover:border-[#3D3A34] transition-colors cursor-pointer"
               >
-                <Globe className="w-3.5 h-3.5" />
+                <Globe className="w-3.5 h-3.5 text-[#B79B70]" />
                 <span>{currentLanguage.flag} {currentLanguage.nativeName}</span>
               </button>
 
               <button
                 onClick={() => setIsThemeOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#2A2824] bg-[#1B1A17] text-xs font-semibold text-[#F5F1E8] hover:border-[#3D3A34] transition-colors cursor-pointer"
               >
-                <Palette className="w-3.5 h-3.5" />
+                <Palette className="w-3.5 h-3.5 text-[#B79B70]" />
                 <span>Theme: {currentPresetConfig.name.split(' ')[0]}</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Main Footer Links */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Main Multi-Column Directory */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
-            {/* Col 1: Brand */}
+            {/* Col 1: Brand Wordmark & Mission */}
             <div className="col-span-2 space-y-4">
-              <Link to="/" className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 flex items-center justify-center shadow-md">
-                  <Wrench className="w-4 h-4" />
+              <Link to="/" className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#1B1A17] border border-[#2A2824] text-[#E8DFCF] flex items-center justify-center">
+                  <span className="font-serif font-bold text-base text-[#B79B70]">X</span>
                 </div>
-                <span className="text-xl font-black tracking-tight text-zinc-900 dark:text-white">
-                  ToolBox<span className="text-zinc-500 dark:text-zinc-400">X</span>
+                <span className="text-xl font-bold tracking-tight text-[#F5F1E8]">
+                  ToolBox<span className="text-[#B79B70]">X</span>
                 </span>
               </Link>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
-                Fast, free, and privacy-focused online utility platform. Transform images, edit PDFs, analyze text, and generate QR codes directly in your browser.
+              <p className="text-sm text-[#B8B2A7] max-w-sm leading-relaxed font-normal">
+                Simple online tools for everyday digital tasks. High-performance browser utilities for PDFs, images, text, and productivity.
               </p>
-              <div className="text-xs text-zinc-400 dark:text-zinc-500">
-                Free • Fast • 100% Client-Side
+              <div className="flex items-center gap-4 text-xs font-mono text-[#7A756D]">
+                <span>100% Free</span>
+                <span>•</span>
+                <span>Zero File Uploads</span>
+                <span>•</span>
+                <span>No Accounts</span>
               </div>
             </div>
 
-            {/* Col 2: Image Tools */}
+            {/* Col 2: PDF Tools */}
             <div>
-              <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
-                Image Tools
-              </h5>
-              <ul className="space-y-2 text-sm">
-                {imageTools.map((t) => (
-                  <li key={t.id}>
-                    <Link
-                      to={t.path}
-                      className="hover:text-zinc-900 dark:hover:text-white transition-colors"
-                    >
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Col 3: PDF Tools */}
-            <div>
-              <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#F5F1E8] mb-3.5">
                 PDF Tools
               </h5>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2.5 text-xs text-[#B8B2A7]">
                 <li>
                   <Link
                     to="/pdf-tools"
-                    className="font-medium text-zinc-900 dark:text-zinc-200 hover:underline transition-colors"
+                    className="font-bold text-[#E8DFCF] hover:text-[#F5F1E8] transition-colors flex items-center gap-1"
                   >
-                    PDF Hub (30 Tools)
+                    PDF Hub (30 Tools) <ArrowUpRight className="w-3 h-3 text-[#B79B70]" />
                   </Link>
                 </li>
                 {pdfTools.filter(t => t.id !== 'pdf-tools').slice(0, 7).map((t) => (
                   <li key={t.id}>
                     <Link
                       to={t.path}
-                      className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                      className="hover:text-[#F5F1E8] transition-colors"
                     >
                       {t.name}
                     </Link>
@@ -125,17 +110,36 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 4: Text & Platform */}
+            {/* Col 3: Image Tools */}
             <div>
-              <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
-                Text & Platform
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#F5F1E8] mb-3.5">
+                Image Tools
               </h5>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2.5 text-xs text-[#B8B2A7]">
+                {imageTools.map((t) => (
+                  <li key={t.id}>
+                    <Link
+                      to={t.path}
+                      className="hover:text-[#F5F1E8] transition-colors"
+                    >
+                      {t.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Col 4: Text & Utilities */}
+            <div>
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#F5F1E8] mb-3.5">
+                Text & Utilities
+              </h5>
+              <ul className="space-y-2.5 text-xs text-[#B8B2A7]">
                 {textTools.map((t) => (
                   <li key={t.id}>
                     <Link
                       to={t.path}
-                      className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                      className="hover:text-[#F5F1E8] transition-colors"
                     >
                       {t.name}
                     </Link>
@@ -145,42 +149,30 @@ export const Footer: React.FC = () => {
                   <li key={t.id}>
                     <Link
                       to={t.path}
-                      className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                      className="hover:text-[#F5F1E8] transition-colors"
                     >
                       {t.name}
                     </Link>
                   </li>
                 ))}
-                <li className="pt-2">
-                  <Link
-                    to="/about"
-                    className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                  >
+                <li className="pt-2 border-t border-[#2A2824]/60">
+                  <Link to="/about" className="hover:text-[#F5F1E8] transition-colors">
                     About ToolBoxX
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/privacy"
-                    className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                  >
+                  <Link to="/privacy" className="hover:text-[#F5F1E8] transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/terms"
-                    className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                  >
+                  <Link to="/terms" className="hover:text-[#F5F1E8] transition-colors">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contact"
-                    className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                  >
-                    Contact & Feedback
+                  <Link to="/contact" className="hover:text-[#F5F1E8] transition-colors">
+                    Contact Support
                   </Link>
                 </li>
               </ul>
@@ -188,13 +180,13 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
-            <p>© {new Date().getFullYear()} ToolBoxX. All rights reserved. Free browser utility platform.</p>
+          <div className="mt-14 pt-8 border-t border-[#2A2824] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7A756D]">
+            <p>© {new Date().getFullYear()} ToolBoxX. All rights reserved. Built for private, fast productivity.</p>
             <div className="flex items-center gap-6">
-              <Link to="/privacy" className="hover:underline">Privacy</Link>
-              <Link to="/terms" className="hover:underline">Terms</Link>
-              <Link to="/contact" className="hover:underline">Support</Link>
-              <Link to="/all-tools" className="hover:underline">Sitemap</Link>
+              <Link to="/privacy" className="hover:text-[#B8B2A7] transition-colors">Privacy</Link>
+              <Link to="/terms" className="hover:text-[#B8B2A7] transition-colors">Terms</Link>
+              <Link to="/contact" className="hover:text-[#B8B2A7] transition-colors">Contact</Link>
+              <Link to="/all-tools" className="hover:text-[#B8B2A7] transition-colors">All Tools</Link>
             </div>
           </div>
         </div>

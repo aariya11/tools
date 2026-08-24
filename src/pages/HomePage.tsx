@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Search,
-  Wrench,
-  ShieldCheck,
   Zap,
   Lock,
   Sparkles,
   ArrowRight,
   Image as ImageIcon,
   FileText,
-  Type,
-  QrCode,
   HeartHandshake,
   HelpCircle,
+  Wrench,
+  Sliders,
 } from 'lucide-react';
 import { ToolCard } from '../components/common/ToolCard';
 import { AdSlot } from '../components/common/AdSlot';
@@ -21,9 +19,8 @@ import { SeoHead } from '../components/common/SeoHead';
 import { Accordion } from '../components/common/Accordion';
 import {
   TOOLS_DATA,
-  CATEGORIES,
   getPopularTools,
-  getRecentTools,
+  getToolsByCategory,
   searchTools,
 } from '../data/toolsData';
 
@@ -32,40 +29,56 @@ export const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   const popularTools = getPopularTools();
-  const recentTools = getRecentTools();
+  const pdfTools = getToolsByCategory('pdf');
+  const imageTools = getToolsByCategory('images');
+  const textTools = getToolsByCategory('text');
+  const generatorTools = getToolsByCategory('generators');
+
   const searchResults = searchTools(searchQuery);
 
   const QUICK_SUGGESTIONS = [
     { label: 'Compress PDF', path: '/pdf-compress' },
     { label: 'Merge PDF', path: '/pdf-merge' },
+    { label: 'Edit PDF', path: '/edit-pdf' },
     { label: 'Image Compressor', path: '/image-compressor' },
     { label: 'JPG to PNG', path: '/jpg-to-png' },
     { label: 'Word Counter', path: '/word-counter' },
-    { label: 'QR Code Generator', path: '/qr-code-generator' },
     { label: 'Text to Handwriting', path: '/text-to-handwriting' },
-    { label: 'Edit PDF', path: '/edit-pdf' },
+    { label: 'QR Code Generator', path: '/qr-code-generator' },
   ];
 
   const HOMEPAGE_FAQS = [
     {
       question: 'What is ToolBoxX?',
-      answer: 'ToolBoxX is a comprehensive online utility platform featuring 39+ free browser-based tools for editing PDFs, compressing images, converting document formats, counting words, and generating custom QR codes without software installation.'
+      answer: 'ToolBoxX is an all-in-one suite of 39+ free, browser-based digital productivity tools for editing PDFs, compressing images, converting file formats, analyzing text, and generating custom QR codes without software installation.'
     },
     {
-      question: 'Are all tools on ToolBoxX completely free to use?',
-      answer: 'Yes, 100% of the tools on ToolBoxX are completely free with no usage limits, hidden fees, subscriptions, or watermarks.'
+      question: 'Are ToolBoxX tools completely free to use?',
+      answer: 'Yes, 100% of the tools on ToolBoxX are free with no usage limits, hidden fees, subscriptions, or watermarks.'
+    },
+    {
+      question: 'How does client-side file privacy work?',
+      answer: 'Unlike traditional cloud converters that upload your confidential files to remote servers, ToolBoxX executes processing locally in your browser memory using modern WebAssembly, Canvas, and JavaScript APIs. Your files never leave your computer or phone.'
+    },
+    {
+      question: 'How can I compress a PDF online?',
+      answer: 'Navigate to our Compress PDF tool, drop your document into the upload zone, select your preferred compression level (Extreme, Recommended, or Low), and download your optimized PDF in seconds.'
+    },
+    {
+      question: 'How can I merge multiple PDF files?',
+      answer: 'Open the Merge PDF tool, select two or more PDF documents, drag and drop the files to arrange your desired sequence, and click "Merge PDF Files" to download a unified document.'
+    },
+    {
+      question: 'Can I convert JPG to PNG online?',
+      answer: 'Yes! Use our JPG to PNG Converter to instantly transform JPEG photos into lossless PNG format with transparency readiness directly in your browser.'
+    },
+    {
+      question: 'Can I use ToolBoxX on mobile phones and tablets?',
+      answer: 'Yes! ToolBoxX is fully responsive and optimized for all modern mobile devices and touchscreens including iPhone (iOS Safari) and Android (Chrome).'
     },
     {
       question: 'Do I need to create an account or sign up to use the tools?',
       answer: 'No registration or account sign-up is required. All utilities are immediately accessible directly in your web browser.'
-    },
-    {
-      question: 'How does client-side privacy work on ToolBoxX?',
-      answer: 'Unlike traditional web converters that upload your sensitive documents to remote cloud servers, ToolBoxX executes file processing locally in your browser memory using modern WebAssembly, Canvas, and JavaScript APIs. Your files never leave your computer or phone.'
-    },
-    {
-      question: 'Can I use ToolBoxX on mobile phones and tablets?',
-      answer: 'Yes! ToolBoxX is fully responsive and optimized for all modern mobile devices, tablets, and desktop browsers including Chrome, Safari, Firefox, and Edge.'
     }
   ];
 
@@ -76,22 +89,8 @@ export const HomePage: React.FC = () => {
     }
   };
 
-  const getCatIcon = (id: string) => {
-    switch (id) {
-      case 'images':
-        return <ImageIcon className="w-5 h-5" />;
-      case 'pdf':
-        return <FileText className="w-5 h-5" />;
-      case 'text':
-        return <Type className="w-5 h-5" />;
-      case 'generators':
-      default:
-        return <QrCode className="w-5 h-5" />;
-    }
-  };
-
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#11110F] text-[#F5F1E8]">
       <SeoHead
         title="Free Online Tools – PDF, Image, Text & QR Code Utilities"
         description="Discover 39+ fast, free online tools to compress images, merge and edit PDF files, convert formats, count words, and generate QR codes with 100% browser privacy."
@@ -104,56 +103,58 @@ export const HomePage: React.FC = () => {
         <AdSlot type="leaderboard" />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24">
-        {/* Background subtle radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-zinc-500/5 blur-[120px] pointer-events-none -z-10 rounded-full" />
+      {/* ========================================================================= */}
+      {/* 1. HERO SECTION (Editorial, Minimalist, High-Impact) */}
+      {/* ========================================================================= */}
+      <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-[#2A2824]/60">
+        {/* Subtle radial ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#B79B70]/5 blur-[140px] pointer-events-none -z-10 rounded-full" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          {/* Privacy Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-emerald-500" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+          {/* Trust / Privacy Pill */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#161513] border border-[#2A2824] text-[#B8B2A7] text-xs font-medium shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>100% Client-Side Privacy: Your files never leave your device</span>
           </div>
 
-          {/* Hero Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-zinc-900 dark:text-white tracking-tight leading-[1.1]">
-            Free Online Tools That{' '}
-            <span className="text-zinc-500 dark:text-zinc-400">
-              Just Work.
+          {/* Editorial Display Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight text-[#F5F1E8] leading-[1.1]">
+            All the tools you need.<br />
+            <span className="text-[#B79B70] italic font-normal">
+              In one simple toolbox.
             </span>
           </h1>
 
           {/* Hero Subtitle */}
-          <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-            Compress, convert, resize, generate and transform your files and text — quickly, privately and for free directly in your browser.
+          <p className="text-base sm:text-xl text-[#B8B2A7] max-w-2xl mx-auto leading-relaxed font-normal">
+            Free, fast and privacy-friendly online tools for PDFs, images, text and everyday productivity.
           </p>
 
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto pt-4">
+          {/* Prominent Search Bar */}
+          <div className="max-w-2xl mx-auto pt-2">
             <form onSubmit={handleSearchSubmit} className="relative group">
-              <div className="relative flex items-center rounded-3xl shadow-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 backdrop-blur-md overflow-hidden focus-within:ring-2 focus-within:ring-zinc-400 transition-all">
-                <Search className="w-5 h-5 text-zinc-400 ml-4 shrink-0" />
+              <div className="relative flex items-center rounded-2xl sm:rounded-3xl shadow-2xl border border-[#2A2824] bg-[#161513] backdrop-blur-md overflow-hidden focus-within:border-[#B79B70]/70 focus-within:ring-1 focus-within:ring-[#B79B70]/70 transition-all">
+                <Search className="w-5 h-5 text-[#B79B70] ml-5 shrink-0" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="What do you want to do? (e.g. compress pdf, jpg to png, word counter)..."
-                  className="w-full px-4 py-4 text-base bg-transparent border-0 text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none"
+                  placeholder="Search for a tool (e.g. compress PDF, word counter, JPG to PNG)..."
+                  className="w-full px-4 py-4 text-sm sm:text-base bg-transparent border-0 text-[#F5F1E8] placeholder:text-[#7A756D] focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="mr-2 px-6 py-2.5 rounded-2xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-bold shadow-md transition-all shrink-0"
+                  className="mr-2.5 px-6 py-2.5 rounded-xl sm:rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-xs sm:text-sm font-bold shadow-md transition-all shrink-0 cursor-pointer"
                 >
                   Search
                 </button>
               </div>
 
-              {/* Autocomplete Dropdown if typing */}
+              {/* Autocomplete Dropdown */}
               {searchQuery.trim() !== '' && (
-                <div className="absolute top-full left-0 right-0 mt-2 p-2 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl z-30 max-h-72 overflow-y-auto divide-y divide-zinc-100 dark:divide-zinc-800 text-left">
+                <div className="absolute top-full left-0 right-0 mt-2 p-2 bg-[#161513] rounded-2xl border border-[#2A2824] shadow-2xl z-30 max-h-72 overflow-y-auto divide-y divide-[#2A2824]/60 text-left">
                   {searchResults.length === 0 ? (
-                    <div className="p-4 text-center text-sm text-zinc-400">
+                    <div className="p-4 text-center text-xs text-[#7A756D]">
                       No matching tools found for "{searchQuery}".
                     </div>
                   ) : (
@@ -161,18 +162,18 @@ export const HomePage: React.FC = () => {
                       <Link
                         key={tool.id}
                         to={tool.path}
-                        className="flex items-center justify-between p-3 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-[#1B1A17] transition-colors"
                       >
                         <div>
-                          <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">
+                          <p className="text-sm font-bold text-[#F5F1E8]">
                             {tool.name}
                           </p>
-                          <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                          <p className="text-xs text-[#B8B2A7] line-clamp-1">
                             {tool.shortDescription}
                           </p>
                         </div>
-                        <span className="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-1">
-                          Use <ArrowRight className="w-3.5 h-3.5" />
+                        <span className="text-xs font-bold text-[#B79B70] flex items-center gap-1">
+                          Open <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </Link>
                     ))
@@ -183,82 +184,134 @@ export const HomePage: React.FC = () => {
 
             {/* Quick Suggestion Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
-              <span className="text-zinc-400 font-bold mr-1">Popular:</span>
+              <span className="text-[#7A756D] font-mono font-medium mr-1">Trending:</span>
               {QUICK_SUGGESTIONS.map((item) => (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-semibold transition-colors border border-zinc-200/80 dark:border-zinc-800"
+                  className="px-3 py-1 rounded-full bg-[#161513] hover:bg-[#1B1A17] text-[#B8B2A7] hover:text-[#F5F1E8] font-medium transition-colors border border-[#2A2824]"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Category Directory Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CATEGORIES.map((category) => {
-            const count = TOOLS_DATA.filter((t) => t.category === category.id).length;
-            return (
-              <Link
-                key={category.id}
-                to={`/category/${category.id}`}
-                className="group p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800/90 bg-white dark:bg-zinc-950 hover:border-zinc-400 dark:hover:border-zinc-600 shadow-xs hover:shadow-xl transition-all duration-200 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white flex items-center justify-center mb-4 transition-transform group-hover:scale-105">
-                    {getCatIcon(category.id)}
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-1">
-                    {category.name}
-                  </h3>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-                    {category.description}
-                  </p>
-                </div>
+          {/* Primary & Secondary Hero CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link
+              to="/all-tools"
+              className="px-8 py-3.5 rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-sm font-bold shadow-lg transition-all flex items-center gap-2"
+            >
+              <span>Explore All 39+ Tools</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
 
-                <div className="flex items-center justify-between text-xs font-bold text-zinc-900 dark:text-zinc-200 pt-2 border-t border-zinc-100 dark:border-zinc-800">
-                  <span>{count} Tools Available</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+            <a
+              href="#popular-tools"
+              className="px-8 py-3.5 rounded-2xl bg-[#161513] hover:bg-[#1B1A17] border border-[#2A2824] text-[#E8DFCF] hover:text-white text-sm font-semibold transition-all"
+            >
+              Popular Tools
+            </a>
+          </div>
 
-      {/* Popular Tools Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-          <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2">
-              <Sparkles className="w-4 h-4" />
-              <span>Top Rated</span>
+          {/* Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-[#2A2824]/60 text-center">
+            <div className="space-y-0.5">
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">39+</div>
+              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Free Utilities</div>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+            <div className="space-y-0.5">
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">100%</div>
+              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Private In-Browser</div>
+            </div>
+            <div className="space-y-0.5">
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">0 KB</div>
+              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Server Uploads</div>
+            </div>
+            <div className="space-y-0.5">
+              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F5F1E8]">$0</div>
+              <div className="text-xs text-[#7A756D] uppercase tracking-wider font-mono">Free Forever</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 2. POPULAR TOOLS SECTION */}
+      {/* ========================================================================= */}
+      <section id="popular-tools" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 scroll-mt-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#B79B70] mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Most Used Tools</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
               Popular Tools
             </h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-              The most frequently used browser utilities on ToolBoxX.
+            <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+              The most loved browser utilities on ToolBoxX.
             </p>
           </div>
 
           <Link
             to="/all-tools"
-            className="text-sm font-bold text-zinc-900 dark:text-white hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
           >
-            View All ({TOOLS_DATA.length}) Tools <ArrowRight className="w-4 h-4" />
+            View All ({TOOLS_DATA.length}) Tools <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {popularTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {popularTools.slice(0, 8).map((tool) => (
+            <ToolCard key={tool.id} tool={tool} isFeatured={true} />
           ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. CATEGORY SHOWCASE: PDF TOOLS */}
+      {/* ========================================================================= */}
+      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                <FileText className="w-3.5 h-3.5" />
+                <span>30 Tools Available</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+                PDF Tools
+              </h2>
+              <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+                Edit, compress, merge, split, sign, convert, and protect PDF documents.
+              </p>
+            </div>
+
+            <Link
+              to="/pdf-tools"
+              className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+            >
+              Open PDF Hub <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {pdfTools.filter(t => t.id !== 'pdf-tools').slice(0, 8).map((tool) => (
+              <ToolCard key={tool.id} tool={tool} />
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              to="/pdf-tools"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#1B1A17] hover:bg-[#1F1E1B] border border-[#2A2824] text-xs font-semibold text-[#E8DFCF] transition-colors"
+            >
+              <span>Explore all {pdfTools.length} PDF Tools</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#B79B70]" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -267,172 +320,217 @@ export const HomePage: React.FC = () => {
         <AdSlot type="in-content" />
       </div>
 
-      {/* Recently Added Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
-              Recently Added & Updated Tools
-            </h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-              New client-side tools and office conversion capabilities.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {recentTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
-        </div>
-      </section>
-
-      {/* Comprehensive SEO Content & Platform Guide */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="p-8 sm:p-12 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 space-y-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-bold uppercase tracking-wider">
-              <Wrench className="w-3.5 h-3.5" />
-              <span>Online Toolbox Directory</span>
+      {/* ========================================================================= */}
+      {/* 4. CATEGORY SHOWCASE: IMAGE TOOLS */}
+      {/* ========================================================================= */}
+      <section className="border-t border-[#2A2824]/60 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                <ImageIcon className="w-3.5 h-3.5" />
+                <span>Image Processing</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+                Image Tools
+              </h2>
+              <p className="text-sm text-[#B8B2A7] mt-1 font-normal">
+                Compress photos, resize dimensions, and convert between JPG, PNG, and WebP.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white">
-              All-in-One Free Online Tools Platform
-            </h2>
-            <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              ToolBoxX is a modern suite of free web tools designed to solve daily digital file tasks effortlessly. Whether you need to compress large PDF documents, convert image formats like JPG to PNG and PNG to WebP, inspect text with our word counter, or generate scannable QR codes with custom logos, our browser-based utilities give you fast, reliable, and private results without requiring downloads or subscriptions.
-            </p>
+
+            <Link
+              to="/category/images"
+              className="text-xs font-semibold text-[#B79B70] hover:text-[#E8DFCF] transition-colors flex items-center gap-1.5"
+            >
+              View Image Category <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
-          {/* 4 Feature Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3">
-              <h3 className="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <FileText className="w-4 h-4 text-rose-500" />
-                <span>PDF Tools</span>
-              </h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Merge, split, compress, edit, sign, redact, OCR, and convert PDFs to and from Word, Excel, PowerPoint, and JPG formats.
-              </p>
-              <Link to="/category/pdf" className="text-xs font-bold text-zinc-900 dark:text-white inline-flex items-center gap-1 hover:underline pt-2">
-                Explore PDF Tools <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3">
-              <h3 className="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <ImageIcon className="w-4 h-4 text-sky-500" />
-                <span>Image Tools</span>
-              </h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Compress JPG, PNG, and WebP photos with quality sliders, resize image dimensions with aspect ratio lock, and convert formats.
-              </p>
-              <Link to="/category/images" className="text-xs font-bold text-zinc-900 dark:text-white inline-flex items-center gap-1 hover:underline pt-2">
-                Explore Image Tools <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3">
-              <h3 className="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <Type className="w-4 h-4 text-emerald-500" />
-                <span>Text Tools</span>
-              </h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Count words and characters, analyze reading time, convert case styles (UPPERCASE, Title Case, camelCase), and generate realistic handwriting.
-              </p>
-              <Link to="/category/text" className="text-xs font-bold text-zinc-900 dark:text-white inline-flex items-center gap-1 hover:underline pt-2">
-                Explore Text Tools <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3">
-              <h3 className="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <QrCode className="w-4 h-4 text-purple-500" />
-                <span>QR Generators</span>
-              </h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Create static QR codes for links, Wi-Fi credentials, emails, and phone numbers with custom color palettes and embedded logos.
-              </p>
-              <Link to="/qr-code-generator" className="text-xs font-bold text-zinc-900 dark:text-white inline-flex items-center gap-1 hover:underline pt-2">
-                Create QR Codes <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {imageTools.map((tool) => (
+              <ToolCard key={tool.id} tool={tool} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Trust & Client-Side Architecture Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-8 sm:p-12 shadow-xl">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Why Choose ToolBoxX</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white">
-              Fast, Free, and 100% Client-Side Private.
-            </h2>
-            <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Unlike traditional cloud converters that upload your confidential files to remote servers, ToolBoxX executes processing locally in your browser memory using modern WebAssembly and Canvas APIs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white flex items-center justify-center">
-                <Lock className="w-6 h-6" />
+      {/* ========================================================================= */}
+      {/* 5. CATEGORY SHOWCASE: TEXT & UTILITY TOOLS */}
+      {/* ========================================================================= */}
+      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Text Tools Column */}
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                    Text Tools
+                  </h3>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">Word counts, case conversions, and handwriting generation</p>
+                </div>
+                <Link to="/category/text" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                  All Text Tools →
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                Zero Cloud Uploads
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Your images, contracts, and text never leave your device. All computations execute directly inside your browser sandbox.
-              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {textTools.map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+              </div>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white flex items-center justify-center">
-                <Zap className="w-6 h-6" />
+            {/* Utility & QR Column */}
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">
+                    Utility Tools
+                  </h3>
+                  <p className="text-xs text-[#B8B2A7] mt-0.5">QR code generators with custom logo embedding and export</p>
+                </div>
+                <Link to="/category/generators" className="text-xs font-semibold text-[#B79B70] hover:underline">
+                  All Utilities →
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                Instant Processing Speed
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                No server queues, no file transfer delays, and no upload waiting times. Everything processes in real-time.
-              </p>
-            </div>
 
-            <div className="p-6 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white flex items-center justify-center">
-                <HeartHandshake className="w-6 h-6" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {generatorTools.map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+                <Link
+                  to="/all-tools"
+                  className="p-6 rounded-2xl sm:rounded-3xl border border-dashed border-[#2A2824] bg-[#161513]/50 hover:border-[#B79B70]/60 flex flex-col justify-center items-center text-center group transition-all"
+                >
+                  <Sliders className="w-8 h-8 text-[#B79B70] mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-bold text-[#F5F1E8]">Browse All Tools</span>
+                  <span className="text-xs text-[#B8B2A7] mt-1">39+ Free Utilities</span>
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                Free Forever, No Sign-Up
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                No subscription walls, no watermarks, and no mandatory account registration required to access any tool.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Frequently Asked Questions Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-zinc-500" />
-            <span>Platform FAQ</span>
+      {/* ========================================================================= */}
+      {/* 6. WHY TOOLBOXX (4 Luxury Feature Blocks) */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 border-t border-[#2A2824]/60">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+            <Wrench className="w-3.5 h-3.5" />
+            <span>Why ToolBoxX</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
-            Frequently Asked Questions
+          <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[#F5F1E8]">
+            Built with Craft. Engineered for Privacy.
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
-            Answers to common questions about using ToolBoxX online utilities.
+          <p className="text-base sm:text-lg text-[#B8B2A7] leading-relaxed font-normal">
+            Every tool is designed to solve common document and media tasks with instant speed and zero server reliance.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Fast */}
+          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+              <Zap className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-[#F5F1E8]">
+              Fast
+            </h3>
+            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+              Get your task done quickly without complicated software, installation delays, or server queues.
+            </p>
+          </div>
+
+          {/* Simple */}
+          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-[#F5F1E8]">
+              Simple
+            </h3>
+            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+              Clean, distraction-free interfaces designed for everyone with zero learning curve.
+            </p>
+          </div>
+
+          {/* Private */}
+          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-emerald-400 flex items-center justify-center">
+              <Lock className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-[#F5F1E8]">
+              Private
+            </h3>
+            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+              Keep privacy at the center of every file-based tool. 100% on-device browser processing.
+            </p>
+          </div>
+
+          {/* Free */}
+          <div className="p-8 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-3 hover:border-[#3D3A34] transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center">
+              <HeartHandshake className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-[#F5F1E8]">
+              Free
+            </h3>
+            <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
+              Provide useful everyday utilities without subscription paywalls, watermarks, or account walls.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 7. FREQUENTLY ASKED QUESTIONS */}
+      {/* ========================================================================= */}
+      <section className="border-t border-[#2A2824]/60 bg-[#141311]/50 py-20 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Frequently Asked Questions</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#F5F1E8]">
+              Everything You Need to Know
+            </h2>
+            <p className="text-sm text-[#B8B2A7] font-normal">
+              Common questions about ToolBoxX, file security, and browser utilities.
+            </p>
+          </div>
+
           <Accordion items={HOMEPAGE_FAQS} />
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 8. FINAL CTA BANNER */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="p-10 sm:p-14 rounded-3xl bg-[#161513] border border-[#2A2824] text-center space-y-6 relative overflow-hidden shadow-2xl">
+          <div className="max-w-2xl mx-auto space-y-4">
+            <h2 className="text-3xl sm:text-5xl font-bold font-serif text-[#F5F1E8] tracking-tight">
+              Ready to streamline your workflow?
+            </h2>
+            <p className="text-sm sm:text-base text-[#B8B2A7] leading-relaxed font-normal">
+              Start using our 39+ free, private browser utilities immediately. No downloads, no credit cards, no sign-ups required.
+            </p>
+          </div>
+
+          <div className="pt-2">
+            <Link
+              to="/all-tools"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-sm font-bold shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <span>Get Started — It's Free</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

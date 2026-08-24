@@ -48,31 +48,31 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
       <AdSlot type="leaderboard" className="my-4 hidden sm:flex" />
 
       {/* Tool Header */}
-      <div className="text-center max-w-3xl mx-auto my-6 sm:my-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/90 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 text-xs font-bold uppercase tracking-wider mb-4">
+      <div className="text-center max-w-3xl mx-auto my-8 sm:my-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs">
           <DynamicIcon name={tool.icon} className="w-3.5 h-3.5" />
           <span>{tool.category} Utility</span>
         </div>
 
-        {/* SEO H1 Heading */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 dark:text-white tracking-tight mb-4 leading-tight">
+        {/* SEO Editorial H1 Heading */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8] tracking-tight mb-4 leading-[1.15]">
           {h1Title}
         </h1>
 
-        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-[#B8B2A7] leading-relaxed max-w-2xl mx-auto font-normal">
           {tool.fullDescription}
         </p>
 
-        {/* Privacy Pill */}
-        <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold shadow-xs">
+        {/* Privacy Assurance Pill */}
+        <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161513] border border-[#2A2824] text-[#B8B2A7] text-xs font-medium shadow-xs">
           <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
           <span>100% Client-Side Privacy: Your files never leave your device</span>
         </div>
       </div>
 
-      {/* Main Interactive Tool Workspace */}
+      {/* Main Interactive Tool Workspace Container */}
       <div className="my-8">
-        <div className="bg-white dark:bg-zinc-950 rounded-3xl border border-zinc-200 dark:border-zinc-800/90 p-4 sm:p-8 shadow-xl backdrop-blur-md">
+        <div className="bg-[#161513] rounded-3xl border border-[#2A2824] p-4 sm:p-8 shadow-2xl backdrop-blur-md">
           {children}
         </div>
       </div>
@@ -82,29 +82,29 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Step-by-Step "How to Use" Section */}
       {tool.howToSteps && tool.howToSteps.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
+        <section className="mt-16 pt-12 border-t border-[#2A2824]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
               How to Use {tool.name} Online
             </h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+            <p className="text-sm text-[#B8B2A7] mt-2">
               Follow these simple steps to process your files securely in seconds.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {tool.howToSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="relative p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xs flex flex-col justify-start"
+                className="relative p-6 rounded-2xl border border-[#2A2824] bg-[#161513] hover:border-[#3D3A34] shadow-xs flex flex-col justify-start transition-colors"
               >
-                <div className="w-9 h-9 rounded-2xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-black text-sm flex items-center justify-center mb-4 shadow-md">
-                  {idx + 1}
+                <div className="w-8 h-8 rounded-lg bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] font-mono font-bold text-xs flex items-center justify-center mb-4 shadow-sm">
+                  0{idx + 1}
                 </div>
-                <h3 className="text-base font-bold text-zinc-900 dark:text-white mb-2">
+                <h3 className="text-base font-bold text-[#F5F1E8] mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
                   {step.description}
                 </p>
               </div>
@@ -113,35 +113,35 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
         </section>
       )}
 
-      {/* Rich Educational Section (What is it & Why choose) */}
+      {/* Rich Educational Section (Overview & Use Cases) */}
       {tool.educationalSection && (
-        <section className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
-          <div className="p-8 sm:p-10 rounded-3xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 space-y-6">
+        <section className="mt-16 pt-12 border-t border-[#2A2824]">
+          <div className="p-8 sm:p-10 rounded-3xl bg-[#161513] border border-[#2A2824] space-y-6">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-3">
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>Overview & Guide</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8] mb-4">
                 {tool.educationalSection.title}
               </h2>
               {tool.educationalSection.paragraphs.map((p, i) => (
-                <p key={i} className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
+                <p key={i} className="text-sm sm:text-base text-[#B8B2A7] leading-relaxed mb-4 font-normal">
                   {p}
                 </p>
               ))}
             </div>
 
             {tool.educationalSection.useCases && tool.educationalSection.useCases.length > 0 && (
-              <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800">
-                <h3 className="text-base font-bold text-zinc-900 dark:text-white mb-3">
+              <div className="pt-4 border-t border-[#2A2824]/80">
+                <h3 className="text-base font-bold text-[#F5F1E8] mb-3">
                   Common Use Cases
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {tool.educationalSection.useCases.map((useCase, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-sm text-zinc-600 dark:text-zinc-300">
-                      <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5" />
+                    <div key={idx} className="flex items-start gap-2.5 text-sm text-[#B8B2A7]">
+                      <div className="w-5 h-5 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-[#B79B70]" />
                       </div>
                       <span>{useCase}</span>
                     </div>
@@ -155,30 +155,30 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Key Features & Capabilities Section */}
       {tool.features && tool.features.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
+        <section className="mt-16 pt-12 border-t border-[#2A2824]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
               Key Features & Capabilities
             </h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+            <p className="text-sm text-[#B8B2A7] mt-2">
               Engineered for maximum speed, precision, and privacy.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {tool.features.map((feature, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xs flex items-start gap-4"
+                className="p-6 rounded-2xl border border-[#2A2824] bg-[#161513] hover:border-[#3D3A34] shadow-xs flex items-start gap-4 transition-colors"
               >
-                <div className="w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-zinc-900 dark:text-white mb-1">
+                  <h3 className="text-base font-bold text-[#F5F1E8] mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-[#B8B2A7] leading-relaxed font-normal">
                     {feature.description}
                   </p>
                 </div>
@@ -190,16 +190,16 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
 
       {/* Frequently Asked Questions */}
       {tool.faqs && tool.faqs.length > 0 && (
-        <section className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
+        <section className="mt-16 pt-12 border-t border-[#2A2824]">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider mb-3">
-              <HelpCircle className="w-3.5 h-3.5 text-zinc-500" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <HelpCircle className="w-3.5 h-3.5" />
               <span>Questions & Answers</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#F5F1E8]">
               Frequently Asked Questions
             </h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+            <p className="text-sm text-[#B8B2A7] mt-2">
               Everything you need to know about using our {tool.name} tool.
             </p>
           </div>

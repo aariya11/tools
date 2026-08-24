@@ -97,10 +97,10 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
-        className={`relative cursor-pointer rounded-2xl border-2 border-dashed p-8 md:p-12 text-center transition-all duration-200 flex flex-col items-center justify-center ${
+        className={`group relative cursor-pointer rounded-3xl border-2 border-dashed p-8 md:p-12 text-center transition-all duration-200 flex flex-col items-center justify-center ${
           isDragging
-            ? 'border-indigo-500 bg-indigo-50/70 dark:bg-indigo-950/40 scale-[1.01]'
-            : 'border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 hover:border-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900'
+            ? 'border-[#B79B70] bg-[#1B1A17] scale-[1.01]'
+            : 'border-[#2A2824] bg-[#161513] hover:border-[#B79B70]/60 hover:bg-[#191815]'
         } shadow-sm backdrop-blur-sm`}
       >
         <input
@@ -116,34 +116,34 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
           aria-label="Upload files"
         />
 
-        <div className="w-16 h-16 rounded-2xl bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 shadow-inner group-hover:scale-110 transition-transform">
-          <UploadCloud className="w-8 h-8" />
+        <div className="w-14 h-14 rounded-2xl bg-[#1B1A17] border border-[#2A2824] group-hover:border-[#B79B70]/40 text-[#B79B70] flex items-center justify-center mb-4 transition-transform group-hover:scale-105 shadow-inner">
+          <UploadCloud className="w-7 h-7" />
         </div>
 
-        <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-1">
+        <h3 className="text-base sm:text-lg font-bold text-[#F5F1E8] mb-1">
           {label}
         </h3>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 max-w-md">
+        <p className="text-xs sm:text-sm text-[#B8B2A7] mb-5 max-w-md">
           {description}
         </p>
 
         <button
           type="button"
-          className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium shadow-md hover:shadow-indigo-500/20 transition-all active:scale-95"
+          className="px-6 py-2.5 rounded-xl bg-[#E8DFCF] hover:bg-[#F5F1E8] text-[#11110F] text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95 cursor-pointer"
         >
           Select {multiple ? 'Files' : 'File'}
         </button>
 
         {allowedFormatsText && (
-          <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500">
-            <FileType className="w-3.5 h-3.5" />
+          <div className="mt-4 flex items-center gap-1.5 text-xs text-[#7A756D]">
+            <FileType className="w-3.5 h-3.5 text-[#B79B70]" />
             <span>Supported formats: {allowedFormatsText}</span>
           </div>
         )}
       </div>
 
       {errorMessage && (
-        <div className="mt-3 p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-800/60 text-rose-700 dark:text-rose-300 text-sm flex items-start gap-2.5 animate-in fade-in">
+        <div className="mt-3 p-3.5 rounded-xl bg-rose-950/40 border border-rose-800/60 text-rose-300 text-sm flex items-start gap-2.5 animate-in fade-in">
           <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
           <span>{errorMessage}</span>
         </div>

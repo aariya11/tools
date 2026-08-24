@@ -13,18 +13,18 @@ export const TermsPage: React.FC = () => {
 
       <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
 
-      <div className="text-center space-y-4">
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">
+      <div className="text-center space-y-4 my-8">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8]">
           Terms of Service
         </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-sm text-[#7A756D] font-mono">
           Effective date: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-8 text-sm sm:text-base leading-relaxed">
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+      <div className="space-y-8 text-[#B8B2A7] text-sm sm:text-base leading-relaxed">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             1. Acceptance of Terms
           </h2>
           <p>
@@ -32,8 +32,8 @@ export const TermsPage: React.FC = () => {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             2. Permitted Use
           </h2>
           <p>
@@ -46,8 +46,8 @@ export const TermsPage: React.FC = () => {
           </ul>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             3. Disclaimer of Warranties
           </h2>
           <p>
@@ -55,8 +55,8 @@ export const TermsPage: React.FC = () => {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             4. Limitation of Liability
           </h2>
           <p>
@@ -64,8 +64,8 @@ export const TermsPage: React.FC = () => {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        <section className="bg-[#161513] p-8 rounded-3xl border border-[#2A2824] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[#F5F1E8]">
             5. Changes to Terms
           </h2>
           <p>

@@ -37,20 +37,20 @@ export const CategoryPage: React.FC = () => {
         ]}
       />
 
-      <div className="text-center max-w-3xl mx-auto my-8 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+      <div className="text-center max-w-3xl mx-auto my-10 space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B1A17] border border-[#2A2824] text-[#B79B70] text-xs font-mono font-bold uppercase tracking-wider">
           <DynamicIcon name={categoryMeta.icon} className="w-3.5 h-3.5" />
           <span>{categoryMeta.name}</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-[#F5F1E8]">
           {categoryMeta.name}
         </h1>
-        <p className="text-base text-slate-600 dark:text-slate-300">
+        <p className="text-base text-[#B8B2A7] leading-relaxed max-w-2xl mx-auto font-normal">
           {categoryMeta.description}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-8">
         {tools.map((tool) => (
           <ToolCard key={tool.id} tool={tool} />
         ))}

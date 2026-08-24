@@ -3,32 +3,32 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --theme-accent: #ffffff;
-    --theme-accent-hover: #e4e4e7;
-    --theme-bg-dark: #000000;
-    --theme-bg-light: #ffffff;
+    --theme-accent: #E8DFCF;
+    --theme-accent-hover: #F5F1E8;
+    --theme-bg-dark: #11110F;
+    --theme-bg-light: #FBF9F5;
   }
   
   .dark {
     color-scheme: dark;
   }
 
-  /* Default Monochrome Black & White Theme */
+  /* Default Premium Dark Editorial Theme (Inspired by wegic editorial aesthetic) */
   [data-theme="monochrome"].dark body,
-  :root:not([data-theme]).dark body {
-    background-color: #000000;
-    color: #ffffff;
+  :root:not([data-theme]).dark body,
+  :root body {
+    background-color: #11110F;
+    color: #F5F1E8;
   }
   
-  [data-theme="monochrome"]:not(.dark) body,
-  :root:not([data-theme]):not(.dark) body {
-    background-color: #ffffff;
-    color: #000000;
+  [data-theme="monochrome"]:not(.dark) body {
+    background-color: #FAF8F5;
+    color: #181714;
   }
 
   /* Modern Slate Theme */
   [data-theme="slate"].dark body {
-    background-color: #090d16;
+    background-color: #0c0f14;
     color: #f1f5f9;
   }
   [data-theme="slate"]:not(.dark) body {
@@ -38,7 +38,7 @@
 
   /* Midnight Indigo Theme */
   [data-theme="midnight"].dark body {
-    background-color: #030712;
+    background-color: #060913;
     color: #f3f4f6;
   }
   [data-theme="midnight"]:not(.dark) body {
@@ -48,7 +48,7 @@
 
   /* Emerald Mint Theme */
   [data-theme="emerald"].dark body {
-    background-color: #021e17;
+    background-color: #071510;
     color: #f0fdf4;
   }
   [data-theme="emerald"]:not(.dark) body {
@@ -58,7 +58,7 @@
 
   /* Cyberpunk Violet Theme */
   [data-theme="cyberpunk"].dark body {
-    background-color: #120420;
+    background-color: #0d0617;
     color: #faf5ff;
   }
   [data-theme="cyberpunk"]:not(.dark) body {
@@ -68,7 +68,7 @@
 
   /* Sunset Amber Theme */
   [data-theme="sunset"].dark body {
-    background-color: #1c1304;
+    background-color: #140d05;
     color: #fffbeb;
   }
   [data-theme="sunset"]:not(.dark) body {
@@ -78,7 +78,7 @@
 
   /* Crimson Rose Theme */
   [data-theme="crimson"].dark body {
-    background-color: #1c040a;
+    background-color: #140508;
     color: #fff1f2;
   }
   [data-theme="crimson"]:not(.dark) body {
@@ -88,7 +88,7 @@
 
   /* Ocean Cyan Theme */
   [data-theme="ocean"].dark body {
-    background-color: #021824;
+    background-color: #04121a;
     color: #ecfeff;
   }
   [data-theme="ocean"]:not(.dark) body {
@@ -97,56 +97,47 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition-property: color, background-color, border-color;
     transition-duration: 150ms;
+    background-color: #11110F;
+    color: #F5F1E8;
   }
 }
 
-/* Custom Scrollbars */
+/* Custom Scrollbars (Refined warm dark) */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #11110F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+  background-color: #2A2824;
   border-radius: 9999px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background-color: #27272a;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #94a3b8;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #3f3f46;
+  background-color: #3D3A34;
 }
 
 /* Range input styling */
 input[type="range"] {
-  accent-color: #71717a;
+  accent-color: #B79B70;
 }
 
 /* Focus states */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #71717a, 0 0 0 4px #000000;
-}
-
-.dark *:focus-visible {
-  box-shadow: 0 0 0 2px #a1a1aa, 0 0 0 4px #000000;
+  box-shadow: 0 0 0 2px #B79B70, 0 0 0 4px #11110F;
 }
 
 /* RTL Support Styles */
