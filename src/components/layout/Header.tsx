@@ -17,6 +17,9 @@ import {
   Sparkles,
   Briefcase,
   Code2,
+  BookOpen,
+  Flame,
+  GraduationCap,
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -164,6 +167,30 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link
+              to="/blog"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.startsWith('/blog')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <BookOpen className="w-4 h-4 text-[var(--c-muted)]" />
+              <span>Blog</span>
+            </Link>
+
+            <Link
+              to="/social"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.startsWith('/social')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <Flame className="w-4 h-4 text-[var(--c-gold)]" />
+              <span>Social Hub</span>
+            </Link>
+
+            <Link
               to="/all-tools"
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
                 location.pathname === '/all-tools'
@@ -296,6 +323,30 @@ export const Header: React.FC = () => {
               >
                 <QrCode className="w-5 h-5 text-[var(--c-muted)]" />
                 <span>{t('nav.generators', 'Utilities & QR')}</span>
+              </Link>
+
+              <Link
+                to="/blog"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <BookOpen className="w-5 h-5 text-[var(--c-gold)]" />
+                <span>Editorial Blog & Tutorials</span>
+              </Link>
+
+              <Link
+                to="/social"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <Flame className="w-5 h-5 text-[var(--c-gold)]" />
+                <span>Social Hub & Creator Studio</span>
+              </Link>
+
+              <Link
+                to="/student-tools"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <GraduationCap className="w-5 h-5 text-[var(--c-muted)]" />
+                <span>Student & Academic Toolkit</span>
               </Link>
 
               <Link

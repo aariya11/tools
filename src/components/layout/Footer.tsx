@@ -148,26 +148,47 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 5: Developer & Text */}
+            {/* Col 5: Hubs & Editorial */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                Developer & Text
+                Hubs & Editorial
               </h5>
               <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
-                {devTools.slice(0, 4).map((t) => (
-                  <li key={t.id}>
-                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
-                {textTools.slice(0, 3).map((t) => (
-                  <li key={t.id}>
-                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link to="/blog" className="text-[var(--c-gold)] font-semibold hover:text-[var(--c-text)] transition-colors">
+                    Editorial Blog & Guides
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/social" className="hover:text-[var(--c-text)] transition-colors">
+                    Social Hub & Studio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/student-tools" className="hover:text-[var(--c-text)] transition-colors">
+                    Student Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/productivity-tools" className="hover:text-[var(--c-text)] transition-colors">
+                    Productivity Suite
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/free-pdf-tools" className="hover:text-[var(--c-text)] transition-colors">
+                    Free PDF Tools (30+)
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/free-image-tools" className="hover:text-[var(--c-text)] transition-colors">
+                    Free Image Studio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/social-analytics" className="hover:text-[var(--c-text)] transition-colors">
+                    Privacy Analytics
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -175,7 +196,10 @@ export const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="mt-14 pt-8 border-t border-[var(--c-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--c-subtle)]">
             <p>© {new Date().getFullYear()} ToolBoxX. All rights reserved. Built for private, fast productivity.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap">
+              <Link to="/blog" className="hover:text-[var(--c-muted)] transition-colors">Blog</Link>
+              <Link to="/social" className="hover:text-[var(--c-muted)] transition-colors">Social Hub</Link>
+              <Link to="/student-tools" className="hover:text-[var(--c-muted)] transition-colors">Students</Link>
               <Link to="/privacy" className="hover:text-[var(--c-muted)] transition-colors">Privacy</Link>
               <Link to="/terms" className="hover:text-[var(--c-muted)] transition-colors">Terms</Link>
               <Link to="/contact" className="hover:text-[var(--c-muted)] transition-colors">Contact</Link>

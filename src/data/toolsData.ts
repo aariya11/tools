@@ -3400,10 +3400,684 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'What is the difference between MB and MiB?', answer: '1 MB (Megabyte) = 1,000,000 bytes (Base 10 / SI). 1 MiB (Mebibyte) = 1,048,576 bytes (Base 2 / IEC).' }
     ],
     relatedToolIds: ['zip-creator', 'image-compressor', 'bulk-renamer']
+  },
+
+  // =========================================================================
+  // --- CALCULATOR TOOLS ---
+  // =========================================================================
+  {
+    id: 'age-calculator',
+    name: 'Age & Milestone Calculator',
+    path: '/age-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate exact live age, total days lived, days until next birthday, zodiac signs, and life milestones.',
+    fullDescription: 'Live ticking age calculator tracking exact years, months, days, minutes, and seconds lived. Features Western & Chinese Zodiac, planetary ages, countdown to next birthday, and shareable milestone cards.',
+    icon: 'Calendar',
+    isPopular: true,
+    badge: 'Live Clock',
+    seoTitle: 'Age Calculator Online – Exact Age, Days Lived & Milestones | ToolBoxX',
+    metaDescription: 'Free online age calculator with live ticking clock. Calculate exact age in years, months, days, hours, total days lived, next birthday countdown, and zodiac signs.',
+    h1Heading: 'Age & Milestone Calculator',
+    primaryKeyword: 'age calculator',
+    secondaryKeywords: ['chronological age calculator', 'calculate exact age', 'how many days old am i', 'birthday countdown', 'zodiac calculator'],
+    features: [
+      { title: 'Live Ticking Clock', description: 'Real-time age down to the exact second with continuous live updates.' },
+      { title: 'Zodiac & Astrological Signs', description: 'Instant Western zodiac element analysis and Chinese lunar animal sign.' },
+      { title: 'Planetary Ages', description: 'See your age on Mercury, Venus, Mars, Jupiter, and Saturn.' },
+      { title: 'Shareable Milestone Card', description: 'One-click copy and share life milestone cards to social media.' }
+    ],
+    howToSteps: [
+      { title: 'Select Birth Date', description: 'Pick your date of birth from the calendar selector.' },
+      { title: 'Optional Birth Time', description: 'Enable birth time for exact hour and minute precision.' },
+      { title: 'Explore Life Metrics', description: 'View total days lived, biological vitals, and next birthday countdown.' },
+      { title: 'Copy & Share', description: 'Copy your personalized life milestone card or celebrate with confetti.' }
+    ],
+    faqs: [
+      { question: 'How is the exact age calculated?', answer: 'The calculator computes calendar years, months, and days while factoring in leap years and exact month lengths.' },
+      { question: 'Is my birth date stored on any server?', answer: 'No. All calculations are performed 100% locally in your browser memory.' }
+    ],
+    relatedToolIds: ['date-calculator', 'timezone-converter', 'percentage-calculator']
+  },
+  {
+    id: 'percentage-calculator',
+    name: 'Percentage Calculator',
+    path: '/percentage-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate what is X% of Y, X is what % of Y, percentage increase/decrease, and percentage difference.',
+    fullDescription: 'Free online percentage calculator with 4 essential calculation modes: X% of Y, ratio to percentage, percentage increase/decrease, percentage difference, and quick add/subtract tools with formula breakdown.',
+    icon: 'Percent',
+    isPopular: true,
+    badge: 'Essential',
+    seoTitle: 'Percentage Calculator Online – 4 Modes & Formulas | ToolBoxX',
+    metaDescription: 'Free online percentage calculator. Calculate percentage increase, decrease, difference, fractions, and percentage of any number with step-by-step formulas.',
+    h1Heading: 'Percentage Calculator Online',
+    primaryKeyword: 'percentage calculator',
+    secondaryKeywords: ['percent calculator', 'percentage increase calculator', 'percentage change', 'percentage difference', 'how to calculate percentage'],
+    features: [
+      { title: '4 Calculation Modes', description: 'What is X% of Y, X is what % of Y, % Increase/Decrease, and % Difference.' },
+      { title: 'Step-by-Step Formula', description: 'Clear mathematical derivations and proportional fraction representations.' },
+      { title: 'Visual Bar Charts', description: 'Interactive visual proportional comparison bars for intuitive comprehension.' },
+      { title: 'Quick Add / Subtract %', description: 'Instantly add or subtract sales tax, discounts, or tips.' }
+    ],
+    howToSteps: [
+      { title: 'Select Mode', description: 'Choose between the 4 essential percentage calculation modes.' },
+      { title: 'Enter Numbers', description: 'Provide the numbers or use quick preset chips.' },
+      { title: 'Review Breakdown', description: 'Inspect the formula steps and visual comparison bar.' },
+      { title: 'Copy Result', description: 'Copy the formatted mathematical statement with 1 click.' }
+    ],
+    faqs: [
+      { question: 'What is the formula for percentage increase?', answer: 'Percentage Increase = ((New Value − Initial Value) / Initial Value) × 100.' },
+      { question: 'How is percentage difference calculated?', answer: 'Percentage Difference = (|Value 1 − Value 2| / Average of both values) × 100.' }
+    ],
+    relatedToolIds: ['discount-calculator', 'salary-calculator', 'emi-calculator']
+  },
+  {
+    id: 'gpa-calculator',
+    name: 'GPA & Honors Calculator',
+    path: '/gpa-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate College (4.0) and High School weighted (5.0) GPA with honors distinctions and target GPA planner.',
+    fullDescription: 'Free online cumulative and semester GPA calculator. Supports weighted honors/AP scales, credit hours, target GPA planner, CSV export, and academic distinction cards.',
+    icon: 'GraduationCap',
+    isPopular: true,
+    badge: 'Academic',
+    seoTitle: 'GPA Calculator Online – College & High School 4.0/5.0 Scale | ToolBoxX',
+    metaDescription: 'Calculate your cumulative and semester GPA online for college (4.0 scale) and high school weighted (5.0 scale). Plan target GPA and export transcript.',
+    h1Heading: 'GPA & Academic Honors Calculator',
+    primaryKeyword: 'gpa calculator',
+    secondaryKeywords: ['college gpa calculator', 'high school gpa calculator', 'weighted gpa calculator', 'cumulative gpa', 'target gpa planner'],
+    features: [
+      { title: 'College & High School Scales', description: 'Standard 4.0 unweighted scale and 5.0 weighted Honors/AP scale.' },
+      { title: 'Multi-Semester Support', description: 'Add unlimited semesters with term-by-term and cumulative GPA.' },
+      { title: 'Target GPA Planner', description: 'Calculate the GPA required in future courses to hit your academic goal.' },
+      { title: 'CSV Transcript Export', description: 'Download your full course and grade schedule as a spreadsheet.' }
+    ],
+    howToSteps: [
+      { title: 'Select Scale', description: 'Choose College (4.0) or High School (5.0 Weighted).' },
+      { title: 'Add Courses', description: 'Enter course names, letter grades, and credit hours.' },
+      { title: 'View Cumulative GPA', description: 'Inspect your honors distinction (Summa/Magna Cum Laude) and quality points.' },
+      { title: 'Share or Export', description: 'Export your academic transcript to CSV or copy your achievement badge.' }
+    ],
+    faqs: [
+      { question: 'How do AP and Honors weights affect GPA?', answer: 'In the 5.0 weighted scale, Honors courses receive +0.5 GPA bonus and AP/IB courses receive +1.0 GPA bonus.' },
+      { question: 'What GPA is needed for Summa Cum Laude?', answer: 'Typically a 3.90+ cumulative GPA qualifies for Summa Cum Laude (highest honors).' }
+    ],
+    relatedToolIds: ['percentage-calculator', 'age-calculator', 'salary-calculator']
+  },
+  {
+    id: 'emi-calculator',
+    name: 'Loan EMI & Amortization Calculator',
+    path: '/emi-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate monthly EMI, total interest, prepayment savings, and download amortization PDF/CSV.',
+    fullDescription: 'Comprehensive loan EMI calculator for home, auto, or personal loans. Calculate monthly installments, total interest, principal vs interest chart, and generate downloadable PDF & CSV amortization schedules.',
+    icon: 'CreditCard',
+    isPopular: true,
+    badge: 'Finance',
+    seoTitle: 'Loan EMI Calculator – Monthly Payments & Amortization PDF | ToolBoxX',
+    metaDescription: 'Calculate monthly loan EMI, total interest, and prepayment savings. View yearly amortization schedule and download free statement as PDF or CSV.',
+    h1Heading: 'Loan EMI & Amortization Calculator',
+    primaryKeyword: 'emi calculator',
+    secondaryKeywords: ['loan emi calculator', 'mortgage calculator', 'home loan emi', 'amortization schedule', 'loan prepayment calculator'],
+    features: [
+      { title: 'Interactive Sliders', description: 'Dual slider and precision inputs for Loan Amount, Rate, and Tenure.' },
+      { title: 'Principal vs Interest Donut', description: 'Visual breakdown showing the exact proportion of interest paid.' },
+      { title: 'Prepayment Simulator', description: 'See how much interest and time you save by making extra monthly payments.' },
+      { title: 'PDF & CSV Export', description: 'Generate clean downloadable loan amortization statements in PDF or CSV.' }
+    ],
+    howToSteps: [
+      { title: 'Input Loan Details', description: 'Enter loan amount, annual interest rate, and tenure in years/months.' },
+      { title: 'Test Prepayment', description: 'Optionally add an extra monthly payment to simulate interest savings.' },
+      { title: 'Review Schedule', description: 'Inspect yearly and monthly principal, interest, and remaining balance.' },
+      { title: 'Download Statement', description: 'Click Download PDF or Export CSV to save your loan report.' }
+    ],
+    faqs: [
+      { question: 'What is the mathematical formula for EMI?', answer: 'EMI = [P × r × (1 + r)^n] / [(1 + r)^n − 1], where P is Principal, r is periodic monthly rate, and n is number of monthly installments.' },
+      { question: 'Does prepayment reduce total interest?', answer: 'Yes! Extra payments directly reduce the outstanding principal balance, accelerating payoff and cutting total interest.' }
+    ],
+    relatedToolIds: ['discount-calculator', 'salary-calculator', 'percentage-calculator']
+  },
+  {
+    id: 'discount-calculator',
+    name: 'Discount & Tip Calculator',
+    path: '/discount-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate sale price, double stacked coupons, sales tax, tip %, and group bill splitting.',
+    fullDescription: 'Quickly calculate sale prices, stacked coupon codes, sales tax, and tip percentages. Includes group bill splitting and itemized receipt breakdown.',
+    icon: 'Tag',
+    isPopular: true,
+    badge: 'Shopping',
+    seoTitle: 'Discount & Sale Price Calculator – Stacked Coupons & Tax | ToolBoxX',
+    metaDescription: 'Free online discount calculator. Calculate final price, total savings, stacked double discounts, sales tax, tips, and split bills among friends.',
+    h1Heading: 'Discount & Tip Calculator',
+    primaryKeyword: 'discount calculator',
+    secondaryKeywords: ['sale price calculator', 'percent off calculator', 'stacked coupon calculator', 'tip calculator', 'split bill calculator'],
+    features: [
+      { title: 'Stacked Double Discounts', description: 'Apply a second coupon code or markdown on already discounted items.' },
+      { title: 'Sales Tax & Tips', description: 'Accurate tax percentages and custom gratuity calculations.' },
+      { title: 'Group Bill Splitting', description: 'Split the final bill evenly among friends with per-person breakdowns.' },
+      { title: 'Itemized Receipt Breakdown', description: 'Clean receipt breakdown showing MSRP, savings, tax, and final total.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Original Price', description: 'Type the initial item or bill price.' },
+      { title: 'Set Discounts', description: 'Enter primary % off or flat dollar discount, plus optional stacked coupons.' },
+      { title: 'Configure Tax & Tip', description: 'Add your local sales tax and desired tip percentage.' },
+      { title: 'Split Bill', description: 'Enter number of people to calculate per-person share.' }
+    ],
+    faqs: [
+      { question: 'How do stacked discounts work?', answer: 'A stacked discount applies the second discount percentage to the already reduced price rather than adding percentages together.' }
+    ],
+    relatedToolIds: ['percentage-calculator', 'emi-calculator', 'salary-calculator']
+  },
+  {
+    id: 'salary-calculator',
+    name: 'Salary & Wage Converter',
+    path: '/salary-calculator',
+    category: 'calculators',
+    shortDescription: 'Convert between hourly, weekly, bi-weekly, monthly, and annual salary with overtime and tax preview.',
+    fullDescription: 'Convert pay between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, and annual compensation. Includes overtime rates, bonus compensation, and side-by-side job offer comparison.',
+    icon: 'Briefcase',
+    isPopular: true,
+    badge: 'Career',
+    seoTitle: 'Salary & Wage Calculator – Hourly to Salary Converter | ToolBoxX',
+    metaDescription: 'Convert hourly wage to annual salary and vice versa. Calculate overtime, bi-weekly pay, monthly paychecks, and compare job compensation packages.',
+    h1Heading: 'Salary & Hourly Wage Converter',
+    primaryKeyword: 'salary calculator',
+    secondaryKeywords: ['hourly to salary', 'wage calculator', 'biweekly salary calculator', 'overtime pay calculator', 'compare job offers'],
+    features: [
+      { title: '7 Pay Frequencies', description: 'Hourly, Daily, Weekly, Bi-Weekly, Semi-Monthly, Monthly, and Annual.' },
+      { title: 'Custom Hours & Overtime', description: 'Account for custom workweeks and 1.5x / 2.0x overtime rates.' },
+      { title: 'Take-Home Tax Preview', description: 'Estimate gross versus net paychecks across all frequencies.' },
+      { title: 'Side-by-Side Job Comparison', description: 'Compare two job offers with different hourly rates and bonus structures.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Current Pay', description: 'Input your wage and select the payment frequency (Hourly, Annual, etc.).' },
+      { title: 'Set Work Schedule', description: 'Adjust standard hours per day, days per week, and weeks per year.' },
+      { title: 'Add Overtime & Bonus', description: 'Optionally add overtime hours and annual incentive bonuses.' },
+      { title: 'Review Breakdown', description: 'Inspect your full pay schedule table and copy the compensation summary.' }
+    ],
+    faqs: [
+      { question: 'How many work hours are in a standard year?', answer: 'A standard full-time year (40 hours/week × 52 weeks) consists of 2,080 working hours.' }
+    ],
+    relatedToolIds: ['percentage-calculator', 'emi-calculator', 'discount-calculator']
+  },
+  {
+    id: 'date-calculator',
+    name: 'Date Difference & Duration',
+    path: '/date-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate days between two dates, working business days excluding weekends, and add/subtract time.',
+    fullDescription: 'Calculate the exact interval between two dates in days, weeks, months, years, and working business days. Easily add or subtract days, months, and years from any starting date.',
+    icon: 'Calendar',
+    isPopular: true,
+    badge: 'Calendar',
+    seoTitle: 'Date Calculator – Days Between Dates & Business Days | ToolBoxX',
+    metaDescription: 'Free online date calculator. Calculate number of days between two dates, business working days, weekends, and add or subtract days from a date.',
+    h1Heading: 'Date Difference & Duration Calculator',
+    primaryKeyword: 'date calculator',
+    secondaryKeywords: ['days between dates', 'business days calculator', 'working days calculator', 'date duration', 'add days to date'],
+    features: [
+      { title: 'Exact Interval Breakdown', description: 'Calculates total days, weeks, months, years, hours, and seconds.' },
+      { title: 'Business Days Filter', description: 'Excludes weekends (Sat-Sun or Fri-Sat) and custom holidays.' },
+      { title: 'Add / Subtract Time', description: 'Shift dates forward or backward by custom years, months, weeks, or days.' },
+      { title: 'Quick Presets', description: 'Instant +30, +90, +180, and +365 days calculations.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Mode', description: 'Select Date Difference or Add/Subtract Time.' },
+      { title: 'Pick Dates', description: 'Select starting and ending calendar dates.' },
+      { title: 'Toggle Business Days', description: 'Optionally filter out weekends and custom holidays.' },
+      { title: 'Copy Result', description: 'Copy the formatted interval breakdown.' }
+    ],
+    faqs: [
+      { question: 'Does the calculator count the end date?', answer: 'You can easily toggle "Include End Day" on or off to include or exclude the final boundary date.' }
+    ],
+    relatedToolIds: ['age-calculator', 'timezone-converter', 'timestamp-converter']
+  },
+  {
+    id: 'timezone-converter',
+    name: 'World Clock & Meeting Planner',
+    path: '/timezone-converter',
+    category: 'calculators',
+    shortDescription: 'Multi-city world clock with synchronized 24-hour slider to find overlapping working hours.',
+    fullDescription: 'Coordinate global teams across international timezones. Interactive synchronized 24-hour slider, overlapping working hours finder, and .ICS calendar export.',
+    icon: 'Globe',
+    isPopular: true,
+    badge: 'Remote Work',
+    seoTitle: 'Timezone Converter & World Clock – Global Meeting Planner | ToolBoxX',
+    metaDescription: 'Convert time across global cities with interactive 24-hour slider. Find overlapping working hours for remote teams and export meeting invites as .ICS.',
+    h1Heading: 'World Clock & Timezone Converter',
+    primaryKeyword: 'timezone converter',
+    secondaryKeywords: ['world clock', 'meeting planner timezone', 'time difference calculator', 'overlapping working hours', 'convert gmt to est'],
+    features: [
+      { title: 'Synchronized 24h Slider', description: 'Dragging the master slider updates local time across all cities in real time.' },
+      { title: 'Overlap Working Hours Finder', description: 'Highlights optimal meeting slots where all team members are awake.' },
+      { title: 'Color-Coded Status Bars', description: 'Instant visual indicators for Working (Green), Awake (Amber), and Night (Dark).' },
+      { title: '.ICS Calendar Export', description: 'Download calendar invite files ready for Google Calendar and Outlook.' }
+    ],
+    howToSteps: [
+      { title: 'Add Global Cities', description: 'Select team locations from the world city database.' },
+      { title: 'Drag Time Slider', description: 'Move the 24-hour slider to find suitable meeting hours.' },
+      { title: 'Check Overlap', description: 'Inspect the green working hours indicators for all participants.' },
+      { title: 'Copy or Export', description: 'Copy the synchronized schedule or download a .ics calendar event.' }
+    ],
+    faqs: [
+      { question: 'Does this account for Daylight Saving Time (DST)?', answer: 'Yes! The calculator uses standard IANA timezone databases and adjusts for DST based on your selected date.' }
+    ],
+    relatedToolIds: ['date-calculator', 'timestamp-converter', 'age-calculator']
+  },
+  {
+    id: 'bmi-calculator',
+    name: 'BMI & Calorie Calculator',
+    path: '/bmi-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate BMI score, WHO weight classification, healthy weight range, and daily TDEE calories.',
+    fullDescription: 'Calculate Body Mass Index (BMI) in Metric or Imperial units. View WHO classification gauge, healthy weight range for height, basal metabolic rate (BMR), and TDEE calorie requirements.',
+    icon: 'Activity',
+    isPopular: true,
+    badge: 'Health',
+    seoTitle: 'BMI Calculator Online – Free Body Mass Index & Calories | ToolBoxX',
+    metaDescription: 'Free BMI calculator for metric and imperial units. Check WHO weight classification, ideal weight for height, and daily TDEE calorie requirements.',
+    h1Heading: 'BMI & Daily Calorie Calculator',
+    primaryKeyword: 'bmi calculator',
+    secondaryKeywords: ['body mass index calculator', 'ideal weight calculator', 'bmr calculator', 'tdee calculator', 'daily calorie calculator'],
+    features: [
+      { title: 'Metric & Imperial Modes', description: 'Seamless toggle between kg/cm and lbs/feet-inches.' },
+      { title: 'WHO Health Classification', description: 'Color-coded visual spectrum for Underweight, Normal, Overweight, and Obese.' },
+      { title: 'Ideal Weight Range', description: 'Calculates the target healthy weight range tailored to your exact height.' },
+      { title: 'BMR & TDEE Calorie Guidance', description: 'Mifflin-St Jeor daily calories for maintenance, weight loss, or weight gain.' }
+    ],
+    howToSteps: [
+      { title: 'Select Units', description: 'Choose Metric (kg/cm) or Imperial (lbs/ft-in).' },
+      { title: 'Input Measurements', description: 'Enter your height, weight, age, sex, and activity level.' },
+      { title: 'Review Health Metrics', description: 'Inspect your BMI score, healthy weight target, and daily calorie needs.' },
+      { title: 'Copy Summary', description: 'Copy your personalized health summary report with 1 click.' }
+    ],
+    faqs: [
+      { question: 'What is a healthy BMI range for adults?', answer: 'The World Health Organization (WHO) defines a healthy adult BMI as between 18.5 and 24.9.' },
+      { question: 'How is BMR calculated?', answer: 'We use the clinically validated Mifflin-St Jeor equation factoring in sex, age, height, and weight.' }
+    ],
+    relatedToolIds: ['percentage-calculator', 'age-calculator', 'discount-calculator']
+  },
+
+  // =========================================================================
+  // --- SOCIAL MEDIA & CREATOR TOOLS ---
+  // =========================================================================
+  {
+    id: 'social-content-generator',
+    name: 'Social Content Generator',
+    path: '/social-content-generator',
+    category: 'social',
+    shortDescription: 'Generate platform-tailored copy for Instagram, LinkedIn, X/Twitter, Facebook, Pinterest, and Reddit.',
+    fullDescription: 'Create high-converting social media copy for 6 platforms simultaneously. Features customized hooks, problem-solution storytelling, bullet points, CTA links, and 30 targeted hashtags with one-click multi-copy.',
+    icon: 'Share2',
+    isPopular: true,
+    isRecent: true,
+    badge: 'Popular',
+    seoTitle: 'Social Content Generator Online – Multi-Platform Post Copy | ToolBoxX',
+    metaDescription: 'Free multi-platform social media copy generator for Instagram, LinkedIn, X, Facebook, Pinterest, and Reddit. One-click viral hooks, formatting, and hashtags.',
+    h1Heading: 'Social Content Generator Online',
+    primaryKeyword: 'social content generator',
+    secondaryKeywords: ['social media post generator', 'instagram caption generator', 'linkedin post generator', 'twitter thread generator', 'social media copywriter'],
+    educationalSection: {
+      title: 'Generate Engaging Social Media Copy in Seconds',
+      paragraphs: [
+        'Each social network requires a distinct storytelling framework: Instagram thrives on visual hooks and hashtags, LinkedIn rewards executive problem-solution narratives, X/Twitter favors fast-paced threads, and Reddit demands zero-sales technical authenticity.',
+        'ToolBoxX Social Content Generator automatically tailors your message to each platform with customized tone, audience focus, and character count optimization.'
+      ],
+      useCases: [
+        'Product Launches: Announce new features across 6 platforms simultaneously with 1-click export.',
+        'Creator Growth: Maintain consistent publishing schedule with tested viral hook structures.',
+        'Agency Workflow: Generate branded client drafts in seconds without expensive SaaS subscriptions.'
+      ]
+    },
+    features: [
+      { title: '6 Platform Presets', description: 'Tailored formatting for Instagram, LinkedIn, Twitter, Facebook, Pinterest, and Reddit.' },
+      { title: 'Tone & Audience Selectors', description: 'Switch between Viral Growth Hacker, Executive, Founder, and Minimalist tones.' },
+      { title: 'Live Character Counters', description: 'Real-time counters with platform character bounds to ensure optimal delivery.' },
+      { title: '1-Click Multi-Copy', description: 'Copy individual platform posts or export full markdown launch kit.' }
+    ],
+    howToSteps: [
+      { title: 'Select Tool or Topic', description: 'Choose a ToolBoxX preset or enter your custom product topic.' },
+      { title: 'Pick Tone & Audience', description: 'Select your preferred voice style and target demographic.' },
+      { title: 'Review Generated Copy', description: 'Inspect the platform tabs for Instagram, LinkedIn, X, Facebook, and Reddit.' },
+      { title: 'Copy & Publish', description: 'Click copy or export the full markdown kit for your social media scheduler.' }
+    ],
+    faqs: [
+      { question: 'Are the hashtags generated relevant?', answer: 'Yes! Hashtags are dynamically selected based on your chosen tool, niche category, and broad high-volume discoverability tags.' },
+      { question: 'Can I edit the generated copy?', answer: 'Yes, all text areas and hooks are completely editable for real-time fine tuning.' }
+    ],
+    relatedToolIds: ['social-image-generator', 'content-calendar', 'short-video-script-generator', 'social-bio-generator']
+  },
+  {
+    id: 'social-image-generator',
+    name: 'Social Image Generator',
+    path: '/social-image-generator',
+    category: 'social',
+    shortDescription: 'Create branded dark-luxury visual announcement cards for 6 standard social dimensions.',
+    fullDescription: 'Canvas-based graphic design studio for ToolBoxX branding and product announcements. Live preview, editable headlines, benefit bullets, CTA badges, dark luxury themes, and 1-click high-res PNG export.',
+    icon: 'Palette',
+    isPopular: true,
+    isRecent: true,
+    badge: 'New',
+    seoTitle: 'Social Image Generator – Create Branded Social Media Cards Free | ToolBoxX',
+    metaDescription: 'Create high-resolution branded social media cards for Instagram, X, LinkedIn, Facebook, and Pinterest. 100% browser-based canvas editor with dark luxury themes.',
+    h1Heading: 'Social Image Generator Studio',
+    primaryKeyword: 'social image generator',
+    secondaryKeywords: ['social media card creator', 'banner generator', 'instagram post maker', 'linkedin card maker', 'twitter header generator'],
+    educationalSection: {
+      title: 'Vector-Sharp Visual Cards for Product & Feature Announcements',
+      paragraphs: [
+        'Eye-catching graphics increase social media click-through rates by over 300%. Creating consistent branded graphics usually requires complex design software.',
+        'ToolBoxX Social Image Generator renders high-DPI canvas graphics with luxury gradient backgrounds, glassmorphism cards, and customizable feature lists directly in your browser.'
+      ],
+      useCases: [
+        'Product Launches: Create sharp announcement graphics for Twitter, LinkedIn, and Instagram in seconds.',
+        'Feature Spotlights: Highlight key metrics and user benefits with clean typography.',
+        'Quotes & Tips: Share developer insights and creator workflows with branded aesthetics.'
+      ]
+    },
+    features: [
+      { title: '6 Standard Aspect Ratios', description: 'Instagram 1:1, Story 9:16, Twitter 16:9, LinkedIn 1.91:1, Facebook, and Pinterest.' },
+      { title: 'Luxury Dark Palettes', description: 'Obsidian Gold, Midnight Cyber, Emerald Dynasty, Royal Amethyst, and Carbon Minimal.' },
+      { title: 'Multiple Card Layouts', description: 'Feature showcase, big metric highlight, comparison card, and quote card.' },
+      { title: 'Lossless PNG Export', description: 'Download crisp 1080p+ graphics or copy image directly to clipboard.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Aspect Ratio', description: 'Select your target social platform and format.' },
+      { title: 'Customize Content', description: 'Edit headline, subtitle, feature bullets, and CTA badge.' },
+      { title: 'Select Theme Palette', description: 'Pick your favorite dark luxury background style.' },
+      { title: 'Export Image', description: 'Click Download PNG or Copy Image to Clipboard.' }
+    ],
+    faqs: [
+      { question: 'What resolution are the downloaded images?', answer: 'Images are exported at full native high resolution (e.g. 1080×1080, 1080×1920, 1600×900) for crystal-clear retina rendering.' }
+    ],
+    relatedToolIds: ['social-media-resizer', 'social-content-generator', 'image-resizer', 'link-in-bio-builder']
+  },
+  {
+    id: 'social-media-resizer',
+    name: 'Social Media Resizer',
+    path: '/social-media-resizer',
+    category: 'social',
+    shortDescription: 'Crop & resize photos for Instagram, Facebook, YouTube, LinkedIn, X, Pinterest & TikTok with batch ZIP export.',
+    fullDescription: 'Interactive platform dimension guide and high-precision image resizer. 24+ standard presets across 7 major platforms with smart blur background padding, pan/zoom crop, and 1-click batch ZIP download.',
+    icon: 'Maximize2',
+    isPopular: true,
+    isRecent: true,
+    badge: 'Popular',
+    seoTitle: 'Social Media Image Resizer – Resize Photos for All Platforms Free | ToolBoxX',
+    metaDescription: 'Resize photos for Instagram, YouTube, LinkedIn, Facebook, Twitter, Pinterest & TikTok. Smart blur background, pan/zoom cropping, and batch ZIP export.',
+    h1Heading: 'Social Media Image Resizer Online',
+    primaryKeyword: 'social media resizer',
+    secondaryKeywords: ['resize image for instagram', 'youtube thumbnail resizer', 'twitter header resizer', 'social media image size', 'batch image resizer'],
+    educationalSection: {
+      title: 'Standard Social Media Dimensions Reference & Resizer',
+      paragraphs: [
+        'Every social network enforces different aspect ratios. Uploading an un-optimized photo leads to awkward cropping, blurry compression, and lost engagement.',
+        'ToolBoxX Social Media Resizer provides the complete dimension reference guide for all major networks and allows you to batch resize any image with smart glassmorphic background padding.'
+      ],
+      useCases: [
+        'Omnichannel Publishing: Adapt one master banner into Instagram, YouTube, and LinkedIn formats.',
+        'Profile Picture Standardization: Create circular avatars and banner headers for all networks.',
+        'Batch Asset Packaging: Download all 20+ platform formats in a single organized ZIP archive.'
+      ]
+    },
+    features: [
+      { title: '24+ Platform Presets', description: 'Instagram, Facebook, YouTube, LinkedIn, X, Pinterest, and TikTok.' },
+      { title: 'Smart Glass Blur Contain', description: 'Preserve entire image without awkward black letterboxing.' },
+      { title: 'Pan & Zoom Cropping', description: 'Fine-tune horizontal and vertical positioning with 100%-250% zoom.' },
+      { title: 'Batch ZIP Export', description: 'Resize multiple platforms in parallel and download as a ZIP file.' }
+    ],
+    howToSteps: [
+      { title: 'Upload Image', description: 'Drag and drop any JPG, PNG, or WebP photo.' },
+      { title: 'Select Platform Presets', description: 'Choose single format or check multiple for batch processing.' },
+      { title: 'Adjust Fit & Position', description: 'Toggle Contain with Blur, Smart Cover, or adjust pan/zoom.' },
+      { title: 'Download Output', description: 'Download individual image or 1-click download all selected as ZIP.' }
+    ],
+    faqs: [
+      { question: 'Will my image quality degrade?', answer: 'No. The resizer uses high-quality bicubic canvas resampling and exports in lossless PNG or high-quality WebP/JPEG.' }
+    ],
+    relatedToolIds: ['image-resizer', 'social-image-generator', 'image-cropper', 'image-compressor']
+  },
+  {
+    id: 'short-video-script-generator',
+    name: 'Short Video Script Generator',
+    path: '/short-video-script-generator',
+    category: 'social',
+    shortDescription: 'Generate high-retention 15s, 30s & 60s video scripts for TikTok, Reels & Shorts with shot list and teleprompter.',
+    fullDescription: 'Video script creator designed for high watch time. Generates 3 hook variations, problem-solution pacing, B-roll visual directions, on-screen text overlays, and includes a live scrolling teleprompter with mirror mode.',
+    icon: 'Video',
+    isPopular: true,
+    isRecent: true,
+    badge: 'New',
+    seoTitle: 'Short Video Script Generator – TikTok, Reels & Shorts Scripts | ToolBoxX',
+    metaDescription: 'Generate viral 15s, 30s, and 60s short video scripts for TikTok, Instagram Reels, and YouTube Shorts. Hook ratings, shot lists, audio advice, and built-in teleprompter.',
+    h1Heading: 'Short Video Script Generator',
+    primaryKeyword: 'short video script generator',
+    secondaryKeywords: ['tiktok script generator', 'reels script generator', 'youtube shorts script', 'viral video hooks', 'video script writer'],
+    educationalSection: {
+      title: 'Craft High-Retention Short Form Video Scripts',
+      paragraphs: [
+        'Short-form video algorithms (TikTok, Reels, Shorts) prioritize 3-second hook retention and average watch percentage. Without a strong curiosity gap in the first 3 seconds, viewers swipe away.',
+        'ToolBoxX Short Video Script Generator structures your video into an optimal timeline with visual B-roll cues, sound effects, on-screen text overlays, and voiceover pacing.'
+      ],
+      useCases: [
+        'SaaS & App Demos: Showcase software workflows in 30 seconds with zero fluff.',
+        'Educational Content: Teach tech tricks, keyboard shortcuts, and life hacks with high retention.',
+        'Content Creator Scaling: Produce 10+ ready-to-record video scripts every hour.'
+      ]
+    },
+    features: [
+      { title: '3 Hook Variations', description: 'Curiosity Gap, Pain Point Callout, and Shocking Comparison with virality scores.' },
+      { title: 'Scene-by-Scene Timeline', description: 'Visual action cues, on-screen overlays, voiceover text, and SFX cues.' },
+      { title: 'Built-in Teleprompter', description: 'Fullscreen scrolling teleprompter with speed slider and mirror flip mode.' },
+      { title: '1-Click VO Export', description: 'Copy voiceover text directly for AI voice generators like ElevenLabs.' }
+    ],
+    howToSteps: [
+      { title: 'Select Tool / Topic', description: 'Choose a ToolBoxX preset or enter your custom video topic.' },
+      { title: 'Set Duration & Vibe', description: 'Pick 15s, 30s, or 60s and select your creator persona style.' },
+      { title: 'Choose Your Hook', description: 'Select from 3 high-retention hook variations.' },
+      { title: 'Record with Teleprompter', description: 'Launch the fullscreen prompter to record directly on camera.' }
+    ],
+    faqs: [
+      { question: 'How does the teleprompter mirror mode work?', answer: 'Mirror mode flips the text horizontally so you can record with professional teleprompter beam-splitter glass or front-facing cameras.' }
+    ],
+    relatedToolIds: ['social-content-generator', 'youtube-tag-generator', 'content-calendar', 'social-bio-generator']
+  },
+  {
+    id: 'content-calendar',
+    name: 'Social Content Calendar',
+    path: '/content-calendar',
+    category: 'social',
+    shortDescription: 'Plan, schedule, and organize multi-platform content with Month, Kanban, and List views with CSV export.',
+    fullDescription: 'Visual social media content planner with persistent local storage. Features interactive Month calendar, Kanban workflow columns, List table, filter by platform and status, pre-loaded 30-day campaign, and 1-click CSV export.',
+    icon: 'Calendar',
+    isPopular: true,
+    isRecent: true,
+    badge: 'Popular',
+    seoTitle: 'Social Content Calendar & Planner Online Free | ToolBoxX',
+    metaDescription: 'Free visual social media content calendar and campaign planner. Month view, Kanban board, platform filtering, local storage persistence, and CSV export.',
+    h1Heading: 'Social Content Calendar Planner',
+    primaryKeyword: 'social content calendar',
+    secondaryKeywords: ['social media planner', 'content planner online', 'marketing calendar free', 'notion content calendar', 'social media schedule template'],
+    educationalSection: {
+      title: 'Organize and Streamline Your Social Media Publishing',
+      paragraphs: [
+        'Consistency is the single most important factor in building a social media audience. A visual planner helps you balance educational posts, product features, behind-the-scenes stories, and community engagement.',
+        'ToolBoxX Content Calendar runs completely in your browser with automatic localStorage persistence, Kanban workflow management, and Notion/Sheets CSV export.'
+      ],
+      useCases: [
+        '30-Day Campaign Planning: Plan entire product launches across Instagram, X, LinkedIn, and YouTube.',
+        'Content Workflow Management: Track posts from Draft to In Review, Ready, Scheduled, and Published.',
+        'Spreadsheet Export: Export formatted CSV data for Notion databases and Google Sheets.'
+      ]
+    },
+    features: [
+      { title: '3 Interactive Views', description: 'Month calendar grid, Kanban workflow board, and sortable data list.' },
+      { title: '9 Platform Badges', description: 'Color-coded scheduling for Instagram, LinkedIn, X, TikTok, YouTube, FB, Pinterest, Reddit, Threads.' },
+      { title: 'Local Persistence', description: 'All calendar changes save automatically to your browser memory.' },
+      { title: 'CSV & JSON Export', description: 'Export to CSV for Notion/Sheets or create full JSON backups.' }
+    ],
+    howToSteps: [
+      { title: 'Click Any Date', description: 'Click on the calendar day or click "+ Add Post" button.' },
+      { title: 'Fill Post Details', description: 'Enter platform, tool topic, headline, caption, hashtags, and status.' },
+      { title: 'Organize in Kanban', description: 'Drag or advance post status from Draft to Scheduled and Published.' },
+      { title: 'Export Campaign', description: 'Download CSV file to sync with Notion or team spreadsheets.' }
+    ],
+    faqs: [
+      { question: 'Will my posts be saved if I close the browser?', answer: 'Yes! All calendar entries are saved directly in your browser localStorage.' }
+    ],
+    relatedToolIds: ['social-content-generator', 'short-video-script-generator', 'social-image-generator', 'youtube-tag-generator']
+  },
+  {
+    id: 'social-bio-generator',
+    name: 'Social Bio Generator',
+    path: '/social-bio-generator',
+    category: 'social',
+    shortDescription: 'Create high-converting profile bios for Instagram, Twitter/X, TikTok & LinkedIn with Unicode aesthetic fonts.',
+    fullDescription: 'Multi-platform social bio studio. Select from 6 vibe styles (Minimalist, Founder, Tech, Creative), convert to 10 aesthetic Unicode fonts, prevent Instagram line break collapse with zero-width spacers, and preview in live profile mockups.',
+    icon: 'User',
+    isPopular: false,
+    isRecent: true,
+    badge: 'New',
+    seoTitle: 'Social Bio Generator – Aesthetic Profile Bios for IG, X, TikTok & LinkedIn | ToolBoxX',
+    metaDescription: 'Generate aesthetic profile bios for Instagram, Twitter/X, TikTok, and LinkedIn. Unicode font changers, line break formatters, and live mockup previews.',
+    h1Heading: 'Social Profile Bio Generator',
+    primaryKeyword: 'social bio generator',
+    secondaryKeywords: ['instagram bio generator', 'twitter bio generator', 'tiktok bio maker', 'aesthetic bio fonts', 'linkedin headline generator'],
+    educationalSection: {
+      title: 'Make an Irresistible First Impression with Your Profile Bio',
+      paragraphs: [
+        'Your profile bio is your digital business card. You have less than 3 seconds and under 150 characters to communicate who you are, what you build, and why someone should follow you.',
+        'ToolBoxX Social Bio Generator combines strategic value propositions with aesthetic Unicode fonts and line break formatting for Instagram, X, TikTok, and LinkedIn.'
+      ],
+      useCases: [
+        'Personal Branding: Showcase your skills, startup, and achievements in 150 characters.',
+        'Founder & Indie Hacker Bios: Highlight monthly user stats and free tool URLs.',
+        'Aesthetic Formatting: Use custom Unicode bold, serif, monospace, and script fonts.'
+      ]
+    },
+    features: [
+      { title: '4 Platform Adapters', description: 'Instagram (150 chars), Twitter (160 chars), TikTok (80 chars), and LinkedIn (220 chars).' },
+      { title: 'Unicode Font Changer', description: '1-click transform to Bold Sans, Bold Serif, Monospace, Script, and Small Caps.' },
+      { title: 'Instagram Line Break Safety', description: 'Zero-width space formatting prevents Instagram from collapsing multi-line layout.' },
+      { title: 'Live Profile Mockups', description: 'Preview your bio on simulated Instagram, Twitter, TikTok, and LinkedIn cards.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Role & Achievements', description: 'Input your profession, niche, proof points, and call to action.' },
+      { title: 'Select Vibe & Platform', description: 'Choose Founder, Tech Hacker, Minimalist, or Creative style.' },
+      { title: 'Pick Unicode Font', description: 'Transform text into bold, script, monospace, or aesthetic styles.' },
+      { title: 'Copy with Formatting', description: '1-click copy or use "Copy for IG" to preserve clean line breaks.' }
+    ],
+    faqs: [
+      { question: 'Why does Instagram collapse my line breaks?', answer: 'Instagram removes regular whitespace lines. Our "Copy for IG" tool inserts invisible zero-width spaces (\u200B) to guarantee perfect spacing.' }
+    ],
+    relatedToolIds: ['link-in-bio-builder', 'social-content-generator', 'social-image-generator', 'resume-builder']
+  },
+  {
+    id: 'link-in-bio-builder',
+    name: 'Link in Bio Builder',
+    path: '/link-in-bio-builder',
+    category: 'social',
+    shortDescription: 'Design dark luxury mobile link-in-bio landing pages and export standalone index.html.',
+    fullDescription: 'Interactive mobile link-in-bio page creator. Add unlimited custom link buttons with icons and badges, choose from dark luxury themes, preview on a live smartphone mockup, and download a 100% standalone index.html file ready to host.',
+    icon: 'Smartphone',
+    isPopular: true,
+    isRecent: true,
+    badge: 'Popular',
+    seoTitle: 'Link in Bio Builder Free – Standalone Mobile Landing Page | ToolBoxX',
+    metaDescription: 'Create custom mobile link-in-bio landing pages for free. Dark luxury themes, live smartphone preview, and 1-click standalone index.html download.',
+    h1Heading: 'Link in Bio Page Builder',
+    primaryKeyword: 'link in bio builder',
+    secondaryKeywords: ['free linktree alternative', 'link in bio html template', 'custom bio link page', 'mobile landing page builder', 'standalone bio link'],
+    educationalSection: {
+      title: 'Own Your Audience with a Self-Hosted Link in Bio Page',
+      paragraphs: [
+        'Traditional link-in-bio services charge monthly fees, display third-party branding, and slow down your traffic. A standalone HTML bio page gives you 100% control, instant load times, and custom branding.',
+        'ToolBoxX Link in Bio Builder lets you design luxury dark landing pages with live iPhone preview and export a single self-contained index.html file ready for GitHub Pages, Netlify, or Vercel.'
+      ],
+      useCases: [
+        'Creator Hubs: Aggregate YouTube, TikTok, newsletter, and merchandise links in one place.',
+        'Developer & Agency Portfolios: Showcase live tool demos, client case studies, and contact info.',
+        'Free Self-Hosting: Host permanently on free platforms with zero subscriptions or branding watermarks.'
+      ]
+    },
+    features: [
+      { title: 'Unlimited Link Buttons', description: 'Custom icons, subtitles, highlight badges (HOT, NEW, FREE), and button styles.' },
+      { title: 'Luxury Dark Themes', description: 'Obsidian Gold, Midnight Cyber, Emerald Dynasty, Royal Velvet, and Sunset Amber.' },
+      { title: 'Live Smartphone Mockup', description: 'Interactive iPhone 16 Pro mockup frame reflects edits in real-time.' },
+      { title: 'Standalone HTML Export', description: 'Download self-contained index.html with embedded CSS and zero dependencies.' }
+    ],
+    howToSteps: [
+      { title: 'Customize Profile', description: 'Enter your name, handle, bio description, and upload your avatar.' },
+      { title: 'Add Link Buttons', description: 'Add destination URLs, icons, subtitles, and highlight badges.' },
+      { title: 'Choose Theme Palette', description: 'Select Obsidian Gold, Cyber, Emerald, or Matte Charcoal.' },
+      { title: 'Export index.html', description: 'Download the file and deploy to GitHub Pages, Cloudflare, or Netlify.' }
+    ],
+    faqs: [
+      { question: 'Do I need a server to host the exported file?', answer: 'No! The downloaded index.html is completely self-contained with embedded CSS and icons. You can drop it directly into GitHub Pages or Netlify for free.' }
+    ],
+    relatedToolIds: ['social-bio-generator', 'social-content-generator', 'qr-code-generator', 'social-image-generator']
+  },
+  {
+    id: 'youtube-tag-generator',
+    name: 'YouTube Tag & SEO Generator',
+    path: '/youtube-tag-generator',
+    category: 'social',
+    shortDescription: 'Generate high-CTR titles, timestamped descriptions, and algorithm keyword tags within the 500-char limit.',
+    fullDescription: 'Complete YouTube metadata optimization toolkit. Generates 10 CTR-scored titles, search-optimized description templates with chapter markers, and keyword tags with a live 500-character counter for direct paste into YouTube Studio.',
+    icon: 'Youtube',
+    isPopular: true,
+    isRecent: true,
+    badge: 'Popular',
+    seoTitle: 'YouTube Tag Generator & Video SEO Optimizer Free | ToolBoxX',
+    metaDescription: 'Free YouTube tag generator and video SEO optimizer. High-CTR video titles, timestamped description templates, and keyword tags within the 500-character limit.',
+    h1Heading: 'YouTube Tag & Video SEO Generator',
+    primaryKeyword: 'youtube tag generator',
+    secondaryKeywords: ['youtube tags seo', 'youtube title generator', 'youtube description template', 'youtube keyword tool', 'video tag optimizer'],
+    educationalSection: {
+      title: 'Optimize Video Metadata for Maximum YouTube Search & Recommendations',
+      paragraphs: [
+        'The YouTube algorithm indexes video titles, the first 3 lines of descriptions, and keyword tags to classify your content and recommend it to relevant viewers.',
+        'ToolBoxX YouTube Tag Generator creates click-worthy title formulas, timestamped chapter descriptions, and targeted keyword tags perfectly filling the 500-character YouTube Studio limit.'
+      ],
+      useCases: [
+        'Tutorials & How-To Videos: Generate exact match and long-tail question tags.',
+        'Video Launch Optimization: Prepare titles, descriptions, timestamps, and tags before publishing.',
+        'Competitor & Search Alignment: Target high-volume search phrases and related keyword clusters.'
+      ]
+    },
+    features: [
+      { title: 'High-CTR Title Formulas', description: 'Curiosity Gap, Warning, Speed, Money Saver, and Ultimate Guide formulas with CTR scores.' },
+      { title: 'Strict 500-Char Tag Gauge', description: 'Color-coded progress bar indicates optimal tag saturation for YouTube Studio.' },
+      { title: 'Description with Chapters', description: 'Pre-formatted chapter timestamps, tool links, and 3 top video hashtags.' },
+      { title: '1-Click Studio Copy', description: 'Copy all comma-separated tags ready for immediate paste into YouTube Studio.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Video Topic', description: 'Type your primary keyword or choose a popular creator topic.' },
+      { title: 'Review Title Options', description: 'Choose your preferred high-CTR title formula.' },
+      { title: 'Fine-Tune Tags', description: 'Add custom tags or remove irrelevant ones to reach 450-490 characters.' },
+      { title: 'Copy All Tags', description: '1-click copy comma-separated tags and paste into YouTube Studio.' }
+    ],
+    faqs: [
+      { question: 'Why is the 500-character limit important?', answer: 'YouTube Studio restricts tag boxes to 500 characters. Our live character counter ensures your tag list maximizes search coverage without exceeding the limit.' }
+    ],
+    relatedToolIds: ['short-video-script-generator', 'social-content-generator', 'content-calendar', 'social-image-generator']
   }
 ];
 
 export const CATEGORIES = [
+  {
+    id: 'social',
+    name: 'Social & Creator Tools',
+    description: 'Multi-platform copywriters, canvas image studios, dimension resizers, viral video scripts, content calendars, and bio builders.',
+    icon: 'Share2'
+  },
+  {
+    id: 'calculators',
+    name: 'Calculators',
+    description: 'Smart financial, date, academic, health, salary, percentage, and time zone calculators with instant sharing.',
+    icon: 'Calculator'
+  },
   {
     id: 'developer',
     name: 'Developer Tools',

@@ -18,6 +18,17 @@ const TermsPage = lazy(() => import('./pages/TermsPage').then((m) => ({ default:
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
+// Lazy-loaded Editorial, Social & Curated Hub Pages
+const BlogPage = lazy(() => import('./pages/BlogPage').then((m) => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then((m) => ({ default: m.BlogPostPage })));
+const SocialHubPage = lazy(() => import('./pages/SocialHubPage').then((m) => ({ default: m.SocialHubPage })));
+const SocialAnalyticsPage = lazy(() => import('./pages/SocialAnalyticsPage').then((m) => ({ default: m.SocialAnalyticsPage })));
+const StudentToolsPage = lazy(() => import('./pages/StudentToolsPage').then((m) => ({ default: m.StudentToolsPage })));
+const ProductivityToolsPage = lazy(() => import('./pages/ProductivityToolsPage').then((m) => ({ default: m.ProductivityToolsPage })));
+const SocialMediaToolsPage = lazy(() => import('./pages/SocialMediaToolsPage').then((m) => ({ default: m.SocialMediaToolsPage })));
+const FreePdfToolsPage = lazy(() => import('./pages/FreePdfToolsPage').then((m) => ({ default: m.FreePdfToolsPage })));
+const FreeImageToolsPage = lazy(() => import('./pages/FreeImageToolsPage').then((m) => ({ default: m.FreeImageToolsPage })));
+
 // Lazy-loaded Image Tools
 const ImageCompressor = lazy(() => import('./components/tools/image/ImageCompressor').then((m) => ({ default: m.ImageCompressor })));
 const ImageResizer = lazy(() => import('./components/tools/image/ImageResizer').then((m) => ({ default: m.ImageResizer })));
@@ -119,6 +130,27 @@ const ZipExtractor = lazy(() => import('./components/tools/file/ZipExtractor').t
 const BulkRenamer = lazy(() => import('./components/tools/file/BulkRenamer').then((m) => ({ default: m.BulkRenamer })));
 const FileSizeConverter = lazy(() => import('./components/tools/file/FileSizeConverter').then((m) => ({ default: m.FileSizeConverter })));
 
+// Lazy-loaded Calculator Tools
+const AgeCalculator = lazy(() => import('./components/tools/calculator/AgeCalculator').then((m) => ({ default: m.AgeCalculator })));
+const PercentageCalculator = lazy(() => import('./components/tools/calculator/PercentageCalculator').then((m) => ({ default: m.PercentageCalculator })));
+const GpaCalculator = lazy(() => import('./components/tools/calculator/GpaCalculator').then((m) => ({ default: m.GpaCalculator })));
+const EmiCalculator = lazy(() => import('./components/tools/calculator/EmiCalculator').then((m) => ({ default: m.EmiCalculator })));
+const DiscountCalculator = lazy(() => import('./components/tools/calculator/DiscountCalculator').then((m) => ({ default: m.DiscountCalculator })));
+const SalaryCalculator = lazy(() => import('./components/tools/calculator/SalaryCalculator').then((m) => ({ default: m.SalaryCalculator })));
+const DateCalculator = lazy(() => import('./components/tools/calculator/DateCalculator').then((m) => ({ default: m.DateCalculator })));
+const TimeZoneConverter = lazy(() => import('./components/tools/calculator/TimeZoneConverter').then((m) => ({ default: m.TimeZoneConverter })));
+const BmiCalculator = lazy(() => import('./components/tools/calculator/BmiCalculator').then((m) => ({ default: m.BmiCalculator })));
+
+// Lazy-loaded Social Media & Creator Tools
+const SocialContentGenerator = lazy(() => import('./components/tools/social/SocialContentGenerator').then((m) => ({ default: m.SocialContentGenerator })));
+const SocialImageGenerator = lazy(() => import('./components/tools/social/SocialImageGenerator').then((m) => ({ default: m.SocialImageGenerator })));
+const SocialMediaResizer = lazy(() => import('./components/tools/social/SocialMediaResizer').then((m) => ({ default: m.SocialMediaResizer })));
+const ShortVideoScriptGenerator = lazy(() => import('./components/tools/social/ShortVideoScriptGenerator').then((m) => ({ default: m.ShortVideoScriptGenerator })));
+const ContentCalendar = lazy(() => import('./components/tools/social/ContentCalendar').then((m) => ({ default: m.ContentCalendar })));
+const SocialBioGenerator = lazy(() => import('./components/tools/social/SocialBioGenerator').then((m) => ({ default: m.SocialBioGenerator })));
+const LinkInBioBuilder = lazy(() => import('./components/tools/social/LinkInBioBuilder').then((m) => ({ default: m.LinkInBioBuilder })));
+const YouTubeTagGenerator = lazy(() => import('./components/tools/social/YouTubeTagGenerator').then((m) => ({ default: m.YouTubeTagGenerator })));
+
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -160,6 +192,19 @@ export function App() {
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+
+                {/* Editorial, Social & Analytics Hubs */}
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/social" element={<SocialHubPage />} />
+                <Route path="/social-analytics" element={<SocialAnalyticsPage />} />
+
+                {/* Curated High-Intent Landing Pages */}
+                <Route path="/student-tools" element={<StudentToolsPage />} />
+                <Route path="/productivity-tools" element={<ProductivityToolsPage />} />
+                <Route path="/social-media-tools" element={<SocialMediaToolsPage />} />
+                <Route path="/free-pdf-tools" element={<FreePdfToolsPage />} />
+                <Route path="/free-image-tools" element={<FreeImageToolsPage />} />
 
                 {/* Image Tools */}
                 <Route
@@ -442,6 +487,27 @@ export function App() {
                 <Route path="/zip-extractor" element={<ToolWrapper toolId="zip-extractor"><ZipExtractor /></ToolWrapper>} />
                 <Route path="/bulk-renamer" element={<ToolWrapper toolId="bulk-renamer"><BulkRenamer /></ToolWrapper>} />
                 <Route path="/file-size-converter" element={<ToolWrapper toolId="file-size-converter"><FileSizeConverter /></ToolWrapper>} />
+
+                {/* Calculator Tools */}
+                <Route path="/age-calculator" element={<ToolWrapper toolId="age-calculator"><AgeCalculator /></ToolWrapper>} />
+                <Route path="/percentage-calculator" element={<ToolWrapper toolId="percentage-calculator"><PercentageCalculator /></ToolWrapper>} />
+                <Route path="/gpa-calculator" element={<ToolWrapper toolId="gpa-calculator"><GpaCalculator /></ToolWrapper>} />
+                <Route path="/emi-calculator" element={<ToolWrapper toolId="emi-calculator"><EmiCalculator /></ToolWrapper>} />
+                <Route path="/discount-calculator" element={<ToolWrapper toolId="discount-calculator"><DiscountCalculator /></ToolWrapper>} />
+                <Route path="/salary-calculator" element={<ToolWrapper toolId="salary-calculator"><SalaryCalculator /></ToolWrapper>} />
+                <Route path="/date-calculator" element={<ToolWrapper toolId="date-calculator"><DateCalculator /></ToolWrapper>} />
+                <Route path="/timezone-converter" element={<ToolWrapper toolId="timezone-converter"><TimeZoneConverter /></ToolWrapper>} />
+                <Route path="/bmi-calculator" element={<ToolWrapper toolId="bmi-calculator"><BmiCalculator /></ToolWrapper>} />
+
+                {/* Social Media & Creator Tools */}
+                <Route path="/social-content-generator" element={<ToolWrapper toolId="social-content-generator"><SocialContentGenerator /></ToolWrapper>} />
+                <Route path="/social-image-generator" element={<ToolWrapper toolId="social-image-generator"><SocialImageGenerator /></ToolWrapper>} />
+                <Route path="/social-media-resizer" element={<ToolWrapper toolId="social-media-resizer"><SocialMediaResizer /></ToolWrapper>} />
+                <Route path="/short-video-script-generator" element={<ToolWrapper toolId="short-video-script-generator"><ShortVideoScriptGenerator /></ToolWrapper>} />
+                <Route path="/content-calendar" element={<ToolWrapper toolId="content-calendar"><ContentCalendar /></ToolWrapper>} />
+                <Route path="/social-bio-generator" element={<ToolWrapper toolId="social-bio-generator"><SocialBioGenerator /></ToolWrapper>} />
+                <Route path="/link-in-bio-builder" element={<ToolWrapper toolId="link-in-bio-builder"><LinkInBioBuilder /></ToolWrapper>} />
+                <Route path="/youtube-tag-generator" element={<ToolWrapper toolId="youtube-tag-generator"><YouTubeTagGenerator /></ToolWrapper>} />
 
                 {/* Fallback 404 */}
                 <Route path="*" element={<NotFoundPage />} />
