@@ -4017,6 +4017,252 @@ export const TOOLS_DATA: ToolMeta[] = [
       { question: 'Why is the 500-character limit important?', answer: 'YouTube Studio restricts tag boxes to 500 characters. Our live character counter ensures your tag list maximizes search coverage without exceeding the limit.' }
     ],
     relatedToolIds: ['short-video-script-generator', 'social-content-generator', 'content-calendar', 'social-image-generator']
+  },
+  {
+    id: 'unit-converter',
+    name: 'Unit Converter',
+    path: '/unit-converter',
+    category: 'calculators',
+    shortDescription: 'Convert length, weight, temperature, area, volume, speed, time, and data storage units instantly.',
+    fullDescription: 'Comprehensive all-in-one unit converter supporting metric and imperial measurements for length, weight, mass, temperature, area, volume, speed, time, and digital data storage. Instant real-time calculation with live reference tables.',
+    icon: 'ArrowLeftRight',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Free Unit Converter Online – Length, Weight, Temp & Data | ToolBoxX',
+    metaDescription: 'Convert units for length, weight, temperature, speed, area, volume, time and digital storage. Fast, free and accurate client-side unit converter.',
+    h1Heading: 'Free Online Unit Converter',
+    primaryKeyword: 'unit converter',
+    secondaryKeywords: ['unit converter online', 'length converter', 'weight converter', 'temperature converter', 'area converter', 'speed converter', 'bytes converter', 'free unit converter'],
+    features: [
+      { title: '8 Essential Dimensions', description: 'Convert Length, Weight, Temperature, Area, Volume, Speed, Time, and Digital Storage.' },
+      { title: 'Two-Way Instant Conversion', description: 'Real-time calculation with 1-click unit swapping and precision formatting.' },
+      { title: 'Live Dimension Tables', description: 'View complete equivalence tables across all available units in the selected category.' },
+      { title: '100% Client-Side', description: 'Calculations run instantly in your browser with zero latency or network requests.' }
+    ],
+    howToSteps: [
+      { title: 'Select Dimension', description: 'Choose your measurement category (Length, Weight, Temp, etc.).' },
+      { title: 'Choose Units', description: 'Select your source (From) and target (To) units from the dropdowns.' },
+      { title: 'Enter Value', description: 'Type the number you wish to convert.' },
+      { title: 'Copy Result', description: 'View the instant conversion and copy the result with 1 click.' }
+    ],
+    faqs: [
+      { question: 'What unit systems are supported?', answer: 'We support both International Metric (SI) and US Imperial / Customary units across all 8 dimensions.' },
+      { question: 'How accurate are the conversions?', answer: 'Conversions use standard high-precision IEEE 754 floating-point mathematics for scientific accuracy.' }
+    ],
+    relatedToolIds: ['file-size-converter', 'percentage-calculator', 'date-calculator', 'timezone-converter']
+  },
+  {
+    id: 'text-diff',
+    name: 'Text Diff Checker',
+    path: '/text-diff',
+    category: 'text',
+    shortDescription: 'Compare two text snippets side-by-side or inline to highlight additions, removals, and modifications.',
+    fullDescription: 'Compare two pieces of text, code, or documents to instantly find differences. Provides side-by-side and unified inline comparison modes, line difference counters, character delta stats, and copyable diff reports.',
+    icon: 'Columns',
+    isPopular: true,
+    badge: 'Popular',
+    seoTitle: 'Text Diff Checker Online – Compare Text Differences Free | ToolBoxX',
+    metaDescription: 'Free online text diff tool to compare two texts and highlight differences side-by-side or inline. Fast, private and client-side.',
+    h1Heading: 'Online Text Diff & Comparison Tool',
+    primaryKeyword: 'text diff',
+    secondaryKeywords: ['text diff checker', 'compare text online', 'text comparison tool', 'diff checker online', 'find text differences', 'code diff online'],
+    features: [
+      { title: 'Side-by-Side & Inline Views', description: 'Toggle between split dual-column and unified inline diff layouts.' },
+      { title: 'Line & Character Stats', description: 'View real-time counters for added (+), removed (-), and modified (~) lines.' },
+      { title: 'Color-Coded Highlights', description: 'Clear emerald and rose highlighting makes spotting changes effortless.' },
+      { title: '1-Click Diff Export', description: 'Copy a standardized Git-style diff report directly to your clipboard.' }
+    ],
+    howToSteps: [
+      { title: 'Paste Original Text', description: 'Enter or paste the baseline original text into the left pane.' },
+      { title: 'Paste Modified Text', description: 'Enter or paste the updated text into the right pane.' },
+      { title: 'Inspect Differences', description: 'View color-coded additions, deletions, and changed lines.' },
+      { title: 'Copy Diff Report', description: 'Click Copy Diff to save the formatted comparison.' }
+    ],
+    faqs: [
+      { question: 'Is my text stored or sent to a server?', answer: 'No. All text comparison happens completely on your device using client-side JavaScript.' }
+    ],
+    relatedToolIds: ['text-cleaner', 'word-counter', 'case-converter', 'markdown-editor']
+  },
+  {
+    id: 'qr-code-scanner',
+    name: 'QR Code Scanner',
+    path: '/qr-code-scanner',
+    category: 'generators',
+    shortDescription: 'Scan QR codes in your browser using your webcam, phone camera, or by uploading an image.',
+    fullDescription: 'Fast, secure browser-based QR code reader and scanner. Scan directly from your webcam or phone camera with live detection, or upload an image file or screenshot to extract encoded URLs and text.',
+    icon: 'Camera',
+    isPopular: true,
+    badge: 'New',
+    seoTitle: 'QR Code Scanner Online – Scan QR via Camera & Image | ToolBoxX',
+    metaDescription: 'Scan QR codes online using your camera, webcam or by uploading an image. Fast, secure, free and works 100% in your browser.',
+    h1Heading: 'Free Online QR Code Scanner',
+    primaryKeyword: 'qr code scanner',
+    secondaryKeywords: ['qr code scanner online', 'scan qr code from image', 'webcam qr scanner', 'qr reader online', 'free qr scanner', 'scan qr code online'],
+    features: [
+      { title: 'Live Camera Scanning', description: 'Real-time video stream detection using your device webcam or phone camera.' },
+      { title: 'Image File Upload', description: 'Drop any PNG, JPG, or screenshot containing a QR code for instant decoding.' },
+      { title: 'URL Link Auto-Launch', description: 'Instantly open decoded web links or copy payload to clipboard.' },
+      { title: 'Private & Secure', description: 'Camera frames are processed entirely on-device with zero server streaming.' }
+    ],
+    howToSteps: [
+      { title: 'Choose Mode', description: 'Click Start Camera Scanner or Browse Image File.' },
+      { title: 'Align or Upload', description: 'Point camera at the QR code or select an image file.' },
+      { title: 'View Decoded Result', description: 'Inspect the extracted text or URL instantly.' },
+      { title: 'Copy or Open', description: 'Copy content to clipboard or open URL directly in a new tab.' }
+    ],
+    faqs: [
+      { question: 'Do I need to install any app to scan QR codes?', answer: 'No. ToolBoxX QR Code Scanner runs natively in modern web browsers without requiring any third-party app.' }
+    ],
+    relatedToolIds: ['qr-code-generator', 'barcode-generator', 'uuid-generator']
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    path: '/lorem-ipsum-generator',
+    category: 'text',
+    shortDescription: 'Generate custom placeholder dummy text in paragraphs, sentences, words, or lists with HTML options.',
+    fullDescription: 'Customizable Lorem Ipsum generator for designers, developers, and writers. Create realistic Latin dummy text by paragraphs, sentences, words, or bullet lists with optional HTML tags and 1-click clipboard copy.',
+    icon: 'FileText',
+    seoTitle: 'Lorem Ipsum Generator Online – Free Dummy Text Creator | ToolBoxX',
+    metaDescription: 'Generate dummy Lorem Ipsum placeholder text by paragraphs, sentences, words or HTML tags. Free, fast and easy to copy.',
+    h1Heading: 'Lorem Ipsum Dummy Text Generator',
+    primaryKeyword: 'lorem ipsum generator',
+    secondaryKeywords: ['lorem ipsum generator online', 'dummy text generator', 'placeholder text generator', 'latin text generator', 'free lorem ipsum'],
+    features: [
+      { title: 'Flexible Units', description: 'Generate by Paragraphs, Sentences, Words, or Bulleted Lists.' },
+      { title: 'HTML Markup Support', description: 'Optionally wrap output in semantic <p>, <ul>, and <li> tags.' },
+      { title: 'Live Word & Char Counter', description: 'Real-time statistics on total word and character counts.' },
+      { title: '1-Click Copy', description: 'Instantly transfer generated text to your clipboard.' }
+    ],
+    howToSteps: [
+      { title: 'Select Format', description: 'Choose between Paragraphs, Sentences, Words, or Lists.' },
+      { title: 'Set Quantity', description: 'Enter the desired amount of text to generate.' },
+      { title: 'Configure Options', description: 'Toggle HTML tags or standard Lorem ipsum starting phrase.' },
+      { title: 'Copy Text', description: 'Click Copy Text to paste into your design mockup or editor.' }
+    ],
+    faqs: [
+      { question: 'What is Lorem Ipsum?', answer: 'Lorem Ipsum is standard placeholder dummy text derived from classical Latin literature, used since the 1500s to demonstrate typography and page layout.' }
+    ],
+    relatedToolIds: ['word-counter', 'character-counter', 'case-converter', 'markdown-editor']
+  },
+  {
+    id: 'random-number-generator',
+    name: 'Random Number Generator',
+    path: '/random-number-generator',
+    category: 'generators',
+    shortDescription: 'Generate true random numbers, dice rolls, lottery combinations, and decimals within custom ranges.',
+    fullDescription: 'Cryptographically secure random number generator. Generate single or batch random integers, decimals, lottery numbers, dice rolls, and custom ranges with sorting and duplicate filtering.',
+    icon: 'Dices',
+    seoTitle: 'Random Number Generator Online – Free RNG Tool | ToolBoxX',
+    metaDescription: 'Generate random numbers within any range. Quick presets for dice rolls, lottery numbers, sorting and decimals. 100% free online RNG.',
+    h1Heading: 'Free Online Random Number Generator',
+    primaryKeyword: 'random number generator',
+    secondaryKeywords: ['random number generator online', 'rng online', 'random integer generator', 'dice roller online', 'lottery number generator', 'random picker'],
+    features: [
+      { title: 'Custom Range & Count', description: 'Define custom Min and Max boundaries and generate up to 500 numbers at once.' },
+      { title: 'Unique or Duplicate Modes', description: 'Toggle duplicate allowances for fair lotteries and random sampling.' },
+      { title: 'Game & Dice Presets', description: 'Quick 1-click buttons for D6, D20, Lottery (6 of 50), and 1-100.' },
+      { title: 'Sorting & Decimals', description: 'Sort numbers ascending/descending or generate floating-point decimals.' }
+    ],
+    howToSteps: [
+      { title: 'Set Range', description: 'Enter your Minimum and Maximum target numbers.' },
+      { title: 'Choose Quantity', description: 'Specify how many numbers you want to generate.' },
+      { title: 'Click Generate', description: 'Press the Generate button for instant randomized numbers.' },
+      { title: 'Copy Numbers', description: '1-click copy your formatted results.' }
+    ],
+    faqs: [
+      { question: 'Are these numbers truly random?', answer: 'Yes. ToolBoxX uses browser-standard pseudorandom and cryptographic entropy sources for unbiased distribution.' }
+    ],
+    relatedToolIds: ['password-generator', 'uuid-generator', 'qr-code-generator']
+  },
+  {
+    id: 'color-palette-generator',
+    name: 'Color Palette Generator',
+    path: '/color-palette-generator',
+    category: 'generators',
+    shortDescription: 'Generate beautiful aesthetic color palettes with lockable swatches and 1-click CSS export.',
+    fullDescription: 'Interactive color palette studio for designers and developers. Generate harmonious color schemes, lock individual favorite shades, sample HEX, RGB, and HSL codes, and export ready-to-use CSS variables.',
+    icon: 'Palette',
+    seoTitle: 'Color Palette Generator – Aesthetic Color Schemes | ToolBoxX',
+    metaDescription: 'Generate color palettes for websites, branding and UI design. Lock colors, explore harmonies and copy CSS variables instantly.',
+    h1Heading: 'Online Color Palette Generator',
+    primaryKeyword: 'color palette generator',
+    secondaryKeywords: ['color palette generator online', 'color scheme generator', 'palette creator', 'css color palette', 'hex color palette', 'aesthetic color generator'],
+    features: [
+      { title: 'Lock & Reroll', description: 'Lock individual favorite color swatches while generating new complementary tones.' },
+      { title: '1-Click HEX & RGB Copy', description: 'Quickly copy hex codes for Figma, Tailwind, or CSS stylesheets.' },
+      { title: 'CSS Variables Exporter', description: 'Export full :root CSS variable blocks ready for frontend integration.' },
+      { title: 'Contrast & Aesthetics', description: 'Curated algorithms generate balanced, high-contrast palettes for UI/UX.' }
+    ],
+    howToSteps: [
+      { title: 'Generate Palette', description: 'Click Generate New Palette to roll a fresh set of 5 colors.' },
+      { title: 'Lock Favorites', description: 'Click the Lock icon on any color swatch you wish to keep.' },
+      { title: 'Copy HEX Codes', description: 'Click Copy HEX on any swatch or export full CSS variables.' }
+    ],
+    faqs: [
+      { question: 'How do I use the exported CSS variables in my website?', answer: 'Paste the copied :root block into your global stylesheet (e.g. index.css) and reference them with var(--color-1), var(--color-2), etc.' }
+    ],
+    relatedToolIds: ['color-converter', 'image-color-picker', 'favicon-generator', 'meta-tag-generator']
+  },
+  {
+    id: 'sitemap-generator',
+    name: 'XML Sitemap Generator',
+    path: '/sitemap-generator',
+    category: 'business',
+    shortDescription: 'Create clean Google-compliant XML sitemaps for your website with custom priorities and frequencies.',
+    fullDescription: 'Free visual XML Sitemap generator to create structured, Google-compliant sitemap.xml files. Add individual URLs or bulk import paths, customize priority and change frequency, preview formatted XML, and download your sitemap with 1 click.',
+    icon: 'FileCode',
+    seoTitle: 'XML Sitemap Generator Online – Free Google Sitemap Creator | ToolBoxX',
+    metaDescription: 'Create valid XML sitemaps for Google Search Console. Set priorities, change frequencies, and download sitemap.xml for free.',
+    h1Heading: 'Free Online XML Sitemap Generator',
+    primaryKeyword: 'sitemap generator',
+    secondaryKeywords: ['xml sitemap generator', 'sitemap generator online', 'create sitemap xml', 'google sitemap creator', 'free sitemap tool', 'generate sitemap for website'],
+    features: [
+      { title: 'Google-Compliant XML', description: 'Generates valid schema 0.9 XML accepted by Google, Bing, and all major search engines.' },
+      { title: 'Bulk Path Importer', description: 'Paste dozens of URL paths at once for rapid sitemap compilation.' },
+      { title: 'Granular SEO Settings', description: 'Set custom <priority>, <changefreq>, and <lastmod> tags per URL.' },
+      { title: '1-Click XML Download', description: 'Download your sitemap.xml file directly to upload to your web root.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Base Domain', description: 'Type your website address (e.g. https://yourdomain.com).' },
+      { title: 'Add URL Paths', description: 'Input individual pages or paste a list in bulk import.' },
+      { title: 'Configure Priorities', description: 'Adjust crawl frequencies (daily, weekly) and priority weights.' },
+      { title: 'Download sitemap.xml', description: 'Click Download sitemap.xml and upload to your web server.' }
+    ],
+    faqs: [
+      { question: 'Where should I upload sitemap.xml?', answer: 'Upload sitemap.xml to the public root directory of your website (e.g. https://yourdomain.com/sitemap.xml) and submit the URL in Google Search Console.' }
+    ],
+    relatedToolIds: ['robots-txt-generator', 'meta-tag-generator', 'schema-generator', 'utm-builder']
+  },
+  {
+    id: 'tip-calculator',
+    name: 'Tip & Bill Split Calculator',
+    path: '/tip-calculator',
+    category: 'calculators',
+    shortDescription: 'Calculate tip percentages, split restaurant bills fairly among friends, and round up totals.',
+    fullDescription: 'Easy tip and bill splitting calculator. Calculate exact tip amounts by percentage presets or custom rates, divide bills equally among up to 50 friends, round totals to nearest dollar, and copy the full payment breakdown.',
+    icon: 'Receipt',
+    seoTitle: 'Tip Calculator Online – Bill Split & Gratuity Calculator | ToolBoxX',
+    metaDescription: 'Calculate restaurant tips and split bills easily among friends. Custom tip percentages, rounding, and per-person breakdown.',
+    h1Heading: 'Free Online Tip & Bill Split Calculator',
+    primaryKeyword: 'tip calculator',
+    secondaryKeywords: ['tip calculator online', 'bill split calculator', 'gratuity calculator', 'split restaurant bill', 'restaurant tip calculator', 'calculate tip per person'],
+    features: [
+      { title: 'Preset & Custom Tips', description: 'Quick 10%, 15%, 18%, 20%, and 25% buttons plus custom rate inputs.' },
+      { title: 'Multi-Person Bill Split', description: 'Instantly calculate per-person bill and tip contributions for groups.' },
+      { title: 'Round-Up Option', description: 'Round total bill to the nearest dollar with automatic tip recalculation.' },
+      { title: 'Shareable Summary', description: '1-click copy formatted payment breakdown to share in group chats.' }
+    ],
+    howToSteps: [
+      { title: 'Enter Bill Total', description: 'Input the pre-tax or total bill amount.' },
+      { title: 'Select Tip %', description: 'Choose a standard tip percentage or type a custom amount.' },
+      { title: 'Set Group Size', description: 'Specify how many people are splitting the payment.' },
+      { title: 'View Share', description: 'See the exact per-person breakdown and copy the summary.' }
+    ],
+    faqs: [
+      { question: 'What is the standard tipping percentage?', answer: 'Standard restaurant tipping typically ranges from 15% to 20% in the United States and Canada for good service.' }
+    ],
+    relatedToolIds: ['discount-calculator', 'percentage-calculator', 'salary-calculator', 'emi-calculator']
   }
 ];
 

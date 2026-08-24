@@ -129,7 +129,8 @@ const ZipExtractor = lazy(() => import('./components/tools/file/ZipExtractor').t
 const BulkRenamer = lazy(() => import('./components/tools/file/BulkRenamer').then((m) => ({ default: m.BulkRenamer })));
 const FileSizeConverter = lazy(() => import('./components/tools/file/FileSizeConverter').then((m) => ({ default: m.FileSizeConverter })));
 
-// Lazy-loaded Calculator Tools
+// Lazy-loaded Unit & Calculator Tools
+const UnitConverter = lazy(() => import('./components/tools/converter/UnitConverter').then((m) => ({ default: m.UnitConverter })));
 const AgeCalculator = lazy(() => import('./components/tools/calculator/AgeCalculator').then((m) => ({ default: m.AgeCalculator })));
 const PercentageCalculator = lazy(() => import('./components/tools/calculator/PercentageCalculator').then((m) => ({ default: m.PercentageCalculator })));
 const GpaCalculator = lazy(() => import('./components/tools/calculator/GpaCalculator').then((m) => ({ default: m.GpaCalculator })));
@@ -139,6 +140,15 @@ const SalaryCalculator = lazy(() => import('./components/tools/calculator/Salary
 const DateCalculator = lazy(() => import('./components/tools/calculator/DateCalculator').then((m) => ({ default: m.DateCalculator })));
 const TimeZoneConverter = lazy(() => import('./components/tools/calculator/TimeZoneConverter').then((m) => ({ default: m.TimeZoneConverter })));
 const BmiCalculator = lazy(() => import('./components/tools/calculator/BmiCalculator').then((m) => ({ default: m.BmiCalculator })));
+const TipLoanCalculator = lazy(() => import('./components/tools/calculator/TipLoanCalculator').then((m) => ({ default: m.TipLoanCalculator })));
+
+// Lazy-loaded Additional Generators & Text Tools
+const TextDiffChecker = lazy(() => import('./components/tools/text/TextDiffChecker').then((m) => ({ default: m.TextDiffChecker })));
+const LoremIpsumGenerator = lazy(() => import('./components/tools/text/LoremIpsumGenerator').then((m) => ({ default: m.LoremIpsumGenerator })));
+const QrCodeScanner = lazy(() => import('./components/tools/generator/QrCodeScanner').then((m) => ({ default: m.QrCodeScanner })));
+const RandomNumberGenerator = lazy(() => import('./components/tools/generator/RandomNumberGenerator').then((m) => ({ default: m.RandomNumberGenerator })));
+const ColorPaletteGenerator = lazy(() => import('./components/tools/generator/ColorPaletteGenerator').then((m) => ({ default: m.ColorPaletteGenerator })));
+const SitemapGenerator = lazy(() => import('./components/tools/generator/SitemapGenerator').then((m) => ({ default: m.SitemapGenerator })));
 
 // Lazy-loaded Social Media & Creator Tools
 const SocialContentGenerator = lazy(() => import('./components/tools/social/SocialContentGenerator').then((m) => ({ default: m.SocialContentGenerator })));
@@ -473,10 +483,19 @@ export function App() {
                 <Route path="/timestamp-converter" element={<ToolWrapper toolId="timestamp-converter"><TimestampConverter /></ToolWrapper>} />
                 <Route path="/color-converter" element={<ToolWrapper toolId="color-converter"><ColorConverter /></ToolWrapper>} />
 
+                {/* Additional Generators & Business Tools */}
+                <Route path="/sitemap-generator" element={<ToolWrapper toolId="sitemap-generator"><SitemapGenerator /></ToolWrapper>} />
+                <Route path="/qr-code-scanner" element={<ToolWrapper toolId="qr-code-scanner"><QrCodeScanner /></ToolWrapper>} />
+                <Route path="/random-number-generator" element={<ToolWrapper toolId="random-number-generator"><RandomNumberGenerator /></ToolWrapper>} />
+                <Route path="/color-palette-generator" element={<ToolWrapper toolId="color-palette-generator"><ColorPaletteGenerator /></ToolWrapper>} />
+
                 {/* Text Tools (Extended) */}
                 <Route path="/text-cleaner" element={<ToolWrapper toolId="text-cleaner"><TextCleaner /></ToolWrapper>} />
                 <Route path="/markdown-editor" element={<ToolWrapper toolId="markdown-editor"><MarkdownEditor /></ToolWrapper>} />
                 <Route path="/csv-converter" element={<ToolWrapper toolId="csv-converter"><CsvConverter /></ToolWrapper>} />
+                <Route path="/text-diff" element={<ToolWrapper toolId="text-diff"><TextDiffChecker /></ToolWrapper>} />
+                <Route path="/text-compare" element={<Navigate to="/text-diff" replace />} />
+                <Route path="/lorem-ipsum-generator" element={<ToolWrapper toolId="lorem-ipsum-generator"><LoremIpsumGenerator /></ToolWrapper>} />
 
                 {/* File & Archive Tools */}
                 <Route path="/zip-creator" element={<ToolWrapper toolId="zip-creator"><ZipCreator /></ToolWrapper>} />
@@ -484,7 +503,9 @@ export function App() {
                 <Route path="/bulk-renamer" element={<ToolWrapper toolId="bulk-renamer"><BulkRenamer /></ToolWrapper>} />
                 <Route path="/file-size-converter" element={<ToolWrapper toolId="file-size-converter"><FileSizeConverter /></ToolWrapper>} />
 
-                {/* Calculator Tools */}
+                {/* Converter & Calculator Tools */}
+                <Route path="/unit-converter" element={<ToolWrapper toolId="unit-converter"><UnitConverter /></ToolWrapper>} />
+                <Route path="/calculator" element={<Navigate to="/percentage-calculator" replace />} />
                 <Route path="/age-calculator" element={<ToolWrapper toolId="age-calculator"><AgeCalculator /></ToolWrapper>} />
                 <Route path="/percentage-calculator" element={<ToolWrapper toolId="percentage-calculator"><PercentageCalculator /></ToolWrapper>} />
                 <Route path="/gpa-calculator" element={<ToolWrapper toolId="gpa-calculator"><GpaCalculator /></ToolWrapper>} />
@@ -494,6 +515,7 @@ export function App() {
                 <Route path="/date-calculator" element={<ToolWrapper toolId="date-calculator"><DateCalculator /></ToolWrapper>} />
                 <Route path="/timezone-converter" element={<ToolWrapper toolId="timezone-converter"><TimeZoneConverter /></ToolWrapper>} />
                 <Route path="/bmi-calculator" element={<ToolWrapper toolId="bmi-calculator"><BmiCalculator /></ToolWrapper>} />
+                <Route path="/tip-calculator" element={<ToolWrapper toolId="tip-calculator"><TipLoanCalculator /></ToolWrapper>} />
 
                 {/* Social Media & Creator Tools */}
                 <Route path="/social-content-generator" element={<ToolWrapper toolId="social-content-generator"><SocialContentGenerator /></ToolWrapper>} />

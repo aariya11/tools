@@ -10,11 +10,24 @@ export interface ToastMessage {
 
 let toastListener: ((toast: ToastMessage) => void) | null = null;
 
-export const showToast = (toast: Omit<ToastMessage, 'id'>) => {
+export function showToast(
+  toastOrTitle: Omit<ToastMessage, 'id'> | string,
+  type: 'success' | 'error' | 'info' = 'success',
+  message?: string
+) {
   if (toastListener) {
-    toastListener({ ...toast, id: Math.random().toString(36).slice(2, 9) });
+    if (typeof toastOrTitle === 'string') {
+      toastListener({
+        id: Math.random().toString(36).slice(2, 9),
+        title: toastOrTitle,
+        type,
+        message,
+      });
+    } else {
+      toastListener({ ...toastOrTitle, id: Math.random().toString(36).slice(2, 9) });
+    }
   }
-};
+}
 
 export const ToastContainer: React.FC = () => {
   const [toasts, setToasts] = useState<ToastMessage[]>([]);

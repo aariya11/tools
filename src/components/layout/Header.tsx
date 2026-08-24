@@ -16,6 +16,7 @@ import {
   BookOpen,
   Flame,
   GraduationCap,
+  ArrowLeftRight,
 } from 'lucide-react';
 import { SearchModal } from '../common/SearchModal';
 
@@ -81,7 +82,18 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center space-x-1 text-sm font-medium text-[var(--c-muted)]">
+          <nav className="hidden lg:flex items-center space-x-1 text-sm font-medium text-[var(--c-muted)]">
+            <Link
+              to="/"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname === '/'
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <span>Home</span>
+            </Link>
+
             <Link
               to="/pdf-tools"
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
@@ -91,67 +103,67 @@ export const Header: React.FC = () => {
               }`}
             >
               <FileText className="w-4 h-4 text-[var(--c-gold)]" />
-              <span>PDF</span>
+              <span>PDF Tools</span>
             </Link>
 
             <Link
               to="/category/images"
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('image') || location.pathname.includes('png') || location.pathname.includes('jpg')
+                location.pathname.includes('image') || location.pathname.includes('png') || location.pathname.includes('jpg') || location.pathname.includes('webp')
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <ImageIcon className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Images</span>
-            </Link>
-
-            <Link
-              to="/category/ai"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('ai-') || location.pathname.includes('/category/ai')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Sparkles className="w-4 h-4 text-[var(--c-gold)]" />
-              <span>AI</span>
-            </Link>
-
-            <Link
-              to="/category/developer"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('developer') || location.pathname.includes('json') || location.pathname.includes('jwt') || location.pathname.includes('base64') || location.pathname.includes('regex')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Code2 className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Developer</span>
-            </Link>
-
-            <Link
-              to="/category/business"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('business') || location.pathname.includes('invoice') || location.pathname.includes('resume') || location.pathname.includes('utm') || location.pathname.includes('barcode')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Briefcase className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Business</span>
+              <span>Image Tools</span>
             </Link>
 
             <Link
               to="/category/text"
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('text') || location.pathname.includes('word') || location.pathname.includes('case') || location.pathname.includes('clean')
+                location.pathname.includes('text') || location.pathname.includes('word') || location.pathname.includes('case') || location.pathname.includes('diff') || location.pathname.includes('lorem')
                   ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                   : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
               }`}
             >
               <Type className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Text</span>
+              <span>Text Tools</span>
+            </Link>
+
+            <Link
+              to="/unit-converter"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('converter') || location.pathname.includes('calculator') || location.pathname.includes('percentage') || location.pathname.includes('age')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <ArrowLeftRight className="w-4 h-4 text-[var(--c-muted)]" />
+              <span>Converters</span>
+            </Link>
+
+            <Link
+              to="/category/generators"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname.includes('generator') || location.pathname.includes('scanner') || location.pathname.includes('qr')
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <QrCode className="w-4 h-4 text-[var(--c-muted)]" />
+              <span>Generators</span>
+            </Link>
+
+            <Link
+              to="/all-tools"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
+                location.pathname === '/all-tools'
+                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
+                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
+              }`}
+            >
+              <Grid className="w-4 h-4 text-[var(--c-gold)]" />
+              <span>All Tools</span>
             </Link>
 
             <Link
@@ -164,30 +176,6 @@ export const Header: React.FC = () => {
             >
               <BookOpen className="w-4 h-4 text-[var(--c-muted)]" />
               <span>Blog</span>
-            </Link>
-
-            <Link
-              to="/social"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.startsWith('/social')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Flame className="w-4 h-4 text-[var(--c-gold)]" />
-              <span>Social Hub</span>
-            </Link>
-
-            <Link
-              to="/all-tools"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname === '/all-tools'
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Grid className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>All 60+ Tools</span>
             </Link>
           </nav>
 
@@ -223,6 +211,13 @@ export const Header: React.FC = () => {
           <div className="lg:hidden border-b border-[var(--c-border)] bg-[var(--c-bg)]/95 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-4 animate-in slide-in-from-top-2">
             <div className="space-y-1 font-medium text-sm">
               <Link
+                to="/"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <span>Home</span>
+              </Link>
+
+              <Link
                 to="/pdf-tools"
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
@@ -239,6 +234,30 @@ export const Header: React.FC = () => {
               </Link>
 
               <Link
+                to="/category/text"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <Type className="w-5 h-5 text-[var(--c-muted)]" />
+                <span>Text Tools</span>
+              </Link>
+
+              <Link
+                to="/unit-converter"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <ArrowLeftRight className="w-5 h-5 text-[var(--c-gold)]" />
+                <span>Converters & Calculators</span>
+              </Link>
+
+              <Link
+                to="/category/generators"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+              >
+                <QrCode className="w-5 h-5 text-[var(--c-muted)]" />
+                <span>Generators & QR</span>
+              </Link>
+
+              <Link
                 to="/category/ai"
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
@@ -251,7 +270,7 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <Code2 className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>Developer Tools (JSON, JWT, Hash)</span>
+                <span>Developer Tools</span>
               </Link>
 
               <Link
@@ -259,23 +278,7 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <Briefcase className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>Business & Marketing Tools</span>
-              </Link>
-
-              <Link
-                to="/category/text"
-                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
-              >
-                <Type className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>Text & Document Tools</span>
-              </Link>
-
-              <Link
-                to="/qr-code-generator"
-                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
-              >
-                <QrCode className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>Utilities & QR</span>
+                <span>Business & Marketing</span>
               </Link>
 
               <Link
@@ -283,31 +286,15 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
               >
                 <BookOpen className="w-5 h-5 text-[var(--c-gold)]" />
-                <span>Editorial Blog & Tutorials</span>
-              </Link>
-
-              <Link
-                to="/social"
-                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
-              >
-                <Flame className="w-5 h-5 text-[var(--c-gold)]" />
-                <span>Social Hub & Creator Studio</span>
-              </Link>
-
-              <Link
-                to="/student-tools"
-                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
-              >
-                <GraduationCap className="w-5 h-5 text-[var(--c-muted)]" />
-                <span>Student & Academic Toolkit</span>
+                <span>Editorial Blog</span>
               </Link>
 
               <Link
                 to="/all-tools"
-                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)]"
+                className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-[var(--c-text)] hover:bg-[var(--c-card)] border border-transparent hover:border-[var(--c-border)] font-bold text-[var(--c-gold)]"
               >
-                <Grid className="w-5 h-5 text-[var(--c-gold)]" />
-                <span>All 60+ Tools Catalog</span>
+                <Grid className="w-5 h-5" />
+                <span>Explore All Tools Catalog</span>
               </Link>
             </div>
 

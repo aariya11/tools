@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, ArrowUpRight, Lock, Zap } from 'lucide-react';
+import { ShieldCheck, ArrowUpRight, Lock, Zap, ExternalLink } from 'lucide-react';
 import { getToolsByCategory } from '../../data/toolsData';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
@@ -20,12 +20,11 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4'
 );
 
 export const Footer: React.FC = () => {
-  const imageTools = getToolsByCategory('images');
   const pdfTools = getToolsByCategory('pdf');
-  const aiTools = getToolsByCategory('ai');
-  const devTools = getToolsByCategory('developer');
-  const bizTools = getToolsByCategory('business');
+  const imageTools = getToolsByCategory('images');
   const textTools = getToolsByCategory('text');
+  const calcTools = getToolsByCategory('calculators');
+  const generatorTools = getToolsByCategory('generators');
 
   return (
     <>
@@ -74,10 +73,10 @@ export const Footer: React.FC = () => {
                 </span>
               </Link>
               <p className="text-sm text-[var(--c-muted)] max-w-sm leading-relaxed font-normal">
-                High-performance client-side productivity utilities for PDFs, images, AI workflows, and developer tools. 100% free and private.
+                Free online tools for PDF editing, image compression, file conversions, and digital productivity. 100% private, fast, and browser-based.
               </p>
               <div className="flex items-center gap-4 text-xs font-mono text-[var(--c-subtle)]">
-                <span>60+ Free Tools</span>
+                <span>68+ Free Tools</span>
                 <span>•</span>
                 <span>Zero File Uploads</span>
                 <span>•</span>
@@ -102,16 +101,13 @@ export const Footer: React.FC = () => {
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
                 PDF Tools
               </h5>
-              <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
+              <ul className="space-y-2 text-xs text-[var(--c-muted)]">
                 <li>
-                  <Link
-                    to="/pdf-tools"
-                    className="font-bold text-[var(--c-accent)] hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
-                  >
-                    PDF Hub (30+) <ArrowUpRight className="w-3 h-3 text-[var(--c-gold)]" />
+                  <Link to="/pdf-tools" className="text-[var(--c-gold)] font-bold hover:text-[var(--c-text)] transition-colors">
+                    All PDF Tools (30+) →
                   </Link>
                 </li>
-                {pdfTools.filter(t => t.id !== 'pdf-tools').slice(0, 6).map((t) => (
+                {pdfTools.filter((t) => t.id !== 'pdf-tools').slice(0, 5).map((t) => (
                   <li key={t.id}>
                     <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
@@ -121,13 +117,18 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 3: Image Suite */}
+            {/* Col 3: Image Tools */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                Image Suite
+                Image Tools
               </h5>
-              <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
-                {imageTools.slice(0, 7).map((t) => (
+              <ul className="space-y-2 text-xs text-[var(--c-muted)]">
+                <li>
+                  <Link to="/category/images" className="text-[var(--c-gold)] font-bold hover:text-[var(--c-text)] transition-colors">
+                    All Image Tools →
+                  </Link>
+                </li>
+                {imageTools.slice(0, 5).map((t) => (
                   <li key={t.id}>
                     <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
                       {t.name}
@@ -137,106 +138,147 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Col 4: AI & Business */}
+            {/* Col 4: Converters & Text */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                AI & Business
+                Converters & Text
               </h5>
-              <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
-                {aiTools.slice(0, 4).map((t) => (
-                  <li key={t.id}>
-                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
-                {bizTools.slice(0, 3).map((t) => (
-                  <li key={t.id}>
-                    <Link to={t.path} className="hover:text-[var(--c-text)] transition-colors">
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
+              <ul className="space-y-2 text-xs text-[var(--c-muted)]">
+                <li>
+                  <Link to="/unit-converter" className="text-[var(--c-gold)] font-bold hover:text-[var(--c-text)] transition-colors">
+                    Unit Converter
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/percentage-calculator" className="hover:text-[var(--c-text)] transition-colors">
+                    Percentage Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/word-counter" className="hover:text-[var(--c-text)] transition-colors">
+                    Word Counter
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/text-diff" className="hover:text-[var(--c-text)] transition-colors">
+                    Text Diff Checker
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/case-converter" className="hover:text-[var(--c-text)] transition-colors">
+                    Case Converter
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/category/text" className="text-[var(--c-gold)] hover:text-[var(--c-text)] transition-colors">
+                    More Text Tools →
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            {/* Col 5: Hubs & Editorial */}
+            {/* Col 5: Company & Legal */}
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--c-text)] mb-3.5">
-                Hubs & Editorial
+                Company & Legal
               </h5>
-              <ul className="space-y-2.5 text-xs text-[var(--c-muted)]">
+              <ul className="space-y-2 text-xs text-[var(--c-muted)]">
                 <li>
-                  <Link to="/blog" className="text-[var(--c-gold)] font-semibold hover:text-[var(--c-text)] transition-colors">
-                    Editorial Blog & Guides
+                  <Link to="/about" className="hover:text-[var(--c-text)] transition-colors">
+                    About ToolBoxX
                   </Link>
                 </li>
                 <li>
-                  <Link to="/social" className="hover:text-[var(--c-text)] transition-colors">
-                    Social Hub & Studio
+                  <Link to="/blog" className="hover:text-[var(--c-text)] transition-colors">
+                    Editorial Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to="/student-tools" className="hover:text-[var(--c-text)] transition-colors">
-                    Student Tools
+                  <Link to="/contact" className="hover:text-[var(--c-text)] transition-colors">
+                    Contact Support
                   </Link>
                 </li>
                 <li>
-                  <Link to="/productivity-tools" className="hover:text-[var(--c-text)] transition-colors">
-                    Productivity Suite
+                  <Link to="/privacy" className="hover:text-[var(--c-text)] transition-colors">
+                    Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/free-pdf-tools" className="hover:text-[var(--c-text)] transition-colors">
-                    Free PDF Tools (30+)
+                  <Link to="/terms" className="hover:text-[var(--c-text)] transition-colors">
+                    Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/free-image-tools" className="hover:text-[var(--c-text)] transition-colors">
-                    Free Image Studio
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/social-analytics" className="hover:text-[var(--c-text)] transition-colors">
-                    Privacy Analytics
+                  <Link to="/all-tools" className="text-[var(--c-gold)] font-bold hover:text-[var(--c-text)] transition-colors">
+                    All Tools Directory
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="mt-14 pt-8 border-t border-[var(--c-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--c-subtle)]">
-            <div className="flex items-center gap-3">
-              <p>© {new Date().getFullYear()} ToolBoxX. All rights reserved. Built for private, fast productivity.</p>
-              <a
-                href="https://www.instagram.com/__.arunfx.__?igsi=bmtxcGhiOTZ6Nmc3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1.5 rounded-lg border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-muted)] hover:text-[#E4405F] hover:border-[#E4405F]/50 transition-all flex items-center justify-center shadow-xs group"
-                aria-label="Instagram Profile"
-                title="Follow on Instagram (@__.arunfx.__)"
-              >
-                <InstagramIcon className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-              </a>
+          {/* Social Links Row */}
+          <div className="mt-10 pt-6 border-t border-[var(--c-border)]/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div className="flex items-center gap-2 text-[var(--c-subtle)]">
+              <span>Connect with ToolBoxX:</span>
             </div>
-            <div className="flex items-center gap-6 flex-wrap">
-              <Link to="/blog" className="hover:text-[var(--c-muted)] transition-colors">Blog</Link>
-              <Link to="/social" className="hover:text-[var(--c-muted)] transition-colors">Social Hub</Link>
-              <Link to="/student-tools" className="hover:text-[var(--c-muted)] transition-colors">Students</Link>
-              <Link to="/privacy" className="hover:text-[var(--c-muted)] transition-colors">Privacy</Link>
-              <Link to="/terms" className="hover:text-[var(--c-muted)] transition-colors">Terms</Link>
-              <Link to="/contact" className="hover:text-[var(--c-muted)] transition-colors">Contact</Link>
-              <Link to="/all-tools" className="hover:text-[var(--c-muted)] transition-colors">All Tools</Link>
+
+            <div className="flex items-center gap-4 flex-wrap text-xs text-[var(--c-muted)] font-medium">
               <a
                 href="https://www.instagram.com/__.arunfx.__?igsi=bmtxcGhiOTZ6Nmc3"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[var(--c-muted)] hover:text-[#E4405F] font-semibold transition-colors"
+                className="hover:text-[#E4405F] transition-colors flex items-center gap-1.5"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
                 <span>Instagram</span>
               </a>
+
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
+              >
+                <span>X (Twitter)</span>
+              </a>
+
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
+              >
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
+              >
+                <span>YouTube</span>
+              </a>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--c-text)] transition-colors flex items-center gap-1"
+              >
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Copyright Row */}
+          <div className="mt-6 pt-6 border-t border-[var(--c-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--c-subtle)]">
+            <p>© 2026 ToolBoxX. All rights reserved. Free Online Tools That Just Work.</p>
+            <div className="flex items-center gap-4">
+              <Link to="/privacy" className="hover:text-[var(--c-muted)] transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-[var(--c-muted)] transition-colors">Terms of Service</Link>
+              <Link to="/all-tools" className="hover:text-[var(--c-muted)] transition-colors">All 68+ Tools</Link>
             </div>
           </div>
         </div>
