@@ -7,8 +7,15 @@ import { DynamicIcon } from '../components/common/DynamicIcon';
 import { CATEGORIES, getToolsByCategory } from '../data/toolsData';
 
 export const CategoryPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const categoryMeta = CATEGORIES.find((c) => c.id === id);
+  const { id, toolOrCategory } = useParams<{ id?: string; toolOrCategory?: string }>();
+  const rawId = (id || toolOrCategory || '').toLowerCase();
+  const aliasMap: Record<string, string> = {
+    image: 'images',
+    calculator: 'calculators',
+    generator: 'generators',
+  };
+  const resolvedId = aliasMap[rawId] || rawId;
+  const categoryMeta = CATEGORIES.find((c) => c.id === resolvedId);
 
   if (!categoryMeta) {
     return <Navigate to="/all-tools" replace />;

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+export type ThemePreference = 'dark' | 'light' | 'system';
 export type ThemeMode = 'dark' | 'light';
 
 export type ThemePreset = 
@@ -99,9 +100,11 @@ export const THEME_PRESETS: ThemeConfig[] = [
 
 interface ThemeContextType {
   mode: ThemeMode;
+  preference: ThemePreference;
   preset: ThemePreset;
   toggleMode: () => void;
   setMode: (mode: ThemeMode) => void;
+  setPreference: (preference: ThemePreference) => void;
   setPreset: (preset: ThemePreset) => void;
   currentPresetConfig: ThemeConfig;
 }
@@ -338,12 +341,39 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return 'monochrome';
   });
 
-  // Default to dark mode for the black & white / monochrome aesthetic
-  const [mode, setModeState] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem('toolboxx_mode');
-    if (saved === 'dark' || saved === 'light') return saved;
-    return 'dark'; // Default dark for slick B&W aesthetic
+  // Preference can be 'light', 'dark', or 'system'
+  const [preference, setPreferenceState] = useState<ThemePreference>(() => {
+    const saved = localStorage.getItem('toolboxx_theme_preference');
+    if (saved === 'dark' || saved === 'light' || saved === 'system') return saved;
+    const legacy = localStorage.getItem('toolboxx_mode');
+    if (legacy === 'dark' || legacy === 'light') return legacy;
+    return 'dark'; // Default dark for slick aesthetic
   });
+
+  // Resolved mode: 'dark' | 'light'
+  const [mode, setModeState] = useState<ThemeMode>(() => {
+    if (typeof window !== 'undefined' && preference === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return preference === 'light' ? 'light' : 'dark';
+  });
+
+  // Listen to system theme changes when preference is 'system'
+  useEffect(() => {
+    if (preference !== 'system') {
+      setModeState(preference === 'light' ? 'light' : 'dark');
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const updateSystemTheme = () => {
+      setModeState(mediaQuery.matches ? 'dark' : 'light');
+    };
+
+    updateSystemTheme();
+    mediaQuery.addEventListener('change', updateSystemTheme);
+    return () => mediaQuery.removeEventListener('change', updateSystemTheme);
+  }, [preference]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -365,15 +395,20 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
 
     localStorage.setItem('toolboxx_mode', mode);
+    localStorage.setItem('toolboxx_theme_preference', preference);
     localStorage.setItem('toolboxx_preset', preset);
-  }, [mode, preset]);
+  }, [mode, preset, preference]);
 
   const toggleMode = () => {
-    setModeState(prev => (prev === 'light' ? 'dark' : 'light'));
+    setPreferenceState(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   const setMode = (m: ThemeMode) => {
-    setModeState(m);
+    setPreferenceState(m);
+  };
+
+  const setPreference = (p: ThemePreference) => {
+    setPreferenceState(p);
   };
 
   const setPreset = (p: ThemePreset) => {
@@ -383,7 +418,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const currentPresetConfig = THEME_PRESETS.find(p => p.id === preset) || THEME_PRESETS[0];
 
   return (
-    <ThemeContext.Provider value={{ mode, preset, toggleMode, setMode, setPreset, currentPresetConfig }}>
+    <ThemeContext.Provider value={{ mode, preference, preset, toggleMode, setMode, setPreference, setPreset, currentPresetConfig }}>
       {children}
     </ThemeContext.Provider>
   );

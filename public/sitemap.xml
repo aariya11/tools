@@ -10,39 +10,149 @@
   </url>
   <url>
     <loc>https://pdfedittools.netlify.app/all-tools</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/tools</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://pdfedittools.netlify.app/about</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://pdfedittools.netlify.app/privacy</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/privacy-policy</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://pdfedittools.netlify.app/terms</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://pdfedittools.netlify.app/contact</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/cookie-policy</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/disclaimer</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/dmca</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/accessibility</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/faq</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/guides</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Editorial Blog Posts & Practical Guides -->
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-compress-pdf-without-losing-quality</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-reduce-image-size-for-instagram-and-web</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-jpg-to-png-transparent-background</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-merge-pdf-files-in-order</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-remove-metadata-from-images-exif-privacy</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-pdf-to-word-doc</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/7-secret-productivity-tools-every-student-needs</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-jpg-to-pdf</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-word-to-pdf</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pdfedittools.netlify.app/blog/how-to-count-words-in-a-document</loc>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <!-- Hubs & Curated Landings -->
   <url>
     <loc>https://pdfedittools.netlify.app/pdf-tools</loc>
-    <lastmod>2026-08-24T22:00:00+00:00</lastmod>
+    <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>

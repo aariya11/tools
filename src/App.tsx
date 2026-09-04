@@ -1,11 +1,14 @@
 import React, { Suspense, useEffect, lazy } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
+import { CookieConsentProvider } from './context/CookieConsentContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ToolLayout } from './components/layout/ToolLayout';
 import { ToastContainer } from './components/common/Toast';
+import { CookieConsentBanner } from './components/common/CookieConsentBanner';
+import { CookiePreferencesModal } from './components/common/CookiePreferencesModal';
 import { getToolById } from './data/toolsData';
 
 // Lazy-loaded Pages
@@ -16,6 +19,12 @@ const AboutPage = lazy(() => import('./pages/AboutPage').then((m) => ({ default:
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then((m) => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then((m) => ({ default: m.TermsPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
+const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage').then((m) => ({ default: m.CookiePolicyPage })));
+const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage').then((m) => ({ default: m.DisclaimerPage })));
+const DmcaPage = lazy(() => import('./pages/DmcaPage').then((m) => ({ default: m.DmcaPage })));
+const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage').then((m) => ({ default: m.AccessibilityPage })));
+const FaqPage = lazy(() => import('./pages/FaqPage').then((m) => ({ default: m.FaqPage })));
+const GuidesPage = lazy(() => import('./pages/GuidesPage').then((m) => ({ default: m.GuidesPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
 // Lazy-loaded Editorial, Social & Curated Hub Pages
@@ -176,32 +185,79 @@ function ToolWrapper({ toolId, children }: { toolId: string; children: React.Rea
   return <ToolLayout tool={tool}>{children}</ToolLayout>;
 }
 
+// Dynamic tool or category route handler
+function DynamicToolsRoute() {
+  const { toolOrCategory } = useParams<{ toolOrCategory: string }>();
+  if (!toolOrCategory) return <Navigate to="/all-tools" replace />;
+
+  const catAliases: Record<string, string> = {
+    pdf: 'pdf',
+    image: 'images',
+    images: 'images',
+    text: 'text',
+    developer: 'developer',
+    calculators: 'calculators',
+    calculator: 'calculators',
+    business: 'business',
+    ai: 'ai',
+    generators: 'generators',
+    generator: 'generators',
+    file: 'file',
+    social: 'social',
+  };
+
+  const lower = toolOrCategory.toLowerCase();
+  if (catAliases[lower]) {
+    return <CategoryPage />;
+  }
+
+  const tool = getToolById(lower);
+  if (tool) {
+    return <Navigate to={tool.path} replace />;
+  }
+
+  return <NotFoundPage />;
+}
+
 export function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1 flex flex-col">
-              <Suspense
-                fallback={
-                  <div className="min-h-[50vh] flex items-center justify-center">
-                    <div className="w-10 h-10 border-4 border-zinc-500 border-t-transparent rounded-full animate-spin" />
-                  </div>
-                }
-              >
-              <Routes>
-                {/* Platform Pages */}
-                <Route path="/" element={<HomePage />} />
-                <Route path="/all-tools" element={<AllToolsPage />} />
-                <Route path="/tools" element={<Navigate to="/all-tools" replace />} />
-                <Route path="/category/:id" element={<CategoryPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/privacy" element={<PrivacyPage />} />
-                <Route path="/terms" element={<TermsPage />} />
-                <Route path="/contact" element={<ContactPage />} />
+        <CookieConsentProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1 flex flex-col">
+                <Suspense
+                  fallback={
+                    <div className="min-h-[50vh] flex items-center justify-center">
+                      <div className="w-10 h-10 border-4 border-zinc-500 border-t-transparent rounded-full animate-spin" />
+                    </div>
+                  }
+                >
+                <Routes>
+                  {/* Platform & Directory Pages */}
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/all-tools" element={<AllToolsPage />} />
+                  <Route path="/tools" element={<AllToolsPage />} />
+                  <Route path="/tools/:toolOrCategory" element={<DynamicToolsRoute />} />
+                  <Route path="/category/:id" element={<CategoryPage />} />
+                  
+                  {/* Standard Legal & Informational Pages */}
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/privacy" element={<PrivacyPage />} />
+                  <Route path="/privacy-policy" element={<PrivacyPage />} />
+                  <Route path="/terms" element={<TermsPage />} />
+                  <Route path="/terms-of-service" element={<TermsPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+                  <Route path="/disclaimer" element={<DisclaimerPage />} />
+                  <Route path="/dmca" element={<DmcaPage />} />
+                  <Route path="/accessibility" element={<AccessibilityPage />} />
+                  <Route path="/faq" element={<FaqPage />} />
+                  <Route path="/guides" element={<GuidesPage />} />
+                  <Route path="/404" element={<NotFoundPage />} />
 
                 {/* Editorial, Social & Analytics Hubs */}
                 <Route path="/blog" element={<BlogPage />} />
@@ -533,9 +589,12 @@ export function App() {
             </Suspense>
           </main>
           <Footer />
+          <CookieConsentBanner />
+          <CookiePreferencesModal />
           <ToastContainer />
         </div>
       </BrowserRouter>
+      </CookieConsentProvider>
     </LanguageProvider>
   </ThemeProvider>
   );

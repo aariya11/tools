@@ -1,0 +1,16 @@
+﻿{
+  "name": "ToolBoxX — Free Online Tools for PDF, Images, Text & More",
+  "short_name": "ToolBoxX",
+  "description": "Free, fast, and private online tools for PDF editing, image compression, text conversion, and daily productivity.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#11110F",
+  "theme_color": "#18181b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -494,6 +494,131 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'how-to-convert-jpg-to-pdf',
+    title: 'How to Convert JPG Images to PDF Online (Single or Multiple Photos)',
+    excerpt: 'Convert individual photos or batch combine multiple JPG, PNG, and WebP images into a single clean PDF file with custom page sizes and margins.',
+    readingTime: '4 min read',
+    date: 'Aug 06, 2026',
+    author: BLOG_AUTHORS.alex,
+    category: 'PDF',
+    tags: ['JPG to PDF', 'Image to PDF', 'Combine Photos', 'Document Scan'],
+    relatedToolIds: ['jpg-to-pdf', 'pdf-to-jpg', 'pdf-compress', 'image-compressor'],
+    primaryToolId: 'jpg-to-pdf',
+    featured: false,
+    keyTakeaways: [
+      'Converting JPG photos to PDF makes it easy to submit homework, ID documents, and expense receipts in standard format.',
+      'You can combine multiple photos into a single paginated PDF document with 1 click.',
+      'Client-side processing ensures your private personal photos never touch cloud servers.',
+    ],
+    sections: [
+      {
+        id: 'why-convert-jpg-to-pdf',
+        title: 'Why Turn Image Files into PDF Documents?',
+        content: 'Image files like JPG and PNG are great for viewing, but official portals for universities, banks, and immigration require PDF documents. Storing multiple images in a single PDF ensures the page order is preserved and standardizes page margins for printing.',
+      },
+      {
+        id: 'conversion-steps',
+        title: 'How to Convert Photos to PDF in Seconds',
+        content: 'Follow these simple steps with ToolBoxX JPG to PDF Converter:',
+        steps: [
+          {
+            stepNumber: 1,
+            title: 'Drop Your JPG or PNG Images',
+            description: 'Select one or more images from your camera roll or computer.',
+          },
+          {
+            stepNumber: 2,
+            title: 'Reorder and Adjust Page Settings',
+            description: 'Drag images to rearrange page order and choose page orientation (Portrait or Landscape).',
+          },
+          {
+            stepNumber: 3,
+            title: 'Generate and Download Your PDF',
+            description: 'Click Convert to PDF to immediately download your consolidated document.',
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I combine different image formats like PNG and JPG in the same PDF?',
+        answer: 'Yes! ToolBoxX allows you to combine JPG, PNG, and WebP images into a unified multi-page PDF.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-convert-word-to-pdf',
+    title: 'How to Convert Word DOCX Documents to PDF Without Formatting Shifts',
+    excerpt: 'Preserve your fonts, margins, tables, and spacing by converting Microsoft Word documents into lock-tight PDF files ready for printing and emailing.',
+    readingTime: '5 min read',
+    date: 'Aug 04, 2026',
+    author: BLOG_AUTHORS.marcus,
+    category: 'PDF',
+    tags: ['Word to PDF', 'DOCX to PDF', 'Document Formatting', 'Office Tools'],
+    relatedToolIds: ['word-to-pdf', 'pdf-to-word', 'pdf-compress'],
+    primaryToolId: 'word-to-pdf',
+    featured: false,
+    keyTakeaways: [
+      'Word documents often shift layout or substitute fonts when opened on different devices or operating systems.',
+      'Converting to PDF locks every visual element into an immutable vector representation.',
+      'ToolBoxX converts DOCX to PDF client-side with zero upload latency.',
+    ],
+    sections: [
+      {
+        id: 'why-word-formatting-breaks',
+        title: 'The Problem with Sending Raw Word Documents',
+        content: 'When you email a .docx file, the recipient may have a different version of Word, a missing custom font, or an alternative viewer like Google Docs. This causes line wraps, misaligned tables, and unwanted page overflows. Converting to PDF eliminates this risk entirely.',
+      },
+      {
+        id: 'word-to-pdf-process',
+        title: 'Converting Word Documents into Protected PDFs',
+        content: 'Upload your .docx file to ToolBoxX Word to PDF. The document structure is parsed and converted directly in your browser, generating an identical PDF that displays exactly as intended everywhere.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do I need Microsoft Word installed on my computer?',
+        answer: 'No! ToolBoxX runs completely inside your browser and does not require Microsoft Office or any paid software.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-count-words-in-a-document',
+    title: 'How to Accurately Count Words, Characters, and Reading Time in Any Text',
+    excerpt: 'Analyze text metrics for essays, tweets, blog articles, and translations with live word counters, syllable counts, and reading time estimates.',
+    readingTime: '4 min read',
+    date: 'Aug 02, 2026',
+    author: BLOG_AUTHORS.elena,
+    category: 'Productivity',
+    tags: ['Word Counter', 'Character Count', 'Writing Tools', 'SEO Copywriting'],
+    relatedToolIds: ['word-counter', 'character-counter', 'case-converter', 'text-cleaner'],
+    primaryToolId: 'word-counter',
+    featured: false,
+    keyTakeaways: [
+      'Different platforms use different counting algorithms (e.g. hyphenated words, punctuation, whitespace).',
+      'Average silent reading speed is ~200 to 250 words per minute; speaking speed is ~130 to 150 words per minute.',
+      'Tracking character counts without spaces is critical for translation agency billing and strict application character limits.',
+    ],
+    sections: [
+      {
+        id: 'importance-of-accurate-counting',
+        title: 'Why Precise Word & Character Counting Matters',
+        content: 'Whether you are adhering to a 500-word college application prompt, drafting a 280-character tweet, or optimizing an SEO meta description between 150-160 characters, knowing your exact metrics prevents embarrassing cut-offs and submission rejections.',
+      },
+      {
+        id: 'advanced-metrics',
+        title: 'Metrics Tracked by ToolBoxX Word Counter',
+        content: 'ToolBoxX calculates total words, total characters (with and without spaces), total paragraphs, estimated reading duration, estimated speaking duration, and most frequent keywords.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Does ToolBoxX Word Counter store or view what I paste?',
+        answer: 'No. Everything is analyzed live in your browser memory. Your text is never sent across the network or stored in any database.',
+      },
+    ],
+  },
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
