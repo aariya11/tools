@@ -227,12 +227,14 @@ export function App() {
           <BrowserRouter>
             <ScrollToTop />
             <div className="flex flex-col min-h-screen">
+              <a href="#main-content" className="skip-link">Skip to main content</a>
               <Header />
-              <main className="flex-1 flex flex-col">
+              <main id="main-content" tabIndex={-1} className="flex-1 flex flex-col">
                 <Suspense
                   fallback={
-                    <div className="min-h-[50vh] flex items-center justify-center">
-                      <div className="w-10 h-10 border-4 border-zinc-500 border-t-transparent rounded-full animate-spin" />
+                    <div role="status" className="min-h-[50vh] flex flex-col gap-4 items-center justify-center text-[var(--c-muted)]">
+                      <div aria-hidden="true" className="w-10 h-10 border-4 border-zinc-500 border-t-transparent rounded-full animate-spin" />
+                      <span>Loading your workspace…</span>
                     </div>
                   }
                 >

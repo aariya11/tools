@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { FAQItem, HowToStep } from '../../types/tools';
+import { SITE_URL } from '../../config/site';
 
 interface SeoHeadProps {
   title: string;
@@ -9,228 +11,88 @@ interface SeoHeadProps {
   howToSteps?: HowToStep[];
   type?: 'website' | 'article';
   breadcrumbs?: { name: string; url: string }[];
+  noIndex?: boolean;
+  isTool?: boolean;
 }
 
 export const SeoHead: React.FC<SeoHeadProps> = ({
-  title,
-  description,
-  canonicalPath = '',
-  faqs = [],
-  howToSteps = [],
-  type = 'website',
-  breadcrumbs = []
+  title, description, canonicalPath, faqs = [], howToSteps = [],
+  type = 'website', breadcrumbs = [], noIndex = false, isTool = false,
 }) => {
-  // Ensure site name suffix only if not already present
+  const { pathname } = useLocation();
   const fullTitle = title.includes('ToolBoxX') ? title : `${title} | ToolBoxX`;
-  const domain = typeof window !== 'undefined' ? window.location.origin : 'https://pdfedittools.netlify.app';
-  const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
-  const fullUrl = `${domain}${cleanPath}`;
-
-  // Supported global languages for international GEO SEO
-  const GLOBAL_LANGS = [
-    { code: 'en', lang: 'English' },
-    { code: 'es', lang: 'Spanish' },
-    { code: 'fr', lang: 'French' },
-    { code: 'de', lang: 'German' },
-    { code: 'hi', lang: 'Hindi' },
-    { code: 'pt', lang: 'Portuguese' },
-    { code: 'ja', lang: 'Japanese' },
-    { code: 'zh-CN', lang: 'Chinese' },
-    { code: 'ar', lang: 'Arabic' },
-    { code: 'ru', lang: 'Russian' },
-    { code: 'id', lang: 'Indonesian' }
-  ];
+  const path = (canonicalPath ?? pathname).split(/[?#]/)[0];
+  const cleanPath = `/${path.replace(/^\/+|\/+$/g, '')}`;
+  const fullUrl = `${SITE_URL}${cleanPath}`;
 
   useEffect(() => {
-    // 1. Update Title
     document.title = fullTitle;
-
-    // 2. Helper to set or update meta tag
-    const setMeta = (nameOrProp: string, key: 'name' | 'property', content: string) => {
-      let element = document.querySelector(`meta[${key}="${nameOrProp}"]`);
+    const setMeta = (key: 'name' | 'property', name: string, content: string) => {
+      let element = document.head.querySelector(`meta[${key}="${name}"]`);
       if (!element) {
         element = document.createElement('meta');
-        element.setAttribute(key, nameOrProp);
+        element.setAttribute(key, name);
         document.head.appendChild(element);
       }
       element.setAttribute('content', content);
     };
+    const robots = noIndex ? 'noindex, follow' : 'index, follow, max-image-preview:large';
+    setMeta('name', 'description', description);
+    setMeta('name', 'robots', robots);
+    // Avoid conflicting crawler-specific directives from legacy templates.
+    document.head.querySelectorAll('meta[name="googlebot"], meta[name="bingbot"], meta[name="keywords"]').forEach(el => el.remove());
+    setMeta('property', 'og:title', fullTitle);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', fullUrl);
+    setMeta('property', 'og:type', type);
+    setMeta('property', 'og:site_name', 'ToolBoxX');
+    setMeta('property', 'og:locale', 'en_US');
+    setMeta('name', 'twitter:card', 'summary');
+    setMeta('name', 'twitter:title', fullTitle);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:url', fullUrl);
 
-    // Primary SEO & Search Indexing Directives
-    setMeta('description', 'name', description);
-    setMeta('robots', 'name', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-    setMeta('googlebot', 'name', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-    setMeta('bingbot', 'name', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-    setMeta('revisit-after', 'name', '2 days');
-    setMeta('author', 'name', 'ToolBoxX');
-
-    // International GEO-Targeting & Multi-Region Directives
-    setMeta('rating', 'name', 'General');
-    setMeta('distribution', 'name', 'Global');
-    setMeta('coverage', 'name', 'Worldwide');
-    setMeta('target', 'name', 'all');
-    setMeta('audience', 'name', 'all');
-    setMeta('language', 'name', 'English');
-
-    // Remove legacy/stale meta keywords if present (Google ignores them)
-    const existingKeywords = document.querySelector('meta[name="keywords"]');
-    if (existingKeywords) {
-      existingKeywords.remove();
-    }
-
-    // OpenGraph Social & Regional Meta
-    setMeta('og:title', 'property', fullTitle);
-    setMeta('og:description', 'property', description);
-    setMeta('og:url', 'property', fullUrl);
-    setMeta('og:type', 'property', type);
-    setMeta('og:site_name', 'property', 'ToolBoxX');
-    setMeta('og:locale', 'property', 'en_US');
-
-    // Twitter Card Meta
-    setMeta('twitter:card', 'name', 'summary_large_image');
-    setMeta('twitter:title', 'name', fullTitle);
-    setMeta('twitter:description', 'name', description);
-
-    // 3. Update Canonical Link
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
+    document.head.querySelectorAll('link[rel="canonical"]').forEach(el => el.remove());
+    if (!noIndex) {
+      const canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = fullUrl;
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', fullUrl);
+    // A UI language preference is not a separately crawlable translation.
+    // Add hreflang only when real, translated URLs exist.
+    document.head.querySelectorAll('link[rel="alternate"][hreflang], meta[property="og:locale:alternate"]').forEach(el => el.remove());
 
-    // 4. Update / Inject International Hreflang Tags for Multi-Region Indexing
-    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    existingHreflangs.forEach((el) => el.remove());
-
-    // Add x-default
-    const xDefault = document.createElement('link');
-    xDefault.setAttribute('rel', 'alternate');
-    xDefault.setAttribute('hreflang', 'x-default');
-    xDefault.setAttribute('href', fullUrl);
-    document.head.appendChild(xDefault);
-
-    // Add specific regional hreflang links
-    GLOBAL_LANGS.forEach((lang) => {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'alternate');
-      link.setAttribute('hreflang', lang.code);
-      link.setAttribute('href', fullUrl);
-      document.head.appendChild(link);
-    });
-
-    // 5. Inject Structured Data (Schema.org JSON-LD Graph)
-    const schemaId = 'toolboxx-jsonld-schema';
-    let scriptTag = document.getElementById(schemaId) as HTMLScriptElement | null;
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = schemaId;
-      scriptTag.type = 'application/ld+json';
-      document.head.appendChild(scriptTag);
-    }
-
-    const schemaGraph: any[] = [
-      // WebSite Schema with Sitelinks SearchBox
-      {
-        '@type': 'WebSite',
-        '@id': `${domain}/#website`,
-        url: domain,
-        name: 'ToolBoxX',
-        description: 'Free, fast, and private online tools for PDF editing, image compression, text tools, and QR code generation.',
-        inLanguage: GLOBAL_LANGS.map((l) => l.code),
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: `${domain}/all-tools?q={search_term_string}`,
-          'query-input': 'required name=search_term_string'
-        }
-      },
-      // Organization / Publisher Schema
-      {
-        '@type': 'Organization',
-        '@id': `${domain}/#organization`,
-        name: 'ToolBoxX',
-        url: domain,
-        logo: `${domain}/favicon.svg`,
-        sameAs: [
-          'https://github.com/aariya11/tools'
-        ]
-      },
-      // WebApplication / SoftwareApplication Schema
-      {
-        '@type': 'WebApplication',
-        '@id': `${fullUrl}#webapp`,
-        name: title.replace(/ \| ToolBoxX.*/, ''),
-        url: fullUrl,
-        description: description,
-        applicationCategory: 'UtilityApplication',
-        operatingSystem: 'Windows, macOS, Android, iOS, Linux, ChromeOS',
-        browserRequirements: 'Requires modern web browser with HTML5 and WebAssembly support',
-        countriesSupported: 'Global',
-        softwareVersion: '2.0',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock'
-        }
-      }
+    const graph: Record<string, unknown>[] = [
+      { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: 'ToolBoxX', inLanguage: 'en' },
+      { '@type': 'WebPage', '@id': `${fullUrl}#webpage`, url: fullUrl, name: fullTitle, description, inLanguage: 'en', isPartOf: { '@id': `${SITE_URL}/#website` } },
     ];
-
-    // HowTo Schema (Generates Google How-To Rich Cards in Search Results)
-    if (howToSteps && howToSteps.length > 0) {
-      schemaGraph.push({
-        '@type': 'HowTo',
-        '@id': `${fullUrl}#howto`,
-        name: `How to Use ${title.replace(/ \| ToolBoxX.*/, '')} Online`,
-        description: `Step-by-step tutorial on using ${title.replace(/ \| ToolBoxX.*/, '')} securely in your web browser.`,
-        step: howToSteps.map((step, idx) => ({
-          '@type': 'HowToStep',
-          position: idx + 1,
-          name: step.title,
-          text: step.description,
-          url: `${fullUrl}#step-${idx + 1}`
-        }))
+    if (isTool) {
+      graph.push({
+        '@type': 'WebApplication', '@id': `${fullUrl}#webapp`, name: title,
+        url: fullUrl, description, applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Any', browserRequirements: 'Requires a modern web browser with JavaScript enabled',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       });
     }
-
-    // FAQPage Schema (Generates Google FAQ Rich Snippets in Search Results)
-    if (faqs && faqs.length > 0) {
-      schemaGraph.push({
-        '@type': 'FAQPage',
-        '@id': `${fullUrl}#faq`,
-        mainEntity: faqs.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer
-          }
-        }))
-      });
+    if (howToSteps.length) {
+      graph.push({ '@type': 'HowTo', name: `How to use ${title}`, step: howToSteps.map((step, i) => ({ '@type': 'HowToStep', position: i + 1, name: step.title, text: step.description })) });
     }
-
-    // BreadcrumbList Schema (Generates Breadcrumb paths in Search Snippets)
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      schemaGraph.push({
-        '@type': 'BreadcrumbList',
-        '@id': `${fullUrl}#breadcrumbs`,
-        itemListElement: breadcrumbs.map((crumb, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: crumb.name,
-          item: crumb.url.startsWith('http') ? crumb.url : `${domain}${crumb.url}`
-        }))
-      });
+    if (faqs.length) {
+      graph.push({ '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) });
     }
-
-    const schemaData = {
-      '@context': 'https://schema.org',
-      '@graph': schemaGraph
-    };
-
-    scriptTag.textContent = JSON.stringify(schemaData);
-  }, [fullTitle, description, fullUrl, faqs, howToSteps, type, breadcrumbs, domain]);
+    if (breadcrumbs.length) {
+      graph.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, name: crumb.name, item: new URL(crumb.url, SITE_URL).href })) });
+    }
+    document.getElementById('toolboxx-jsonld-schema')?.remove();
+    if (!noIndex) {
+      const script = document.createElement('script');
+      script.id = 'toolboxx-jsonld-schema';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+      document.head.appendChild(script);
+    }
+  }, [fullTitle, title, description, fullUrl, type, faqs, howToSteps, breadcrumbs, noIndex, isTool]);
 
   return null;
 };

@@ -21,7 +21,7 @@
   }
 
   body {
-    font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
@@ -91,5 +91,51 @@ input[type="range"] {
 
 body {
   top: 0 !important;
+}
+
+html { scroll-padding-top: 6rem; }
+#root { min-width: 0; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+::selection { background: var(--c-accent); color: var(--c-bg); }
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  transform: translateY(-200%);
+  z-index: 100;
+  padding: .875rem 1.25rem;
+  border-radius: .75rem;
+  background: var(--c-accent);
+  color: var(--c-bg);
+  font-weight: 700;
+}
+.skip-link:focus { transform: translateY(0); }
+.home-hero h1 { text-wrap: balance; max-width: 20ch; margin-inline: auto; }
+.home-hero p { text-wrap: pretty; }
+
+/* Readable, lightweight catalog before JavaScript loads or when it is disabled. */
+.static-page { max-width: 72rem; margin-inline: auto; padding: 2rem 1.25rem 5rem; line-height: 1.7; }
+.static-page h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; margin-block: 2rem 1rem; text-wrap: balance; }
+.static-page h2 { font-size: 1.5rem; margin-block: 2rem 1rem; }
+.static-page h3 { font-size: 1.125rem; font-weight: 700; }
+.static-page a { color: var(--c-accent); text-decoration: underline; text-underline-offset: .2em; }
+.static-page nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.static-page p { color: var(--c-muted); margin-block: .75rem; }
+.static-page ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.static-page li { padding: 1.25rem; border: 1px solid var(--c-border); border-radius: 1rem; background: var(--c-surface); }
+.static-page details { border-block-end: 1px solid var(--c-border); padding-block: 1rem; }
+.static-page summary { cursor: pointer; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (forced-colors: active) {
+  *:focus-visible { outline: 2px solid Highlight; outline-offset: 3px; }
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Search, Grid, X, LayoutGrid, ListFilter, Sparkles, FileText, Image as ImageIcon, Code2, Briefcase, Flame, Calculator, Type, FolderArchive, QrCode } from 'lucide-react';
 import { ToolCard } from '../components/common/ToolCard';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
@@ -26,7 +27,16 @@ const CATEGORIES: CategoryConfig[] = [
 ];
 
 export const AllToolsPage: React.FC = () => {
-  const [query, setQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('q') || '';
+  const setQuery = (value: string) => {
+    setSearchParams(previous => {
+      const next = new URLSearchParams(previous);
+      if (value) next.set('q', value);
+      else next.delete('q');
+      return next;
+    }, { replace: true });
+  };
   const [category, setCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'grouped'>('grid');
 
@@ -96,6 +106,7 @@ export const AllToolsPage: React.FC = () => {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search the tool directory"
             placeholder="Search all tools by name, action or keyword (e.g. compress, merge, pdf, crop, age)..."
             className="w-full pl-12 pr-10 py-3.5 sm:py-4 text-sm sm:text-base rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text)] placeholder:text-[var(--c-subtle)] focus:ring-1 focus:ring-[var(--c-gold)] focus:border-[var(--c-gold)] shadow-md outline-none transition-all"
           />

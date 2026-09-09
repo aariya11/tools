@@ -12,6 +12,7 @@ export const NotFoundPage: React.FC = () => {
       <SeoHead
         title="404 — Page Not Found"
         description="The tool or page you are looking for does not exist on ToolBoxX."
+        noIndex
       />
 
       <div className="w-16 h-16 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)] flex items-center justify-center mx-auto shadow-inner">
