@@ -1,4 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { showToast } from '../components/common/Toast';
+
+type TranslateWindow = Window & {
+  googleTranslateElementInit?: () => void;
+  google?: { translate?: { TranslateElement: new (options: { pageLanguage: string; autoDisplay: boolean }, id: string) => unknown } };
+};
 
 export interface LanguageOption {
   code: string;
@@ -264,9 +270,11 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [langCode, setLangCodeState] = useState<string>(() => {
     // Read from localStorage first
-    const saved = localStorage.getItem('toolboxx_language');
-    if (saved && GLOBAL_LANGUAGES.some(l => l.code === saved)) {
-      return saved;
+    try {
+      const saved = localStorage.getItem('toolboxx_language');
+      if (saved && GLOBAL_LANGUAGES.some(l => l.code === saved)) return saved;
+    } catch {
+      // Storage can be unavailable in restricted browser environments.
     }
     // Also check if googtrans cookie was already set
     const match = document.cookie.match(/googtrans=\/en\/([^;]+)/);
@@ -302,19 +310,42 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (select) {
       select.value = code === 'en' ? '' : targetGoogleCode;
       select.dispatchEvent(new Event('change'));
-    } else {
-      // If combo box is not in DOM yet, ensure the Google script is loaded
+    } else if (code !== 'en') {
+      // Translation is optional: never request Google on the default English path.
       if (!document.getElementById('google-translate-script')) {
-        const s = document.createElement('script');
-        s.id = 'google-translate-script';
-        s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        document.body.appendChild(s);
+        const translateWindow = window as TranslateWindow;
+        translateWindow.googleTranslateElementInit = () => {
+          const TranslateElement = translateWindow.google?.translate?.TranslateElement;
+          if (!TranslateElement) return;
+          if (!document.getElementById('google-translate-element')) {
+            const container = document.createElement('div');
+            container.id = 'google-translate-element';
+            container.hidden = true;
+            document.body.appendChild(container);
+          }
+          new TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google-translate-element');
+        };
+        const script = document.createElement('script');
+        script.id = 'google-translate-script';
+        script.async = true;
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.onerror = () => {
+          script.remove();
+          document.documentElement.lang = 'en';
+          document.documentElement.dir = 'ltr';
+          showToast({ type: 'error', title: 'Page translation unavailable', message: 'The translation service could not load on this network. You can continue using the tools in English or use your browser translator.' });
+        };
+        document.body.appendChild(script);
       }
     }
   };
 
   useEffect(() => {
-    localStorage.setItem('toolboxx_language', langCode);
+    try {
+      localStorage.setItem('toolboxx_language', langCode);
+    } catch {
+      // Keep the preference in memory when persistence is unavailable.
+    }
     
     // Update HTML dir and lang attributes
     document.documentElement.lang = langCode;
@@ -326,7 +357,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const setLanguage = (code: string) => {
     if (GLOBAL_LANGUAGES.some(l => l.code === code)) {
       setLangCodeState(code);
-      applyGoogleTranslate(code);
     }
   };
 

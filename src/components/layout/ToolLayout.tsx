@@ -30,6 +30,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ tool, children }) => {
         title={seoTitle}
         description={seoDescription}
         canonicalPath={tool.path}
+        isTool
         faqs={tool.faqs}
         howToSteps={tool.howToSteps}
         breadcrumbs={breadcrumbs}

@@ -103,9 +103,8 @@ export const HomePage: React.FC = () => {
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchResults.length > 0) {
-      navigate(searchResults[0].path);
-    }
+    const query = searchQuery.trim();
+    navigate(query ? `/all-tools?q=${encodeURIComponent(query)}` : '/all-tools');
   };
 
   return (
@@ -119,7 +118,7 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 1. HERO SECTION & PROMINENT TOOL SEARCH */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[var(--c-border)]/60">
+      <section className="home-hero relative pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[var(--c-border)]/60">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8 relative z-10">
@@ -141,20 +140,28 @@ export const HomePage: React.FC = () => {
 
           {/* Prominent Tool Search Box (Dynamically uses actual real tool count) */}
           <div className="max-w-2xl mx-auto pt-2">
-            <form onSubmit={handleSearchSubmit} className="relative group">
+            <form role="search" onSubmit={handleSearchSubmit} className="relative group">
               <Search className="w-5 h-5 text-[var(--c-gold)] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
-                type="text"
+                type="search"
+                name="q"
+                autoComplete="off"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={`Search ${TOOLS_DATA.length}+ free online tools... (e.g. compress pdf, convert jpg, word counter)`}
-                className="w-full pl-12 pr-4 py-4 sm:py-5 rounded-2xl sm:rounded-3xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text)] text-sm sm:text-base placeholder:text-[var(--c-subtle)] focus:ring-2 focus:ring-[var(--c-gold)]/30 focus:border-[var(--c-gold)] shadow-xl outline-none transition-all"
+                onKeyDown={(e) => { if (e.key === 'Escape') setSearchQuery(''); }}
+                placeholder={`Search ${TOOLS_DATA.length} tools…`}
+                className="w-full pl-12 pr-24 py-4 sm:py-5 rounded-2xl sm:rounded-3xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text)] text-sm sm:text-base placeholder:text-[var(--c-muted)] focus:ring-2 focus:ring-[var(--c-gold)]/30 focus:border-[var(--c-gold)] shadow-xl outline-none transition-all"
                 aria-label="Search all online tools"
+                aria-controls={searchQuery.trim() ? 'home-search-results' : undefined}
               />
+              <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 rounded-xl bg-[var(--c-accent)] px-4 py-3 text-sm font-semibold text-[var(--c-bg)] hover:bg-[var(--c-gold)] transition-colors">
+                Search
+              </button>
 
               {/* Instant Dropdown Search Results */}
               {searchQuery.trim().length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 p-2 rounded-2xl bg-[var(--c-surface)] border border-[var(--c-border)] shadow-2xl z-50 text-left max-h-96 overflow-y-auto">
+                <div id="home-search-results" className="absolute top-full left-0 right-0 mt-2 p-2 rounded-2xl bg-[var(--c-surface)] border border-[var(--c-border)] shadow-2xl z-30 text-left max-h-96 overflow-y-auto">
+                  <p role="status" className="px-3 py-2 text-xs text-[var(--c-muted)]">{searchResults.length} results. Press Enter to browse all matches.</p>
                   {searchResults.length > 0 ? (
                     searchResults.slice(0, 8).map((tool) => (
                       <Link

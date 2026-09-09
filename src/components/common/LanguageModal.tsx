@@ -39,8 +39,8 @@ export const LanguageModal: React.FC<LanguageModalProps> = ({ isOpen, onClose })
     setLanguage(lang.code);
     showToast({
       type: 'success',
-      title: 'Language Selected',
-      message: `Interface language set to ${lang.nativeName} (${lang.name})`,
+      title: 'Language preference saved',
+      message: lang.code === 'en' ? 'Using the original English interface.' : `Requesting ${lang.nativeName} translation. Availability depends on the translation service.`,
     });
     onClose();
   };
@@ -62,12 +62,13 @@ export const LanguageModal: React.FC<LanguageModalProps> = ({ isOpen, onClose })
                 Global Languages
               </h3>
               <p className="text-xs text-[var(--c-muted)]">
-                Choose your preferred interface language ({languages.length} supported)
+                Choose from {languages.length} language preferences. Page translation uses an external service and may not work on every network.
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
+            aria-label="Close language preferences"
             className="p-2 rounded-xl text-[var(--c-subtle)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
@@ -83,6 +84,7 @@ export const LanguageModal: React.FC<LanguageModalProps> = ({ isOpen, onClose })
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search language name, native script, or region..."
+              aria-label="Search languages"
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-sm text-[var(--c-text)] placeholder:text-[var(--c-subtle)] focus:border-[var(--c-gold)] focus:ring-1 focus:ring-[var(--c-gold)] outline-none"
               autoFocus
             />
@@ -116,6 +118,7 @@ export const LanguageModal: React.FC<LanguageModalProps> = ({ isOpen, onClose })
                   key={lang.code}
                   type="button"
                   onClick={() => handleSelectLanguage(lang)}
+                  aria-pressed={isSelected}
                   className={`p-3.5 rounded-2xl border text-left transition-all flex items-center justify-between gap-2 cursor-pointer ${
                     isSelected
                       ? 'border-[var(--c-gold)] bg-[var(--c-card)] text-[var(--c-text)] shadow-sm'

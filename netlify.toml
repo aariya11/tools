@@ -2,10 +2,8 @@
   publish = "dist"
   command = "npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Route rewrites and the real HTTP 404 fallback are generated in dist/_redirects.
+# No country-based redirects: every supported route uses the same public URL.
 
 [[headers]]
   for = "/*"
