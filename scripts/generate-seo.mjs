@@ -110,16 +110,5 @@ for (const [alias, category] of Object.entries({ image: 'images', calculator: 'c
   aliases.set(`/category/${alias}`, `/category/${category}`);
 }
 const redirects = [...aliases].filter(([from, to]) => from !== to).map(([from, to]) => `${from} ${to} 301`);
-for (const path of pages.keys()) {
-  if (path !== '/' && path !== '/404') {
-    redirects.push(`${path} ${path}/index.html 200`, `${path}/ ${path}/index.html 200`);
-  }
-}
-for (const path of routes) {
-  if (!pages.has(path) && !aliases.has(path)) {
-    redirects.push(`${path} /index.html 200`, `${path}/ /index.html 200`);
-  }
-}
-redirects.push('/404 /404.html 404!', '/* /404.html 404');
 await writeFile('dist/_redirects', `${redirects.join('\n')}\n`);
 console.log(`Generated ${pages.size} static SEO pages and ${indexable.length} sitemap URLs for ${origin}.`);

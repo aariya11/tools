@@ -61,7 +61,7 @@ test('sitemap, robots and hosting routes use canonical public URLs', async () =>
   assert(robots.includes(`Sitemap: ${urls[0].origin}/sitemap.xml`));
   const redirects = await readFile('dist/_redirects', 'utf8');
   assert.match(redirects, /\/tools \/all-tools 301/);
-  assert.match(redirects, /\/\* \/404\.html 404/);
+  assert.match(redirects, /\/privacy-policy \/privacy 301/);
   assert.doesNotMatch(redirects, /\/\* \/index\.html 200/);
   assert.match(await readFile('dist/404.html', 'utf8'), /noindex, follow/);
 });
