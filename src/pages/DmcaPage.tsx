@@ -58,14 +58,23 @@ export const DmcaPage: React.FC = () => {
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-4">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)] flex items-center gap-2">
             <Mail className="w-5 h-5 text-[var(--c-gold)]" />
-            3. Contacting the DMCA Agent
+            3. Designated DMCA Agent Contact Information
           </h2>
           <p>
-            You can submit copyright inquiries directly via our{' '}
+            Notices of copyright infringement should be transmitted to the Designated Agent for [BUSINESS LEGAL NAME]:
+          </p>
+          <ul className="space-y-1.5 list-none font-mono text-xs sm:text-sm text-[var(--c-text)] bg-[var(--c-card)] p-4 rounded-xl border border-[var(--c-border)]">
+            <li><strong>Designated Agent:</strong> Copyright Agent / Legal Counsel</li>
+            <li><strong>Entity:</strong> [BUSINESS LEGAL NAME]</li>
+            <li><strong>Mailing Address:</strong> [BUSINESS ADDRESS]</li>
+            <li><strong>Agent Email:</strong> <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)]">[CONTACT EMAIL]</a></li>
+          </ul>
+          <p className="text-xs text-[var(--c-muted)]">
+            You may also transmit notices directly via our{' '}
             <Link to="/contact" className="text-[var(--c-gold)] underline hover:text-[var(--c-text)]">
               Contact Form
             </Link>
-            . We review and respond to legitimate notices promptly.
+            .
           </p>
         </section>
       </div>

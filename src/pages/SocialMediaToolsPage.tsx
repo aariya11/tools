@@ -59,7 +59,7 @@ const CREATOR_BENEFITS = [
 const SOCIAL_FAQS = [
   {
     question: 'Why do my Instagram photos look pixelated after uploading?',
-    answer: 'If you upload an image larger than 1080px wide or exceeding 30MB, Instagram?s servers compress it aggressively. Using ToolBoxX Image Resizer (preset to 1080x1350px 4:5) and Image Compressor ensures your image stays razor sharp.',
+    answer: "If you upload an image larger than 1080px wide or exceeding 30MB, Instagram's servers compress it aggressively. Using ToolBoxX Image Resizer (preset to 1080x1350px 4:5) and Image Compressor ensures your image stays razor sharp.",
   },
   {
     question: 'Can I generate captions with hashtags for multiple social platforms?',
@@ -94,7 +94,7 @@ export const SocialMediaToolsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] pb-28 transition-colors">
       <SeoHead
-        title="Free Social Media Creator & Marketing Tools ? Resizer, Caption Writer, UTM Builder"
+        title="Free Social Media Creator & Marketing Tools – Resizer, Caption Writer, UTM Builder"
         description="All-in-one in-browser creator suite: resize graphics to Instagram & TikTok aspect ratios, compress photos, generate viral captions, remove backgrounds, and create trackable UTM links."
         canonicalPath="/social-media-tools"
         faqs={SOCIAL_FAQS}
@@ -163,7 +163,7 @@ export const SocialMediaToolsPage: React.FC = () => {
                 Essential Social Media & Creator Tools
               </h2>
               <p className="text-xs sm:text-sm text-[var(--c-muted)] mt-1">
-                Zero signups ? 100% Client-side processing
+                Zero signups • 100% Client-side processing
               </p>
             </div>
 
@@ -247,7 +247,7 @@ export const SocialMediaToolsPage: React.FC = () => {
         {/* Global Share Banner */}
         <SocialShareButtons
           variant="banner"
-          title="Free Social Media Creator Tools ? ToolBoxX"
+          title="Free Social Media Creator Tools | ToolBoxX"
           description="Resize images, generate captions, create transparent PNGs, and build UTM links."
         />
       </div>

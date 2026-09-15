@@ -101,7 +101,7 @@ export const StudentToolsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] pb-28 transition-colors">
       <SeoHead
-        title="Free Online Tools for Students & Researchers ? PDF, OCR, Essay, Handwriting"
+        title="Free Online Tools for Students & Researchers – PDF, OCR, Essay, Handwriting"
         description="Curated suite of 100% free student utilities: PDF compress for Canvas uploads, Text to Handwriting converter, Optical Character Recognition (OCR), AI summarizer, and essay word counter."
         canonicalPath="/student-tools"
         faqs={STUDENT_FAQS}
@@ -274,7 +274,7 @@ export const StudentToolsPage: React.FC = () => {
         {/* Global Share Banner */}
         <SocialShareButtons
           variant="banner"
-          title="Free Online Tools for Students & Researchers ? ToolBoxX"
+          title="Free Online Tools for Students & Researchers | ToolBoxX"
           description="Compress PDFs for Canvas, convert text to handwriting, and run free browser OCR."
         />
       </div>

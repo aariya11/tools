@@ -25,4 +25,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://pdfedittools.netlify.app/sitemap.xml
+Sitemap: https://toolboxx.arunwebdeveloper.workers.dev/sitemap.xml

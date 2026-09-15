@@ -9,13 +9,32 @@ export const ContactPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('Feature Request');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Silent spam bot rejection via honeypot
+    if (honeypot) {
+      setIsSubmitted(true);
+      return;
+    }
+
     if (!name.trim() || !email.trim() || !message.trim()) {
       showToast({ type: 'error', title: 'Missing Information', message: 'Please fill in all required fields.' });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      showToast({ type: 'error', title: 'Invalid Email', message: 'Please enter a valid email address.' });
+      return;
+    }
+
+    if (!consent) {
+      showToast({ type: 'error', title: 'Consent Required', message: 'Please check the consent box to proceed.' });
       return;
     }
 
@@ -66,10 +85,10 @@ export const ContactPage: React.FC = () => {
                 Official Email
               </span>
               <a
-                href="mailto:support@toolboxx.dev"
-                className="text-sm font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors"
+                href="mailto:[CONTACT EMAIL]"
+                className="text-sm font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors font-mono"
               >
-                support@toolboxx.dev
+                [CONTACT EMAIL]
               </a>
             </div>
           </div>
@@ -97,7 +116,7 @@ export const ContactPage: React.FC = () => {
                   Message Received!
                 </h3>
                 <p className="text-sm text-[var(--c-muted)] max-w-sm mx-auto">
-                  Thank you for helping us make ToolBoxX even better. We'll be in touch soon.
+                  Thank you for helping us make ToolBoxX even better. We will review your message shortly.
                 </p>
                 <button
                   onClick={() => {
@@ -111,11 +130,26 @@ export const ContactPage: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot field for spam prevention */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="contact-website-field">Leave this empty</label>
+                  <input
+                    id="contact-website-field"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
                 <div>
-                  <label className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
-                    Your Name
+                  <label htmlFor="contact-name" className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
+                    Your Name <span className="text-rose-400">*</span>
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     value={name}
@@ -126,10 +160,11 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
-                    Email Address
+                  <label htmlFor="contact-email" className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
+                    Email Address <span className="text-rose-400">*</span>
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     required
                     value={email}
@@ -140,10 +175,11 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
+                  <label htmlFor="contact-topic" className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
                     Topic
                   </label>
                   <select
+                    id="contact-topic"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     className="w-full px-4 py-3 text-sm rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] focus:ring-1 focus:ring-[var(--c-gold)] focus:border-[var(--c-gold)] outline-none"
@@ -156,10 +192,11 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
-                    Message
+                  <label htmlFor="contact-message" className="text-xs font-semibold text-[var(--c-text)] block mb-1.5">
+                    Message <span className="text-rose-400">*</span>
                   </label>
                   <textarea
+                    id="contact-message"
                     required
                     rows={5}
                     value={message}
@@ -167,6 +204,25 @@ export const ContactPage: React.FC = () => {
                     placeholder="Tell us what you need or what happened..."
                     className="w-full p-4 text-sm rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] text-[var(--c-text)] placeholder:text-[var(--c-subtle)] focus:ring-1 focus:ring-[var(--c-gold)] focus:border-[var(--c-gold)] outline-none"
                   />
+                </div>
+
+                <div className="pt-1">
+                  <label className="flex items-start gap-2.5 text-xs text-[var(--c-muted)] cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="mt-0.5 rounded border-[var(--c-border)] text-[var(--c-gold)] focus:ring-[var(--c-gold)]"
+                    />
+                    <span>
+                      I consent to [BUSINESS LEGAL NAME] processing my name and email solely to respond to this inquiry in accordance with the{' '}
+                      <a href="/privacy" className="text-[var(--c-gold)] underline hover:text-[var(--c-accent)]">
+                        Privacy Policy
+                      </a>
+                      .
+                    </span>
+                  </label>
                 </div>
 
                 <button
@@ -181,6 +237,7 @@ export const ContactPage: React.FC = () => {
             )}
           </div>
         </div>
+
       </div>
     </div>
   );

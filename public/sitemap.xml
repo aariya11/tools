@@ -3,85 +3,85 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Core Platform Pages -->
   <url>
-    <loc>https://pdfedittools.netlify.app/</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/all-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/all-tools</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/tools</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/about</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/about</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/privacy</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/privacy</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/privacy-policy</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/privacy-policy</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/terms</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/terms</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/contact</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/contact</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/cookie-policy</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/cookie-policy</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/disclaimer</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/disclaimer</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/dmca</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/dmca</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/accessibility</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/accessibility</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/faq</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/faq</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/guides</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/guides</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -89,61 +89,61 @@
 
   <!-- Editorial Blog Posts & Practical Guides -->
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-compress-pdf-without-losing-quality</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-compress-pdf-without-losing-quality</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-reduce-image-size-for-instagram-and-web</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-reduce-image-size-for-instagram-and-web</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-jpg-to-png-transparent-background</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-convert-jpg-to-png-transparent-background</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-merge-pdf-files-in-order</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-merge-pdf-files-in-order</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-remove-metadata-from-images-exif-privacy</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-remove-metadata-from-images-exif-privacy</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-pdf-to-word-doc</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-convert-pdf-to-word-doc</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/7-secret-productivity-tools-every-student-needs</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/7-secret-productivity-tools-every-student-needs</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-jpg-to-pdf</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-convert-jpg-to-pdf</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-convert-word-to-pdf</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-convert-word-to-pdf</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog/how-to-count-words-in-a-document</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog/how-to-count-words-in-a-document</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
@@ -151,49 +151,49 @@
 
   <!-- Hubs & Curated Landings -->
   <url>
-    <loc>https://pdfedittools.netlify.app/pdf-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-tools</loc>
     <lastmod>2026-09-04T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/blog</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/blog</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/social</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/social</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/student-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/student-tools</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/productivity-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/productivity-tools</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/social-media-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/social-media-tools</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/free-pdf-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/free-pdf-tools</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/free-image-tools</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/free-image-tools</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -201,186 +201,186 @@
 
   <!-- Category Landing Pages -->
   <url>
-    <loc>https://pdfedittools.netlify.app/category/pdf</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/pdf</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/images</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/images</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/text</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/text</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/calculators</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/calculators</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/generators</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/generators</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/developer</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/developer</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/business</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/business</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/ai</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/ai</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/file</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/file</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pdfedittools.netlify.app/category/social</loc>
+    <loc>https://toolboxx.arunwebdeveloper.workers.dev/category/social</loc>
     <lastmod>2026-08-24T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- PDF Tools -->
-  <url><loc>https://pdfedittools.netlify.app/pdf-compress</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-merge</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-split</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/edit-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/sign-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/protect-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/unlock-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/word-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/excel-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/powerpoint-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-word</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-excel</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-powerpoint</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-jpg</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-png</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-webp</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/jpg-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/rotate-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/add-page-numbers</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/add-watermark</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/remove-pages</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/organize-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/repair-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-pdfa</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/crop-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/redact-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/html-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/scan-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/compare-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-forms</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-header-footer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-flatten</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-metadata</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-to-text</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/pdf-extract-images</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ocr-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-compress</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-merge</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-split</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/edit-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/sign-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/protect-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/unlock-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/word-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/excel-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/powerpoint-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-word</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-excel</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-powerpoint</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-jpg</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-png</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-webp</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/jpg-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/rotate-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/add-page-numbers</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/add-watermark</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/remove-pages</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/organize-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/repair-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-pdfa</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/crop-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/redact-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/html-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/scan-to-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/compare-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-forms</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-header-footer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-flatten</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-metadata</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-to-text</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/pdf-extract-images</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ocr-pdf</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
 
   <!-- Image Tools -->
-  <url><loc>https://pdfedittools.netlify.app/image-compressor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-cropper</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/background-remover</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-upscaler</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-enhancer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-metadata-remover</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-watermark</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-blur-pixelate</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/image-color-picker</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/favicon-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/jpg-to-png</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/png-to-webp</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-compressor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-cropper</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/background-remover</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-upscaler</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-enhancer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-metadata-remover</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-watermark</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-blur-pixelate</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/image-color-picker</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/favicon-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/jpg-to-png</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/png-to-webp</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
   <!-- Text Tools -->
-  <url><loc>https://pdfedittools.netlify.app/word-counter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/character-counter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/case-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/text-cleaner</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/text-diff</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/lorem-ipsum-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/markdown-editor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/csv-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/text-to-handwriting</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/word-counter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/character-counter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/case-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/text-cleaner</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/text-diff</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/lorem-ipsum-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/markdown-editor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/csv-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/text-to-handwriting</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- Converters & Calculators -->
-  <url><loc>https://pdfedittools.netlify.app/unit-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/percentage-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/age-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/gpa-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/emi-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/discount-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/salary-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/date-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/timezone-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/bmi-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/tip-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/file-size-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/unit-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/percentage-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/age-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/gpa-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/emi-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/discount-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/salary-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/date-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/timezone-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/bmi-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/tip-calculator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/file-size-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- Generators -->
-  <url><loc>https://pdfedittools.netlify.app/qr-code-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/qr-code-scanner</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/barcode-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/password-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/uuid-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/random-number-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/color-palette-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/sitemap-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/meta-tag-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/robots-txt-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/schema-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/qr-code-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/qr-code-scanner</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/barcode-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/password-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/uuid-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/random-number-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/color-palette-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/sitemap-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/meta-tag-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/robots-txt-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/schema-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- Developer Tools -->
-  <url><loc>https://pdfedittools.netlify.app/json-formatter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/code-minifier</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/base64-tool</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/url-encoder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/jwt-decoder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/hash-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/regex-tester</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/timestamp-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/color-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/json-formatter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/code-minifier</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/base64-tool</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/url-encoder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/jwt-decoder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/hash-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/regex-tester</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/timestamp-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/color-converter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- Business & Marketing Tools -->
-  <url><loc>https://pdfedittools.netlify.app/utm-builder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/email-signature-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/invoice-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/resume-builder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/cover-letter-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/business-name-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/utm-builder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/email-signature-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/invoice-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/resume-builder</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/cover-letter-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/business-name-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- AI Tools -->
-  <url><loc>https://pdfedittools.netlify.app/ai-summarizer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ai-rewriter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ai-grammar-checker</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ai-email-writer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ai-title-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/ai-blog-outline</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-summarizer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-rewriter</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-grammar-checker</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-email-writer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-title-generator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/ai-blog-outline</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- File & Archive Tools -->
-  <url><loc>https://pdfedittools.netlify.app/zip-creator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/zip-extractor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pdfedittools.netlify.app/bulk-renamer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/zip-creator</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/zip-extractor</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolboxx.arunwebdeveloper.workers.dev/bulk-renamer</loc><lastmod>2026-08-24T22:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 </urlset>

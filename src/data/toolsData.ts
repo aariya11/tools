@@ -1,4 +1,5 @@
 import type { ToolMeta } from '../types/tools';
+import { getToolMultilingualKeywords } from './multilingualSeo';
 
 export const TOOLS_DATA: ToolMeta[] = [
   // =========================================================================
@@ -4354,6 +4355,7 @@ export const searchTools = (query: string): ToolMeta[] => {
       t.shortDescription.toLowerCase().includes(q) ||
       (t.primaryKeyword && t.primaryKeyword.toLowerCase().includes(q)) ||
       (t.secondaryKeywords && t.secondaryKeywords.some((k) => k.toLowerCase().includes(q))) ||
+      getToolMultilingualKeywords(t.id).some((k) => k.toLowerCase().includes(q)) ||
       t.category.toLowerCase().includes(q)
   );
 };

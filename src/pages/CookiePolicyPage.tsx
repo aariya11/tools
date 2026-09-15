@@ -85,7 +85,7 @@ export const CookiePolicyPage: React.FC = () => {
             <div className="p-5 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] space-y-2">
               <span className="font-bold text-[var(--c-text)] text-sm block">Analytics Cookies (Consent-Gated)</span>
               <p className="text-[var(--c-muted)] leading-relaxed">
-                Measure aggregate, anonymized technical telemetry such as page load speed, error occurrences, and overall feature usage. They do not record document text or user identities. Gated strictly behind your consent.
+                When enabled by you, anonymous aggregate usage metrics are evaluated via [ANALYTICS PROVIDER] solely to improve platform stability, page load speed, and user experience. No personal identifiers or document contents are collected.
               </p>
             </div>
 
@@ -104,6 +104,15 @@ export const CookiePolicyPage: React.FC = () => {
           </h2>
           <p>
             In addition to our on-site settings panel, you can configure your browser to block or delete cookies at any time via your browser settings (Chrome, Firefox, Safari, Edge). Please note that blocking essential cookies may prevent theme preferences from persisting.
+          </p>
+        </section>
+
+        <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
+            4. Inquiries & Data Privacy Officer
+          </h2>
+          <p>
+            For questions about our cookie architecture or telemetry policies, contact [BUSINESS LEGAL NAME] at <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono underline">[CONTACT EMAIL]</a>.
           </p>
         </section>
       </div>

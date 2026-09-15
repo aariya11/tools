@@ -92,7 +92,7 @@ export const ProductivityToolsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] pb-28 transition-colors">
       <SeoHead
-        title="High-Performance Browser Productivity Suite ? Batch Tools & Document Automation"
+        title="High-Performance Browser Productivity Suite – Batch Tools & Document Automation"
         description="Streamline daily document pipelines: client-side PDF organization, bulk renamers, invoice generators, markdown formatting, and password tools. 100% free and private."
         canonicalPath="/productivity-tools"
         faqs={PRODUCTIVITY_FAQS}
@@ -248,7 +248,7 @@ export const ProductivityToolsPage: React.FC = () => {
         {/* Global Share Banner */}
         <SocialShareButtons
           variant="banner"
-          title="ToolBoxX Productivity Suite ? Fast In-Browser Utilities"
+          title="ToolBoxX Productivity Suite | Fast In-Browser Utilities"
           description="Process documents, rename files, and format spreadsheets without server uploads."
         />
       </div>

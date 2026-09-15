@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createServer, loadEnv } from 'vite';
 
 const env = { ...loadEnv('production', process.cwd(), ''), ...process.env };
-const configured = new URL(env.VITE_SITE_URL || 'https://pdfedittools.netlify.app');
+const configured = new URL(env.VITE_SITE_URL || 'https://toolboxx.arunwebdeveloper.workers.dev');
 assert(configured.protocol === 'https:' && configured.pathname === '/' && !configured.search && !configured.hash && !configured.username && !configured.password, 'VITE_SITE_URL must be an HTTPS origin');
 const origin = configured.origin;
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);

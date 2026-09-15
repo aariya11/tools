@@ -34,7 +34,7 @@ const COMPARISON_DATA = [
 const PDF_FAQS = [
   {
     question: 'How can ToolBoxX offer 30+ PDF tools completely free?',
-    answer: 'Traditional services pay massive cloud server costs to receive, store, and process your files on remote clusters. ToolBoxX uses modern browser-native WebAssembly and PDF-Lib algorithms that run directly on your own computer?s CPU/RAM, reducing server overhead to nearly zero.',
+    answer: "Traditional services pay massive cloud server costs to receive, store, and process your files on remote clusters. ToolBoxX uses modern browser-native WebAssembly and PDF-Lib algorithms that run directly on your own computer's CPU/RAM, reducing server overhead to nearly zero.",
   },
   {
     question: 'Is there a limit on how many pages or files I can process?',
@@ -80,7 +80,7 @@ export const FreePdfToolsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] pb-28 transition-colors">
       <SeoHead
-        title="30+ Free PDF Tools Online ? Unlimited, Private, No Upload Limits | ToolBoxX"
+        title="30+ Free PDF Tools Online – Unlimited, Private, No Upload Limits | ToolBoxX"
         description="The ultimate 100% free client-side PDF suite: Merge, Split, Compress, Convert (Word, Excel, JPG), OCR, Sign, Protect, and Edit PDFs directly in your browser with zero cloud storage."
         canonicalPath="/free-pdf-tools"
         faqs={PDF_FAQS}
@@ -110,9 +110,9 @@ export const FreePdfToolsPage: React.FC = () => {
                   <ShieldCheck className="w-4 h-4" />
                   100% Client-Side Privacy
                 </span>
-                <span>?</span>
+                <span>•</span>
                 <span>Unlimited Batch Use</span>
-                <span>?</span>
+                <span>•</span>
                 <span>No Accounts Required</span>
               </div>
             </div>
@@ -125,13 +125,13 @@ export const FreePdfToolsPage: React.FC = () => {
               </div>
               <div className="space-y-2 text-xs">
                 <Link to="/blog/how-to-compress-pdf-without-losing-quality" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? How to Compress PDF Without Losing Quality ?
+                  • How to Compress PDF Without Losing Quality →
                 </Link>
                 <Link to="/blog/how-to-merge-pdf-files-in-order" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? How to Merge PDFs in Sequential Order ?
+                  • How to Merge PDFs in Sequential Order →
                 </Link>
                 <Link to="/blog/how-to-convert-pdf-to-word-doc" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? How to Convert PDF to Word DOCX ?
+                  • How to Convert PDF to Word DOCX →
                 </Link>
               </div>
             </div>
@@ -259,7 +259,7 @@ export const FreePdfToolsPage: React.FC = () => {
         {/* Global Share Banner */}
         <SocialShareButtons
           variant="banner"
-          title="30+ Free Online PDF Tools ? ToolBoxX"
+          title="30+ Free Online PDF Tools | ToolBoxX"
           description="Merge, compress, convert, sign, protect and edit PDFs directly in your browser."
         />
       </div>

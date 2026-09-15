@@ -60,7 +60,16 @@ export const DisclaimerPage: React.FC = () => {
             4. Limitation of Liability
           </h2>
           <p>
-            In no event shall ToolBoxX, its creators, contributors, or infrastructure providers be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the platform, including but not limited to file loss, corrupted outputs, or operational interruptions.
+            In no event shall [BUSINESS LEGAL NAME], its creators, contributors, or infrastructure providers be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the platform, including but not limited to file loss, corrupted outputs, or operational interruptions.
+          </p>
+        </section>
+
+        <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
+            5. Inquiries
+          </h2>
+          <p>
+            Questions regarding tool calculations or technical disclaimers may be addressed to [BUSINESS LEGAL NAME] at <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono underline">[CONTACT EMAIL]</a>.
           </p>
         </section>
       </div>

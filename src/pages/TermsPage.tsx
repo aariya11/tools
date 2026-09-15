@@ -25,51 +25,81 @@ export const TermsPage: React.FC = () => {
       <div className="space-y-8 text-[var(--c-muted)] text-sm sm:text-base leading-relaxed">
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
-            1. Acceptance of Terms
+            1. Acceptance of Terms & Operator Identification
           </h2>
           <p>
-            By accessing or using ToolBoxX (the "Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the website.
+            By accessing or using ToolBoxX (the "Service"), operated by <strong>[BUSINESS LEGAL NAME]</strong> ("we", "us", or "our"), located at <strong>[BUSINESS ADDRESS]</strong> (Contact: <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono">[CONTACT EMAIL]</a>), you agree to be bound by these Terms of Service. If you do not agree, do not access or use the website.
           </p>
         </section>
 
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
-            2. Permitted Use
+            2. Permitted Use & Conduct
           </h2>
           <p>
-            ToolBoxX provides client-side utilities for personal, educational, commercial, and developer use. You agree not to:
+            ToolBoxX provides browser-based utilities for personal, educational, commercial, and professional use. You agree not to:
           </p>
           <ul className="space-y-2 list-disc pl-5">
-            <li>Attempt to interfere with or disrupt the operation of the website.</li>
-            <li>Use the tools for any illegal purpose or to generate infringing or unlawful content.</li>
-            <li>Attempt to reverse-engineer unauthorized parts of the platform or overload public bandwidth.</li>
+            <li>Attempt to interfere with, disrupt, or impair website operations or hosting infrastructure.</li>
+            <li>Use the tools for any unlawful purpose, fraud, or generation of infringing materials.</li>
+            <li>Launch automated spiders or scrapers that place unreasonable request loads on our hosting servers.</li>
           </ul>
         </section>
 
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
-            3. Disclaimer of Warranties
+            3. Intellectual Property & Your Content Ownership
           </h2>
           <p>
-            ToolBoxX is provided on an "as-is" and "as-available" basis without warranties of any kind, whether express or implied. While we strive for absolute accuracy and high performance in all tool computations, we do not guarantee uninterrupted availability or error-free outputs.
+            <strong>You own your files:</strong> ToolBoxX does not claim any ownership, copyright, or intellectual property rights over files, text, images, or documents you process. Because operations execute locally in your browser memory, we never acquire rights, copies, or licenses over your content.
+          </p>
+          <p>
+            All website software, branding, interface designs, logos, and original educational guides are the intellectual property of [BUSINESS LEGAL NAME] and protected under applicable copyright laws.
           </p>
         </section>
 
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
-            4. Limitation of Liability
+            4. Free Service & Refund Policy
           </h2>
           <p>
-            In no event shall ToolBoxX or its contributors be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the services.
+            ToolBoxX core web utilities are offered free of charge. No registration, payment, or credit card is required. In the event that optional paid tiers or enterprise licensing are made available, all transactions and cancellations will be governed by our statutory refund policy: <strong>[REFUND TERMS]</strong>.
           </p>
         </section>
 
         <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
           <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
-            5. Changes to Terms
+            5. Disclaimer of Warranties
           </h2>
           <p>
-            We reserve the right to modify these Terms of Service at any time. Continued use of ToolBoxX constitutes acceptance of any updated terms.
+            ToolBoxX is provided on an "as-is" and "as-available" basis without warranties of any kind, whether express or implied. While we strive for high precision and performance, we make no guarantees that tool outputs will be error-free or uninterrupted. Users should maintain original backups of important files.
+          </p>
+        </section>
+
+        <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
+            6. Limitation of Liability
+          </h2>
+          <p>
+            To the maximum extent permitted by law, [BUSINESS LEGAL NAME] and its contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use the platform.
+          </p>
+        </section>
+
+        <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
+            7. Governing Law & Jurisdiction
+          </h2>
+          <p>
+            These Terms of Service and any disputes arising under or related to them shall be governed by and construed in accordance with the laws of <strong>[COUNTRY/JURISDICTION]</strong>, without regard to conflict of law principles.
+          </p>
+        </section>
+
+        <section className="bg-[var(--c-surface)] p-8 rounded-3xl border border-[var(--c-border)] space-y-3">
+          <h2 className="text-xl font-bold font-serif text-[var(--c-text)]">
+            8. Changes to Terms
+          </h2>
+          <p>
+            We reserve the right to modify these Terms of Service at any time. Continued use of ToolBoxX constitutes acceptance of updated terms.
           </p>
         </section>
       </div>

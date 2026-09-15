@@ -211,26 +211,26 @@ export const SocialHubPage: React.FC = () => {
 
   const handleGenerateCaptions = () => {
     const topic = captionTopic.trim() || 'Productivity hacks';
-    const emojis = captionIncludeEmojis ? '? ?? ?? ?? ?? ??' : '';
+    const emojis = captionIncludeEmojis ? '✨ 🚀 💡 🔥 📌' : '';
     const hashtagsList = ['#productivity', '#techtips', '#lifehacks', '#workflow', '#digitalcreator', '#tools', '#studytips', '#efficiency', '#software', '#trending'].slice(0, captionHashtagCount);
     const tags = hashtagsList.join(' ');
 
     let variations: string[] = [];
     if (captionTone === 'viral') {
       variations = [
-        `Stop scrolling. ${captionIncludeEmojis ? '??' : ''} If you aren't using this workflow for ${topic}, you're doing it the hard way.\n\nHere is the exact step-by-step breakdown you need to save 5+ hours every single week:\n\n1. Stop overcomplicating simple file edits\n2. Use browser-native tools with zero uploads\n3. Automate your daily repetitive tasks\n\n${captionIncludeEmojis ? '??' : ''} Save this post so you don't lose it later.\n\n${tags}`,
-        `Nobody is talking about this yet, but ${topic} is about to change everything ${emojis}.\n\nSwipe through or check the link to see how simple it actually is.\n\nDrop a "${captionIncludeEmojis ? '??' : 'TOOL'}" in the comments if you want the direct link!\n\n${tags}`,
-        `3 simple rules for mastering ${topic} in 2026:\n\n? Keep it private (no cloud storage risks)\n? Fast client-side execution\n? Zero paywalls or recurring subscriptions\n\nWhich one did you learn today? ??\n\n${tags}`,
+        `Stop scrolling. ${captionIncludeEmojis ? '🚨' : ''} If you aren't using this workflow for ${topic}, you're doing it the hard way.\n\nHere is the exact step-by-step breakdown you need to save 5+ hours every single week:\n\n1. Stop overcomplicating simple file edits\n2. Use browser-native tools with zero uploads\n3. Automate your daily repetitive tasks\n\n${captionIncludeEmojis ? '📌' : ''} Save this post so you don't lose it later.\n\n${tags}`,
+        `Nobody is talking about this yet, but ${topic} is about to change everything ${emojis}.\n\nSwipe through or check the link to see how simple it actually is.\n\nDrop a "${captionIncludeEmojis ? '🔥' : 'TOOL'}" in the comments if you want the direct link!\n\n${tags}`,
+        `3 simple rules for mastering ${topic} in 2026:\n\n1. Keep it private (no cloud storage risks)\n2. Fast client-side execution\n3. Zero paywalls or recurring subscriptions\n\nWhich one did you learn today? ${captionIncludeEmojis ? '👇' : ''}\n\n${tags}`,
       ];
     } else if (captionTone === 'professional') {
       variations = [
         `Optimizing ${topic} is one of the highest leverage investments for modern digital teams.\n\nBy leveraging zero-knowledge browser utilities, organizations can drastically improve turnaround times while maintaining strict data compliance.\n\nKey takeaways:\n- Client-side data integrity\n- Reduced friction in document pipelines\n- Instant browser performance\n\n${tags}`,
-        `Efficiency isn't about working longer?it's about removing unnecessary bottlenecks.\n\nHere is a practical perspective on ${topic} that helped streamline our daily operational tasks.\n\n${tags}`,
+        `Efficiency isn't about working longer — it's about removing unnecessary bottlenecks.\n\nHere is a practical perspective on ${topic} that helped streamline our daily operational tasks.\n\n${tags}`,
       ];
     } else {
       variations = [
-        `POV: You just discovered the easiest way to handle ${topic} ${captionIncludeEmojis ? '??' : ''}\n\nNo signups. No subscriptions. Just pure speed.\n\nShare this with a friend who desperately needs this.\n\n${tags}`,
-        `Here's your friendly reminder that ${topic} doesn't have to be complicated ${captionIncludeEmojis ? '?' : ''}\n\nTap the link in bio to try it yourself 100% free.\n\n${tags}`,
+        `POV: You just discovered the easiest way to handle ${topic} ${captionIncludeEmojis ? '✨' : ''}\n\nNo signups. No subscriptions. Just pure speed.\n\nShare this with a friend who desperately needs this.\n\n${tags}`,
+        `Here's your friendly reminder that ${topic} doesn't have to be complicated ${captionIncludeEmojis ? '💡' : ''}\n\nTap the link in bio to try it yourself 100% free.\n\n${tags}`,
       ];
     }
     setGeneratedCaptions(variations);

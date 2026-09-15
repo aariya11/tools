@@ -60,7 +60,7 @@ export const FreeImageToolsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] pb-28 transition-colors">
       <SeoHead
-        title="Free In-Browser Image Studio ? Compress, Resize, Convert, Background Remover | ToolBoxX"
+        title="Free In-Browser Image Studio – Compress, Resize, Convert, Background Remover | ToolBoxX"
         description="Comprehensive client-side image editor: Compress JPG/PNG/WebP, resize with social presets, remove backgrounds, strip EXIF privacy metadata, watermark, upscale, and convert formats."
         canonicalPath="/free-image-tools"
         faqs={IMAGE_FAQS}
@@ -90,9 +90,9 @@ export const FreeImageToolsPage: React.FC = () => {
                   <ShieldCheck className="w-4 h-4" />
                   100% Client-Side Privacy
                 </span>
-                <span>?</span>
+                <span>•</span>
                 <span>Live Before / After Previews</span>
-                <span>?</span>
+                <span>•</span>
                 <span>Lossless & Perceptual Compression</span>
               </div>
             </div>
@@ -105,13 +105,13 @@ export const FreeImageToolsPage: React.FC = () => {
               </div>
               <div className="space-y-2 text-xs">
                 <Link to="/blog/how-to-reduce-image-size-for-instagram-and-web" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? Reduce Image Size for Instagram & Web ?
+                  • Reduce Image Size for Instagram & Web →
                 </Link>
                 <Link to="/blog/how-to-convert-jpg-to-png-transparent-background" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? Convert JPG to PNG Transparent Background ?
+                  • Convert JPG to PNG Transparent Background →
                 </Link>
                 <Link to="/blog/how-to-remove-metadata-from-images-exif-privacy" className="block text-[var(--c-text)] hover:text-[var(--c-gold)] font-semibold">
-                  ? Strip EXIF Metadata for Privacy ?
+                  • Strip EXIF Metadata for Privacy →
                 </Link>
               </div>
             </div>
@@ -229,7 +229,7 @@ export const FreeImageToolsPage: React.FC = () => {
         {/* Global Share Banner */}
         <SocialShareButtons
           variant="banner"
-          title="Free In-Browser Image Studio ? ToolBoxX"
+          title="Free In-Browser Image Studio | ToolBoxX"
           description="Compress, resize, convert, remove backgrounds, and strip EXIF metadata without uploading files."
         />
       </div>
