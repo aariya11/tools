@@ -38,7 +38,20 @@ const addPage = (path, title, description, body, extra = [], noIndex = false) =>
   assert(!pages.has(path), `Duplicate generated route: ${path}`);
   const url = `${origin}${path}`;
   const graph = [
-    { '@type': 'WebSite', '@id': `${origin}/#website`, url: `${origin}/`, name: 'ToolBoxX', inLanguage: 'en' },
+    { '@type': 'WebSite', '@id': `${origin}/#website`, url: `${origin}/`, name: 'ToolBoxX', inLanguage: 'en', publisher: { '@id': `${origin}/#organization` } },
+    {
+      '@type': 'Organization',
+      '@id': `${origin}/#organization`,
+      name: 'TOOLBOXX',
+      url: `${origin}/`,
+      email: 'Lsatoneof69@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Bhubaneswar',
+        addressRegion: 'Odisha',
+        addressCountry: 'India',
+      },
+    },
     { '@type': 'WebPage', '@id': `${url}#webpage`, name: fullTitle(title), description, url, inLanguage: 'en', isPartOf: { '@id': `${origin}/#website` } },
     ...extra,
   ];
@@ -88,12 +101,12 @@ for (const post of posts) {
   const sectionContent = section => `<section id="${escape(section.id)}"><h2>${escape(section.title)}</h2><p>${escape(section.content)}</p>${(section.subsections || []).map(subsection => `<h3>${escape(subsection.title)}</h3><p>${escape(subsection.content)}</p>`).join('')}${(section.steps || []).map(step => `<h3>${escape(step.title)}</h3><p>${escape(step.description)}</p>`).join('')}${section.callout ? `<aside><h3>${escape(section.callout.title)}</h3><p>${escape(section.callout.message)}</p></aside>` : ''}</section>`;
   addPage(`/blog/${post.slug}`, post.title, post.excerpt, `<h1>${escape(post.title)}</h1><p>${escape(post.excerpt)}</p>${post.sections.map(sectionContent).join('')}${faqContent(post.faqs)}<h2>Related tools</h2>${links(tools.filter(tool => post.relatedToolIds.includes(tool.id)))}`);
 }
-addPage('/privacy', 'Privacy Policy | ToolBoxX', 'ToolBoxX processes files and text locally on your device. We do not store, view, or transmit your private files to remote servers.', '<h1>Privacy Policy</h1><p>ToolBoxX processes files locally within your web browser. Zero server uploads.</p>');
-addPage('/terms', 'Terms of Service | ToolBoxX', 'Terms and conditions for utilizing ToolBoxX online utility platform.', '<h1>Terms of Service</h1><p>Terms of service for using ToolBoxX free client-side utilities.</p>');
-addPage('/contact', 'Contact & Feedback | ToolBoxX', 'Contact the ToolBoxX team for tool suggestions, bug reports, and partnership inquiries.', '<h1>Contact &amp; Feedback</h1><p>Get in touch with our team for questions, suggestions, or feedback.</p>');
-addPage('/cookie-policy', 'Cookie Policy | ToolBoxX', 'Learn how ToolBoxX uses cookies and local storage. Configure your cookie preferences anytime.', '<h1>Cookie Policy</h1><p>Information about cookies, localStorage, and privacy choices on ToolBoxX.</p>');
-addPage('/disclaimer', 'Disclaimer | ToolBoxX', 'Important legal disclaimer regarding browser-based processing, data accuracy, and limitations of liability for ToolBoxX utilities.', '<h1>Legal Disclaimer</h1><p>Important disclaimers and operational limits for ToolBoxX utilities.</p>');
-addPage('/dmca', 'DMCA Copyright Policy | ToolBoxX', 'Digital Millennium Copyright Act compliance, intellectual property guidelines, and copyright notice procedures for ToolBoxX.', '<h1>DMCA Policy</h1><p>Copyright compliance and DMCA designated agent contact procedures.</p>');
+addPage('/privacy', 'Privacy Policy | ToolBoxX', 'ToolBoxX processes files and text locally on your device. We do not store, view, or transmit your private files to remote servers.', '<h1>Privacy Policy</h1><p>ToolBoxX processes files locally within your web browser. Zero server uploads.</p><p>Data Controller: TOOLBOXX, Bhubaneswar, Odisha, India. Official Contact Email: Lsatoneof69@gmail.com</p>');
+addPage('/terms', 'Terms of Service | ToolBoxX', 'Terms and conditions for utilizing ToolBoxX online utility platform.', '<h1>Terms of Service</h1><p>Terms of service for using ToolBoxX free client-side utilities operated by TOOLBOXX located in Bhubaneswar, Odisha, India. Contact: Lsatoneof69@gmail.com</p>');
+addPage('/contact', 'Contact & Feedback | ToolBoxX', 'Contact the ToolBoxX team for tool suggestions, bug reports, and partnership inquiries.', '<h1>Contact &amp; Feedback</h1><p>Get in touch with TOOLBOXX at Lsatoneof69@gmail.com or via mail at Bhubaneswar, Odisha, India.</p>');
+addPage('/cookie-policy', 'Cookie Policy | ToolBoxX', 'Learn how ToolBoxX uses cookies and local storage. Configure your cookie preferences anytime.', '<h1>Cookie Policy</h1><p>Information about cookies, localStorage, and privacy choices on ToolBoxX operated by TOOLBOXX (Lsatoneof69@gmail.com).</p>');
+addPage('/disclaimer', 'Disclaimer | ToolBoxX', 'Important legal disclaimer regarding browser-based processing, data accuracy, and limitations of liability for ToolBoxX utilities.', '<h1>Legal Disclaimer</h1><p>Important disclaimers and operational limits for ToolBoxX utilities operated by TOOLBOXX (Lsatoneof69@gmail.com).</p>');
+addPage('/dmca', 'DMCA Copyright Policy | ToolBoxX', 'Digital Millennium Copyright Act compliance, intellectual property guidelines, and copyright notice procedures for ToolBoxX.', '<h1>DMCA Policy</h1><p>Copyright compliance and DMCA designated agent contact procedures for TOOLBOXX, Bhubaneswar, Odisha, India. Email: Lsatoneof69@gmail.com</p>');
 addPage('/accessibility', 'Accessibility Statement | ToolBoxX', 'ToolBoxX commitment to web accessibility and WCAG 2.2 AA standards.', '<h1>Accessibility Statement</h1><p>Our commitment to an accessible, inclusive user experience.</p>');
 addPage('/faq', 'Frequently Asked Questions | ToolBoxX', 'Answers to common questions about ToolBoxX browser utilities, file privacy, and supported features.', '<h1>Frequently Asked Questions</h1><p>Find answers to common questions about our free online tools.</p>');
 addPage('/about', 'About ToolBoxX | Fast, Private Browser Utilities', 'Learn about ToolBoxX mission to provide free, high-performance, privacy-first web utilities with zero server file storage.', '<h1>About ToolBoxX</h1><p>High-performance client-side utilities built for privacy, speed, and simplicity.</p>');
