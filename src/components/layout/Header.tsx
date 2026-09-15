@@ -24,6 +24,7 @@ import {
 import { SearchModal } from '../common/SearchModal';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageModal } from '../common/LanguageModal';
+import { SpotlightNavbar } from '../common/SpotlightNavbar';
 import { useLanguage } from '../../context/LanguageContext';
 
 export const Header: React.FC = () => {
@@ -103,78 +104,24 @@ export const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 text-sm font-medium text-[var(--c-muted)]">
-            {/* 1. PDF Tools */}
-            <Link
-              to="/pdf-tools"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('pdf')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] font-semibold'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <FileText className="w-4 h-4 text-[var(--c-gold)]" />
-              <span>PDF Tools</span>
-            </Link>
-
-            {/* 2. Image Tools */}
-            <Link
-              to="/category/images"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('image') || location.pathname.includes('png') || location.pathname.includes('jpg') || location.pathname.includes('webp')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] font-semibold'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <ImageIcon className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Image Tools</span>
-            </Link>
-
-            {/* 3. Text Tools */}
-            <Link
-              to="/category/text"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('text') || location.pathname.includes('word') || location.pathname.includes('case') || location.pathname.includes('diff') || location.pathname.includes('lorem')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] font-semibold'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Type className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Text Tools</span>
-            </Link>
-
-            {/* 4. Converters */}
-            <Link
-              to="/unit-converter"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname.includes('converter') || location.pathname.includes('calculator')
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] font-semibold'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <ArrowLeftRight className="w-4 h-4 text-[var(--c-muted)]" />
-              <span>Converters</span>
-            </Link>
-
-            {/* 5. Compress */}
-            <Link
-              to="/pdf-compress"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all duration-150 ${
-                location.pathname === '/pdf-compress' || location.pathname === '/image-compressor'
-                  ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)] font-semibold'
-                  : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
-              }`}
-            >
-              <Minimize2 className="w-4 h-4 text-emerald-400" />
-              <span>Compress</span>
-            </Link>
+          {/* Desktop Navigation Links with Interactive Spotlight */}
+          <div className="hidden lg:flex items-center gap-1">
+            <SpotlightNavbar
+              className="pt-0"
+              items={[
+                { label: 'PDF Tools', href: '/pdf-tools' },
+                { label: 'Image Tools', href: '/category/images' },
+                { label: 'Text Tools', href: '/category/text' },
+                { label: 'Converters', href: '/unit-converter' },
+                { label: 'Compress', href: '/pdf-compress' },
+              ]}
+            />
 
             {/* 6. More Tools (Dropdown) */}
             <div className="relative" ref={moreDropdownRef}>
               <button
                 onClick={() => setIsMoreDropdownOpen(!isMoreDropdownOpen)}
-                className={`flex items-center gap-1 px-3 py-2 rounded-xl transition-all duration-150 cursor-pointer ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-xl transition-all duration-150 cursor-pointer text-sm font-medium ${
                   isMoreDropdownOpen
                     ? 'text-[var(--c-text)] bg-[var(--c-card)] border border-[var(--c-border)]'
                     : 'hover:text-[var(--c-text)] hover:bg-[var(--c-card)]/60'
@@ -253,7 +200,7 @@ export const Header: React.FC = () => {
                 </div>
               )}
             </div>
-          </nav>
+          </div>
 
           {/* Right Action Controls: Search, Theme Toggle, Language Selector */}
           <div className="flex items-center gap-2 sm:gap-2.5">

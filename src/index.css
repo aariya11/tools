@@ -139,3 +139,30 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   *:focus-visible { outline: 2px solid Highlight; outline-offset: 3px; }
 }
 
+/* Spotlight Navbar Styles */
+.spotlight-nav {
+  --spotlight-color: rgba(0, 0, 0, 0.08);
+  --ambience-color: rgba(0, 0, 0, 0.8);
+}
+.dark .spotlight-nav,
+[data-theme="dark"] .spotlight-nav {
+  --spotlight-color: rgba(255, 255, 255, 0.15);
+  --ambience-color: rgba(255, 255, 255, 1);
+}
+.spotlight-nav-bg {
+  background: var(--c-surface, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.glass-border {
+  border: 1px solid var(--c-border, rgba(0, 0, 0, 0.08));
+}
+.spotlight-nav-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+.dark .spotlight-nav-shadow,
+[data-theme="dark"] .spotlight-nav-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+
