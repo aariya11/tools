@@ -60,7 +60,7 @@ export const DisclaimerPage: React.FC = () => {
             4. Limitation of Liability
           </h2>
           <p>
-            In no event shall [BUSINESS LEGAL NAME], its creators, contributors, or infrastructure providers be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the platform, including but not limited to file loss, corrupted outputs, or operational interruptions.
+            In no event shall TOOLBOXX, its creators, contributors, or infrastructure providers be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the platform, including but not limited to file loss, corrupted outputs, or operational interruptions.
           </p>
         </section>
 
@@ -69,7 +69,7 @@ export const DisclaimerPage: React.FC = () => {
             5. Inquiries
           </h2>
           <p>
-            Questions regarding tool calculations or technical disclaimers may be addressed to [BUSINESS LEGAL NAME] at <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono underline">[CONTACT EMAIL]</a>.
+            Questions regarding tool calculations or technical disclaimers may be addressed to TOOLBOXX at <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)] font-mono underline">Lsatoneof69@gmail.com</a>.
           </p>
         </section>
       </div>

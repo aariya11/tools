@@ -61,13 +61,13 @@ export const DmcaPage: React.FC = () => {
             3. Designated DMCA Agent Contact Information
           </h2>
           <p>
-            Notices of copyright infringement should be transmitted to the Designated Agent for [BUSINESS LEGAL NAME]:
+            Notices of copyright infringement should be transmitted to the Designated Agent for TOOLBOXX:
           </p>
           <ul className="space-y-1.5 list-none font-mono text-xs sm:text-sm text-[var(--c-text)] bg-[var(--c-card)] p-4 rounded-xl border border-[var(--c-border)]">
             <li><strong>Designated Agent:</strong> Copyright Agent / Legal Counsel</li>
-            <li><strong>Entity:</strong> [BUSINESS LEGAL NAME]</li>
-            <li><strong>Mailing Address:</strong> [BUSINESS ADDRESS]</li>
-            <li><strong>Agent Email:</strong> <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)]">[CONTACT EMAIL]</a></li>
+            <li><strong>Entity:</strong> TOOLBOXX</li>
+            <li><strong>Mailing Address:</strong> Bhubaneswar, Odisha, India</li>
+            <li><strong>Agent Email:</strong> <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)]">Lsatoneof69@gmail.com</a></li>
           </ul>
           <p className="text-xs text-[var(--c-muted)]">
             You may also transmit notices directly via our{' '}

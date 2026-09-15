@@ -80,16 +80,26 @@ export const ContactPage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[var(--c-muted)] leading-relaxed font-normal">
               We respond to tool inquiries, feature requests, and bug reports within 24–48 hours.
             </p>
-            <div className="pt-2">
-              <span className="text-xs font-mono text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
-                Official Email
-              </span>
-              <a
-                href="mailto:[CONTACT EMAIL]"
-                className="text-sm font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors font-mono"
-              >
-                [CONTACT EMAIL]
-              </a>
+            <div className="pt-2 space-y-3">
+              <div>
+                <span className="text-xs font-mono text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
+                  Official Email
+                </span>
+                <a
+                  href="mailto:Lsatoneof69@gmail.com"
+                  className="text-sm font-semibold text-[var(--c-gold)] hover:text-[var(--c-accent)] transition-colors font-mono"
+                >
+                  Lsatoneof69@gmail.com
+                </a>
+              </div>
+              <div>
+                <span className="text-xs font-mono text-[var(--c-subtle)] uppercase tracking-wider block mb-1">
+                  Mailing Address
+                </span>
+                <p className="text-sm font-semibold text-[var(--c-text)] font-mono">
+                  TOOLBOXX, Bhubaneswar, Odisha, India
+                </p>
+              </div>
             </div>
           </div>
 
@@ -216,7 +226,7 @@ export const ContactPage: React.FC = () => {
                       className="mt-0.5 rounded border-[var(--c-border)] text-[var(--c-gold)] focus:ring-[var(--c-gold)]"
                     />
                     <span>
-                      I consent to [BUSINESS LEGAL NAME] processing my name and email solely to respond to this inquiry in accordance with the{' '}
+                      I consent to TOOLBOXX processing my name and email solely to respond to this inquiry in accordance with the{' '}
                       <a href="/privacy" className="text-[var(--c-gold)] underline hover:text-[var(--c-accent)]">
                         Privacy Policy
                       </a>

@@ -85,7 +85,7 @@ export const CookiePolicyPage: React.FC = () => {
             <div className="p-5 rounded-2xl bg-[var(--c-card)] border border-[var(--c-border)] space-y-2">
               <span className="font-bold text-[var(--c-text)] text-sm block">Analytics Cookies (Consent-Gated)</span>
               <p className="text-[var(--c-muted)] leading-relaxed">
-                When enabled by you, anonymous aggregate usage metrics are evaluated via [ANALYTICS PROVIDER] solely to improve platform stability, page load speed, and user experience. No personal identifiers or document contents are collected.
+                When enabled by you, anonymous aggregate usage metrics are evaluated via privacy-focused aggregate telemetry solely to improve platform stability, page load speed, and user experience. No personal identifiers or document contents are collected.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export const CookiePolicyPage: React.FC = () => {
             4. Inquiries & Data Privacy Officer
           </h2>
           <p>
-            For questions about our cookie architecture or telemetry policies, contact [BUSINESS LEGAL NAME] at <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono underline">[CONTACT EMAIL]</a>.
+            For questions about our cookie architecture or telemetry policies, contact TOOLBOXX at <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)] font-mono underline">Lsatoneof69@gmail.com</a>.
           </p>
         </section>
       </div>

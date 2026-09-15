@@ -46,10 +46,10 @@ export const PrivacyPage: React.FC = () => {
             The data controller responsible for the operation of ToolBoxX is:
           </p>
           <ul className="space-y-1.5 list-none font-mono text-xs sm:text-sm text-[var(--c-text)] bg-[var(--c-card)] p-4 rounded-xl border border-[var(--c-border)]">
-            <li><strong>Legal Entity:</strong> [BUSINESS LEGAL NAME]</li>
-            <li><strong>Address:</strong> [BUSINESS ADDRESS]</li>
-            <li><strong>Contact Email:</strong> [CONTACT EMAIL]</li>
-            <li><strong>Jurisdiction:</strong> [COUNTRY/JURISDICTION]</li>
+            <li><strong>Legal Entity:</strong> TOOLBOXX</li>
+            <li><strong>Address:</strong> Bhubaneswar, Odisha, India</li>
+            <li><strong>Contact Email:</strong> <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)]">Lsatoneof69@gmail.com</a></li>
+            <li><strong>Jurisdiction:</strong> Odisha, India</li>
           </ul>
         </section>
 
@@ -90,7 +90,7 @@ export const PrivacyPage: React.FC = () => {
           </p>
           <ul className="space-y-2 list-disc pl-5 text-[var(--c-muted)]">
             <li><strong>Contact Submissions:</strong> If you voluntarily send a message through our Contact Page, we collect your name, email address, topic, and message text solely to respond to your query.</li>
-            <li><strong>Data Retention:</strong> Inquiries submitted via the contact form are retained for [DATA RETENTION PERIOD] to resolve follow-ups, after which they are permanently purged. Document files processed in tools are retained on servers for 0 seconds.</li>
+            <li><strong>Data Retention:</strong> Inquiries submitted via the contact form are retained for 90 days to resolve follow-ups, after which they are permanently purged. Document files processed in tools are retained on servers for 0 seconds.</li>
             <li><strong>No User Accounts:</strong> ToolBoxX does not require user registration, passwords, or personal profiles.</li>
           </ul>
         </section>
@@ -100,7 +100,7 @@ export const PrivacyPage: React.FC = () => {
             5. Cookies, Local Storage & Analytics
           </h2>
           <p>
-            ToolBoxX uses local browser storage for essential site preferences (active visual theme, cookie consent preferences, and optional tool configurations). Optional aggregate analytics may be provided by [ANALYTICS PROVIDER] only after explicit consent via our cookie consent banner. Please refer to our <a href="/cookie-policy" className="text-[var(--c-gold)] underline">Cookie Policy</a> to view details or modify your preferences.
+            ToolBoxX uses local browser storage for essential site preferences (active visual theme, cookie consent preferences, and optional tool configurations). Optional aggregate analytics may be provided by privacy-focused aggregate analytics only after explicit consent via our cookie consent banner. Please refer to our <a href="/cookie-policy" className="text-[var(--c-gold)] underline">Cookie Policy</a> to view details or modify your preferences.
           </p>
         </section>
 
@@ -125,7 +125,7 @@ export const PrivacyPage: React.FC = () => {
             7. Contacting Us
           </h2>
           <p>
-            To exercise your privacy rights or discuss our privacy safeguards, contact [BUSINESS LEGAL NAME] at <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono underline">[CONTACT EMAIL]</a> or via our <a href="/contact" className="text-[var(--c-gold)] underline">Contact Form</a>.
+            To exercise your privacy rights or discuss our privacy safeguards, contact TOOLBOXX at <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)] font-mono underline">Lsatoneof69@gmail.com</a> or via our <a href="/contact" className="text-[var(--c-gold)] underline">Contact Form</a>.
           </p>
         </section>
       </div>

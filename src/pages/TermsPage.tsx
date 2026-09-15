@@ -28,7 +28,7 @@ export const TermsPage: React.FC = () => {
             1. Acceptance of Terms & Operator Identification
           </h2>
           <p>
-            By accessing or using ToolBoxX (the "Service"), operated by <strong>[BUSINESS LEGAL NAME]</strong> ("we", "us", or "our"), located at <strong>[BUSINESS ADDRESS]</strong> (Contact: <a href="mailto:[CONTACT EMAIL]" className="text-[var(--c-gold)] font-mono">[CONTACT EMAIL]</a>), you agree to be bound by these Terms of Service. If you do not agree, do not access or use the website.
+            By accessing or using ToolBoxX (the "Service"), operated by <strong>TOOLBOXX</strong> ("we", "us", or "our"), located at <strong>Bhubaneswar, Odisha, India</strong> (Contact: <a href="mailto:Lsatoneof69@gmail.com" className="text-[var(--c-gold)] font-mono">Lsatoneof69@gmail.com</a>), you agree to be bound by these Terms of Service. If you do not agree, do not access or use the website.
           </p>
         </section>
 
@@ -54,7 +54,7 @@ export const TermsPage: React.FC = () => {
             <strong>You own your files:</strong> ToolBoxX does not claim any ownership, copyright, or intellectual property rights over files, text, images, or documents you process. Because operations execute locally in your browser memory, we never acquire rights, copies, or licenses over your content.
           </p>
           <p>
-            All website software, branding, interface designs, logos, and original educational guides are the intellectual property of [BUSINESS LEGAL NAME] and protected under applicable copyright laws.
+            All website software, branding, interface designs, logos, and original educational guides are the intellectual property of TOOLBOXX and protected under applicable copyright laws.
           </p>
         </section>
 
@@ -63,7 +63,7 @@ export const TermsPage: React.FC = () => {
             4. Free Service & Refund Policy
           </h2>
           <p>
-            ToolBoxX core web utilities are offered free of charge. No registration, payment, or credit card is required. In the event that optional paid tiers or enterprise licensing are made available, all transactions and cancellations will be governed by our statutory refund policy: <strong>[REFUND TERMS]</strong>.
+            ToolBoxX core web utilities are offered free of charge. No registration, payment, or credit card is required. In the event that optional paid tiers or enterprise licensing are made available, all transactions and cancellations will be governed by our statutory refund policy: <strong>14-day refund window for any future paid tiers or subscriptions</strong>.
           </p>
         </section>
 
@@ -81,7 +81,7 @@ export const TermsPage: React.FC = () => {
             6. Limitation of Liability
           </h2>
           <p>
-            To the maximum extent permitted by law, [BUSINESS LEGAL NAME] and its contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use the platform.
+            To the maximum extent permitted by law, TOOLBOXX and its contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use the platform.
           </p>
         </section>
 
@@ -90,7 +90,7 @@ export const TermsPage: React.FC = () => {
             7. Governing Law & Jurisdiction
           </h2>
           <p>
-            These Terms of Service and any disputes arising under or related to them shall be governed by and construed in accordance with the laws of <strong>[COUNTRY/JURISDICTION]</strong>, without regard to conflict of law principles.
+            These Terms of Service and any disputes arising under or related to them shall be governed by and construed in accordance with the laws of <strong>Odisha, India</strong>, without regard to conflict of law principles.
           </p>
         </section>
 
