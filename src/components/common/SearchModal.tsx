@@ -59,40 +59,57 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex flex-col justify-end sm:justify-start sm:items-center sm:pt-20 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-150"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-in zoom-in-95 duration-150"
+        className="w-full sm:max-w-2xl rounded-t-[28px] sm:rounded-3xl bg-[var(--c-surface)] border-t sm:border border-[var(--c-border)] shadow-2xl overflow-hidden flex flex-col h-[90dvh] sm:h-auto sm:max-h-[80vh] animate-in slide-in-from-bottom-6 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
       >
+        {/* Mobile Grab Handle */}
+        <div className="sm:hidden pt-2.5 pb-1 flex justify-center shrink-0">
+          <div className="w-10 h-1 rounded-full bg-[var(--c-border-hover)]" />
+        </div>
+
         {/* Search Input Bar */}
-        <div className="flex items-center px-5 py-4 border-b border-[var(--c-border)] gap-3">
+        <div className="flex items-center px-4 sm:px-5 py-3 sm:py-4 border-b border-[var(--c-border)] gap-2.5 sm:gap-3 bg-[var(--c-surface)] shrink-0">
           <Search className="w-5 h-5 text-[var(--c-gold)] shrink-0" />
           <input
             ref={inputRef}
-            type="text"
+            type="search"
+            autoCapitalize="none"
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search tools (e.g., 'compress pdf', 'jpg to png', 'word counter')..."
-            className="w-full bg-transparent border-none text-[var(--c-text)] placeholder:text-[var(--c-subtle)] text-base focus:outline-none focus:ring-0"
+            placeholder="Search tools (e.g., 'compress pdf', 'word counter')..."
+            className="w-full bg-transparent border-none outline-none text-[var(--c-text)] placeholder:text-[var(--c-subtle)] text-base focus:outline-none focus:ring-0 focus:border-none shadow-none appearance-none [-webkit-appearance:none]"
+            style={{ outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="p-1 rounded-md text-[var(--c-subtle)] hover:text-[var(--c-text)]"
+              className="p-1.5 rounded-lg text-[var(--c-subtle)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] cursor-pointer shrink-0"
+              aria-label="Clear search query"
             >
               <X className="w-4 h-4" />
             </button>
           )}
-          <kbd className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono text-[var(--c-muted)] bg-[var(--c-card)] border border-[var(--c-border)] rounded">
+          <button
+            onClick={onClose}
+            className="sm:hidden px-2.5 py-1 text-xs font-semibold text-[var(--c-gold)] hover:bg-[var(--c-card)] rounded-lg transition-colors cursor-pointer shrink-0"
+          >
+            Cancel
+          </button>
+          <kbd className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono text-[var(--c-muted)] bg-[var(--c-card)] border border-[var(--c-border)] rounded shadow-xs">
             ESC
           </kbd>
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex items-center gap-1.5 px-5 py-2.5 bg-[var(--c-bg)]/60 border-b border-[var(--c-border)] overflow-x-auto text-xs scrollbar-none">
+        <div className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-[var(--c-bg)]/60 border-b border-[var(--c-border)] overflow-x-auto text-xs scrollbar-none shrink-0 scroll-touch">
           {[
             { id: 'all', label: 'All' },
             { id: 'pdf', label: 'PDF' },
@@ -109,7 +126,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 py-1 rounded-full whitespace-nowrap font-medium transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full whitespace-nowrap font-medium transition-all cursor-pointer shrink-0 text-xs min-h-[34px] flex items-center ${
                 selectedCategory === cat.id
                   ? 'bg-[var(--c-gold)] text-[var(--c-bg)] font-bold shadow-xs'
                   : 'text-[var(--c-muted)] hover:bg-[var(--c-card)] hover:text-[var(--c-text)]'
@@ -121,7 +138,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Results List */}
-        <div className="overflow-y-auto p-3 divide-y divide-[var(--c-border)]/40">
+        <div className="overflow-y-auto overscroll-contain flex-1 p-3 sm:p-4 divide-y divide-[var(--c-border)]/40 scroll-touch">
           {results.length === 0 ? (
             <div className="p-10 text-center text-[var(--c-muted)]">
               <p className="font-semibold text-base text-[var(--c-text)]">No tools found matching "{query}"</p>
@@ -136,15 +153,15 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                   key={tool.id}
                   onClick={() => handleSelectTool(tool)}
                   onMouseEnter={() => setActiveIndex(idx)}
-                  className={`flex items-center justify-between p-3.5 rounded-2xl cursor-pointer transition-all ${
+                  className={`flex items-center justify-between p-3 sm:p-3.5 rounded-2xl cursor-pointer transition-all active:scale-[0.99] active:bg-[var(--c-card)] ${
                     isSelected
                       ? 'bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-text)]'
                       : 'hover:bg-[var(--c-card)]/60 text-[var(--c-muted)]'
                   }`}
                 >
-                  <div className="flex items-center gap-3.5 min-w-0">
+                  <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
                     <div
-                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                         isSelected
                           ? 'bg-[var(--c-gold)] text-[var(--c-bg)]'
                           : 'bg-[var(--c-card)] border border-[var(--c-border)] text-[var(--c-gold)]'
@@ -180,8 +197,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Footer Navigation Hints */}
-        <div className="px-5 py-3 bg-[var(--c-bg)]/80 border-t border-[var(--c-border)] flex items-center justify-between text-xs text-[var(--c-subtle)]">
+        <div className="px-4 sm:px-5 py-3 sm:py-3.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-[var(--c-bg)]/80 border-t border-[var(--c-border)] flex items-center justify-between text-xs text-[var(--c-subtle)] shrink-0">
           <span>{results.length} tools indexed</span>
+          <button
+            onClick={onClose}
+            className="sm:hidden px-3 py-1 rounded-full bg-[var(--c-card)] border border-[var(--c-border)] text-[11px] font-semibold text-[var(--c-text)] cursor-pointer"
+          >
+            Done
+          </button>
           <div className="hidden sm:flex items-center gap-3">
             <span>↑↓ to navigate</span>
             <span>↵ to select</span>

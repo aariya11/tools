@@ -12,7 +12,7 @@ export const CookieConsentBanner: React.FC = () => {
     <div
       role="region"
       aria-label="Cookie consent banner"
-      className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 bg-[var(--c-surface)]/95 backdrop-blur-xl border-t border-[var(--c-border)] shadow-2xl animate-in slide-in-from-bottom duration-300"
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 pb-[max(1rem,env(safe-area-inset-bottom))] bg-[var(--c-surface)]/95 backdrop-blur-xl border-t border-[var(--c-border)] shadow-2xl animate-in slide-in-from-bottom duration-300"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
         <div className="flex items-start gap-3.5 max-w-3xl">
@@ -37,25 +37,25 @@ export const CookieConsentBanner: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto shrink-0 justify-end">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-2.5 w-full lg:w-auto shrink-0 justify-end">
           <button
             onClick={openPreferencesModal}
-            className="px-4 py-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] hover:bg-[var(--c-surface)] text-xs font-semibold text-[var(--c-text)] transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-card)] hover:bg-[var(--c-surface)] text-xs font-semibold text-[var(--c-text)] transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs min-h-[40px]"
           >
-            <Sliders className="w-3.5 h-3.5 text-[var(--c-muted)]" />
-            <span>Manage Preferences</span>
+            <Sliders className="w-3.5 h-3.5 text-[var(--c-muted)] shrink-0" />
+            <span className="truncate">Preferences</span>
           </button>
 
           <button
             onClick={rejectNonEssential}
-            className="px-4 py-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:bg-[var(--c-card)] text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] transition-colors cursor-pointer shadow-xs"
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] hover:bg-[var(--c-card)] text-xs font-semibold text-[var(--c-muted)] hover:text-[var(--c-text)] transition-colors cursor-pointer shadow-xs min-h-[40px] text-center"
           >
-            Reject Non-Essential
+            Reject All
           </button>
 
           <button
             onClick={acceptAll}
-            className="px-5 py-2.5 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-xs font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-md"
+            className="col-span-2 sm:col-span-1 px-5 py-2.5 rounded-xl bg-[var(--c-accent)] hover:bg-[var(--c-gold)] text-[var(--c-bg)] text-xs font-bold transition-all hover:scale-102 active:scale-98 cursor-pointer shadow-md min-h-[40px] text-center"
           >
             Accept All
           </button>

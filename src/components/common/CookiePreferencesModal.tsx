@@ -25,13 +25,18 @@ export const CookiePreferencesModal: React.FC = () => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="cookie-preferences-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
       onClick={closePreferencesModal}
     >
       <div
-        className="w-full max-w-xl rounded-3xl bg-[var(--c-surface)] border border-[var(--c-border)] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[var(--c-text)]"
+        className="w-full sm:max-w-xl rounded-t-[28px] sm:rounded-3xl bg-[var(--c-surface)] border-t sm:border border-[var(--c-border)] shadow-2xl overflow-hidden animate-in slide-in-from-bottom-6 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 text-[var(--c-text)] flex flex-col max-h-[90dvh] sm:max-h-[85vh]"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Mobile Grab Handle */}
+        <div className="sm:hidden pt-2.5 pb-1 flex justify-center shrink-0">
+          <div className="w-10 h-1 rounded-full bg-[var(--c-border-hover)]" />
+        </div>
+
         {/* Header */}
         <div className="p-6 border-b border-[var(--c-border)] flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -57,7 +62,7 @@ export const CookiePreferencesModal: React.FC = () => {
         </div>
 
         {/* Categories List */}
-        <div className="p-6 space-y-5 max-h-[60vh] overflow-y-auto divide-y divide-[var(--c-border)]">
+        <div className="p-5 sm:p-6 space-y-5 overflow-y-auto overscroll-contain scroll-touch flex-1 divide-y divide-[var(--c-border)]">
           {/* Necessary Cookies */}
           <div className="pt-2 first:pt-0 space-y-2">
             <div className="flex items-center justify-between">
@@ -133,7 +138,7 @@ export const CookiePreferencesModal: React.FC = () => {
         </div>
 
         {/* Footer Actions */}
-        <div className="p-6 border-t border-[var(--c-border)] bg-[var(--c-surface)] flex flex-wrap items-center justify-between gap-3">
+        <div className="p-4 sm:p-6 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-[var(--c-border)] bg-[var(--c-surface)] flex flex-wrap items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2">
             <button
               onClick={rejectNonEssential}

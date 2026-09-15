@@ -58,10 +58,21 @@ input[type="range"] {
   accent-color: var(--c-gold);
 }
 
-/* Focus states */
-*:focus-visible {
+/* Focus states — scoped to interactive non-input elements to prevent unwanted input focus boxes */
+*:focus-visible:not(input):not(textarea):not(select):not([role="searchbox"]):not([type="search"]) {
   outline: none;
   box-shadow: 0 0 0 2px var(--c-gold), 0 0 0 4px var(--c-bg);
+}
+
+/* Mobile Safe-Area & Touch Helpers */
+.pt-safe { padding-top: max(1rem, env(safe-area-inset-top)); }
+.pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.pl-safe { padding-left: max(1rem, env(safe-area-inset-left)); }
+.pr-safe { padding-right: max(1rem, env(safe-area-inset-right)); }
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
 }
 
 /* RTL Support Styles */

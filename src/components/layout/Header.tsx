@@ -238,7 +238,7 @@ export const Header: React.FC = () => {
               <ThemeToggle showDropdown={false} />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-xl text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] border border-[var(--c-border)] transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl text-[var(--c-muted)] hover:text-[var(--c-text)] hover:bg-[var(--c-card)] border border-[var(--c-border)] transition-colors cursor-pointer min-h-[40px] min-w-[40px] flex items-center justify-center"
                 aria-label="Toggle navigation menu"
                 aria-expanded={isMobileMenuOpen}
               >
@@ -250,7 +250,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-b border-[var(--c-border)] bg-[var(--c-bg)]/98 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-4 animate-in slide-in-from-top-2 shadow-2xl">
+          <div className="lg:hidden border-b border-[var(--c-border)] bg-[var(--c-bg)]/98 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-4 max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain scroll-touch animate-in slide-in-from-top-2 shadow-2xl">
             <div className="space-y-1 font-medium text-sm">
               <Link
                 to="/pdf-tools"
