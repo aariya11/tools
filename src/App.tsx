@@ -37,6 +37,7 @@ const ProductivityToolsPage = lazy(() => import('./pages/ProductivityToolsPage')
 const SocialMediaToolsPage = lazy(() => import('./pages/SocialMediaToolsPage').then((m) => ({ default: m.SocialMediaToolsPage })));
 const FreePdfToolsPage = lazy(() => import('./pages/FreePdfToolsPage').then((m) => ({ default: m.FreePdfToolsPage })));
 const FreeImageToolsPage = lazy(() => import('./pages/FreeImageToolsPage').then((m) => ({ default: m.FreeImageToolsPage })));
+const StaggeredGridDemoPage = lazy(() => import('./pages/StaggeredGridDemoPage').then((m) => ({ default: m.StaggeredGridDemoPage })));
 
 // Lazy-loaded Image Tools
 const ImageCompressor = lazy(() => import('./components/tools/image/ImageCompressor').then((m) => ({ default: m.ImageCompressor })));
@@ -273,6 +274,7 @@ export function App() {
                 <Route path="/social-media-tools" element={<SocialMediaToolsPage />} />
                 <Route path="/free-pdf-tools" element={<FreePdfToolsPage />} />
                 <Route path="/free-image-tools" element={<FreeImageToolsPage />} />
+                <Route path="/staggered-grid" element={<StaggeredGridDemoPage />} />
 
                 {/* Image Tools */}
                 <Route
