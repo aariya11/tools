@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Global Multilingual SEO & Natural Search Keyword Clusters
  * Maps natural international search intent across major languages
  * to real client-side PDF utilities without keyword stuffing or doorway tactics.
